@@ -65,7 +65,6 @@ export default function Industries() {
                 lineHeight: 1,
                 marginBottom: 20,
                 textTransform: "uppercase",
-                fontStyle: "italic",
                 letterSpacing: "0.02em",
               }}
             >
@@ -151,7 +150,7 @@ function IndustryCard({ ind, Icon }: { ind: any; Icon: React.ElementType }) {
         <Icon size={24} color={ind.accent} />
       </div>
 
-      <h3 style={{ fontSize: 18, fontWeight: 900, fontStyle: "italic", color: "#fff", marginBottom: 12, letterSpacing: "0.02em" }}>
+      <h3 className="font-display" style={{ fontSize: 18, fontWeight: 800, color: "#fff", marginBottom: 12 }}>
         {ind.title}
       </h3>
       <p style={{ fontSize: 14, color: "#90CAF9", lineHeight: 1.6, marginBottom: 24, flex: 1 }}>

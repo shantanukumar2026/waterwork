@@ -3,20 +3,20 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Building2, 
-  FileText, 
-  ShieldCheck, 
-  Building, 
-  Award, 
-  Briefcase, 
-  PhoneCall, 
-  ArrowRight, 
-  CheckCircle2, 
-  Globe2, 
-  Target, 
-  Zap, 
-  Leaf, 
+import {
+  Building2,
+  FileText,
+  ShieldCheck,
+  Building,
+  Award,
+  Briefcase,
+  PhoneCall,
+  ArrowRight,
+  CheckCircle2,
+  Globe2,
+  Target,
+  Zap,
+  Leaf,
   Factory,
   Check,
   Download,
@@ -54,32 +54,32 @@ const storyTimeline = [
 ];
 
 const whatWeDoPillars = [
-  { 
-    title: "ENGINEERING & CAD DESIGN", 
+  {
+    title: "ENGINEERING & CAD DESIGN",
     desc: "In-house 3D FEA stress analysis, custom municipal pattern development, and specialized CAD submittals.",
     icon: Wrench,
     points: ["3D Finite Element Analysis", "Custom AWWA Spec Submittals", "Pattern Design & Tooling"]
   },
-  { 
-    title: "MANUFACTURING & FOUNDRY", 
+  {
+    title: "MANUFACTURING & FOUNDRY",
     desc: "Ductile iron sand casting, gray iron foundry operations, and heavy-duty HDPE injection molding.",
     icon: Factory,
     points: ["ASTM A48 Class 35B Iron", "AASHTO H-20 Traffic Rated", "Robotic Injection Molding"]
   },
-  { 
-    title: "QUALITY & TESTING", 
+  {
+    title: "QUALITY & TESTING",
     desc: "Rigorous 100% batch testing including hydrostatic pressure, SPECTRO chemical analysis, and load testing.",
     icon: Award,
     points: ["Hydrostatic Burst Chamber", "Chemical Spectrometry", "NSF/ANSI 61 Lead-Free"]
   },
-  { 
-    title: "DISTRIBUTION & LOGISTICS", 
+  {
+    title: "DISTRIBUTION & LOGISTICS",
     desc: "Strategically located regional warehouses in NY, FL, and ON ensuring rapid JIT site delivery.",
     icon: Truck,
     points: ["48-Hour Emergency Shipping", "Jobsite Staging Support", "USA & Canadian Freight"]
   },
-  { 
-    title: "TECHNICAL FIELD SUPPORT", 
+  {
+    title: "TECHNICAL FIELD SUPPORT",
     desc: "Dedicated municipal engineers providing on-site specification consultation and installation guidance.",
     icon: ShieldCheck,
     points: ["AWWA Specification Review", "Contractor On-Site Training", "Lifetime Product Warranties"]
@@ -126,11 +126,11 @@ export default function CompanyProfile() {
         <aside style={{ position: "sticky", top: 120, display: "flex", flexDirection: "column", gap: 24 }} className="company-sidebar">
 
           {/* Menu Card */}
-          <div style={{ background: "#ffffff", borderRadius: "16px", padding: "24px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-            <h4 style={{ fontSize: 11, fontWeight: 900, color: "#004aad", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 18, paddingBottom: 10, borderBottom: "2px solid rgba(0, 133, 244, 0.15)" }}>
+          <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "20px", border: "1px solid var(--line)" }}>
+            <h4 className="font-mono-spec" style={{ fontSize: 11, fontWeight: 700, color: "var(--deep)", letterSpacing: "0.12em", marginBottom: 16, paddingBottom: 8, borderBottom: "1px solid var(--line)" }}>
               COMPANY NAVIGATION
             </h4>
-            <nav style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <nav style={{ display: "flex", flexDirection: "column", gap: 4 }}>
               {sidebarNav.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.id;
@@ -142,36 +142,32 @@ export default function CompanyProfile() {
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      gap: 12,
+                      gap: 10,
                       width: "100%",
-                      padding: "11px 14px",
-                      borderRadius: "10px",
+                      padding: "10px 12px",
+                      borderRadius: "0px",
                       border: "none",
-                      background: isActive ? "#EBF3FF" : "transparent",
-                      color: isActive ? "#004aad" : "#0085f4",
-                      fontWeight: isActive ? 900 : 600,
-                      fontSize: 13,
-                      cursor: "pointer",
-                      textAlign: "left",
-                      textDecoration: "none",
+                      background: isActive ? "var(--paper)" : "transparent",
+                      fontFamily: "var(--font-sans), sans-serif",
+                      fontWeight: isActive ? 800 : 600,
                       transition: "all 0.2s ease"
                     }}
                     onMouseEnter={(e) => {
                       if (!isActive) {
-                        e.currentTarget.style.background = "#F8FAFC";
-                        e.currentTarget.style.color = "#004aad";
+                        e.currentTarget.style.background = "var(--paper)";
+                        e.currentTarget.style.color = "var(--deep)";
                       }
                     }}
                     onMouseLeave={(e) => {
                       if (!isActive) {
                         e.currentTarget.style.background = "transparent";
-                        e.currentTarget.style.color = "#0085f4";
+                        e.currentTarget.style.color = "var(--ink-soft)";
                       }
                     }}
                   >
-                    <Icon size={16} color={isActive ? "#0085f4" : "#90CAF9"} />
+                    <Icon size={14} color={isActive ? "var(--water)" : "var(--ink-soft)"} />
                     <span style={{ flex: 1 }}>{item.label}</span>
-                    {isActive && <ChevronRight size={14} color="#0085f4" />}
+                    {isActive && <ChevronRight size={14} color="var(--water)" />}
                   </Link>
                 );
               })}
@@ -179,55 +175,38 @@ export default function CompanyProfile() {
           </div>
 
           {/* Quick Contact CTA Card */}
-          <div style={{ background: "linear-gradient(135deg, #004aad 0%, #0085f4 100%)", borderRadius: "16px", padding: "24px", color: "#ffffff", boxShadow: "0 12px 32px rgba(0, 74, 173, 0.2)" }}>
-            <div style={{ fontSize: 10, fontWeight: 900, letterSpacing: "0.15em", textTransform: "uppercase", color: "#90CAF9", marginBottom: 8 }}>
+          <div style={{ background: "var(--deep)", borderRadius: "0px", padding: "24px", color: "#FFFFFF", border: "1px solid var(--line-strong)" }}>
+            <div className="eyebrow-label" style={{ color: "var(--water)", marginBottom: 8 }}>
               WORK WITH H2 INDUSTRIES
             </div>
-            <h4 style={{ fontSize: 18, fontWeight: 900, lineHeight: 1.25, marginBottom: 12 }}>
+            <h4 className="font-display" style={{ fontSize: 18, fontWeight: 800, lineHeight: 1.2, marginBottom: 10, color: "#FFFFFF" }}>
               Need Custom AWWA Specifications?
             </h4>
-            <p style={{ fontSize: 12, color: "#E0F2FE", lineHeight: 1.5, marginBottom: 20 }}>
+            <p style={{ fontSize: 12, color: "var(--paper)", lineHeight: 1.5, marginBottom: 18, fontWeight: 400 }}>
               Speak with our engineering sales team for submittal packages, CAD drawings, and volume pricing.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <a
                 href="#contact"
+                className="btn-primary"
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 8,
-                  background: "#ffffff",
-                  color: "#004aad",
-                  padding: "12px",
-                  borderRadius: "8px",
-                  fontSize: 12,
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+                  padding: "10px",
+                  fontSize: 11,
                 }}
               >
                 REQUEST A QUOTE <ArrowRight size={14} />
               </a>
               <a
                 href="tel:+15127828880"
+                className="btn-outline"
                 style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 8,
-                  background: "rgba(255,255,255,0.15)",
-                  color: "#ffffff",
-                  padding: "10px",
-                  borderRadius: "8px",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.3)"
+                  color: "#FFFFFF",
+                  borderColor: "var(--line-strong)",
+                  padding: "8px",
+                  fontSize: 11,
                 }}
               >
-                <PhoneCall size={14} /> +1 (512) 782-8880
+                <PhoneCall size={14} color="var(--water)" /> +1 (512) 782-8880
               </a>
             </div>
           </div>
@@ -244,7 +223,7 @@ export default function CompanyProfile() {
                 <Building2 size={14} color="#0085f4" />
                 <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>ABOUT H2 INDUSTRIES</span>
               </div>
-              <h2 style={{ fontSize: 32, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 20 }}>
+              <h2 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 20 }}>
                 H2 INDUSTRIES COMPANY OVERVIEW
               </h2>
               <p style={{ fontSize: 15, color: "#0085f4", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
@@ -262,7 +241,7 @@ export default function CompanyProfile() {
                     <FileText size={14} color="#0085f4" />
                     <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>WHO WE ARE</span>
                   </div>
-                  <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 16 }}>
+                  <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 16 }}>
                     Engineered for Multi-Decade Field Reliability
                   </h3>
                   <p style={{ fontSize: 14, color: "#0085f4", lineHeight: 1.65, marginBottom: 16, fontWeight: 500 }}>
@@ -308,14 +287,14 @@ export default function CompanyProfile() {
                 <Clock size={14} color="#0085f4" />
                 <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>OUR JOURNEY</span>
               </div>
-              <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 28 }}>
+              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 28 }}>
                 Quarter-Century of Innovation & Growth
               </h3>
 
               <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
                 {storyTimeline.map((item, i) => (
                   <div key={i} style={{ background: "#F8FAFC", borderRadius: "12px", padding: "24px", border: "1px solid #E2E8F0", position: "relative" }}>
-                    <div style={{ fontSize: 24, fontWeight: 950, color: "#0085f4", fontStyle: "italic", marginBottom: 4 }}>
+                    <div className="font-display" style={{ fontSize: 24, fontWeight: 800, color: "var(--brand-blue)", marginBottom: 4 }}>
                       {item.year}
                     </div>
                     <div style={{ fontSize: 14, fontWeight: 900, color: "#004aad", marginBottom: 8 }}>
@@ -337,7 +316,7 @@ export default function CompanyProfile() {
                 <Wrench size={14} color="#0085f4" />
                 <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>WHAT WE DO</span>
               </div>
-              <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
+              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", margin: 0 }}>
                 End-to-End Infrastructure Capabilities
               </h3>
 
@@ -376,7 +355,7 @@ export default function CompanyProfile() {
                 <Factory size={14} color="#0085f4" />
                 <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>MANUFACTURING FOOTPRINT</span>
               </div>
-              <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 24 }}>
+              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Strategic North American Facilities
               </h3>
 
@@ -433,7 +412,7 @@ export default function CompanyProfile() {
                 <Award size={14} color="#0085f4" />
                 <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>QUALITY & STANDARDS</span>
               </div>
-              <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 24 }}>
+              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Certified North American Standards & Approvals
               </h3>
 
@@ -483,7 +462,7 @@ export default function CompanyProfile() {
                 <Compass size={14} color="#0085f4" />
                 <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>MISSION, VISION & VALUES</span>
               </div>
-              <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 24 }}>
+              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Compact & Principled Engineering Philosophy
               </h3>
 
@@ -533,7 +512,7 @@ export default function CompanyProfile() {
                 <Globe2 size={14} color="#0085f4" />
                 <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>MARKETS WE SERVE</span>
               </div>
-              <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
+              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", margin: 0 }}>
                 Diverse Infrastructure Sector Application
               </h3>
 
@@ -556,24 +535,24 @@ export default function CompanyProfile() {
 
           {/* 9. WHY H2 INDUSTRIES */}
           <section id="why-h2" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "linear-gradient(135deg, #004aad 0%, #0085f4 100%)", borderRadius: "20px", padding: "40px", color: "#ffffff", boxShadow: "0 12px 36px rgba(0,74,173,0.2)" }}>
-              <div style={{ fontSize: 11, fontWeight: 900, letterSpacing: "0.15em", textTransform: "uppercase", color: "#90CAF9", marginBottom: 8 }}>
+            <div style={{ background: "var(--deep)", borderRadius: "0px", padding: "36px", color: "#FFFFFF", border: "1px solid var(--line-strong)" }}>
+              <div className="eyebrow-label" style={{ color: "var(--water)", marginBottom: 8 }}>
                 MEASURABLE DIFFERENTIATORS
               </div>
-              <h3 style={{ fontSize: 32, fontWeight: 900, textTransform: "uppercase", fontStyle: "italic", marginBottom: 28 }}>
+              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, textTransform: "uppercase", marginBottom: 24, color: "#FFFFFF" }}>
                 Why Engineers & Contractors Specify H2 Industries
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
                 {[
                   { title: "ENGINEERING SUPPORT", desc: "Direct access to P.E. engineers for custom submittals & CAD drawings." },
                   { title: "MANUFACTURING CONTROL", desc: "100% owned foundry & polymer tooling ensuring zero quality drift." },
                   { title: "PRODUCT RELIABILITY", desc: "Tested to 3x AWWA working pressure with zero field failures." },
                   { title: "EMERGENCY DELIVERY", desc: "48-hour express dispatch for urgent municipal field repairs." },
                 ].map((diff, i) => (
-                  <div key={i} style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(10px)", padding: "20px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.2)" }}>
-                    <div style={{ fontSize: 14, fontWeight: 900, color: "#ffffff", marginBottom: 6 }}>{diff.title}</div>
-                    <div style={{ fontSize: 12, color: "#E0F2FE", lineHeight: 1.45 }}>{diff.desc}</div>
+                  <div key={i} className="industrial-card" style={{ background: "rgba(255,255,255,0.05)", padding: "16px", borderRadius: "0px", border: "1px solid var(--line-strong)" }}>
+                    <div className="font-mono-spec" style={{ fontSize: 11, fontWeight: 700, color: "var(--water)", marginBottom: 6 }}>{diff.title}</div>
+                    <div style={{ fontSize: 12, color: "var(--paper)", lineHeight: 1.45 }}>{diff.desc}</div>
                   </div>
                 ))}
               </div>
@@ -582,12 +561,11 @@ export default function CompanyProfile() {
 
           {/* 10. COMPANY RESOURCES */}
           <section id="resources" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "40px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", marginBottom: 16 }}>
-                <Download size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>COMPANY RESOURCES</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                COMPANY RESOURCES
               </div>
-              <h3 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 24 }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 20 }}>
                 Downloadable Corporate & Technical Documentation
               </h3>
 
@@ -598,31 +576,22 @@ export default function CompanyProfile() {
                   { name: "Master Product Catalog", size: "PDF • Complete Line Specs", href: "/products" },
                   { name: "Submittals & CAD Library", size: "ZIP • Engineering Drawings", href: "/quality#standards" },
                 ].map((res, i) => (
-                  <div key={i} style={{ background: "#F8FAFC", padding: "20px", borderRadius: "12px", border: "1px solid #E2E8F0", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div key={i} className="industrial-card" style={{ background: "var(--paper)", padding: "16px", borderRadius: "0px", border: "1px solid var(--line)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                     <div>
-                      <FileCheck size={24} color="#0085f4" style={{ marginBottom: 10 }} />
-                      <div style={{ fontSize: 14, fontWeight: 900, color: "#004aad" }}>{res.name}</div>
-                      <div style={{ fontSize: 11, color: "#0085f4", marginTop: 2, fontWeight: 500 }}>{res.size}</div>
+                      <FileCheck size={20} color="var(--water)" style={{ marginBottom: 8 }} />
+                      <div className="font-display" style={{ fontSize: 15, fontWeight: 800, color: "var(--deep)" }}>{res.name}</div>
+                      <div className="font-mono-spec" style={{ fontSize: 10, color: "var(--ink-soft)", marginTop: 4 }}>{res.size}</div>
                     </div>
                     <Link
                       href={res.href}
+                      className="btn-outline"
                       style={{
-                        marginTop: 16,
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: 8,
-                        background: "#0085f4",
-                        color: "#fff",
-                        border: "none",
-                        padding: "10px",
-                        borderRadius: "8px",
-                        fontSize: 11,
-                        fontWeight: 900,
-                        textDecoration: "none"
+                        marginTop: 14,
+                        padding: "8px",
+                        fontSize: 10,
                       }}
                     >
-                      <Download size={14} /> VIEW SPEC
+                      <Download size={12} /> VIEW SPEC
                     </Link>
                   </div>
                 ))}
@@ -632,51 +601,31 @@ export default function CompanyProfile() {
 
           {/* 11. CONTACT / PARTNERSHIP CTA */}
           <section id="contact-cta" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "48px", border: "2px solid #0085f4", boxShadow: "0 16px 40px rgba(0, 85, 244, 0.08)", textAlign: "center" }}>
-              <div style={{ fontSize: 11, fontWeight: 900, letterSpacing: "0.15em", textTransform: "uppercase", color: "#0085f4", marginBottom: 8 }}>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "40px", border: "1px solid var(--line)", textAlign: "center" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 8, justifyContent: "center" }}>
                 PARTNERSHIP & MUNICIPAL INQUIRIES
               </div>
-              <h2 style={{ fontSize: 36, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 16 }}>
+              <h2 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 14 }}>
                 Work With H2 Industries
               </h2>
-              <p style={{ fontSize: 15, color: "#0085f4", maxWidth: 640, margin: "0 auto 32px", lineHeight: 1.6, fontWeight: 500 }}>
+              <p style={{ fontSize: 15, color: "var(--ink)", maxWidth: 640, margin: "0 auto 28px", lineHeight: 1.6, fontWeight: 400 }}>
                 Whether you are specifying an upcoming AWWA municipal project, requesting custom CAD submittals, or establishing a regional distribution partnership, our engineering sales team is ready to assist.
               </p>
-              <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
+              <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
                 <a
                   href="#contact"
+                  className="btn-primary"
                   style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 10,
-                    background: "linear-gradient(135deg, #004aad, #0085f4)",
-                    color: "#ffffff",
-                    padding: "16px 36px",
-                    borderRadius: "10px",
-                    fontSize: 14,
-                    fontWeight: 900,
-                    textTransform: "uppercase",
-                    textDecoration: "none",
-                    boxShadow: "0 8px 24px rgba(0,74,173,0.25)"
+                    padding: "12px 28px",
                   }}
                 >
                   REQUEST A QUOTE <ArrowRight size={16} />
                 </a>
                 <a
                   href="tel:+15127828880"
+                  className="btn-outline"
                   style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 10,
-                    background: "#F8FAFC",
-                    color: "#004aad",
-                    border: "1.5px solid #E2E8F0",
-                    padding: "16px 36px",
-                    borderRadius: "10px",
-                    fontSize: 14,
-                    fontWeight: 900,
-                    textTransform: "uppercase",
-                    textDecoration: "none"
+                    padding: "12px 28px",
                   }}
                 >
                   <PhoneCall size={16} /> CONTACT SALES

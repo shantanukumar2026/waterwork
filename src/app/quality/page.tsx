@@ -18,8 +18,8 @@ export default function QualityPage() {
           <span className="dot" />
           Zero Compromise
         </div>
-        <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
-          QUALITY & <span style={{ color: "#0085f4" }}>COMPLIANCE</span>
+        <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", margin: 0 }}>
+          QUALITY & <span style={{ color: "var(--brand-blue)" }}>COMPLIANCE</span>
         </h1>
       </div>
 

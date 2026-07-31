@@ -31,10 +31,10 @@ export default function Testimonials() {
               </span>
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 900, color: "#004aad", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase", fontStyle: "italic" }}>
-              {header.title} <span style={{ color: "#0085f4" }}>{header.highlight}</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "var(--brand-deep)", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
+              {header.title} <span style={{ color: "var(--brand-blue)" }}>{header.highlight}</span>
             </h2>
-            <p style={{ color: "#0085f4", fontSize: 16, maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontWeight: 500 }}>
+            <p style={{ color: "var(--brand-blue)", fontSize: 16, maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontWeight: 500 }}>
               {header.subtitle}
             </p>
           </motion.div>
@@ -64,7 +64,7 @@ export default function Testimonials() {
               >
                 <Quote size={40} color="rgba(21, 101, 192, 0.1)" style={{ position: "absolute", top: 32, right: 32 }} />
                 
-                <p style={{ color: "#004aad", fontSize: 16, lineHeight: 1.7, fontWeight: 600, fontStyle: "italic", marginBottom: 32, position: "relative", zIndex: 1 }}>
+                <p style={{ color: "var(--brand-deep)", fontSize: 16, lineHeight: 1.7, fontWeight: 600, marginBottom: 32, position: "relative", zIndex: 1 }}>
                   "{item.quote}"
                 </p>
                 

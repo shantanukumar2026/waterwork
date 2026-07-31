@@ -53,8 +53,8 @@ export default function Partners() {
             <span style={{ color: "#2196F3", fontSize: 13, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>
               Global Network
             </span>
-            <h2 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 900, color: "#fff", textTransform: "uppercase", fontStyle: "italic", lineHeight: 1.1 }}>
-              Trusted <span style={{ color: "#2196F3" }}>By</span><br />
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 800, color: "#fff", textTransform: "uppercase", lineHeight: 1.1 }}>
+              Trusted <span style={{ color: "var(--brand-blue)" }}>By</span><br />
               Industry Leaders
             </h2>
           </motion.div>

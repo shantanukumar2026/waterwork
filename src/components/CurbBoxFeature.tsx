@@ -233,11 +233,10 @@ export default function CurbBoxFeature() {
               transition={{ duration: 0.6, delay: 0.3 }}
               style={{
                 fontSize: "clamp(2.4rem, 4vw, 4rem)",
-                fontWeight: 950,
+                fontWeight: 800,
                 color: "#004aad",
                 lineHeight: 0.92,
                 textTransform: "uppercase",
-                fontStyle: "italic",
                 letterSpacing: "-0.03em",
                 marginBottom: "1.2vh",
                 background: "linear-gradient(135deg, #004aad 0%, #0085f4 50%, #1976D2 100%)",

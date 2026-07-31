@@ -196,8 +196,6 @@ export default async function IndustryDetailPage({ params }: PageProps) {
               color: "#ffffff", 
               lineHeight: 1.1, 
               marginBottom: 24, 
-              textTransform: "uppercase", 
-              fontStyle: "italic",
               letterSpacing: "0.02em"
             }}
           >
@@ -221,7 +219,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   backdropFilter: "blur(8px)"
                 }}
               >
-                <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", fontStyle: "italic", lineHeight: 1, marginBottom: 6 }}>
+                <div style={{ fontSize: 26, fontWeight: 900, color: "#ffffff", lineHeight: 1, marginBottom: 6 }}>
                   {stat.value}
                 </div>
                 <div style={{ fontSize: 11, fontWeight: 800, color: "#90CAF9", letterSpacing: "0.1em", textTransform: "uppercase" }}>
@@ -245,7 +243,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
               <span style={{ fontSize: 12, fontWeight: 900, color: "#0085f4", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                 SECTOR ANALYSIS
               </span>
-              <h2 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginTop: 8, marginBottom: 20 }}>
+              <h2 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginTop: 8, marginBottom: 20 }}>
                 Overview & Engineering Approach
               </h2>
 
@@ -282,7 +280,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                 <span style={{ fontSize: 12, fontWeight: 900, color: "#0085f4", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                   KEY APPLICATIONS
                 </span>
-                <h2 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginTop: 8 }}>
+                <h2 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginTop: 8 }}>
                   Where Our Products excel
                 </h2>
               </div>
@@ -307,7 +305,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                       <div style={{ width: 44, height: 44, borderRadius: "12px", background: "rgba(0, 133, 244, 0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <Icon size={22} color="#0085f4" />
                       </div>
-                      <h3 style={{ fontSize: 18, fontWeight: 900, color: "#004aad", fontStyle: "italic", margin: 0 }}>
+                      <h3 className="font-display" style={{ fontSize: 18, fontWeight: 800, color: "var(--brand-deep)", margin: 0 }}>
                         {app.title}
                       </h3>
                       <p style={{ fontSize: 14, color: "#64748B", lineHeight: 1.6, fontWeight: 500, margin: 0 }}>
@@ -326,7 +324,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                   <span style={{ fontSize: 12, fontWeight: 900, color: "#0085f4", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                     RECOMMENDED HARDWARE
                   </span>
-                  <h2 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginTop: 8 }}>
+                  <h2 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginTop: 8 }}>
                     Specified Products & Castings
                   </h2>
                 </div>
@@ -372,7 +370,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                           {prod.spec}
                         </span>
                       </div>
-                      <h4 style={{ fontSize: 17, fontWeight: 900, color: "#004aad", fontStyle: "italic", marginBottom: 6 }}>
+                      <h4 className="font-display" style={{ fontSize: 17, fontWeight: 800, color: "var(--brand-deep)", marginBottom: 6 }}>
                         {prod.name}
                       </h4>
                       <p style={{ fontSize: 14, color: "#475569", margin: 0, lineHeight: 1.5 }}>
@@ -409,7 +407,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
               <span style={{ fontSize: 12, fontWeight: 900, color: "#0085f4", letterSpacing: "0.15em", textTransform: "uppercase" }}>
                 QUALITY & COMPLIANCE
               </span>
-              <h2 style={{ fontSize: 28, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginTop: 8, marginBottom: 28 }}>
+              <h2 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginTop: 8, marginBottom: 28 }}>
                 Governing Standards & Testing
               </h2>
 
@@ -439,7 +437,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
                 </span>
               </div>
 
-              <h3 style={{ fontSize: 24, fontWeight: 900, fontStyle: "italic", marginBottom: 8 }}>
+              <h3 className="font-display" style={{ fontSize: 24, fontWeight: 800, marginBottom: 8 }}>
                 {industry.caseStudy.title}
               </h3>
               <p style={{ color: "#90CAF9", fontSize: 13, fontWeight: 800, marginBottom: 24 }}>

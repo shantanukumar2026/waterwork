@@ -50,11 +50,10 @@ export default function BlogSection() {
               className="font-display"
               style={{
                 fontSize: "clamp(2rem, 6vw, 3.2rem)",
-                fontWeight: 900,
-                color: "#004aad",
+                fontWeight: 800,
+                color: "var(--brand-deep)",
                 lineHeight: 1.1,
                 textTransform: "uppercase",
-                fontStyle: "italic",
                 margin: 0
               }}
             >
@@ -186,7 +185,6 @@ export default function BlogSection() {
                         lineHeight: 1.3,
                         marginBottom: 12,
                         textTransform: "uppercase",
-                        fontStyle: "italic",
                         transition: "color 0.2s"
                       }}
                       className="blog-card-title"

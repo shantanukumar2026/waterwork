@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Barlow_Condensed, Plus_Jakarta_Sans, Outfit } from "next/font/google";
+import { Inter, Barlow_Condensed, IBM_Plex_Mono, Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,8 +10,15 @@ const inter = Inter({
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-barlow",
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -77,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlowCondensed.variable} ${jakarta.variable} ${outfit.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${barlowCondensed.variable} ${ibmPlexMono.variable} ${jakarta.variable} ${outfit.variable} scroll-smooth`}>
       <body className="antialiased overflow-x-hidden">{children}</body>
     </html>
   );

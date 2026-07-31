@@ -38,10 +38,10 @@ export default function TechnologyInnovation() {
               </span>
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 900, color: "#004aad", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase", fontStyle: "italic" }}>
-              {header.title} <span style={{ color: "#0085f4" }}>{header.highlight}</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "var(--brand-deep)", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
+              {header.title} <span style={{ color: "var(--brand-blue)" }}>{header.highlight}</span>
             </h2>
-            <p style={{ color: "#0085f4", fontSize: 16, maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontWeight: 500 }}>
+            <p style={{ color: "var(--brand-blue)", fontSize: 16, maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontWeight: 500 }}>
               {header.subtitle}
             </p>
           </motion.div>
@@ -93,7 +93,7 @@ export default function TechnologyInnovation() {
                     <Icon size={28} color="#0085f4" />
                   </div>
                   
-                  <h3 style={{ color: "#004aad", fontSize: 20, fontWeight: 900, marginBottom: 12, textTransform: "uppercase", fontStyle: "italic" }}>{tech.title}</h3>
+                  <h3 style={{ color: "var(--brand-deep)", fontSize: 20, fontWeight: 800, marginBottom: 12, textTransform: "uppercase" }}>{tech.title}</h3>
                   <p style={{ color: "#0085f4", fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500 }}>{tech.desc}</p>
                 </div>
               </motion.div>

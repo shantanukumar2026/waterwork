@@ -74,7 +74,7 @@ export default function Sustainability() {
                     <div style={{ width: 56, height: 56, background: "rgba(33, 150, 243, 0.1)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(33, 150, 243, 0.2)" }}>
                       <Icon size={28} color="#42A5F5" />
                     </div>
-                    <div style={{ color: "#42A5F5", fontSize: 48, fontWeight: 900, fontStyle: "italic", lineHeight: 1, opacity: 0.15 }}>
+                    <div style={{ color: "var(--brand-bright)", fontSize: 44, fontWeight: 800, lineHeight: 1, opacity: 0.25 }}>
                       {item.value}
                     </div>
                   </div>

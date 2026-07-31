@@ -38,64 +38,40 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
   const { header, searchPlaceholder, emptyMessage, button } = homeData.products;
 
   return (
-    <section id="products" className="section-pad products-section" style={{ background: "linear-gradient(135deg, #004aad 0%, #0085f4 50%, #004aad 100%)", padding: "64px 0", position: "relative" }}>
+    <section id="products" className="section-pad products-section" style={{ background: "var(--white)", position: "relative", borderTop: "1px solid var(--hairline)" }}>
       <div className="products-container" style={{ maxWidth: 1720, margin: "0 auto" }}>
         
         {/* Header */}
         <div ref={ref} style={{ textAlign: "left", marginBottom: 48 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                background: "rgba(255, 255, 255, 0.15)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                padding: "6px 16px",
-                marginBottom: 20,
-              }}
-            >
-              <div style={{ width: 12, height: 2, background: "#00bbff" }} />
-              <span
-                style={{
-                  color: "#ffffff",
-                  fontSize: 12,
-                  fontWeight: 800,
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                }}
-              >
-                {header.tagline}
-              </span>
+            <div className="eyebrow-label" style={{ marginBottom: 16 }}>
+              CATALOGUE & EQUIPMENT
             </div>
             
             <h2
               className="font-display"
               style={{
-                fontSize: "clamp(2rem, 8vw, 4rem)",
-                fontWeight: 900,
-                color: "#ffffff",
-                lineHeight: 1,
-                marginBottom: 24,
-                textTransform: "uppercase",
-                fontStyle: "italic",
-                letterSpacing: "0.02em",
+                fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
+                fontWeight: 700,
+                color: "var(--brand-deep)",
+                lineHeight: 1.1,
+                marginBottom: 16,
               }}
             >
-              {header.title}<br />
-              <span style={{ color: "#00bbff" }}>
-                {header.highlight}
+              What We Build.<br />
+              <span style={{ color: "var(--brand-blue)" }}>
+                Precision Waterworks Castings & Sub-Surface Assemblies.
               </span>
             </h2>
-            <div style={{ width: 80, height: 4, background: "#00bbff", marginBottom: 32 }} />
+            <div style={{ width: 60, height: 2, background: "var(--brand-blue)", marginBottom: 20 }} />
 
-            <p style={{ color: "rgba(255, 255, 255, 0.9)", fontSize: 16, maxWidth: 600, lineHeight: 1.7, fontWeight: 500 }}>
-              {header.subtitle}
+            <p style={{ color: "var(--brand-deep)", fontSize: 16, maxWidth: 640, lineHeight: 1.65, fontWeight: 400, opacity: 0.9 }}>
+              Explore our line of AWWA-compliant mechanical joint restraints, ductile iron fittings, municipal manhole covers, and sampling enclosures.
             </p>
           </motion.div>
         </div>
 
-        {/* Search + Filters (Only visible on full /products page for clean corporate homepage layout) */}
+        {/* Search + Filters (Only visible on full /products page) */}
         {isFullPage && (
           <motion.div
             initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}
@@ -103,7 +79,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
           >
             {/* Search */}
             <div style={{ position: "relative", flex: "1 1 320px", minWidth: 200 }}>
-              <Search size={18} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", color: "#004aad" }} />
+              <Search size={16} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", color: "var(--water)" }} />
               <input
                 type="text"
                 placeholder={searchPlaceholder}
@@ -111,43 +87,40 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                 onChange={(e) => { setSearch(e.target.value); setCount(4); }}
                 style={{
                   width: "100%",
-                  padding: "16px 16px 16px 48px",
-                  background: "#fff",
-                  border: "2px solid #ffffff",
-                  boxShadow: "0 4px 20px rgba(0, 74, 173,0.1)",
-                  fontSize: 15,
+                  padding: "12px 16px 12px 44px",
+                  background: "var(--surface)",
+                  border: "1px solid var(--line)",
+                  boxShadow: "none",
+                  fontSize: 13,
                   fontWeight: 600,
-                  color: "#004aad",
-                  fontFamily: "inherit",
+                  color: "var(--ink)",
+                  fontFamily: "var(--font-sans), sans-serif",
                   outline: "none",
-                  borderRadius: "8px",
-                  transition: "border-color 0.2s, box-shadow 0.2s",
+                  borderRadius: "0px",
+                  transition: "border-color 0.2s",
                 }}
-                onFocus={(e) => { e.target.style.borderColor = "#00bbff"; }}
-                onBlur={(e) => { e.target.style.borderColor = "#ffffff"; }}
+                onFocus={(e) => { e.target.style.borderColor = "var(--water)"; }}
+                onBlur={(e) => { e.target.style.borderColor = "var(--line)"; }}
               />
             </div>
 
             {/* Category tabs */}
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {cats.map((c) => (
                 <button
                   key={c}
                   onClick={() => { setCat(c); setCount(4); }}
+                  className="font-mono-spec"
                   style={{
-                    padding: "16px 24px",
-                    border: "none",
-                    borderRadius: "8px",
-                    background: cat === c ? "#ffffff" : "rgba(255, 255, 255, 0.15)",
-                    color: cat === c ? "#004aad" : "#ffffff",
-                    fontSize: 14,
-                    fontWeight: 800,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
+                    padding: "10px 18px",
+                    border: "1px solid var(--line)",
+                    borderRadius: "0px",
+                    background: cat === c ? "var(--deep)" : "var(--surface)",
+                    color: cat === c ? "#FFFFFF" : "var(--deep)",
+                    fontSize: 11,
+                    fontWeight: 700,
                     cursor: "pointer",
-                    fontFamily: "inherit",
                     transition: "all 0.2s",
-                    backdropFilter: "blur(10px)",
                   }}
                 >
                   {c}
@@ -159,8 +132,8 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
 
         {/* Count / Tag */}
         {isFullPage && (
-          <p style={{ color: "rgba(255, 255, 255, 0.85)", fontSize: 14, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 24 }}>
-            SHOWING <strong style={{ color: "#ffffff" }}>{Math.min(count, filtered.length)}</strong> OF <strong style={{ color: "#ffffff" }}>{filtered.length}</strong> PRODUCTS
+          <p className="font-mono-spec" style={{ color: "var(--ink-soft)", fontSize: 11, fontWeight: 600, marginBottom: 24 }}>
+            SHOWING <strong style={{ color: "var(--deep)" }}>{Math.min(count, filtered.length)}</strong> OF <strong style={{ color: "var(--deep)" }}>{filtered.length}</strong> PRODUCTS
           </p>
         )}
 
@@ -170,7 +143,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
           style={{
             display: "grid",
             gridTemplateColumns: isFullPage ? "repeat(auto-fill, minmax(280px, 1fr))" : "repeat(5, minmax(0, 1fr))",
-            gap: isFullPage ? 24 : 16,
+            gap: 16,
           }}
         >
           <AnimatePresence mode="popLayout">
@@ -183,20 +156,20 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                 transition={{ duration: 0.35, delay: i < 8 ? i * 0.04 : 0 }}
                 style={{ height: "100%" }}
               >
-                <ProductCard product={p} onQuickView={() => setQv(p)} catColor={catColors[p.category] ?? "#0085f4"} isCompact={!isFullPage} />
+                <ProductCard product={p} onQuickView={() => setQv(p)} catColor={catColors[p.category] ?? "#1E8FC2"} isCompact={!isFullPage} />
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
 
         {filtered.length === 0 && (
-          <div style={{ textAlign: "center", padding: "80px 0", background: "#fff", borderRadius: "12px", marginTop: 24 }}>
-            <p style={{ color: "#004aad", fontSize: 16, fontWeight: 700, textTransform: "uppercase" }}>{emptyMessage}</p>
+          <div style={{ textAlign: "center", padding: "60px 0", background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "0px", marginTop: 24 }}>
+            <p className="font-mono-spec" style={{ color: "var(--deep)", fontSize: 13, fontWeight: 700 }}>{emptyMessage}</p>
           </div>
         )}
 
         {hasMore && (
-          <div style={{ textAlign: "center", marginTop: 48 }}>
+          <div style={{ textAlign: "center", marginTop: 40 }}>
             <button
               onClick={() => {
                 if (isFullPage) {
@@ -205,26 +178,10 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                   router.push("/products");
                 }
               }}
+              className="btn-primary"
               style={{
-                background: "#ffffff",
-                color: "#004aad",
-                border: "none",
-                borderRadius: "8px",
-                padding: "16px 36px",
-                fontSize: 15,
-                fontWeight: 900,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                cursor: "pointer",
-                fontFamily: "inherit",
-                transition: "all 0.2s",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                boxShadow: "0 8px 24px rgba(0, 74, 173,0.15)",
+                padding: "14px 32px",
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.background = "#00bbff"; e.currentTarget.style.color = "#004aad"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.background = "#ffffff"; e.currentTarget.style.color = "#004aad"; }}
             >
               {isFullPage ? "LOAD MORE PRODUCTS" : "SHOW MORE"} <ArrowRight size={16} />
             </button>
@@ -378,17 +335,16 @@ function ProductCard({ product, onQuickView, catColor, isCompact = false }: {
 
   return (
     <div
+      className="industrial-card"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: "#fff",
-        border: "1px solid #E0E0E0",
-        borderRadius: isCompact ? "10px" : "12px",
+        background: "var(--surface)",
+        border: "1px solid var(--line)",
+        borderRadius: "0px",
         overflow: "hidden",
         position: "relative",
-        transition: "all 0.3s ease",
-        transform: hovered ? "translateY(-4px)" : "translateY(0)",
-        boxShadow: hovered ? "0 16px 36px rgba(0, 74, 173,0.18)" : "0 4px 12px rgba(0, 74, 173,0.06)",
+        transition: "border-color 0.2s ease",
         cursor: "default",
         display: "flex",
         flexDirection: "column",
@@ -396,35 +352,38 @@ function ProductCard({ product, onQuickView, catColor, isCompact = false }: {
       }}
     >
       {/* Category badge */}
-      <div style={{
-        position: "absolute",
-        top: isCompact ? 10 : 16,
-        left: isCompact ? 10 : 16,
-        background: catColor,
-        color: "#fff",
-        padding: isCompact ? "4px 8px" : "6px 12px",
-        fontSize: isCompact ? 9 : 10,
-        fontWeight: 800,
-        letterSpacing: "0.08em",
-        textTransform: "uppercase",
-        borderRadius: "4px",
-        zIndex: 10,
-        boxShadow: "0 4px 12px rgba(0, 133, 244, 0.2)",
-      }}>
+      <div
+        className="font-mono-spec"
+        style={{
+          position: "absolute",
+          top: isCompact ? 10 : 14,
+          left: isCompact ? 10 : 14,
+          background: "var(--deep)",
+          color: "#FFFFFF",
+          padding: isCompact ? "3px 7px" : "4px 10px",
+          fontSize: 9,
+          fontWeight: 700,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          borderRadius: "0px",
+          zIndex: 10,
+          border: "1px solid var(--line)",
+        }}
+      >
         {product.category}
       </div>
 
       {/* Image Block */}
-      <div style={{ position: "relative", aspectRatio: isCompact ? "1.2" : "1", background: "#F8FAFC", borderBottom: "1px solid #E0E0E0", overflow: "hidden" }}>
+      <div style={{ position: "relative", aspectRatio: isCompact ? "1.2" : "1", background: "var(--paper)", borderBottom: "1px solid var(--line)", overflow: "hidden" }}>
         <Image
           src={product.image}
           alt={product.name}
           fill
           style={{
             objectFit: "contain",
-            padding: isCompact ? 18 : 32,
-            transform: hovered ? "scale(1.08)" : "scale(1)",
-            transition: "transform 0.4s ease",
+            padding: isCompact ? 16 : 28,
+            transform: hovered ? "scale(1.05)" : "scale(1)",
+            transition: "transform 0.3s ease",
           }}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
@@ -432,8 +391,7 @@ function ProductCard({ product, onQuickView, catColor, isCompact = false }: {
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "rgba(0, 74, 173, 0.75)",
-          backdropFilter: "blur(4px)",
+          background: "rgba(11, 46, 78, 0.85)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -443,63 +401,41 @@ function ProductCard({ product, onQuickView, catColor, isCompact = false }: {
         }}>
           <button
             onClick={onQuickView}
+            className="btn-primary"
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 6,
-              background: "#0085f4",
-              color: "#fff",
-              border: "none",
-              borderRadius: "6px",
-              padding: isCompact ? "8px 14px" : "12px 20px",
-              fontSize: isCompact ? 11 : 13,
-              fontWeight: 900,
-              textTransform: "uppercase",
-              letterSpacing: "0.05em",
-              cursor: "pointer",
-              fontFamily: "inherit",
-              transition: "all 0.2s",
-              boxShadow: "0 4px 12px rgba(0, 74, 173,0.2)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "#ffffff";
-              e.currentTarget.style.color = "#004aad";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "#0085f4";
-              e.currentTarget.style.color = "#ffffff";
+              padding: isCompact ? "8px 12px" : "10px 16px",
+              fontSize: 11,
             }}
           >
-            <Eye size={isCompact ? 14 : 16} /> QUICK VIEW
+            <Eye size={14} /> QUICK VIEW
           </button>
         </div>
       </div>
 
       {/* Info Block */}
-      <div style={{ padding: isCompact ? "14px" : "20px", flex: 1, display: "flex", flexDirection: "column", background: "#fff" }}>
-        <p style={{ fontSize: isCompact ? 11 : 12, fontWeight: 700, color: "#0085f4", letterSpacing: "0.05em", marginBottom: 6, fontFamily: "monospace" }}>SKU: {product.sku}</p>
-        <h3 style={{ fontSize: isCompact ? 14 : 16, fontWeight: 900, fontStyle: "italic", color: "#004aad", textTransform: "uppercase", lineHeight: 1.3, marginBottom: isCompact ? 12 : 20, flex: 1 }}>
+      <div style={{ padding: isCompact ? "14px" : "18px", flex: 1, display: "flex", flexDirection: "column", background: "var(--surface)" }}>
+        <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--water)", fontWeight: 700, marginBottom: 4 }}>
+          SKU — {product.sku}
+        </p>
+        <h3 className="font-display" style={{ fontSize: isCompact ? 15 : 17, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", lineHeight: 1.25, marginBottom: 8, flex: 1 }}>
           {product.name}
         </h3>
+        
+        {/* Monospace Spec Sheet Row */}
+        <div style={{ borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", padding: "6px 0", margin: "8px 0 14px" }}>
+          <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--ink-soft)", margin: 0 }}>
+            STANDARD — AWWA C110 / ASTM A48
+          </p>
+        </div>
+
         <button
           onClick={() => router.push(`/products/${product.id}`)}
+          className="btn-outline"
           style={{
             width: "100%",
-            padding: isCompact ? "9px 12px" : "12px",
-            background: "transparent",
-            color: "#0085f4",
-            border: "1.5px solid #0085f4",
-            borderRadius: "6px",
-            fontSize: isCompact ? 12 : 14,
-            fontWeight: 800,
-            textTransform: "uppercase",
-            letterSpacing: "0.05em",
-            cursor: "pointer",
-            fontFamily: "inherit",
-            transition: "all 0.2s",
+            padding: isCompact ? "8px" : "10px",
+            fontSize: 11,
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = "#0085f4"; e.currentTarget.style.color = "#ffffff"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#0085f4"; }}
         >
           VIEW DETAILS
         </button>

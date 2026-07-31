@@ -77,7 +77,7 @@ function ProductHero({ product }: { product: any }) {
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(33, 150, 243, 0.2)", border: "1px solid rgba(33, 150, 243, 0.4)", padding: "6px 16px", borderRadius: 4, marginBottom: 20 }}>
               <span style={{ color: "#90CAF9", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>{product.category}</span>
             </div>
-            <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, textTransform: "uppercase", fontStyle: "italic", lineHeight: 1.05, marginBottom: 24, letterSpacing: "0.01em" }}>
+            <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 800, textTransform: "uppercase", lineHeight: 1.05, marginBottom: 24 }}>
               {product.name}
             </h1>
             <p style={{ fontSize: 18, color: "#90CAF9", lineHeight: 1.6, maxWidth: 650, marginBottom: 40, fontWeight: 500 }}>
@@ -110,14 +110,14 @@ function TechnicalSpecs({ product }: { product: any }) {
       <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
         <div style={{ marginBottom: 60 }}>
           <span style={{ color: "#2196F3", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>Specification Details</span>
-          <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
-            ENGINEERING & <span style={{ color: "#2196F3" }}>ATTRIBUTES</span>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", margin: 0 }}>
+            ENGINEERING & <span style={{ color: "var(--brand-blue)" }}>ATTRIBUTES</span>
           </h2>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60 }}>
           <div>
-            <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 24, fontStyle: "italic" }}>
+            <h3 className="font-display" style={{ fontSize: 20, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
               Key Performance Features
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -131,7 +131,7 @@ function TechnicalSpecs({ product }: { product: any }) {
           </div>
 
           <div>
-            <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 24, fontStyle: "italic" }}>
+            <h3 className="font-display" style={{ fontSize: 20, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
               Dimensional & Material Specs
             </h3>
             <div style={{ border: "1px solid #E2E8F0", borderRadius: 8, overflow: "hidden" }}>
@@ -156,8 +156,8 @@ function ManufacturingAndQuality() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }}>
           <div>
             <span style={{ color: "#2196F3", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>Quality Control</span>
-            <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 24 }}>
-              RIGOROUS <span style={{ color: "#2196F3" }}>TESTING LAB</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
+              RIGOROUS <span style={{ color: "var(--brand-blue)" }}>TESTING LAB</span>
             </h2>
             <p style={{ color: "#004aad", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
               Every H2 Industries component undergoes 100% quality inspection, hydrostatic pressure testing, and load-cell stress verification prior to job site delivery.
@@ -190,8 +190,8 @@ function ApplicationsAndIndustries() {
       <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
         <div style={{ textAlign: "center", marginBottom: 60 }}>
           <span style={{ color: "#2196F3", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>Target Deployment</span>
-          <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
-            FIELD <span style={{ color: "#2196F3" }}>APPLICATIONS</span>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", margin: 0 }}>
+            FIELD <span style={{ color: "var(--brand-blue)" }}>APPLICATIONS</span>
           </h2>
         </div>
 
@@ -204,7 +204,7 @@ function ApplicationsAndIndustries() {
           ].map((app, i) => (
             <div key={i} style={{ background: "#F8FAFC", border: "1px solid #E2E8F0", padding: 32, borderRadius: 12 }}>
               <Activity size={24} color="#2196F3" style={{ marginBottom: 16 }} />
-              <h3 style={{ fontSize: 18, fontWeight: 900, color: "#004aad", fontStyle: "italic", marginBottom: 8 }}>{app.title}</h3>
+              <h3 className="font-display" style={{ fontSize: 18, fontWeight: 800, color: "var(--brand-deep)", marginBottom: 8 }}>{app.title}</h3>
               <p style={{ fontSize: 14, color: "#004aad", lineHeight: 1.6, margin: 0 }}>{app.desc}</p>
             </div>
           ))}
@@ -220,21 +220,21 @@ function ResourcesAndContact({ product, router }: { product: any; router: any })
       <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 60, alignItems: "center" }}>
           <div>
-            <h2 style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 900, textTransform: "uppercase", fontStyle: "italic", marginBottom: 20 }}>
-              Request Submittal Package for <span style={{ color: "#2196F3" }}>{product.name}</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 800, textTransform: "uppercase", marginBottom: 20 }}>
+              Request Submittal Package for <span style={{ color: "var(--brand-bright)" }}>{product.name}</span>
             </h2>
             <p style={{ color: "#90CAF9", fontSize: 17, lineHeight: 1.6, marginBottom: 32 }}>
               Need CAD drawings, spec sheets, or a volume distributor quote? Submit your project details for fast engineering response.
             </p>
             <div style={{ display: "flex", gap: 16 }}>
-              <button onClick={() => alert("Downloading specification drawing...")} style={{ background: "#2196F3", color: "#fff", padding: "16px 32px", border: "none", borderRadius: 4, fontWeight: 800, fontSize: 13, textTransform: "uppercase", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8 }}>
+              <button onClick={() => alert("Downloading specification drawing...")} style={{ background: "var(--brand-blue)", color: "#fff", padding: "16px 32px", border: "none", borderRadius: 4, fontWeight: 800, fontSize: 13, textTransform: "uppercase", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8 }}>
                 <Download size={16} /> Download CAD Drawing
               </button>
             </div>
           </div>
 
-          <div style={{ background: "#fff", color: "#004aad", padding: 40, borderRadius: 12 }}>
-            <h3 style={{ fontSize: 20, fontWeight: 900, fontStyle: "italic", textTransform: "uppercase", marginBottom: 20 }}>Quick Engineering Inquiry</h3>
+          <div style={{ background: "#fff", color: "var(--brand-deep)", padding: 40, borderRadius: 12 }}>
+            <h3 className="font-display" style={{ fontSize: 20, fontWeight: 800, textTransform: "uppercase", marginBottom: 20 }}>Quick Engineering Inquiry</h3>
             <form onSubmit={(e) => { e.preventDefault(); alert("Inquiry submitted!"); }} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <input type="text" placeholder="Full Name *" required style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14 }} />
               <input type="email" placeholder="Work Email *" required style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14 }} />

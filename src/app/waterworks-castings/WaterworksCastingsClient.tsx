@@ -188,7 +188,6 @@ export default function WaterworksCastingsClient() {
                   lineHeight: 1.08,
                   marginBottom: 24,
                   textTransform: "uppercase",
-                  fontStyle: "italic",
                   letterSpacing: "0.01em",
                 }}
               >
@@ -215,7 +214,7 @@ export default function WaterworksCastingsClient() {
               >
                 {waterworksData.hero.stats.map((st, i) => (
                   <div key={i}>
-                    <div style={{ fontSize: 28, fontWeight: 900, color: "#64B5F6", fontStyle: "italic", lineHeight: 1 }}>
+                    <div style={{ fontSize: 28, fontWeight: 900, color: "#64B5F6", lineHeight: 1 }}>
                       {st.value}
                     </div>
                     <div style={{ fontSize: 11, fontWeight: 800, color: "#90CAF9", textTransform: "uppercase", letterSpacing: "0.05em", marginTop: 6 }}>
@@ -312,7 +311,6 @@ export default function WaterworksCastingsClient() {
                 fontWeight: 900,
                 color: "#004aad",
                 textTransform: "uppercase",
-                fontStyle: "italic",
                 margin: 0,
               }}
             >
@@ -492,7 +490,6 @@ export default function WaterworksCastingsClient() {
                         style={{
                           fontSize: 18,
                           fontWeight: 900,
-                          fontStyle: "italic",
                           color: "#004aad",
                           textTransform: "uppercase",
                           lineHeight: 1.3,
@@ -592,7 +589,7 @@ export default function WaterworksCastingsClient() {
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
                 <FileText size={28} color="#0085f4" />
                 <div>
-                  <h3 style={{ fontSize: 24, fontWeight: 900, fontStyle: "italic", color: "#004aad", textTransform: "uppercase", margin: 0 }}>
+                  <h3 style={{ fontSize: 24, fontWeight: 900, color: "#004aad", textTransform: "uppercase", margin: 0 }}>
                     General Submittals & MSDS
                   </h3>
                   <p style={{ fontSize: 14, color: "#004aad", margin: 0, marginTop: 4 }}>
@@ -645,7 +642,7 @@ export default function WaterworksCastingsClient() {
 
             {/* Quick Quote Form */}
             <div style={{ background: "#004aad", color: "#fff", padding: 40, borderTop: "4px solid #2196F3" }}>
-              <h3 style={{ fontSize: 24, fontWeight: 900, fontStyle: "italic", textTransform: "uppercase", marginBottom: 8 }}>
+              <h3 style={{ fontSize: 24, fontWeight: 900, textTransform: "uppercase", marginBottom: 8 }}>
                 Request Municipal Distributor Quote
               </h3>
               <p style={{ fontSize: 14, color: "#90CAF9", marginBottom: 28, lineHeight: 1.5 }}>
@@ -790,7 +787,7 @@ export default function WaterworksCastingsClient() {
                     SKU: {quickViewProduct.sku}
                   </div>
 
-                  <h3 style={{ fontSize: 20, fontWeight: 900, fontStyle: "italic", color: "#004aad", textTransform: "uppercase", marginTop: 8, marginBottom: 16 }}>
+                  <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginTop: 8, marginBottom: 16 }}>
                     {quickViewProduct.name}
                   </h3>
 

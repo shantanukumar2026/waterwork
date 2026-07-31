@@ -155,11 +155,11 @@ export default function Navbar() {
         }}
         onMouseLeave={() => setActiveSubmenu(null)}
       >
-        {/* Top Bar (Brand Color with Smart Scroll) */}
+        {/* Top Bar (Industrial Header) */}
         <motion.div
           initial={{ height: 64, opacity: 1 }}
           animate={{ height: scrolled ? 0 : 64, opacity: scrolled ? 0 : 1 }}
-          style={{ background: "#0085f4", overflow: "hidden" }}
+          style={{ background: "#FFFFFF", borderBottom: "1px solid var(--line)", overflow: "hidden" }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <div
@@ -206,7 +206,7 @@ export default function Navbar() {
                   src="/images/logo.png"
                   alt="Waterworks Industries"
                   fill
-                  style={{ objectFit: "contain", objectPosition: "center", padding: "2px 8px" }}
+                  style={{ objectFit: "contain", objectPosition: "left center", padding: "0px" }}
                   priority
                   sizes="300px"
                   unoptimized
@@ -218,32 +218,33 @@ export default function Navbar() {
             <div className="top-links" style={{ display: "none", alignItems: "center", gap: 32 }}>
               {/* Language Selector */}
               <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
-                <Globe size={14} color="#fff" style={{ position: "absolute", left: 10, pointerEvents: "none" }} />
+                <Globe size={14} color="var(--deep)" style={{ position: "absolute", left: 10, pointerEvents: "none" }} />
                 <select
                   style={{
                     appearance: "none",
-                    background: "rgba(255,255,255,0.1)",
-                    border: "1px solid rgba(255,255,255,0.2)",
-                    padding: "8px 28px 8px 30px",
-                    borderRadius: "4px",
-                    color: "#fff",
+                    background: "var(--paper)",
+                    border: "1px solid var(--line)",
+                    padding: "6px 28px 6px 30px",
+                    borderRadius: "0px",
+                    color: "var(--deep)",
                     fontSize: 12,
-                    fontWeight: 800,
+                    fontWeight: 700,
                     cursor: "pointer",
                     outline: "none",
+                    fontFamily: "var(--font-sans), sans-serif",
                     transition: "background 0.2s",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.2)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(255,255,255,0.1)")}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "#FFFFFF")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--paper)")}
                 >
-                  <option value="en" style={{ color: "#004aad" }}>EN</option>
-                  <option value="es" style={{ color: "#004aad" }}>ES</option>
-                  <option value="fr" style={{ color: "#004aad" }}>FR</option>
-                  <option value="de" style={{ color: "#004aad" }}>DE</option>
-                  <option value="zh" style={{ color: "#004aad" }}>ZH</option>
-                  <option value="ar" style={{ color: "#004aad" }}>AR</option>
+                  <option value="en" style={{ color: "var(--deep)" }}>EN</option>
+                  <option value="es" style={{ color: "var(--deep)" }}>ES</option>
+                  <option value="fr" style={{ color: "var(--deep)" }}>FR</option>
+                  <option value="de" style={{ color: "var(--deep)" }}>DE</option>
+                  <option value="zh" style={{ color: "var(--deep)" }}>ZH</option>
+                  <option value="ar" style={{ color: "var(--deep)" }}>AR</option>
                 </select>
-                <ChevronDown size={12} color="#fff" style={{ position: "absolute", right: 10, pointerEvents: "none" }} />
+                <ChevronDown size={12} color="var(--deep)" style={{ position: "absolute", right: 10, pointerEvents: "none" }} />
               </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
@@ -261,22 +262,47 @@ export default function Navbar() {
                         display: "flex",
                         alignItems: "center",
                         gap: 8,
-                        color: "#fff",
-                        fontSize: 13,
-                        fontWeight: 800,
-                        fontFamily: "inherit",
+                        color: "var(--deep)",
+                        fontSize: 12,
+                        fontWeight: 700,
+                        fontFamily: "var(--font-sans), sans-serif",
                         textTransform: "uppercase",
-                        letterSpacing: "0.05em",
-                        transition: "opacity 0.2s",
+                        letterSpacing: "0.04em",
+                        transition: "color 0.2s",
                       }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.7")}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
+                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--water)")}
+                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--deep)")}
                     >
-                      <Icon size={16} />
+                      <Icon size={14} color="var(--water)" />
                       {link.label}
                     </button>
                   );
                 })}
+
+                <button
+                  onClick={() => nav("#contact")}
+                  style={{
+                    background: "#0085F4",
+                    color: "#FFFFFF",
+                    padding: "8px 20px",
+                    borderRadius: "100px",
+                    fontSize: 12,
+                    fontWeight: 800,
+                    textTransform: "uppercase",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    transition: "background 0.2s",
+                    boxShadow: "0 4px 12px rgba(0, 133, 244, 0.3)"
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "#004AAD")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "#0085F4")}
+                >
+                  <span>GET IN TOUCH</span>
+                  <ArrowRight size={14} />
+                </button>
               </div>
             </div>
 
@@ -289,7 +315,7 @@ export default function Navbar() {
                 border: "none",
                 cursor: "pointer",
                 padding: 8,
-                color: "#fff",
+                color: "var(--deep)",
                 display: "none",
               }}
               aria-label="Menu"
@@ -299,8 +325,8 @@ export default function Navbar() {
           </div>
         </motion.div>
 
-        {/* Bottom Bar (White) */}
-        <div className="bottom-bar" style={{ display: "none", borderBottom: "1px solid #90CAF9", position: "relative", background: "#fff" }}>
+        {/* Bottom Bar (Industrial Hairline Border) */}
+        <div className="bottom-bar" style={{ display: "none", borderBottom: "1px solid var(--line)", position: "relative", background: "var(--surface)" }}>
           <div
             style={{
               width: "100%",
@@ -313,7 +339,7 @@ export default function Navbar() {
             }}
           >
             {/* Main Links */}
-            <nav style={{ display: "flex", alignItems: "center", gap: 40, height: "100%" }}>
+            <nav style={{ display: "flex", alignItems: "center", gap: 36, height: "100%" }}>
               {mainLinks.map((link) => (
                 <div
                   key={link.label}
@@ -329,11 +355,12 @@ export default function Navbar() {
                       display: "flex",
                       alignItems: "center",
                       gap: 6,
-                      color: activeSubmenu === link.label ? "#0085f4" : "#004aad",
-                      fontSize: 15,
+                      color: activeSubmenu === link.label ? "var(--water)" : "var(--deep)",
+                      fontSize: 13,
                       fontWeight: 800,
-                      fontFamily: "inherit",
+                      fontFamily: "var(--font-sans), sans-serif",
                       textTransform: "uppercase",
+                      letterSpacing: "0.02em",
                       transition: "color 0.2s",
                       height: "100%",
                       position: "relative",
@@ -342,8 +369,8 @@ export default function Navbar() {
                     {link.label}
                     {link.mega && (
                       <ChevronDown
-                        size={16}
-                        color={activeSubmenu === link.label ? "#0085f4" : "#8898AA"}
+                        size={14}
+                        color={activeSubmenu === link.label ? "var(--water)" : "var(--ink-soft)"}
                         style={{
                           transform: activeSubmenu === link.label ? "rotate(180deg)" : "rotate(0deg)",
                           transition: "transform 0.2s",
@@ -357,8 +384,8 @@ export default function Navbar() {
                         bottom: 0,
                         left: "50%",
                         transform: "translateX(-50%)",
-                        height: 3,
-                        background: "#0085f4",
+                        height: 2,
+                        background: "var(--water)",
                         width: activeSubmenu === link.label ? "100%" : "0%",
                         transition: "width 0.3s ease",
                       }}
@@ -372,37 +399,37 @@ export default function Navbar() {
             <div
               style={{
                 position: "relative",
-                width: 320,
+                width: 300,
               }}
             >
               <Search
-                size={18}
-                color="#8898AA"
-                style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)" }}
+                size={16}
+                color="var(--ink-soft)"
+                style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)" }}
               />
               <input
                 type="text"
-                placeholder="Search resources..."
+                placeholder="Search specs & catalog..."
                 style={{
                   width: "100%",
-                  padding: "10px 16px 10px 44px",
-                  background: "rgba(240, 247, 255, 0.8)",
-                  border: "1px solid rgba(100, 181, 246, 0.5)",
-                  borderRadius: 4,
-                  fontSize: 14,
-                  fontWeight: 500,
-                  color: "#004aad",
-                  fontFamily: "inherit",
+                  padding: "8px 14px 8px 38px",
+                  background: "var(--paper)",
+                  border: "1px solid var(--line)",
+                  borderRadius: "0px",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  color: "var(--ink)",
+                  fontFamily: "var(--font-sans), sans-serif",
                   outline: "none",
                   transition: "border-color 0.2s, background 0.2s",
                 }}
                 onFocus={(e) => {
-                  e.target.style.borderColor = "#0085f4";
-                  e.target.style.background = "#fff";
+                  e.target.style.borderColor = "var(--water)";
+                  e.target.style.background = "#FFFFFF";
                 }}
                 onBlur={(e) => {
-                  e.target.style.borderColor = "rgba(100, 181, 246, 0.5)";
-                  e.target.style.background = "rgba(240, 247, 255, 0.8)";
+                  e.target.style.borderColor = "var(--line)";
+                  e.target.style.background = "var(--paper)";
                 }}
               />
             </div>
@@ -412,18 +439,19 @@ export default function Navbar() {
           <AnimatePresence>
             {activeSubmenu && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
+                exit={{ opacity: 0, y: 8 }}
                 transition={{ duration: 0.2 }}
                 style={{
                   position: "absolute",
                   top: "100%",
                   left: 0,
                   right: 0,
-                  background: "#fff",
-                  boxShadow: "0 20px 40px rgba(6,35,71,0.1)",
-                  borderBottom: "1px solid #90CAF9",
+                  background: "#FFFFFF",
+                  boxShadow: "none",
+                  borderBottom: "1px solid var(--line)",
+                  borderTop: "1px solid var(--line)",
                   zIndex: 40,
                   overflow: "hidden",
                 }}
@@ -438,44 +466,30 @@ export default function Navbar() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: 0.1 }}
-                          style={{ position: "relative", padding: "48px 60px", background: "#004aad", color: "#fff", display: "flex", flexDirection: "column", justifyContent: "center" }}
+                          style={{ position: "relative", padding: "40px 48px", background: "var(--deep)", color: "#FFFFFF", display: "flex", flexDirection: "column", justifyContent: "center" }}
                         >
                           <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-                            <Image src={link.mega.image} alt={link.mega.title} fill style={{ objectFit: "cover", opacity: 0.3 }} />
+                            <Image src={link.mega.image} alt={link.mega.title} fill style={{ objectFit: "cover", opacity: 0.2 }} />
                           </div>
                           <div style={{ position: "relative", zIndex: 1 }}>
-                            <h3 style={{ fontSize: 24, fontWeight: 900, fontStyle: "italic", textTransform: "uppercase", marginBottom: 12 }}>
+                            <h3 className="font-display" style={{ fontSize: 22, fontWeight: 700, textTransform: "uppercase", marginBottom: 10, color: "#FFFFFF" }}>
                               {link.mega.title}
                             </h3>
-                            <p style={{ fontSize: 15, color: "#ffffff", lineHeight: 1.6, marginBottom: 24, fontWeight: 500, maxWidth: 320 }}>
+                            <p style={{ fontSize: 13, color: "var(--paper)", lineHeight: 1.5, marginBottom: 20, fontWeight: 400, maxWidth: 300 }}>
                               {link.mega.desc}
                             </p>
                             <button
                               onClick={() => nav(link.href)}
-                              style={{
-                                display: "inline-flex",
-                                alignItems: "center",
-                                gap: 8,
-                                background: "#0085f4",
-                                color: "#fff",
-                                border: "none",
-                                padding: "12px 24px",
-                                fontSize: 13,
-                                fontWeight: 800,
-                                textTransform: "uppercase",
-                                cursor: "pointer",
-                                transition: "background 0.2s",
-                              }}
-                              onMouseEnter={(e) => (e.currentTarget.style.background = "#004aad")}
-                              onMouseLeave={(e) => (e.currentTarget.style.background = "#0085f4")}
+                              className="btn-primary"
+                              style={{ padding: "10px 18px", fontSize: 11 }}
                             >
-                              {link.mega.link} <ArrowRight size={16} />
+                              {link.mega.link} <ArrowRight size={14} />
                             </button>
                           </div>
                         </motion.div>
 
                         {/* Megamenu Right: Link Columns */}
-                        <div style={{ padding: "48px 60px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 40, background: "rgba(240, 247, 255, 0.95)" }}>
+                        <div style={{ padding: "40px 48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 32, background: "var(--paper)" }}>
                           {link.mega.columns.map((col, idx) => (
                             <motion.div
                               key={col.title}
@@ -483,10 +497,10 @@ export default function Navbar() {
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: 0.15 + (idx * 0.1) }}
                             >
-                              <h4 style={{ fontSize: 14, fontWeight: 900, fontStyle: "italic", color: "#004aad", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 20, paddingBottom: 12, borderBottom: "2px solid #0085f4" }}>
+                              <h4 className="font-mono-spec" style={{ fontSize: 12, fontWeight: 700, color: "var(--water)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 16, paddingBottom: 8, borderBottom: "1px solid var(--line)" }}>
                                 {col.title}
                               </h4>
-                              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                                 {col.items.map((item) => (
                                   <li key={item}>
                                     <button
@@ -495,15 +509,15 @@ export default function Navbar() {
                                         background: "none",
                                         border: "none",
                                         padding: 0,
-                                        fontSize: 15,
-                                        fontWeight: 700,
-                                        color: "#004aad",
+                                        fontSize: 14,
+                                        fontWeight: 500,
+                                        color: "var(--ink)",
                                         cursor: "pointer",
                                         textAlign: "left",
                                         transition: "color 0.2s",
                                       }}
-                                      onMouseEnter={(e) => (e.currentTarget.style.color = "#0085f4")}
-                                      onMouseLeave={(e) => (e.currentTarget.style.color = "#004aad")}
+                                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--water)")}
+                                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--ink)")}
                                     >
                                       {item}
                                     </button>

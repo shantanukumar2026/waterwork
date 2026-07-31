@@ -40,8 +40,8 @@ export default function QualityCompliance() {
               </span>
             </div>
 
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 900, color: "#fff", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase", fontStyle: "italic" }}>
-              {header.title} <span style={{ color: "#2196F3" }}>{header.highlight}</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
+              {header.title} <span style={{ color: "var(--brand-blue)" }}>{header.highlight}</span>
             </h2>
             <p style={{ color: "#90CAF9", fontSize: 16, maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
               {header.subtitle}

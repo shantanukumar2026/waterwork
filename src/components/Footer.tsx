@@ -70,34 +70,23 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" style={{ background: "#004aad", color: "#E0F2FE", fontFamily: "inherit" }}>
+    <footer id="contact" style={{ background: "var(--brand-deep)", color: "var(--white)", fontFamily: "inherit", borderTop: "1px solid var(--hairline)" }}>
 
-      {/* Band 1: Careers Banner */}
+      {/* Band 1: Careers / Engineering Banner */}
       <div
         style={{
-          background: "linear-gradient(135deg, #004aad 0%, #0085f4 100%)",
-          borderBottom: "1px solid rgba(0, 187, 255, 0.3)",
+          background: "var(--brand-deep)",
+          borderBottom: "1px solid var(--hairline)",
           position: "relative",
           overflow: "hidden",
         }}
       >
         <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            opacity: 0.1,
-            backgroundImage:
-              "linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px)",
-            backgroundSize: "30px 30px",
-          }}
-        />
-
-        <div
           className="footer-cta-pad"
           style={{
             maxWidth: 1720,
             margin: "0 auto",
-            padding: "36px 60px",
+            padding: "40px 60px",
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
@@ -110,65 +99,53 @@ export default function Footer() {
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <div
               style={{
-                width: 48,
-                height: 48,
-                borderRadius: "50%",
-                background: "rgba(255, 255, 255, 0.15)",
-                border: "1px solid #00bbff",
+                width: 44,
+                height: 44,
+                borderRadius: "4px",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid var(--brand-bright)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
-              <ShieldCheck size={26} color="#00bbff" />
+              <ShieldCheck size={24} color="var(--brand-bright)" />
             </div>
             <div>
               <h3
+                className="font-display"
                 style={{
-                  fontSize: "clamp(1.2rem, 2.5vw, 1.7rem)",
-                  fontWeight: 900,
-                  fontStyle: "italic",
-                  color: "#fff",
-                  textTransform: "uppercase",
+                  fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
+                  fontWeight: 700,
+                  color: "#FFFFFF",
                   margin: 0,
-                  letterSpacing: "0.02em",
                 }}
               >
-                ENGINEER YOUR CAREER. <span style={{ color: "#00bbff" }}>APPLY NOW AT H2 INDUSTRIES.</span>
+                Need Custom AWWA Submittals? <span style={{ color: "var(--brand-bright)" }}>Talk Directly to Our Engineering Team.</span>
               </h3>
             </div>
           </div>
 
-          <div
+          <a
+            href="tel:+15127828880"
+            className="btn-primary"
             style={{
-              background: "rgba(0, 187, 255, 0.2)",
-              border: "2px solid #00bbff",
-              color: "#fff",
-              padding: "12px 32px",
-              fontSize: 14,
-              fontWeight: 900,
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              textDecoration: "none",
-              borderRadius: 4,
-              transition: "all 0.3s ease",
-              boxShadow: "0 4px 15px rgba(0,74,173,0.3)",
-              cursor: "default"
+              cursor: "pointer"
             }}
           >
-            SEE JOBS
-          </div>
+            CONTACT ENGINEERING SALES
+          </a>
         </div>
       </div>
 
-      {/* Band 2: Exact Addresses & Phone Numbers Provided in Image */}
-      <div style={{ borderBottom: "1px solid rgba(0,187,255,0.15)", padding: "36px 0", background: "#003c8c" }}>
+      {/* Band 2: Exact Addresses & Phone Numbers */}
+      <div style={{ borderBottom: "1px solid var(--line-strong)", padding: "36px 0", background: "var(--deep)" }}>
         <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
 
           {/* Brand Header & Socials */}
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 24, marginBottom: 28 }}>
-            <div style={{ background: "#fff", padding: "4px 10px" }}>
-              <Image src="/images/logo.png" alt="Waterworks Industries" width={300} height={64} style={{ objectFit: "contain" }} unoptimized />
+            <div style={{ background: "#FFFFFF", padding: "6px 12px", border: "1px solid var(--line)" }}>
+              <Image src="/images/logo.png" alt="Waterworks Industries" width={280} height={56} style={{ objectFit: "contain" }} unoptimized />
             </div>
 
             {/* Social Links */}
@@ -178,30 +155,31 @@ export default function Footer() {
                   key={idx}
                   href={s.href}
                   title={s.title}
+                  className="font-mono-spec"
                   style={{
                     width: 36,
                     height: 36,
-                    borderRadius: "50%",
-                    border: "1px solid rgba(33, 150, 243, 0.3)",
-                    background: "rgba(13, 58, 115, 0.5)",
+                    borderRadius: "0px",
+                    border: "1px solid var(--line-strong)",
+                    background: "transparent",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: "#90CAF9",
-                    fontSize: 12,
-                    fontWeight: 900,
+                    color: "var(--paper)",
+                    fontSize: 11,
+                    fontWeight: 700,
                     textDecoration: "none",
                     transition: "all 0.2s ease",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#2196F3";
-                    e.currentTarget.style.color = "#fff";
-                    e.currentTarget.style.borderColor = "#2196F3";
+                    e.currentTarget.style.background = "var(--signal)";
+                    e.currentTarget.style.color = "var(--deep)";
+                    e.currentTarget.style.borderColor = "var(--signal)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(13, 58, 115, 0.5)";
-                    e.currentTarget.style.color = "#90CAF9";
-                    e.currentTarget.style.borderColor = "rgba(33, 150, 243, 0.3)";
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "var(--paper)";
+                    e.currentTarget.style.borderColor = "var(--line-strong)";
                   }}
                 >
                   {s.label}
@@ -210,91 +188,94 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Exact Address Cards Provided by User */}
+          {/* Address Cards Grid */}
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-              gap: 24,
+              gap: 20,
             }}
           >
             {/* USA Address & Phone */}
             <div
+              className="industrial-card"
               style={{
-                background: "rgba(255, 255, 255, 0.03)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderLeft: "4px solid #2196F3",
-                padding: "20px 24px",
-                borderRadius: 6,
+                background: "var(--paper)",
+                border: "1px solid var(--line)",
+                borderLeft: "3px solid var(--water)",
+                padding: "18px 20px",
+                borderRadius: "0px",
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 16,
+                gap: 12,
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <MapPin size={18} color="#2196F3" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: 13, fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.02em" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <MapPin size={16} color="var(--water)" style={{ flexShrink: 0 }} />
+                <span className="font-mono-spec" style={{ fontSize: 11, fontWeight: 600, color: "var(--ink)" }}>
                   105 MAXES ROAD, MELVILLE, NY 11737, USA
                 </span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, color: "#64B5F6" }}>
-                <Phone size={16} color="#2196F3" />
+              <div className="font-mono-spec" style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 700, color: "var(--water)" }}>
+                <Phone size={14} color="var(--water)" />
                 <span>+1 (512) 782-8880</span>
               </div>
             </div>
 
             {/* South (Florida) Address & Phone */}
             <div
+              className="industrial-card"
               style={{
-                background: "rgba(255, 255, 255, 0.03)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderLeft: "4px solid #2196F3",
-                padding: "20px 24px",
-                borderRadius: 6,
+                background: "var(--paper)",
+                border: "1px solid var(--line)",
+                borderLeft: "3px solid var(--water)",
+                padding: "18px 20px",
+                borderRadius: "0px",
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 16,
+                gap: 12,
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <MapPin size={18} color="#2196F3" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: 13, fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.02em" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <MapPin size={16} color="var(--water)" style={{ flexShrink: 0 }} />
+                <span className="font-mono-spec" style={{ fontSize: 11, fontWeight: 600, color: "var(--ink)" }}>
                   SOUTH: 850 NW FEDERAL HWY, STUART, FL 34994
                 </span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, color: "#64B5F6" }}>
-                <Phone size={16} color="#2196F3" />
+              <div className="font-mono-spec" style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 700, color: "var(--water)" }}>
+                <Phone size={14} color="var(--water)" />
                 <span>(772) 297-0700</span>
               </div>
             </div>
 
             {/* Canada Address & Phone */}
             <div
+              className="industrial-card"
               style={{
-                background: "rgba(255, 255, 255, 0.03)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                borderLeft: "4px solid #2196F3",
-                padding: "20px 24px",
-                borderRadius: 6,
+                background: "var(--paper)",
+                border: "1px solid var(--line)",
+                borderLeft: "3px solid var(--water)",
+                padding: "18px 20px",
+                borderRadius: "0px",
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
                 justifyContent: "space-between",
-                gap: 16,
+                gap: 12,
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <MapPin size={18} color="#2196F3" style={{ flexShrink: 0 }} />
-                <span style={{ fontSize: 13, fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.02em" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <MapPin size={16} color="var(--water)" style={{ flexShrink: 0 }} />
+                <span className="font-mono-spec" style={{ fontSize: 11, fontWeight: 600, color: "var(--ink)" }}>
                   ONE YOUNGE STREET, TORONTO, ONTARIO M5E 1R4 CANADA
                 </span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 700, color: "#64B5F6" }}>
-                <Phone size={16} color="#2196F3" />
+              <div className="font-mono-spec" style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, fontWeight: 700, color: "var(--water)" }}>
+                <Phone size={14} color="var(--water)" />
                 <span>+1 (438) 805-9990</span>
               </div>
             </div>
@@ -304,7 +285,7 @@ export default function Footer() {
       </div>
 
       {/* Band 3: Rich Organised Menu Columns */}
-      <div style={{ padding: "64px 0", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+      <div style={{ padding: "64px 0", borderBottom: "1px solid var(--line-strong)", background: "var(--deep)" }}>
         <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
           <div
             style={{
@@ -316,8 +297,8 @@ export default function Footer() {
           >
             {/* Column 1: Products */}
             <div>
-              <div style={{ borderBottom: "2px solid #2196F3", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
-                <h4 style={{ fontSize: 15, fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
+              <div style={{ borderBottom: "1px solid var(--water)", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
+                <h4 className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
                   Products
                 </h4>
               </div>
@@ -326,9 +307,9 @@ export default function Footer() {
                   <li key={idx}>
                     <a
                       href={item.href}
-                      style={{ color: "#90CAF9", textDecoration: "none", fontSize: 13, fontWeight: 500, transition: "color 0.2s ease" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "#90CAF9")}
+                      style={{ color: "var(--paper)", textDecoration: "none", fontSize: 13, fontWeight: 400, transition: "color 0.2s ease" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}
                     >
                       {item.label}
                     </a>
@@ -339,8 +320,8 @@ export default function Footer() {
 
             {/* Column 2: Standards & Compliance */}
             <div>
-              <div style={{ borderBottom: "2px solid #2196F3", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
-                <h4 style={{ fontSize: 15, fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
+              <div style={{ borderBottom: "1px solid var(--water)", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
+                <h4 className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
                   Standards & Compliance
                 </h4>
               </div>
@@ -349,9 +330,9 @@ export default function Footer() {
                   <li key={idx}>
                     <a
                       href={item.href}
-                      style={{ color: "#90CAF9", textDecoration: "none", fontSize: 13, fontWeight: 500, transition: "color 0.2s ease" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "#90CAF9")}
+                      style={{ color: "var(--paper)", textDecoration: "none", fontSize: 13, fontWeight: 400, transition: "color 0.2s ease" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}
                     >
                       {item.label}
                     </a>
@@ -362,8 +343,8 @@ export default function Footer() {
 
             {/* Column 3: Distribution & Hubs */}
             <div>
-              <div style={{ borderBottom: "2px solid #2196F3", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
-                <h4 style={{ fontSize: 15, fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
+              <div style={{ borderBottom: "1px solid var(--water)", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
+                <h4 className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
                   Distribution & Hubs
                 </h4>
               </div>
@@ -372,9 +353,9 @@ export default function Footer() {
                   <li key={idx}>
                     <a
                       href={item.href}
-                      style={{ color: "#90CAF9", textDecoration: "none", fontSize: 13, fontWeight: 500, transition: "color 0.2s ease" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "#90CAF9")}
+                      style={{ color: "var(--paper)", textDecoration: "none", fontSize: 13, fontWeight: 400, transition: "color 0.2s ease" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}
                     >
                       {item.label}
                     </a>
@@ -385,8 +366,8 @@ export default function Footer() {
 
             {/* Column 4: Company & Links */}
             <div>
-              <div style={{ borderBottom: "2px solid #2196F3", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
-                <h4 style={{ fontSize: 15, fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
+              <div style={{ borderBottom: "1px solid var(--water)", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
+                <h4 className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
                   Company & Links
                 </h4>
               </div>
@@ -395,9 +376,9 @@ export default function Footer() {
                   <li key={idx}>
                     <a
                       href={item.href}
-                      style={{ color: "#90CAF9", textDecoration: "none", fontSize: 13, fontWeight: 500, transition: "color 0.2s ease" }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = "#90CAF9")}
+                      style={{ color: "var(--paper)", textDecoration: "none", fontSize: 13, fontWeight: 400, transition: "color 0.2s ease" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}
                     >
                       {item.label}
                     </a>
@@ -408,18 +389,18 @@ export default function Footer() {
 
             {/* Column 5: Newsletter & Certified Badge */}
             <div>
-              <div style={{ borderBottom: "2px solid #2196F3", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
-                <h4 style={{ fontSize: 15, fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
+              <div style={{ borderBottom: "1px solid var(--water)", paddingBottom: 8, marginBottom: 20, width: "fit-content" }}>
+                <h4 className="font-display" style={{ fontSize: 16, fontWeight: 700, color: "#FFFFFF", textTransform: "uppercase", letterSpacing: "0.05em", margin: 0 }}>
                   Stay Updated
                 </h4>
               </div>
-              <p style={{ fontSize: 13, color: "#B0BEC5", lineHeight: 1.6, marginBottom: 16 }}>
+              <p style={{ fontSize: 13, color: "var(--paper)", lineHeight: 1.5, marginBottom: 16 }}>
                 Subscribe to receiving technical spec updates and regional engineering bulletins.
               </p>
 
               {subscribed ? (
-                <div style={{ padding: "12px 16px", background: "rgba(76, 175, 80, 0.15)", border: "1px solid #4CAF50", borderRadius: 4, color: "#81C784", fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", gap: 8 }}>
-                  <CheckCircle2 size={16} /> Subscribed successfully!
+                <div style={{ padding: "12px 16px", background: "rgba(30, 143, 194, 0.15)", border: "1px solid var(--water)", borderRadius: "0px", color: "#FFFFFF", fontSize: 12, fontWeight: 600, display: "flex", alignItems: "center", gap: 8 }}>
+                  <CheckCircle2 size={16} color="var(--water)" /> Subscribed successfully!
                 </div>
               ) : (
                 <form onSubmit={handleSubscribe} style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 20 }}>
@@ -431,39 +412,26 @@ export default function Footer() {
                     onChange={(e) => setEmail(e.target.value)}
                     style={{
                       width: "100%",
-                      padding: "12px 14px",
-                      background: "rgba(255,255,255,0.05)",
-                      border: "1px solid rgba(255,255,255,0.15)",
-                      borderRadius: 4,
-                      color: "#fff",
-                      fontSize: 13,
+                      padding: "10px 14px",
+                      background: "var(--paper)",
+                      border: "1px solid var(--line)",
+                      borderRadius: "0px",
+                      color: "var(--ink)",
+                      fontSize: 12,
+                      fontWeight: 600,
+                      fontFamily: "var(--font-sans), sans-serif",
                       outline: "none",
-                      transition: "border-color 0.2s",
                     }}
-                    onFocus={(e) => (e.target.style.borderColor = "#2196F3")}
-                    onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.15)")}
+                    onFocus={(e) => (e.target.style.borderColor = "var(--water)")}
+                    onBlur={(e) => (e.target.style.borderColor = "var(--line)")}
                   />
                   <button
                     type="submit"
+                    className="btn-primary"
                     style={{
-                      background: "#2196F3",
-                      color: "#fff",
-                      border: "none",
-                      padding: "12px",
-                      fontSize: 13,
-                      fontWeight: 800,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                      borderRadius: 4,
-                      cursor: "pointer",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 8,
-                      transition: "background 0.2s",
+                      padding: "10px 16px",
+                      fontSize: 11,
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "#1976D2")}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = "#2196F3")}
                   >
                     Subscribe <Send size={14} />
                   </button>
@@ -476,18 +444,18 @@ export default function Footer() {
                   display: "flex",
                   alignItems: "center",
                   gap: 12,
-                  background: "rgba(13, 58, 115, 0.4)",
-                  border: "1px solid rgba(33, 150, 243, 0.3)",
+                  background: "var(--paper)",
+                  border: "1px solid var(--line)",
                   padding: "12px 16px",
-                  borderRadius: 6,
+                  borderRadius: "0px",
                 }}
               >
-                <ShieldCheck size={28} color="#64B5F6" />
+                <ShieldCheck size={24} color="var(--water)" />
                 <div>
-                  <div style={{ fontSize: 11, fontWeight: 900, color: "#fff", textTransform: "uppercase" }}>
+                  <div className="font-mono-spec" style={{ fontSize: 10, fontWeight: 700, color: "var(--deep)" }}>
                     ISO 9001:2015 & AWWA
                   </div>
-                  <div style={{ fontSize: 10, color: "#90CAF9", textTransform: "uppercase", marginTop: 2 }}>
+                  <div style={{ fontSize: 10, color: "var(--ink-soft)", marginTop: 2 }}>
                     Certified Quality Manufacturing
                   </div>
                 </div>
@@ -499,15 +467,15 @@ export default function Footer() {
       </div>
 
       {/* Band 4: Legal & Copyright Footer */}
-      <div style={{ padding: "24px 0", background: "#002255" }}>
+      <div style={{ padding: "24px 0", background: "var(--deep)", borderTop: "1px solid var(--line-strong)" }}>
         <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
-          <p style={{ fontSize: 13, color: "#0085f4", fontWeight: 500, margin: 0 }}>
+          <p className="font-mono-spec" style={{ fontSize: 11, color: "var(--paper)", fontWeight: 500, margin: 0 }}>
             © {new Date().getFullYear()} H2 Industries. All rights reserved. Precision Municipal & Industrial Solutions.
           </p>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-            <a href="#" style={{ color: "#90CAF9", fontSize: 13, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#90CAF9")}>Privacy Policy</a>
-            <a href="#" style={{ color: "#90CAF9", fontSize: 13, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#90CAF9")}>Terms of Service</a>
-            <a href="#" style={{ color: "#90CAF9", fontSize: 13, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")} onMouseLeave={(e) => (e.currentTarget.style.color = "#90CAF9")}>Cookie Preferences</a>
+            <a href="#" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}>Privacy Policy</a>
+            <a href="#" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}>Terms of Service</a>
+            <a href="#" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}>Cookie Preferences</a>
           </div>
         </div>
       </div>

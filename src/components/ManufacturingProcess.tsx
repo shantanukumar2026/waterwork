@@ -20,39 +20,30 @@ export default function ManufacturingProcess() {
   const { header, steps } = homeData.process;
 
   return (
-    <section id="process" style={{ background: "#F5F7FA", padding: "48px 0" }}>
+    <section id="process" className="section-pad" style={{ background: "var(--tint-1)", borderTop: "1px solid var(--hairline)" }}>
       <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
         {/* Header */}
         <div ref={ref} style={{ textAlign: "center", marginBottom: 64 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-            <div className="pill-tag" style={{ marginBottom: 20, display: "inline-flex" }}>
-              <span className="dot" /> {header.tagline}
+            <div className="eyebrow-label" style={{ marginBottom: 16, justifyContent: "center" }}>
+              MANUFACTURING SEQUENCE
             </div>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(1.8rem, 8vw, 3.2rem)", fontWeight: 900, color: "#004aad", lineHeight: 1.0, marginBottom: 16, textTransform: "uppercase" }}
+              style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 700, color: "var(--brand-deep)", lineHeight: 1.1, marginBottom: 16 }}
             >
-              {header.title}<br />
-              <span style={{ color: "#0085f4" }}>{header.highlight}</span>
+              Precision Metallurgy. From Raw Spec to Field-Ready Casting.
             </h2>
-            <p style={{ color: "#0085f4", fontSize: 17, maxWidth: 560, margin: "0 auto", lineHeight: 1.65 }}>
-              {header.subtitle}
+            <p style={{ color: "var(--brand-deep)", fontSize: 16, maxWidth: 620, margin: "0 auto", lineHeight: 1.65, opacity: 0.9 }}>
+              Every casting undergoes automated polymer injection modeling, CNC lathe profiling, and 100% hydrostatic pressure testing before shipment.
             </p>
           </motion.div>
         </div>
 
         {/* Desktop timeline */}
         <div className="process-desktop" style={{ display: "none", position: "relative" }}>
-          {/* Connector */}
-          <div style={{
-            position: "absolute",
-            top: 48,
-            left: "calc(10% + 40px)",
-            right: "calc(10% + 40px)",
-            height: 2,
-            background: "linear-gradient(90deg, #0085f4 0%, #2196F3 50%, #0085f4 100%)",
-          }} />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 }}>
+          {/* Grid of Spec Strip Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0, border: "1px solid var(--hairline)", borderRadius: "6px", overflow: "hidden" }}>
             {steps.map((step, i) => {
               const Icon = iconMap[step.icon as keyof typeof iconMap] || Lightbulb;
               return (
@@ -61,61 +52,64 @@ export default function ManufacturingProcess() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-                  style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}
-                >
-                  {/* Circle */}
-                  <div style={{
+                  className="industrial-card"
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
                     position: "relative",
-                    width: 80,
-                    height: 80,
-                    borderRadius: "50%",
-                    background: "#fff",
-                    border: "3px solid #90CAF9",
+                    padding: "32px 24px",
+                    background: "var(--white)",
+                    borderRight: i < 4 ? "1px solid var(--hairline)" : "none",
+                    borderTop: "none",
+                    borderBottom: "none",
+                    borderLeft: "none",
+                    overflow: "hidden",
+                    minHeight: 280,
+                  }}
+                >
+                  {/* Large Numeral in --hairline / --brand-blue */}
+                  <div
+                    className="font-display"
+                    style={{
+                      position: "absolute",
+                      right: 12,
+                      top: 4,
+                      fontSize: 84,
+                      fontWeight: 700,
+                      color: "var(--brand-blue)",
+                      opacity: 0.12,
+                      lineHeight: 1,
+                      pointerEvents: "none",
+                      userSelect: "none",
+                    }}
+                  >
+                    {step.num}
+                  </div>
+
+                  {/* Icon */}
+                  <div style={{
+                    width: 42,
+                    height: 42,
+                    background: "var(--tint-2)",
+                    border: "1px solid var(--hairline)",
+                    borderRadius: "4px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: 24,
-                    boxShadow: "0 4px 20px rgba(21,101,192,0.12)",
                     zIndex: 1,
                   }}>
-                    <div style={{
-                      width: 52,
-                      height: 52,
-                      borderRadius: "50%",
-                      background: "linear-gradient(135deg, #0085f4, #2196F3)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}>
-                      <Icon size={22} color="#fff" />
-                    </div>
-                    {/* Number */}
-                    <div style={{
-                      position: "absolute",
-                      top: -6,
-                      right: -6,
-                      width: 24,
-                      height: 24,
-                      borderRadius: "50%",
-                      background: "#004aad",
-                      color: "#fff",
-                      fontSize: 9,
-                      fontWeight: 800,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}>
-                      {step.num}
-                    </div>
+                    <Icon size={20} color="var(--brand-blue)" strokeWidth={1.5} />
                   </div>
+
                   <h3
                     className="font-display"
-                    style={{ fontSize: 20, fontWeight: 900, color: "#004aad", marginBottom: 10, textTransform: "uppercase" }}
+                    style={{ fontSize: 18, fontWeight: 700, color: "var(--brand-deep)", marginBottom: 8, zIndex: 1 }}
                   >
                     {step.title}
                   </h3>
-                  <p style={{ fontSize: 13, color: "#0085f4", lineHeight: 1.65, marginBottom: 10 }}>{step.desc}</p>
-                  <p style={{ fontSize: 11, color: "#0085f4", fontWeight: 600 }}>{step.detail}</p>
+                  <p style={{ fontSize: 13, color: "var(--brand-deep)", lineHeight: 1.55, marginBottom: 12, flex: 1, zIndex: 1, opacity: 0.9 }}>{step.desc}</p>
+                  <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--brand-blue)", fontWeight: 700, zIndex: 1 }}>{step.detail}</p>
                 </motion.div>
               );
             })}
@@ -123,7 +117,7 @@ export default function ManufacturingProcess() {
         </div>
 
         {/* Mobile vertical */}
-        <div className="process-mobile" style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+        <div className="process-mobile" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {steps.map((step, i) => {
             const Icon = iconMap[step.icon as keyof typeof iconMap] || Lightbulb;
             return (
@@ -132,46 +126,34 @@ export default function ManufacturingProcess() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.09 }}
-                style={{ display: "flex", gap: 20 }}
+                className="industrial-card"
+                style={{ display: "flex", gap: 16, padding: "20px", background: "var(--white)", position: "relative", overflow: "hidden" }}
               >
-                {/* Left */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                  <div style={{
-                    width: 56,
-                    height: 56,
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #0085f4, #2196F3)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                    boxShadow: "0 4px 16px rgba(21,101,192,0.3)",
-                  }}>
-                    <Icon size={20} color="#fff" />
-                  </div>
-                  {i < 4 && (
-                    <div style={{
-                      width: 2,
-                      flex: 1,
-                      minHeight: 32,
-                      background: "linear-gradient(to bottom, #0085f4, #2196F3)",
-                      margin: "8px 0",
-                    }} />
-                  )}
+                <div
+                  className="font-display"
+                  style={{
+                    position: "absolute",
+                    right: 12,
+                    top: 0,
+                    fontSize: 64,
+                    fontWeight: 700,
+                    color: "var(--brand-blue)",
+                    opacity: 0.12,
+                    lineHeight: 1,
+                    pointerEvents: "none",
+                  }}
+                >
+                  {step.num}
                 </div>
-                {/* Content */}
-                <div style={{ paddingBottom: i < 4 ? 32 : 0, paddingTop: 10 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                    <span style={{ fontSize: 11, fontWeight: 800, color: "#0085f4", letterSpacing: "0.1em" }}>{step.num}</span>
-                    <h3
-                      className="font-display"
-                      style={{ fontSize: 22, fontWeight: 900, color: "#004aad", textTransform: "uppercase" }}
-                    >
-                      {step.title}
-                    </h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: "#0085f4", lineHeight: 1.65, marginBottom: 8 }}>{step.desc}</p>
-                  <p style={{ fontSize: 12, color: "#0085f4", fontWeight: 600 }}>{step.detail}</p>
+                <div style={{ width: 40, height: 40, background: "var(--tint-2)", border: "1px solid var(--hairline)", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Icon size={18} color="var(--brand-blue)" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <h3 className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "var(--brand-deep)", marginBottom: 4 }}>
+                    {step.title}
+                  </h3>
+                  <p style={{ fontSize: 13, color: "var(--brand-deep)", lineHeight: 1.5, marginBottom: 6, opacity: 0.9 }}>{step.desc}</p>
+                  <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--brand-blue)", fontWeight: 700 }}>{step.detail}</p>
                 </div>
               </motion.div>
             );

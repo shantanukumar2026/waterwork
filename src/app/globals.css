@@ -1,153 +1,208 @@
 @import "tailwindcss";
 
-/* ─── H2 Industries Brand Tokens ─── */
+/* ─── H2O Waterworks Strict 3-Blue Brand Design Tokens ─── */
 :root {
-  --h2-blue: #0085f4;
-  --h2-blue-light: #00bbff;
-  --h2-blue-dark: #004aad;
-  --h2-navy: #004aad;
-  --h2-navy-mid: #004aad;
-  --h2-white: #FFFFFF;
-  --h2-grey: #F5F7FA;
-  --h2-grey-mid: #E2E8F0;
-  --h2-text: #004aad;
-  --h2-text-muted: #0085f4;
+  --brand-deep: #004AAD;
+  --brand-blue: #0085F4;
+  --brand-bright: #00BBFF;
+  --white: #FFFFFF;
+
+  /* Derived tints for light-section backgrounds — same hue family, not a new color */
+  --tint-1: color-mix(in srgb, var(--brand-blue) 4%, white);   /* barely-blue page background */
+  --tint-2: color-mix(in srgb, var(--brand-blue) 8%, white);   /* subtle card background */
+  --hairline: color-mix(in srgb, var(--brand-blue) 18%, white); /* borders/dividers */
+  --text-soft: color-mix(in srgb, var(--brand-deep) 60%, white); /* secondary text */
+
+  /* Legacy remappings to ensure seamless component compatibility */
+  --paper: var(--tint-1);
+  --surface: var(--white);
+  --line: var(--hairline);
+  --line-strong: color-mix(in srgb, var(--brand-blue) 35%, white);
+  --ink: var(--brand-deep);
+  --ink-soft: var(--text-soft);
+  --deep: var(--brand-deep);
+  --water: var(--brand-blue);
+  --signal: var(--brand-blue);
 }
 
-/* ─── Base Reset ─── */
+@theme {
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-bright: var(--brand-bright);
+  --color-white: var(--white);
+  --color-tint-1: var(--tint-1);
+  --color-tint-2: var(--tint-2);
+  --color-hairline: var(--hairline);
+  --color-text-soft: var(--text-soft);
+
+  --font-display: var(--font-jakarta), 'Plus Jakarta Sans', var(--font-inter), 'Inter', sans-serif;
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-mono: var(--font-inter), 'Inter', sans-serif;
+}
+
+/* ─── Base Reset & Core Background ─── */
 *, *::before, *::after { box-sizing: border-box; }
-* { margin: 0; padding: 0; }
+*, *::before, *::after, h1, h2, h3, h4, h5, h6, p, span, div, a, button, input {
+  margin: 0;
+  padding: 0;
+  font-style: normal !important;
+}
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background-color: var(--tint-1);
 }
 
 body {
   font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
-  background: #ffffff;
-  color: var(--h2-text);
+  background-color: var(--tint-1);
+  color: var(--brand-deep);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* ─── Typography ─── */
+/* ─── Typography Helper Classes ─── */
 .font-display {
-  font-family: var(--font-barlow), 'Barlow Condensed', 'Impact', sans-serif;
+  font-family: var(--font-jakarta), 'Plus Jakarta Sans', var(--font-inter), 'Inter', sans-serif;
+  font-weight: 800;
+  font-style: normal !important;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
-.font-corporate {
-  font-family: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+.font-mono-spec {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
 }
 
-.font-outfit {
-  font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+/* Eyebrow Labels with Short Horizontal Rule */
+.eyebrow-label {
+  font-family: var(--font-sans), 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-bright);
+  display: inline-flex;
+  align-items: center;
+}
+
+.eyebrow-label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 1.5px;
+  background-color: var(--brand-bright);
+  margin-right: 8px;
 }
 
 /* ─── Scrollbar ─── */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--h2-grey); }
-::-webkit-scrollbar-thumb { background: var(--h2-blue); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--h2-blue-dark); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--tint-1); }
+::-webkit-scrollbar-thumb { background: var(--hairline); border-radius: 0px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-blue); }
 
 /* ─── Selection ─── */
-::selection { background: var(--h2-blue); color: #fff; }
+::selection { background: var(--brand-blue); color: #ffffff; }
 
-/* ─── Section Spacing ─── */
+/* ─── Section Spacing (80-120px Vertical Padding) ─── */
 .section-pad {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 85px;
+  padding-bottom: 85px;
 }
 @media (min-width: 1024px) {
   .section-pad {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 115px;
+    padding-bottom: 115px;
   }
 }
 
-/* ─── Video Overlay ─── */
-.hero-overlay {
-  background: linear-gradient(
-    160deg,
-    rgba(8, 20, 40, 0.72) 0%,
-    rgba(10, 25, 55, 0.55) 50%,
-    rgba(8, 20, 40, 0.80) 100%
-  );
+/* ─── Industrial Cards & Panels ─── */
+.industrial-card {
+  background-color: var(--tint-2);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-/* ─── Gradient Heading ─── */
-.text-gradient {
-  background: linear-gradient(135deg, #60AEFF 0%, #2196F3 40%, #0085f4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.industrial-card:hover {
+  border-color: var(--brand-blue);
 }
 
-/* ─── Focus ─── */
-*:focus-visible {
-  outline: 2px solid var(--h2-blue-light);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* ─── Smooth image loading ─── */
-img { transition: opacity 0.3s ease; }
-
-/* ─── Noise texture overlay ─── */
-.noise-overlay::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-}
-
-/* ─── Card hover glow ─── */
-.card-glow {
-  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-}
-.card-glow:hover {
-  box-shadow: 0 12px 40px -8px rgba(21, 101, 192, 0.2);
-  transform: translateY(-2px);
-  border-color: rgba(21, 101, 192, 0.3);
-}
-
-/* ─── Blue pill tag ─── */
-.pill-tag {
+/* ─── Buttons ─── */
+.btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 14px;
-  background: rgba(21, 101, 192, 0.08);
-  border: 1px solid rgba(21, 101, 192, 0.2);
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  justify-content: center;
+  gap: 8px;
+  background: var(--brand-blue);
+  color: var(--white);
+  border: 1px solid var(--brand-blue);
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-family: var(--font-sans), 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #0085f4;
-}
-.pill-tag .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #0085f4;
-}
-.pill-tag-dark {
-  background: rgba(33, 150, 243, 0.12);
-  border-color: rgba(33, 150, 243, 0.25);
-  color: #90CAF9;
-}
-.pill-tag-dark .dot {
-  background: #2196F3;
-  animation: pulse 2s infinite;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+.btn-primary:hover {
+  background: var(--brand-bright);
+  border-color: var(--brand-bright);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--brand-blue);
+  border: 1px solid var(--brand-blue);
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-family: var(--font-sans), 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: var(--tint-2);
+  color: var(--brand-deep);
+  border-color: var(--brand-deep);
+}
+
+/* Section dividers */
+.section-divider {
+  border-top: 1px solid var(--line);
+}
+
+/* Focus outline */
+*:focus-visible {
+  outline: 2px solid var(--water);
+  outline-offset: 3px;
+  border-radius: 0px;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
 }

@@ -20,30 +20,28 @@ export default function GlobalSupplyNetwork() {
   return (
     <section 
       id="global-network" 
+      className="section-pad"
       style={{ 
-        background: "#ffffff", 
-        padding: "48px 0",
+        background: "var(--brand-deep)", 
         position: "relative",
         overflow: "hidden",
-        borderTop: "1px solid #E2E8F0"
+        borderTop: "1px solid var(--hairline)",
+        borderBottom: "1px solid var(--hairline)",
       }}
     >
-      {/* Background Map Graphic (Abstract CSS rendering) */}
-      <div style={{ position: "absolute", top: "10%", right: "-10%", width: "70%", height: "80%", opacity: 0.1, pointerEvents: "none" }}>
+      {/* Background Map Graphic */}
+      <div style={{ position: "absolute", top: "10%", right: "-10%", width: "70%", height: "80%", opacity: 0.15, pointerEvents: "none" }}>
         <svg viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Abstract map dot grid */}
           <pattern id="dotGrid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="2" fill="#0085f4" />
+            <circle cx="2" cy="2" r="2" fill="var(--brand-bright)" />
           </pattern>
           <path d="M100,100 Q400,50 700,200 T750,500 Q400,600 150,450 Z" fill="url(#dotGrid)" />
-          
-          {/* Connection Lines */}
-          <path d="M200,200 Q400,100 600,250" stroke="#0085f4" strokeWidth="2" strokeDasharray="5 5" fill="none" />
-          <path d="M300,300 Q500,400 700,300" stroke="#0085f4" strokeWidth="2" strokeDasharray="5 5" fill="none" />
-          <circle cx="200" cy="200" r="8" fill="#ffffff" stroke="#0085f4" strokeWidth="3" />
-          <circle cx="600" cy="250" r="8" fill="#ffffff" stroke="#0085f4" strokeWidth="3" />
-          <circle cx="300" cy="300" r="8" fill="#ffffff" stroke="#0085f4" strokeWidth="3" />
-          <circle cx="700" cy="300" r="8" fill="#ffffff" stroke="#0085f4" strokeWidth="3" />
+          <path d="M200,200 Q400,100 600,250" stroke="var(--brand-bright)" strokeWidth="2" strokeDasharray="5 5" fill="none" />
+          <path d="M300,300 Q500,400 700,300" stroke="var(--brand-bright)" strokeWidth="2" strokeDasharray="5 5" fill="none" />
+          <circle cx="200" cy="200" r="6" fill="#FFFFFF" stroke="var(--brand-bright)" strokeWidth="2" />
+          <circle cx="600" cy="250" r="6" fill="#FFFFFF" stroke="var(--brand-bright)" strokeWidth="2" />
+          <circle cx="300" cy="300" r="6" fill="#FFFFFF" stroke="var(--brand-bright)" strokeWidth="2" />
+          <circle cx="700" cy="300" r="6" fill="#FFFFFF" stroke="var(--brand-bright)" strokeWidth="2" />
         </svg>
       </div>
 
@@ -56,40 +54,39 @@ export default function GlobalSupplyNetwork() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             style={{ flex: "1 1 500px" }}
           >
-            <div className="pill-tag" style={{ marginBottom: 24 }}>
-              <span className="dot" />
-              {header.tagline}
+            <div className="eyebrow-label" style={{ color: "var(--brand-bright)", marginBottom: 20 }}>
+              GLOBAL LOGISTICS & DISPATCH
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 900, color: "#004aad", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
-              {header.title}<br />
-              <span style={{ color: "#0085f4" }}>{header.highlight}</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2.2rem, 4.8vw, 3.4rem)", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1, marginBottom: 18 }}>
+              Rapid Supply Network.<br />
+              <span style={{ color: "var(--brand-bright)" }}>Built for Emergency Municipal Timelines.</span>
             </h2>
             
-            <p style={{ color: "#0085f4", fontSize: 16, lineHeight: 1.7, marginBottom: 40, maxWidth: 540, fontWeight: 500 }}>
-              {header.subtitle}
+            <p style={{ color: "var(--white)", fontSize: 16, lineHeight: 1.65, marginBottom: 36, maxWidth: 540, fontWeight: 400, opacity: 0.9 }}>
+              With distribution hubs strategically positioned in Melville NY, Stuart FL, and Toronto ON, we ship critical water management inventory anywhere in North America within 48 hours.
             </p>
 
-            <div style={{ display: "flex", gap: 40, marginBottom: 48 }}>
+            <div style={{ display: "flex", gap: 36, marginBottom: 40, borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)", padding: "20px 0" }}>
               {stats.map((stat, i) => (
                 <div key={i}>
-                  <div style={{ color: "#0085f4", fontSize: 36, fontWeight: 900, fontStyle: "italic", lineHeight: 1 }}>
+                  <div className="font-display" style={{ color: "var(--brand-bright)", fontSize: 38, fontWeight: 700, lineHeight: 1 }}>
                     {stat.value}
                   </div>
-                  <div style={{ color: "#0085f4", fontSize: 13, fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.5, marginTop: 8 }}>
+                  <div className="font-mono-spec" style={{ color: "#FFFFFF", fontSize: 11, fontWeight: 600, marginTop: 6 }}>
                     {stat.label}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               {modes.map((mode, i) => {
                 const Icon = iconMap[mode.icon as keyof typeof iconMap] || Ship;
                 return (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, background: "#F8FAFC", padding: "8px 16px", borderRadius: 8, border: "1px solid #E2E8F0" }}>
-                    <Icon size={16} color="#0085f4" />
-                    <span style={{ color: "#004aad", fontSize: 12, fontWeight: 800, textTransform: "uppercase" }}>{mode.label}</span>
+                  <div key={i} className="industrial-card" style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.06)", padding: "8px 14px", borderRadius: "4px", border: "1px solid var(--hairline)" }}>
+                    <Icon size={16} color="var(--brand-bright)" strokeWidth={1.5} />
+                    <span className="font-mono-spec" style={{ color: "#FFFFFF", fontSize: 11, fontWeight: 700 }}>{mode.label}</span>
                   </div>
                 );
               })}
@@ -103,10 +100,11 @@ export default function GlobalSupplyNetwork() {
             transition={{ duration: 0.8, delay: 0.3 }}
             style={{ flex: "1 1 500px", display: "flex", justifyContent: "center" }}
           >
-             <div style={{ width: "100%", height: 400, border: "1px solid #E2E8F0", background: "#F8FAFC", position: "relative", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 10px 30px rgba(6,35,71,0.01)" }}>
+             <div style={{ width: "100%", height: 380, border: "1px solid var(--line-strong)", background: "var(--surface)", position: "relative", borderRadius: "0px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ textAlign: "center", zIndex: 1 }}>
-                  <Globe2 size={64} color="rgba(21, 101, 192, 0.15)" style={{ marginBottom: 16 }} />
-                  <div style={{ color: "#004aad", fontSize: 14, fontWeight: 900, letterSpacing: 2, textTransform: "uppercase", fontStyle: "italic" }}>Live Network Routing</div>
+                  <Globe2 size={56} color="var(--water)" style={{ marginBottom: 12 }} />
+                  <div className="font-display" style={{ color: "var(--deep)", fontSize: 18, fontWeight: 800, textTransform: "uppercase" }}>Live Network Routing</div>
+                  <div className="font-mono-spec" style={{ color: "var(--water)", fontSize: 11, marginTop: 4 }}>STATUS — ACTIVE DISPATCH</div>
                 </div>
 
                 {/* Radar sweep effect */}
@@ -116,11 +114,11 @@ export default function GlobalSupplyNetwork() {
                   style={{
                     position: "absolute",
                     top: "50%", left: "50%",
-                    width: 300, height: 300,
-                    marginLeft: -150, marginTop: -150,
+                    width: 280, height: 280,
+                    marginLeft: -140, marginTop: -140,
                     borderRadius: "50%",
-                    background: "conic-gradient(from 0deg, transparent 70%, rgba(21, 101, 192, 0.08) 100%)",
-                    border: "1px solid rgba(21, 101, 192, 0.04)",
+                    background: "conic-gradient(from 0deg, transparent 70%, rgba(30, 143, 194, 0.15) 100%)",
+                    border: "1px solid var(--line)",
                     pointerEvents: "none"
                   }}
                 />

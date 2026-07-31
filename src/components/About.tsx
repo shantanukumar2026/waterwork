@@ -25,62 +25,62 @@ const iconMap: Record<string, React.ElementType> = {
 // Rich portfolio items matching the design with custom features and support for both mp4/image
 const portfolioItems = [
   {
-    mainTitle: "DEDICATED TO SAVING OUR",
-    highlightText: "OCEANS",
-    subtitle: "THROUGH ENGINEERING",
-    desc: "H2 Industries was founded with a single unwavering mission: to develop industrial water management products that actively reduce environmental harm.",
+    mainTitle: "EVERY UNIT WE SHIP KEEPS WASTE OUT OF THE",
+    highlightText: "WATER SUPPLY",
+    subtitle: "OCEAN & WATERWAY PROTECTION",
+    desc: "H2O Waterworks engineers municipal infrastructure components that actively filter, control, and prevent industrial waste and runoff from entering natural ocean basins.",
     media: "/portfolio/1.mp4",
-    bgColor: "#fbfbfbff",
+    bgColor: "var(--tint-1)",
     features: [
-      { title: "PURPOSE DRIVEN", desc: "Environmental impact at our core", icon: "ShieldCheck" },
-      { title: "ENGINEERING FIRST", desc: "Innovative solutions for real-world challenges", icon: "Settings" },
-      { title: "OCEAN FOCUSED", desc: "Protecting today for a sustainable tomorrow", icon: "Waves" }
+      { title: "PURPOSE DRIVEN", desc: "Built to eliminate waterway contaminants", icon: "ShieldCheck" },
+      { title: "FIELD TESTED", desc: "Engineered for harsh municipal storm events", icon: "Settings" },
+      { title: "OCEAN SAFE", desc: "Protecting aquatic ecosystems since 1998", icon: "Waves" }
     ]
   },
   {
-    mainTitle: "PRECISION SUB-SURFACE",
-    highlightText: "ENGINEERING",
-    subtitle: "FOR THE TOUGHEST ENVIRONMENTS",
-    desc: "Every product is precision-engineered to meet the most demanding industrial and environmental standards across the USA and global markets.",
+    mainTitle: "SUB-SURFACE METALLURGY ENGINEERED FOR 50+ YEAR",
+    highlightText: "SERVICE LIFESPANS",
+    subtitle: "HIGH-LOAD CASTINGS",
+    desc: "Machined to sub-millimeter tolerances, our ASTM A48 grey iron and A536 ductile iron castings withstand AASHTO H-20 wheel loads in heavy traffic corridors.",
     media: "/portfolio/2.mp4",
-    bgColor: "#ffffff",
+    bgColor: "var(--white)",
     features: [
-      { title: "EXACT TOLERANCE", desc: "Machined to sub-millimeter precision", icon: "Target" },
-      { title: "RUGGED RATING", desc: "Certified for municipal Class D wheel-loads", icon: "Award" },
-      { title: "PROVEN INTEGRITY", desc: "Extensively field-tested in heavy storm flows", icon: "ShieldAlert" }
+      { title: "EXACT TOLERANCE", desc: "Sub-millimeter CNC precision machining", icon: "Target" },
+      { title: "AASHTO H-20", desc: "Class D heavy highway load certification", icon: "Award" },
+      { title: "100% IN-HOUSE", desc: "Extensively pressure-tested at foundry", icon: "ShieldAlert" }
     ]
   },
   {
-    mainTitle: "MODULAR HIGH-GRADE",
-    highlightText: "ENCLOSURES",
-    subtitle: "BUILT TO LAST",
-    desc: "We design for compatibility with emerging clean-energy infrastructure, hydrogen utility vaults, and long-term protection of municipal waterways.",
+    mainTitle: "MODULAR HYDRO ENCLOSURES BUILT FOR EXTREME",
+    highlightText: "UTILITY VAULTS",
+    subtitle: "COMPATIBLE MUNICIPAL ACCESS",
+    desc: "We design modular valve boxes and sampling enclosures compatible with emerging hydrogen utility vaults and city water distribution networks.",
     media: "/portfolio/3.mp4",
-    bgColor: "#0085f4",
+    bgColor: "var(--tint-1)",
     features: [
-      { title: "MODULAR SYSTEM", desc: "Adaptable depth and segmented barrels", icon: "Layers" },
-      { title: "CLEAN ENERGY", desc: "Ready for green hydrogen vaults", icon: "Zap" },
-      { title: "LONG LIFETIME", desc: "High-grade polymer resists salt & sewage", icon: "ShieldCheck" }
+      { title: "MODULAR BARRELS", desc: "Adaptable depth for varying frost lines", icon: "Layers" },
+      { title: "UTILITY READY", desc: "Pre-drilled for smart metering & probes", icon: "Zap" },
+      { title: "SALT RESISTANT", desc: "High-grade polymer coating resists sewage", icon: "ShieldCheck" }
     ]
   },
   {
-    mainTitle: "SUSTAINABLE IMPACT &",
-    highlightText: "GLOBAL REACH",
-    desc: "We engineer structural stormwater components that reduce pollutant entry into wastewater systems, creating a cleaner planet.",
-    subtitle: "ECO-FRIENDLY INFRASTRUCTURE",
+    mainTitle: "ZERO-BYPASS FILTRATION EXCEEDING EPA",
+    highlightText: "NPDES MANDATES",
+    subtitle: "STORMWATER COMPLIANCE",
+    desc: "Our catch basin inserts and inlet castings redirect sediment and heavy metals away from municipal outfalls, delivering clean effluent data.",
     media: "/portfolio/4.mp4",
-    bgColor: "#0085f4",
+    bgColor: "var(--white)",
     features: [
-      { title: "ZERO BYPASS", desc: "Engineered catch basin filtration inserts", icon: "Droplet" },
+      { title: "ZERO BYPASS", desc: "High-flow stormwater filtration inserts", icon: "Droplet" },
       { title: "EPA COMPLIANT", desc: "Exceeds NPDES water quality guidelines", icon: "FileText" },
-      { title: "ECO CERTIFIED", desc: "Actively redirects pollutants from ocean basins", icon: "Leaf" }
+      { title: "ECO CERTIFIED", desc: "Captures 98% of gross solids and oils", icon: "Leaf" }
     ]
   }
 ];
 
 export default function About() {
   return (
-    <div id="about" style={{ width: "100%", background: "#004aad", position: "relative" }}>
+    <div id="about" style={{ width: "100%", background: "var(--tint-1)", position: "relative", margin: 0, padding: 0 }}>
       {/* Topographical background lines */}
       <ContourLinesBackground />
 
@@ -107,15 +107,15 @@ function PortfolioSection({ item, index }: { item: typeof portfolioItems[0]; ind
     <section
       ref={containerRef}
       style={{
-        minHeight: "65vh",
-        padding: "70px 0",
+        padding: "44px 0",
         width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
-        borderBottom: "1px solid rgba(0, 187, 255, 0.2)"
+        borderBottom: "1px solid var(--hairline)",
+        background: index % 2 === 0 ? "var(--tint-1)" : "var(--white)",
       }}
     >
       <div
@@ -144,47 +144,27 @@ function PortfolioSection({ item, index }: { item: typeof portfolioItems[0]; ind
           }}
           className="portfolio-content"
         >
-          {/* Section Pill */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              border: "1px solid #00bbff",
-              padding: "5px 16px",
-              borderRadius: "100px",
-              background: "rgba(0, 187, 255, 0.15)",
-              width: "fit-content"
-            }}
-          >
-            <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#00bbff" }} />
-            <span style={{ color: "#00bbff", fontSize: 11, fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase" }}>
-              OUR PURPOSE
-            </span>
+          {/* Eyebrow Label */}
+          <div className="eyebrow-label">
+            ENGINEERING PURPOSE
           </div>
 
           {/* Heading with highlighted text */}
           <h2
             className="font-display"
             style={{
-              fontSize: "clamp(2rem, 3.6vw, 3rem)",
-              fontWeight: 900,
-              color: "#ffffff",
-              lineHeight: 1.12,
-              textTransform: "uppercase",
-              margin: "8px 0 0 0",
-              letterSpacing: "-0.01em"
+              fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
+              fontWeight: 700,
+              color: "var(--brand-deep)",
+              lineHeight: 1.15,
+              margin: "6px 0 0 0",
             }}
           >
             {item.mainTitle} <br />
             <span
               style={{
-                color: "#00bbff",
+                color: "var(--brand-blue)",
                 display: "inline-block",
-                background: "linear-gradient(135deg, #00bbff 0%, #0085f4 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text"
               }}
             >
               {item.highlightText}
@@ -192,20 +172,20 @@ function PortfolioSection({ item, index }: { item: typeof portfolioItems[0]; ind
           </h2>
 
           {/* Subtitle / Engineering Line */}
-          <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "6px 0 14px 0" }}>
-            <span style={{ color: "#00bbff", fontSize: 13, fontWeight: 800, letterSpacing: "0.09em", fontStyle: "italic", textTransform: "uppercase" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "4px 0 12px 0" }}>
+            <span className="font-mono-spec" style={{ color: "var(--brand-blue)", fontSize: 11, fontWeight: 700 }}>
               /// {item.subtitle}
             </span>
-            <div style={{ flex: 1, height: 1, background: "rgba(0, 187, 255, 0.3)", maxWidth: 110 }} />
+            <div style={{ flex: 1, height: 1, background: "var(--hairline)", maxWidth: 110 }} />
           </div>
 
           {/* Description */}
-          <p style={{ color: "#E0F2FE", fontSize: 15, lineHeight: 1.65, fontWeight: 400, marginBottom: 24, maxWidth: 520 }}>
+          <p style={{ color: "var(--brand-deep)", fontSize: 15, lineHeight: 1.65, fontWeight: 400, marginBottom: 20, maxWidth: 540 }}>
             {item.desc}
           </p>
 
           {/* Features Grid Row */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, marginTop: 8 }} className="features-row">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginTop: 8 }} className="features-row">
             {item.features.map((feat, fIdx) => {
               const FeatIcon = iconMap[feat.icon] || ShieldCheck;
               return (
@@ -213,15 +193,15 @@ function PortfolioSection({ item, index }: { item: typeof portfolioItems[0]; ind
                   display: "flex",
                   flexDirection: "column",
                   gap: 8,
-                  borderRight: fIdx < 2 ? "1px solid rgba(0, 187, 255, 0.2)" : "none",
+                  borderRight: fIdx < 2 ? "1px solid var(--line)" : "none",
                   paddingRight: fIdx < 2 ? 14 : 0
                 }} className="feature-col">
-                  <div style={{ width: 38, height: 38, borderRadius: "50%", background: "rgba(0, 187, 255, 0.15)", border: "1px solid #00bbff", display: "flex", alignItems: "center", justifyContent: "center", color: "#00bbff" }}>
-                    <FeatIcon size={17} />
+                  <div style={{ width: 36, height: 36, borderRadius: "0px", background: "var(--surface)", border: "1px solid var(--line)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--water)" }}>
+                    <FeatIcon size={16} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 style={{ color: "#ffffff", fontSize: 12, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 3 }}>{feat.title}</h4>
-                    <p style={{ color: "#BAE6FD", fontSize: 11, lineHeight: 1.45, margin: 0, fontWeight: 400 }}>{feat.desc}</p>
+                    <h4 className="font-mono-spec" style={{ color: "var(--deep)", fontSize: 11, fontWeight: 700, marginBottom: 3 }}>{feat.title}</h4>
+                    <p style={{ color: "var(--ink-soft)", fontSize: 11, lineHeight: 1.45, margin: 0, fontWeight: 400 }}>{feat.desc}</p>
                   </div>
                 </div>
               );
@@ -239,7 +219,7 @@ function PortfolioSection({ item, index }: { item: typeof portfolioItems[0]; ind
               y: yVideo
             }}
           >
-            <CustomMediaPlayer src={item.media} title={item.mainTitle} bgColor="#004aad" />
+            <CustomMediaPlayer src={item.media} title={item.mainTitle} bgColor="var(--surface)" />
           </motion.div>
         </div>
       </div>
@@ -409,11 +389,9 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
             left: 14,
             right: 14,
             height: 42,
-            background: "rgba(15, 23, 42, 0.9)",
-            backdropFilter: "blur(14px)",
-            WebkitBackdropFilter: "blur(14px)",
-            borderRadius: 10,
-            border: "1px solid rgba(255, 255, 255, 0.15)",
+            background: "var(--deep)",
+            borderRadius: 0,
+            border: "1px solid var(--line)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -439,7 +417,7 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
             >
               {isPlaying && isVideo ? <Pause size={16} fill="#ffffff" /> : <Play size={16} fill="#ffffff" />}
             </button>
-            <span style={{ fontSize: 11, color: "#94A3B8", fontWeight: 700, fontFamily: "monospace" }}>
+            <span style={{ fontSize: 11, color: "var(--paper)", fontWeight: 600, fontFamily: "var(--font-mono), monospace" }}>
               {isVideo ? `${currentTime} / ${duration}` : "0:00 / 0:00"}
             </span>
           </div>
@@ -451,8 +429,8 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
               flex: 1,
               margin: "0 16px",
               height: 4,
-              background: "rgba(255, 255, 255, 0.15)",
-              borderRadius: 2,
+              background: "rgba(255, 255, 255, 0.2)",
+              borderRadius: 0,
               position: "relative",
               cursor: isVideo ? "pointer" : "default"
             }}
@@ -461,28 +439,13 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
               style={{
                 height: "100%",
                 width: isVideo ? `${progress}%` : "0%",
-                background: "linear-gradient(90deg, #2196F3, #64B5F6)",
-                borderRadius: 2,
+                background: "var(--signal)",
+                borderRadius: 0,
                 position: "absolute",
                 top: 0,
                 left: 0
               }}
             />
-            {isVideo && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: `${progress}%`,
-                  transform: "translate(-50%, -50%)",
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  background: "#ffffff",
-                  boxShadow: "0 0 6px rgba(0, 74, 173,0.5)"
-                }}
-              />
-            )}
           </div>
 
           {/* Control Triggers */}
@@ -494,7 +457,7 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
                 border: "none",
                 cursor: "pointer",
                 padding: 0,
-                color: "#94A3B8",
+                color: "var(--paper)",
                 display: "flex",
                 alignItems: "center",
                 opacity: isVideo ? 1 : 0.5
@@ -510,7 +473,7 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
                 border: "none",
                 cursor: "pointer",
                 padding: 0,
-                color: "#94A3B8",
+                color: "var(--paper)",
                 display: "flex",
                 alignItems: "center",
                 opacity: isVideo ? 1 : 0.5
@@ -526,8 +489,8 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
       {/* Vertical Side Column (Right Side of Frame) */}
       <div
         style={{
-          background: isWhite ? "#ffffff" : "#004aad",
-          borderLeft: isWhite ? "1px solid #e2e8f0" : "1px solid rgba(255, 255, 255, 0.08)",
+          background: "var(--surface)",
+          borderLeft: "1px solid var(--line)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -538,7 +501,7 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
         {/* Top Dot Grid Pattern */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 4, opacity: 0.35 }}>
           {[...Array(6)].map((_, idx) => (
-            <div key={idx} style={{ width: 3, height: 3, borderRadius: "50%", background: isWhite ? "#0085f4" : "#64B5F6" }} />
+            <div key={idx} style={{ width: 3, height: 3, borderRadius: "0px", background: "var(--water)" }} />
           ))}
         </div>
 
@@ -547,22 +510,22 @@ function CustomMediaPlayer({ src, title, bgColor = "#0085f4" }: { src: string; t
           style={{
             width: 28,
             height: 28,
-            borderRadius: "50%",
-            background: isWhite ? "rgba(21, 101, 192, 0.08)" : "rgba(33, 150, 243, 0.12)",
-            border: isWhite ? "1px solid #0085f4" : "1px solid rgba(33, 150, 243, 0.4)",
+            borderRadius: "0px",
+            background: "var(--paper)",
+            border: "1px solid var(--line)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            color: isWhite ? "#0085f4" : "#64B5F6"
+            color: "var(--water)"
           }}
         >
-          <Droplet size={13} fill={isWhite ? "#0085f4" : "#64B5F6"} />
+          <Droplet size={13} fill="var(--water)" />
         </div>
 
         {/* Bottom Dot Grid Pattern */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 4, opacity: 0.35 }}>
           {[...Array(6)].map((_, idx) => (
-            <div key={idx} style={{ width: 3, height: 3, borderRadius: "50%", background: isWhite ? "#0085f4" : "#64B5F6" }} />
+            <div key={idx} style={{ width: 3, height: 3, borderRadius: "0px", background: "var(--water)" }} />
           ))}
         </div>
       </div>
@@ -579,21 +542,21 @@ function ContourLinesBackground() {
         inset: 0,
         width: "100%",
         height: "100%",
-        opacity: 0.05,
+        opacity: 0.15,
         pointerEvents: "none",
         zIndex: 0
       }}
       viewBox="0 0 1000 1000"
       preserveAspectRatio="none"
     >
-      <path d="M-100,200 C150,150 200,450 450,200 C700,-50 850,300 1100,100" fill="none" stroke="#2196F3" strokeWidth="1.5" />
-      <path d="M-100,250 C150,200 200,500 450,250 C700,0 850,350 1100,150" fill="none" stroke="#2196F3" strokeWidth="1.5" />
-      <path d="M-100,300 C150,250 200,550 450,300 C700,50 850,400 1100,200" fill="none" stroke="#2196F3" strokeWidth="1.5" />
-      <path d="M-100,350 C150,300 200,600 450,350 C700,100 850,450 1100,250" fill="none" stroke="#2196F3" strokeWidth="1.5" />
+      <path d="M-100,200 C150,150 200,450 450,200 C700,-50 850,300 1100,100" fill="none" stroke="var(--line-strong)" strokeWidth="1" />
+      <path d="M-100,250 C150,200 200,500 450,250 C700,0 850,350 1100,150" fill="none" stroke="var(--line-strong)" strokeWidth="1" />
+      <path d="M-100,300 C150,250 200,550 450,300 C700,50 850,400 1100,200" fill="none" stroke="var(--line-strong)" strokeWidth="1" />
+      <path d="M-100,350 C150,300 200,600 450,350 C700,100 850,450 1100,250" fill="none" stroke="var(--line-strong)" strokeWidth="1" />
 
-      <path d="M-100,750 C100,600 350,900 650,750 C950,600 850,950 1100,850" fill="none" stroke="#2196F3" strokeWidth="1.5" />
-      <path d="M-100,800 C100,650 350,950 650,800 C950,650 850,1000 1100,900" fill="none" stroke="#2196F3" strokeWidth="1.5" />
-      <path d="M-100,850 C100,700 350,1000 650,850 C950,700 850,1050 1100,950" fill="none" stroke="#2196F3" strokeWidth="1.5" />
+      <path d="M-100,750 C100,600 350,900 650,750 C950,600 850,950 1100,850" fill="none" stroke="var(--line-strong)" strokeWidth="1" />
+      <path d="M-100,800 C100,650 350,950 650,800 C950,650 850,1000 1100,900" fill="none" stroke="var(--line-strong)" strokeWidth="1" />
+      <path d="M-100,850 C100,700 350,1000 650,850 C950,700 850,1050 1100,950" fill="none" stroke="var(--line-strong)" strokeWidth="1" />
     </svg>
   );
 }

@@ -75,7 +75,7 @@ export default function InfrastructureFacilities() {
               {/* Content Overlay */}
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 32, display: "flex", justifyContent: "space-between", alignItems: "flex-end", zIndex: 3 }}>
                 <div style={{ maxWidth: "80%" }}>
-                  <h3 style={{ color: "#fff", fontSize: 24, fontWeight: 900, textTransform: "uppercase", marginBottom: 8, letterSpacing: "0.02em", fontStyle: "italic" }}>{fac.title}</h3>
+                  <h3 className="font-display" style={{ color: "#fff", fontSize: 24, fontWeight: 800, textTransform: "uppercase", marginBottom: 8 }}>{fac.title}</h3>
                   <p style={{ color: "#90CAF9", fontSize: 14, margin: 0, lineHeight: 1.6, fontWeight: 500 }}>{fac.desc}</p>
                 </div>
                 
