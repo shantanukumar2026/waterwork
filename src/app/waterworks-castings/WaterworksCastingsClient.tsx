@@ -807,26 +807,28 @@ export default function WaterworksCastingsClient() {
                   </div>
 
                   {/* Specs Table */}
-                  <div style={{ background: "#F8FAFC", border: "1px solid #E0E0E0", padding: 16, marginBottom: 24 }}>
-                    <div style={{ fontSize: 12, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 12 }}>
-                      Technical Specifications:
-                    </div>
-                    {Object.entries(quickViewProduct.specs).map(([key, val], idx) => (
-                      <div
-                        key={key}
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          padding: "6px 0",
-                          fontSize: 12,
-                          borderBottom: idx === Object.keys(quickViewProduct.specs).length - 1 ? "none" : "1px solid #E0E0E0",
-                        }}
-                      >
-                        <span style={{ fontWeight: 800, color: "#004aad" }}>{key}</span>
-                        <span style={{ fontWeight: 600, color: "#004aad" }}>{val}</span>
+                  {quickViewProduct.specs && (
+                    <div style={{ background: "#F8FAFC", border: "1px solid #E0E0E0", padding: 16, marginBottom: 24 }}>
+                      <div style={{ fontSize: 12, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 12 }}>
+                        Technical Specifications:
                       </div>
-                    ))}
-                  </div>
+                      {Object.entries(quickViewProduct.specs).map(([key, val], idx) => (
+                        <div
+                          key={key}
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            padding: "6px 0",
+                            fontSize: 12,
+                            borderBottom: idx === Object.keys(quickViewProduct.specs!).length - 1 ? "none" : "1px solid #E0E0E0",
+                          }}
+                        >
+                          <span style={{ fontWeight: 800, color: "#004aad" }}>{key}</span>
+                          <span style={{ fontWeight: 600, color: "#004aad" }}>{val}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
                   <button
                     onClick={() => {

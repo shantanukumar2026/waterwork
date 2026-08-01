@@ -63,7 +63,8 @@
     "Frames & Grates",
     "Restrained Adapters",
     "Extended Range",
-    "Closeout Deals"
+    "Closeout Deals",
+    "Waterworks Tools"
   ],
   "products": [
     {
@@ -385,6 +386,370 @@
         "Certification": "Full ASTM & AWWA Submittal Docs Provided",
         "Pricing": "Distributor Closeout Rates"
       }
+    },
+    {
+      "id": 117,
+      "sku": "H2-WT-GW001",
+      "name": "Heavy Duty Ring Style Gate Wrench",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/ring-style-gate-wrench.webp",
+      "description": "Shaft is 1\" schedule 40 pipe. Ring is forged 1\" thick steel with 1 3/4\" hole. Gate end is 2\" x 2\" square 3/16\" wall tubing 2 1/8 ID, with 1\" mud relief slots. Ring end allows for longer cheater bar to be used for touch valves.",
+      "features": [
+        "1\" Schedule 40 steel pipe shaft construction",
+        "Forged 1\" thick steel ring handle with 1-3/4\" opening",
+        "2-1/8\" ID square socket with 1\" mud relief slots",
+        "Designed for heavy-duty leverage with cheater bar compatibility"
+      ],
+      "specs": {
+        "Material": "1\" Sched 40 Pipe / Forged Steel Ring",
+        "Socket": "2-1/8\" ID Square Tubing",
+        "Mud Relief": "1\" Relief Slots",
+        "Handle": "1\" Thick Forged Steel Ring"
+      }
+    },
+    {
+      "id": 118,
+      "sku": "H2-WT-CA002",
+      "name": "2½\" Centering Rod Adapter",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/centering-rod-adapter.webp",
+      "description": "Used in new construction, typically in 2 1/2\" or 3\" Buffalo style or two piece curb boxes such as a 95E box. Attaches to curb stop with a stainless-steel cotter pin to keep curb stop upright in curb box.",
+      "features": [
+        "Stainless steel cotter pin attachment for positive upright alignment",
+        "1-3/4\" disc on top of 5/8\" square shaft centers 3/8\" operating tang",
+        "Fits 2-1/2\" & 3\" Buffalo style & 95E two-piece curb boxes",
+        "Standard 12\" length (24\" and 36\" custom options available)"
+      ],
+      "specs": {
+        "Material": "Carbon Steel / Stainless Pin",
+        "Compatibility": "2-1/2\" & 3\" Buffalo / 95E Boxes",
+        "Disc Size": "1-3/4\" Centering Disc",
+        "Length": "12\" Standard (24\" / 36\" Optional)"
+      }
+    },
+    {
+      "id": 119,
+      "sku": "H2-WT-GW003",
+      "name": "Standard T-Handle Gate Valve Wrench",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/thandle-gate-wrench.webp",
+      "description": "Wrench used to operate standard 2\" square nuts on gate valves. Fabricated steel socket has 3/16\" wall thickness, with a mud relief arch above socket so silt and mud will not be trapped.",
+      "features": [
+        "Operates standard 2\" AWWA square operating nuts on gate valves",
+        "Fabricated 3/16\" wall steel socket with mud relief arch",
+        "Available in fixed socket or swivel socket designs",
+        "Standard 24\" fixed handle (removable handle option available)"
+      ],
+      "specs": {
+        "Nut Size": "2\" AWWA Square Nut",
+        "Wall Thickness": "3/16\" Fabricated Steel",
+        "Handle": "24\" T-Handle Fixed",
+        "Options": "Swivel Socket / Removable Handle"
+      }
+    },
+    {
+      "id": 120,
+      "sku": "H2-WT-CW004",
+      "name": "Standard T-Handle Curb End Wrench",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/thandle-curb-end-wrench.webp",
+      "description": "Curb wrenches used for operating a curb box, including Buffalo style curb box. Curb ends fit directly onto \"T\" head of curb stop and can also be used on meter valves in meter pits.",
+      "features": [
+        "Fits T-head curb stops and meter pit valves",
+        "1-1/4\" round steel curb end with machined 5/8\" wide slot, 5/8\" deep",
+        "Large curb end option machined from solid 1-3/4\" round steel with 3/4\" slot",
+        "Available in lengths from 3' to 12' with 18\" handle"
+      ],
+      "specs": {
+        "Slot Width": "5/8\" Machined Slot (3/4\" Large)",
+        "Material": "Solid Steel Round Bar",
+        "Lengths": "3' to 12' Operating Shaft",
+        "Handle": "18\" Fixed T-Handle"
+      }
+    },
+    {
+      "id": 121,
+      "sku": "H2-WT-EW005",
+      "name": "Combination Handle Erie Rod Wrench",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/erie-rod-wrench-combo.webp",
+      "description": "Combination handle Erie rod wrenches feature a 2-hole cover remover on one side of handle and a standard 27/32 flat to point pentagon bolt remover on the other side.",
+      "features": [
+        "Integrated 2-hole service box cover remover tool",
+        "Standard 27/32\" flat-to-point pentagon bolt remover socket",
+        "15/16\" rod end with 3/8\" machined operating slot",
+        "Available in lengths from 2' to 8' with 16\" fixed handle"
+      ],
+      "specs": {
+        "Pent Socket": "27/32\" Flat-to-Point",
+        "Rod End": "15/16\" with 3/8\" Slot",
+        "Handle": "16\" Combination Handle",
+        "Lengths": "2' to 8' Shaft"
+      }
+    },
+    {
+      "id": 122,
+      "sku": "H2-WT-PW006",
+      "name": "Hand Pent Wrench",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/hand-pent-wrench.webp",
+      "description": "Used to remove standard water works pentagon bolts from service boxes and meter lids. Standard pentagon socket is 27/32\" flat to point, hydro-cut for exact sizing.",
+      "features": [
+        "Standard 27/32\" flat-to-point pentagon socket",
+        "Hydro-cut precision socket sizing for perfect bolt contact",
+        "Integrated pick end for clearing dirt, debris, and ice around covers",
+        "Heavy-duty T-handle design for manual operation"
+      ],
+      "specs": {
+        "Pentagon Size": "27/32\" Flat-to-Point",
+        "Cutting": "Hydro-Cut CNC Machined",
+        "Pick End": "Integrated Debris Pick",
+        "Finish": "Powder-Coated Industrial Blue"
+      }
+    },
+    {
+      "id": 123,
+      "sku": "H2-WT-PCW007",
+      "name": "Point & Chisel Wrench w/ Slotted Pent End",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/point-chisel-pent-wrench.webp",
+      "description": "Point x chisel pent wrench used to remove standard water works pentagon bolts from service boxes and meter lids. Features hydro-cut pentagon socket and dual point/chisel handle.",
+      "features": [
+        "Hydro-cut 27/32\" flat-to-point pentagon operating socket",
+        "Pointed end for scraping ice, rust, and compacted dirt",
+        "Chisel end for prying stubborn service box lids open",
+        "Optional 1/16\" oversized pentagon socket for meter lids"
+      ],
+      "specs": {
+        "Socket": "27/32\" Slotted Pentagon",
+        "Handle Ends": "Point x Chisel Dual Ends",
+        "Material": "Forged Carbon Steel",
+        "Options": "1/16\" Oversized Pent Socket"
+      }
+    },
+    {
+      "id": 124,
+      "sku": "H2-WT-EW008",
+      "name": "Erie Rod End Wrench, Combination 2-Hole & Pent w/ Debris Cleaner",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/erie-rod-debris-cleaner.webp",
+      "description": "Combination 2-hole and pentagon handle rod wrench with built-in debris cleaner at the top. Standard 15/16\" rod end has 3/8\" machined slot and high-gloss black enamel finish.",
+      "features": [
+        "Built-in top debris cleaner cone to clear service box shafts",
+        "Combination 2-hole cover remover & 27/32\" pentagon bolt remover",
+        "Standard 15/16\" rod end with 3/8\" machined slot",
+        "Available lengths 2' to 8' with high-gloss protective coating"
+      ],
+      "specs": {
+        "Debris Cleaner": "Top Integrated Funnel Cleaner",
+        "Rod End": "15/16\" with 3/8\" Slot",
+        "Finish": "High Gloss Black Enamel",
+        "Handle": "16\" Fixed Combo Handle"
+      }
+    },
+    {
+      "id": 125,
+      "sku": "H2-WT-SE009",
+      "name": "Swivel Gate Wrench End for Detachable H&S Key",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/swivel-gate-wrench-end.webp",
+      "description": "Swivel gate wrench socket end attachment engineered for detachable H&S key operating handles. Allows angular movement when operating misaligned valve stems.",
+      "features": [
+        "Swivel action joint accommodates off-center gate valve stems",
+        "2\" square AWWA operating nut socket",
+        "Heavy-duty locking hex bolt connection",
+        "Fits standard detachable H&S wrench key shafts"
+      ],
+      "specs": {
+        "Socket": "2\" AWWA Square",
+        "Joint Type": "Swivel Angular Pivot",
+        "Locking": "Hex Bolt Set Pin",
+        "Compatibility": "Detachable H&S Keys"
+      }
+    },
+    {
+      "id": 126,
+      "sku": "H2-WT-GA010",
+      "name": "Gator Grip Gate Key Adapter 2\" Square",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/gator-grip-adapter-2in.webp",
+      "description": "Gator grip 2\" square gate key adapter socket with locking pin and bail handle. Ensures positive non-slip connection onto valve operating nuts.",
+      "features": [
+        "Heavy-duty 2\" square gate key socket adapter",
+        "Secure locking pin with steel wire bail keeper",
+        "High-torque transmission capability",
+        "Fits all standard gate valve operating keys"
+      ],
+      "specs": {
+        "Drive Size": "2\" Square Drive",
+        "Pin System": "Quick-Release Wire Bail Pin",
+        "Rating": "High-Torque Municipal Rating",
+        "Finish": "Industrial Blue Powder Coat"
+      }
+    },
+    {
+      "id": 127,
+      "sku": "H2-WT-GE011",
+      "name": "Gate Wrench Ends",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/gate-wrench-ends.webp",
+      "description": "Heavy-duty replacement gate wrench square socket ends with welded circular flange collar base for constructing or repairing custom gate keys.",
+      "features": [
+        "Standard 2\" square AWWA valve nut socket",
+        "Reinforced circular base flange collar",
+        "Heavy-wall fabricated steel construction",
+        "Ready for welding onto custom valve key pipe shafts"
+      ],
+      "specs": {
+        "Socket": "2\" AWWA Square",
+        "Base Flange": "Round Welded Support Collar",
+        "Wall": "Heavy Steel Tubing",
+        "Application": "Custom Gate Key Assembly"
+      }
+    },
+    {
+      "id": 128,
+      "sku": "H2-WT-SN012",
+      "name": "Gate Stem Extension Top & Bottom Nut",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/gate-stem-extension-nut.webp",
+      "description": "Gate stem extension nuts provide the opportunity to create customized gate valve extension stems by welding, pinning, or bolting a section of pipe between them.",
+      "features": [
+        "Includes matching top operating nut and bottom valve socket",
+        "Allows custom length extension stem fabrication on site",
+        "Secured via welding, pinning, or bolting",
+        "Available in carbon steel and 304/316 stainless steel"
+      ],
+      "specs": {
+        "Components": "Top Operating Nut & Bottom Socket",
+        "Connection": "Weld / Pin / Bolt Coupler",
+        "Material": "Steel / 304 / 316 Stainless",
+        "Nut Size": "2\" AWWA Standard"
+      }
+    },
+    {
+      "id": 129,
+      "sku": "H2-WT-ES013",
+      "name": "Gate Wrench Extension Stem",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/gate-wrench-extension-stem.webp",
+      "description": "Features 2\" square operating nut with 4-1/4\" round centering disc keeping shaft centered in gate box. Shaft is 1-1/4\" schedule 40 steel pipe or 304 stainless.",
+      "features": [
+        "4-1/4\" round centering disc keeps shaft centered in valve box",
+        "1-1/4\" Schedule 40 steel or 304 stainless steel pipe shaft",
+        "Bottom socket 2-1/8\" ID with 2\" channel mud relief arch",
+        "Includes 1/2\" x 8\" square head cup point hardened set screw"
+      ],
+      "specs": {
+        "Shaft": "1-1/4\" Sched 40 / 304 Stainless",
+        "Centering": "4-1/4\" Round Disc",
+        "Socket": "2-1/8\" ID with 2\" Mud Relief",
+        "Set Screw": "1/2\" x 8\" Hardened Cup Point"
+      }
+    },
+    {
+      "id": 130,
+      "sku": "H2-WT-GA014",
+      "name": "Gator Grip Gate Key Adapter for Detachable H&S Wrench 1\"",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/gator-grip-adapter-1in.webp",
+      "description": "Heavy duty 1\" adapter for detachable H&S wrench keys with stainless locking bolt and flange collar for operating small valves and curb stops.",
+      "features": [
+        "1\" square key adapter socket collar",
+        "Stainless steel hex bolt locking mechanism",
+        "Compatible with detachable H&S wrench operating handles",
+        "Durable blue powder-coated finish"
+      ],
+      "specs": {
+        "Socket": "1\" Square Adapter",
+        "Locking": "Stainless Hex Bolt",
+        "Compatibility": "Detachable H&S Wrenches",
+        "Finish": "Blue Powder Coating"
+      }
+    },
+    {
+      "id": 131,
+      "sku": "H2-WT-SW015",
+      "name": "Sliding Wedge End",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/sliding-wedge-end.webp",
+      "description": "Adjustable sliding wedge socket end attachment for specialized valve operations, providing variable gripping width for non-standard valve stems.",
+      "features": [
+        "Adjustable sliding wedge jaws grip odd-sized operating nuts",
+        "Heavy-duty cast steel construction",
+        "Universal stem collar coupler with locking set screw",
+        "Engineered for high torque municipal valve applications"
+      ]
+    },
+    {
+      "id": 132,
+      "sku": "H2-WT-LC016",
+      "name": "Water Service Locking Valve Cover",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/locking-valve-cover.webp",
+      "description": "Protective heavy-duty blue steel locking cover housing for water service shutoff valves. Features arch side openings and padlocking hole.",
+      "features": [
+        "Encloses water service shutoff valves to prevent tampering",
+        "Integrated base padlocking hole for security",
+        "Side arch openings accommodate water service pipes",
+        "High-gloss protective blue enamel finish"
+      ]
+    },
+    {
+      "id": 133,
+      "sku": "H2-WT-TL017",
+      "name": "Valve Box Top Lifter",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/valve-box-top-lifter.webp",
+      "description": "Heavy-duty lifting bracket tool designed for lifting valve box tops, risers, and manhole covers safely with hoist ring attachment.",
+      "features": [
+        "Heavy steel lifting frame with center swivel eyelet hook",
+        "Dual corner catch hooks engage valve box top flanges",
+        "1,000 lbs load capacity rating",
+        "Eliminates manual lifting strain for field service crews"
+      ]
+    },
+    {
+      "id": 134,
+      "sku": "H2-WT-CT018",
+      "name": "Valve Box Cover Tongs",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/valve-box-cover-tongs.webp",
+      "description": "Ergonomic dual-handle forged tongs engineered to grip and lift heavy valve box covers and meter lids without hand fatigue or injury.",
+      "features": [
+        "Forged steel scissor tongs with specialized lid-hook tips",
+        "Non-slip rubber cushioned hand grips",
+        "Safely lifts 5-1/4\" valve box drop-in and locking covers",
+        "Compact lightweight design for service utility trucks"
+      ]
+    },
+    {
+      "id": 135,
+      "sku": "H2-WT-CB019",
+      "name": "Valve Box Cover Bar",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/valve-box-cover-bar.webp",
+      "description": "Curved pry bar & pick tool engineered for opening, lifting, and scraping dirt/debris from stubborn valve box covers and service lids.",
+      "features": [
+        "Curved pry tip leverage end for lifting stuck covers",
+        "Pointed chisel tip for scraping compacted silt, mud, & ice",
+        "Forged high-carbon alloy steel bar construction",
+        "Blue powder-coated finish for field visibility"
+      ]
+    },
+    {
+      "id": 136,
+      "sku": "H2-WT-VS020",
+      "name": "Standard Valve Setter",
+      "category": "Waterworks Tools",
+      "image": "/images/watertools/standard-valve-setter.webp",
+      "description": "Engineered to set 4\" - 16\" gate valves into place before pipe connection. Upper slide handle slides down over valve nut so valve hangs secure and plumb while lifting.",
+      "features": [
+        "Load tested and tagged with 1,000 lbs lifting limit",
+        "Updated centering bridge holds setter centered so valve hangs plumb",
+        "Prevents valve setter distortion under heavy loads over time",
+        "Red powder coated for maximum durability and jobsite visibility"
+      ]
     }
   ],
   "submittals": {

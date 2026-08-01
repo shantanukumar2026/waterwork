@@ -212,7 +212,7 @@ export const industriesData: Record<string, IndustryDetail> = {
     title: "Environmental Water Quality",
     subtitle: "Modular sampling stations, micro-pollutant interceptors, and environmental water quality monitoring access points.",
     tagline: "ENVIRONMENTAL MONITORING",
-    heroImage: "/images/1.jpeg",
+    heroImage: "/images/2.jpeg",
     accent: "#43A047",
     overview: "H2 Industries collaborates with environmental consultants, water resource managers, and conservation agencies to build state-of-the-art monitoring infrastructure that protects natural watersheds.",
     challenge: "Traditional stormwater infrastructure provides no mechanism for accurate water quality testing or micro-pollutant capture before discharge into rivers and oceans.",

@@ -26,8 +26,8 @@ const mainLinks = [
           items: ["Stormwater Stations", "Modular Enclosures", "Drainage Infrastructure", "Filtration Systems"],
         },
         {
-          title: "ACCESSORIES & PARTS",
-          items: ["Monitoring Probes", "Valve Connectors", "Heavy-Duty Grates", "Access Covers"],
+          title: "CASTINGS & TOOLS",
+          items: ["Waterworks Tools", "Joint Restraints", "Gate Valves", "Valve Boxes"],
         },
       ],
     },

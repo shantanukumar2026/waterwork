@@ -167,7 +167,7 @@ export const seoPagesConfig: Record<string, PageSeoConfig> = {
     canonical: `${SITE_URL}/calculator`,
     ogTitle: "Engineering Calculators & Weight Estimation Tools | H2 Industries",
     ogDescription: "Interactive calculators for civil engineers and utility contractors specifying pipe restraints, valves, and waterworks castings.",
-    ogImage: "/images/1.webp",
+    ogImage: "/images/2.webp",
     ogType: "website"
   },
   blog: {

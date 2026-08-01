@@ -126,22 +126,66 @@
         "image": "/images/curb-box.webp",
         "icon": "Settings",
         "howItWorks": [
-          { "step": 1, "text": "Installed in catch basin or manhole opening." },
-          { "step": 2, "text": "Stormwater flows through the barrel system." },
-          { "step": 3, "text": "Adjust depth using segmented barrels as required." },
-          { "step": 4, "text": "Provides stable performance and prevents erosion." }
+          {
+            "step": 1,
+            "text": "Installed in catch basin or manhole opening."
+          },
+          {
+            "step": 2,
+            "text": "Stormwater flows through the barrel system."
+          },
+          {
+            "step": 3,
+            "text": "Adjust depth using segmented barrels as required."
+          },
+          {
+            "step": 4,
+            "text": "Provides stable performance and prevents erosion."
+          }
         ],
         "keyBenefits": [
-          { "title": "Corrosion Resistant", "desc": "Built to withstand harsh environments.", "icon": "ShieldCheck" },
-          { "title": "Precision Machined", "desc": "Tight tolerances for reliable performance.", "icon": "Settings" },
-          { "title": "Modular Design", "desc": "Segmented barrels for flexible depth.", "icon": "Layers" },
-          { "title": "Long Service Life", "desc": "Engineered for durability and value.", "icon": "Droplet" }
+          {
+            "title": "Corrosion Resistant",
+            "desc": "Built to withstand harsh environments.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "Precision Machined",
+            "desc": "Tight tolerances for reliable performance.",
+            "icon": "Settings"
+          },
+          {
+            "title": "Modular Design",
+            "desc": "Segmented barrels for flexible depth.",
+            "icon": "Layers"
+          },
+          {
+            "title": "Long Service Life",
+            "desc": "Engineered for durability and value.",
+            "icon": "Droplet"
+          }
         ],
         "callouts": [
-          { "title": "SECURE TOP CAP", "desc": "Precision-fit cap prevents debris entry and ensures system integrity.", "icon": "ShieldCheck" },
-          { "title": "SEGMENTED BARREL SYSTEM", "desc": "Modular segments allow adjustable depth to suit project needs.", "icon": "Layers" },
-          { "title": "PRECISION MACHINED", "desc": "Engineered to ±0.1mm tolerance for consistent fit and function.", "icon": "Target" },
-          { "title": "WIDE BASE SUPPORT", "desc": "Stable base design ensures secure installation and long-term stability.", "icon": "Droplet" }
+          {
+            "title": "SECURE TOP CAP",
+            "desc": "Precision-fit cap prevents debris entry and ensures system integrity.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "SEGMENTED BARREL SYSTEM",
+            "desc": "Modular segments allow adjustable depth to suit project needs.",
+            "icon": "Layers"
+          },
+          {
+            "title": "PRECISION MACHINED",
+            "desc": "Engineered to ±0.1mm tolerance for consistent fit and function.",
+            "icon": "Target"
+          },
+          {
+            "title": "WIDE BASE SUPPORT",
+            "desc": "Stable base design ensures secure installation and long-term stability.",
+            "icon": "Droplet"
+          }
         ],
         "idealFor": "Municipal drainage systems, roadway catch basins, industrial sites, parks, and urban infrastructure projects."
       },
@@ -159,22 +203,66 @@
         "image": "/images/sampling-probe-lr.webp",
         "icon": "Activity",
         "howItWorks": [
-          { "step": 1, "text": "Mount enclosure at field monitoring location." },
-          { "step": 2, "text": "Connect water sampling probes and telemetry." },
-          { "step": 3, "text": "Continuous real-time water quality tracking." },
-          { "step": 4, "text": "Secure dual-door access for maintenance." }
+          {
+            "step": 1,
+            "text": "Mount enclosure at field monitoring location."
+          },
+          {
+            "step": 2,
+            "text": "Connect water sampling probes and telemetry."
+          },
+          {
+            "step": 3,
+            "text": "Continuous real-time water quality tracking."
+          },
+          {
+            "step": 4,
+            "text": "Secure dual-door access for maintenance."
+          }
         ],
         "keyBenefits": [
-          { "title": "IP67 Sealed", "desc": "Weatherproof dual-door enclosure.", "icon": "ShieldCheck" },
-          { "title": "Telemetry Ready", "desc": "Integrated mounting for digital sensors.", "icon": "Settings" },
-          { "title": "Vandal Proof", "desc": "Heavy-duty locking hardware.", "icon": "Layers" },
-          { "title": "25+ Yr Lifespan", "desc": "UV resistant composite housing.", "icon": "Droplet" }
+          {
+            "title": "IP67 Sealed",
+            "desc": "Weatherproof dual-door enclosure.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "Telemetry Ready",
+            "desc": "Integrated mounting for digital sensors.",
+            "icon": "Settings"
+          },
+          {
+            "title": "Vandal Proof",
+            "desc": "Heavy-duty locking hardware.",
+            "icon": "Layers"
+          },
+          {
+            "title": "25+ Yr Lifespan",
+            "desc": "UV resistant composite housing.",
+            "icon": "Droplet"
+          }
         ],
         "callouts": [
-          { "title": "WEATHERPROOF LOCKING HOUSING", "desc": "IP67 sealed enclosure protects sensitive sensors and electronics.", "icon": "ShieldCheck" },
-          { "title": "DUAL ACCESS DOORS", "desc": "180-degree swing doors allow fast probe calibration and servicing.", "icon": "Layers" },
-          { "title": "UNIVERSAL PROBE MOUNT", "desc": "Compatible with standard US EPA water quality monitoring probes.", "icon": "Target" },
-          { "title": "HEAVY-DUTY ANCHOR BASE", "desc": "Concrete pad mounting flange for maximum hurricane and wind resistance.", "icon": "Droplet" }
+          {
+            "title": "WEATHERPROOF LOCKING HOUSING",
+            "desc": "IP67 sealed enclosure protects sensitive sensors and electronics.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "DUAL ACCESS DOORS",
+            "desc": "180-degree swing doors allow fast probe calibration and servicing.",
+            "icon": "Layers"
+          },
+          {
+            "title": "UNIVERSAL PROBE MOUNT",
+            "desc": "Compatible with standard US EPA water quality monitoring probes.",
+            "icon": "Target"
+          },
+          {
+            "title": "HEAVY-DUTY ANCHOR BASE",
+            "desc": "Concrete pad mounting flange for maximum hurricane and wind resistance.",
+            "icon": "Droplet"
+          }
         ],
         "idealFor": "River water monitoring, EPA compliance stations, industrial effluent sites, and municipal water plants."
       },
@@ -192,22 +280,66 @@
         "image": "/images/column-drain-water.webp",
         "icon": "Maximize",
         "howItWorks": [
-          { "step": 1, "text": "Position column flush with roadway curb." },
-          { "step": 2, "text": "Anchor stabilising foot plate into sub-base." },
-          { "step": 3, "text": "Direct stormwater into underground culvert." },
-          { "step": 4, "text": "Heavy-load traffic rating prevents cracking." }
+          {
+            "step": 1,
+            "text": "Position column flush with roadway curb."
+          },
+          {
+            "step": 2,
+            "text": "Anchor stabilising foot plate into sub-base."
+          },
+          {
+            "step": 3,
+            "text": "Direct stormwater into underground culvert."
+          },
+          {
+            "step": 4,
+            "text": "Heavy-load traffic rating prevents cracking."
+          }
         ],
         "keyBenefits": [
-          { "title": "AASHTO H-20 Rated", "desc": "Handles extreme highway truck loads.", "icon": "ShieldCheck" },
-          { "title": "High Flow Rate", "desc": "Maximized intake geometry.", "icon": "Settings" },
-          { "title": "Anti-Clog Grate", "desc": "Intercepts trash while maintaining flow.", "icon": "Layers" },
-          { "title": "Recycled HDPE", "desc": "Eco-friendly sustainable materials.", "icon": "Droplet" }
+          {
+            "title": "AASHTO H-20 Rated",
+            "desc": "Handles extreme highway truck loads.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "High Flow Rate",
+            "desc": "Maximized intake geometry.",
+            "icon": "Settings"
+          },
+          {
+            "title": "Anti-Clog Grate",
+            "desc": "Intercepts trash while maintaining flow.",
+            "icon": "Layers"
+          },
+          {
+            "title": "Recycled HDPE",
+            "desc": "Eco-friendly sustainable materials.",
+            "icon": "Droplet"
+          }
         ],
         "callouts": [
-          { "title": "TRAFFIC RATED GRATE", "desc": "AASHTO H-20 load certified for highway and street installation.", "icon": "ShieldCheck" },
-          { "title": "HIGH INTAKE COLUMNS", "desc": "Vertical intake slots maximize stormwater runoff capture.", "icon": "Layers" },
-          { "title": "STABILISING FOOT PLATE", "desc": "Integrated base plate prevents sinking in soft soils.", "icon": "Target" },
-          { "title": "SMOOTH INTERNAL BORE", "desc": "Prevents sediment buildup and minimizes maintenance cycles.", "icon": "Droplet" }
+          {
+            "title": "TRAFFIC RATED GRATE",
+            "desc": "AASHTO H-20 load certified for highway and street installation.",
+            "icon": "ShieldCheck"
+          },
+          {
+            "title": "HIGH INTAKE COLUMNS",
+            "desc": "Vertical intake slots maximize stormwater runoff capture.",
+            "icon": "Layers"
+          },
+          {
+            "title": "STABILISING FOOT PLATE",
+            "desc": "Integrated base plate prevents sinking in soft soils.",
+            "icon": "Target"
+          },
+          {
+            "title": "SMOOTH INTERNAL BORE",
+            "desc": "Prevents sediment buildup and minimizes maintenance cycles.",
+            "icon": "Droplet"
+          }
         ],
         "idealFor": "Urban streets, highway corridors, parking structures, commercial plazas, and transit hubs."
       }
@@ -829,32 +961,302 @@
       },
       {
         "id": 117,
-        "image": "/images/ring-gate-wrench-3d.png",
-        "name": "H2 Heavy Duty Ring Style Gate Wrench",
+        "image": "/images/watertools/ring-style-gate-wrench.webp",
+        "name": "Heavy Duty Ring Style Gate Wrench",
         "category": "Waterworks Tools",
         "sku": "H2-WT-GW001",
         "price": "Quote on Request",
-        "description": "Heavy-duty epoxy-coated blue steel ring style gate valve wrench designed for operating deep municipal valve boxes and subsurface gate valves. Features a reinforced top ring handle and a 2-inch square operating nut socket.",
+        "description": "Shaft is 1\" schedule 40 pipe. Ring is forged 1\" thick steel with 1 3/4\" hole. Gate end is 2\" x 2\" square 3/16\" wall tubing 2 1/8 ID, with 1\" mud relief slots. Ring end allows for longer cheater bar to be used for touch valves.",
         "features": [
-          "Reinforced top ring handle for multi-angle leverage",
-          "Precision-welded 2-inch AWWA square operating nut socket",
-          "Corrosion-resistant epoxy-coated heavy-duty tubular steel",
-          "Ideal for municipal water main & valve box operations"
+          "1\" Schedule 40 steel pipe shaft construction",
+          "Forged 1\" thick steel ring handle with 1-3/4\" opening",
+          "2-1/8\" ID square socket with 1\" mud relief slots",
+          "Designed for heavy-duty leverage with cheater bar compatibility"
         ]
       },
       {
         "id": 118,
-        "image": "/images/valve-nut-adapter-3d.png",
-        "name": "H2 Heavy Duty Valve Operating Nut Adapter",
+        "image": "/images/watertools/centering-rod-adapter.webp",
+        "name": "2½\" Centering Rod Adapter",
         "category": "Waterworks Tools",
-        "sku": "H2-WT-VA002",
+        "sku": "H2-WT-CA002",
         "price": "Quote on Request",
-        "description": "Heavy-duty blue epoxy-coated valve operating nut adapter socket with dual stainless steel set bolts. Designed for secure attachment to municipal gate valves, extension stems, and valve operating keys.",
+        "description": "Used in new construction, typically in 2 1/2\" or 3\" Buffalo style or two piece curb boxes such as a 95E box. Attaches to curb stop with a stainless-steel cotter pin to keep curb stop upright in curb box.",
         "features": [
-          "2-inch AWWA standard square operating nut socket",
-          "Dual heavy-duty stainless steel locking set bolts",
-          "Precision cast ductile iron / steel construction",
-          "Universal fitment on municipal valve stems & extensions"
+          "Stainless steel cotter pin attachment for positive upright alignment",
+          "1-3/4\" disc on top of 5/8\" square shaft centers 3/8\" operating tang",
+          "Fits 2-1/2\" & 3\" Buffalo style & 95E two-piece curb boxes",
+          "Standard 12\" length (24\" and 36\" custom options available)"
+        ]
+      },
+      {
+        "id": 119,
+        "image": "/images/watertools/thandle-gate-wrench.webp",
+        "name": "Standard T-Handle Gate Valve Wrench",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-GW003",
+        "price": "Quote on Request",
+        "description": "Wrench used to operate standard 2\" square nuts on gate valves. Fabricated steel socket has 3/16\" wall thickness, with a mud relief arch above socket so silt and mud will not be trapped.",
+        "features": [
+          "Operates standard 2\" AWWA square operating nuts on gate valves",
+          "Fabricated 3/16\" wall steel socket with mud relief arch",
+          "Available in fixed socket or swivel socket designs",
+          "Standard 24\" fixed handle (removable handle option available)"
+        ]
+      },
+      {
+        "id": 120,
+        "image": "/images/watertools/thandle-curb-end-wrench.webp",
+        "name": "Standard T-Handle Curb End Wrench",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-CW004",
+        "price": "Quote on Request",
+        "description": "Curb wrenches used for operating a curb box, including Buffalo style curb box. Curb ends fit directly onto \"T\" head of curb stop and can also be used on meter valves in meter pits.",
+        "features": [
+          "Fits T-head curb stops and meter pit valves",
+          "1-1/4\" round steel curb end with machined 5/8\" wide slot, 5/8\" deep",
+          "Large curb end option machined from solid 1-3/4\" round steel with 3/4\" slot",
+          "Available in lengths from 3' to 12' with 18\" handle"
+        ]
+      },
+      {
+        "id": 121,
+        "image": "/images/watertools/erie-rod-wrench-combo.webp",
+        "name": "Combination Handle Erie Rod Wrench",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-EW005",
+        "price": "Quote on Request",
+        "description": "Combination handle Erie rod wrenches feature a 2-hole cover remover on one side of handle and a standard 27/32 flat to point pentagon bolt remover on the other side.",
+        "features": [
+          "Integrated 2-hole service box cover remover tool",
+          "Standard 27/32\" flat-to-point pentagon bolt remover socket",
+          "15/16\" rod end with 3/8\" machined operating slot",
+          "Available in lengths from 2' to 8' with 16\" fixed handle"
+        ]
+      },
+      {
+        "id": 122,
+        "image": "/images/watertools/hand-pent-wrench.webp",
+        "name": "Hand Pent Wrench",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-PW006",
+        "price": "Quote on Request",
+        "description": "Used to remove standard water works pentagon bolts from service boxes and meter lids. Standard pentagon socket is 27/32\" flat to point, hydro-cut for exact sizing.",
+        "features": [
+          "Standard 27/32\" flat-to-point pentagon socket",
+          "Hydro-cut precision socket sizing for perfect bolt contact",
+          "Integrated pick end for clearing dirt, debris, and ice around covers",
+          "Heavy-duty T-handle design for manual operation"
+        ]
+      },
+      {
+        "id": 123,
+        "image": "/images/watertools/point-chisel-pent-wrench.webp",
+        "name": "Point & Chisel Wrench w/ Slotted Pent End",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-PCW007",
+        "price": "Quote on Request",
+        "description": "Point x chisel pent wrench used to remove standard water works pentagon bolts from service boxes and meter lids. Features hydro-cut pentagon socket and dual point/chisel handle.",
+        "features": [
+          "Hydro-cut 27/32\" flat-to-point pentagon operating socket",
+          "Pointed end for scraping ice, rust, and compacted dirt",
+          "Chisel end for prying stubborn service box lids open",
+          "Optional 1/16\" oversized pentagon socket for meter lids"
+        ]
+      },
+      {
+        "id": 124,
+        "image": "/images/watertools/erie-rod-debris-cleaner.webp",
+        "name": "Erie Rod End Wrench, Combination 2-Hole & Pent w/ Debris Cleaner",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-EW008",
+        "price": "Quote on Request",
+        "description": "Combination 2-hole and pentagon handle rod wrench with built-in debris cleaner at the top. Standard 15/16\" rod end has 3/8\" machined slot and high-gloss black enamel finish.",
+        "features": [
+          "Built-in top debris cleaner cone to clear service box shafts",
+          "Combination 2-hole cover remover & 27/32\" pentagon bolt remover",
+          "Standard 15/16\" rod end with 3/8\" machined slot",
+          "Available lengths 2' to 8' with high-gloss protective coating"
+        ]
+      },
+      {
+        "id": 125,
+        "image": "/images/watertools/swivel-gate-wrench-end.webp",
+        "name": "Swivel Gate Wrench End for Detachable H&S Key",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-SE009",
+        "price": "Quote on Request",
+        "description": "Swivel gate wrench socket end attachment engineered for detachable H&S key operating handles. Allows angular movement when operating misaligned valve stems.",
+        "features": [
+          "Swivel action joint accommodates off-center gate valve stems",
+          "2\" square AWWA operating nut socket",
+          "Heavy-duty locking hex bolt connection",
+          "Fits standard detachable H&S wrench key shafts"
+        ]
+      },
+      {
+        "id": 126,
+        "image": "/images/watertools/gator-grip-adapter-2in.webp",
+        "name": "Gator Grip Gate Key Adapter 2\" Square",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-GA010",
+        "price": "Quote on Request",
+        "description": "Gator grip 2\" square gate key adapter socket with locking pin and bail handle. Ensures positive non-slip connection onto valve operating nuts.",
+        "features": [
+          "Heavy-duty 2\" square gate key socket adapter",
+          "Secure locking pin with steel wire bail keeper",
+          "High-torque transmission capability",
+          "Fits all standard gate valve operating keys"
+        ]
+      },
+      {
+        "id": 127,
+        "image": "/images/watertools/gate-wrench-ends.webp",
+        "name": "Gate Wrench Ends",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-GE011",
+        "price": "Quote on Request",
+        "description": "Heavy-duty replacement gate wrench square socket ends with welded circular flange collar base for constructing or repairing custom gate keys.",
+        "features": [
+          "Standard 2\" square AWWA valve nut socket",
+          "Reinforced circular base flange collar",
+          "Heavy-wall fabricated steel construction",
+          "Ready for welding onto custom valve key pipe shafts"
+        ]
+      },
+      {
+        "id": 128,
+        "image": "/images/watertools/gate-stem-extension-nut.webp",
+        "name": "Gate Stem Extension Top & Bottom Nut",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-SN012",
+        "price": "Quote on Request",
+        "description": "Gate stem extension nuts provide the opportunity to create customized gate valve extension stems by welding, pinning, or bolting a section of pipe between them.",
+        "features": [
+          "Includes matching top operating nut and bottom valve socket",
+          "Allows custom length extension stem fabrication on site",
+          "Secured via welding, pinning, or bolting",
+          "Available in carbon steel and 304/316 stainless steel"
+        ]
+      },
+      {
+        "id": 129,
+        "image": "/images/watertools/gate-wrench-extension-stem.webp",
+        "name": "Gate Wrench Extension Stem",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-ES013",
+        "price": "Quote on Request",
+        "description": "Features 2\" square operating nut with 4-1/4\" round centering disc keeping shaft centered in gate box. Shaft is 1-1/4\" schedule 40 steel pipe or 304 stainless.",
+        "features": [
+          "4-1/4\" round centering disc keeps shaft centered in valve box",
+          "1-1/4\" Schedule 40 steel or 304 stainless steel pipe shaft",
+          "Bottom socket 2-1/8\" ID with 2\" channel mud relief arch",
+          "Includes 1/2\" x 8\" square head cup point hardened set screw"
+        ]
+      },
+      {
+        "id": 130,
+        "image": "/images/watertools/gator-grip-adapter-1in.webp",
+        "name": "Gator Grip Gate Key Adapter for Detachable H&S Wrench 1\"",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-GA014",
+        "price": "Quote on Request",
+        "description": "Heavy duty 1\" adapter for detachable H&S wrench keys with stainless locking bolt and flange collar for operating small valves and curb stops.",
+        "features": [
+          "1\" square key adapter socket collar",
+          "Stainless steel hex bolt locking mechanism",
+          "Compatible with detachable H&S wrench operating handles",
+          "Durable blue powder-coated finish"
+        ]
+      },
+      {
+        "id": 131,
+        "image": "/images/watertools/sliding-wedge-end.webp",
+        "name": "Sliding Wedge End",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-SW015",
+        "price": "Quote on Request",
+        "description": "Adjustable sliding wedge socket end attachment for specialized valve operations, providing variable gripping width for non-standard valve stems.",
+        "features": [
+          "Adjustable sliding wedge jaws grip odd-sized operating nuts",
+          "Heavy-duty cast steel construction",
+          "Universal stem collar coupler with locking set screw",
+          "Engineered for high torque municipal valve applications"
+        ]
+      },
+      {
+        "id": 132,
+        "image": "/images/watertools/locking-valve-cover.webp",
+        "name": "Water Service Locking Valve Cover",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-LC016",
+        "price": "Quote on Request",
+        "description": "Protective heavy-duty blue steel locking cover housing for water service shutoff valves. Features arch side openings and padlocking hole.",
+        "features": [
+          "Encloses water service shutoff valves to prevent tampering",
+          "Integrated base padlocking hole for security",
+          "Side arch openings accommodate water service pipes",
+          "High-gloss protective blue enamel finish"
+        ]
+      },
+      {
+        "id": 133,
+        "image": "/images/watertools/valve-box-top-lifter.webp",
+        "name": "Valve Box Top Lifter",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-TL017",
+        "price": "Quote on Request",
+        "description": "Heavy-duty lifting bracket tool designed for lifting valve box tops, risers, and manhole covers safely with hoist ring attachment.",
+        "features": [
+          "Heavy steel lifting frame with center swivel eyelet hook",
+          "Dual corner catch hooks engage valve box top flanges",
+          "1,000 lbs load capacity rating",
+          "Eliminates manual lifting strain for field service crews"
+        ]
+      },
+      {
+        "id": 134,
+        "image": "/images/watertools/valve-box-cover-tongs.webp",
+        "name": "Valve Box Cover Tongs",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-CT018",
+        "price": "Quote on Request",
+        "description": "Ergonomic dual-handle forged tongs engineered to grip and lift heavy valve box covers and meter lids without hand fatigue or injury.",
+        "features": [
+          "Forged steel scissor tongs with specialized lid-hook tips",
+          "Non-slip rubber cushioned hand grips",
+          "Safely lifts 5-1/4\" valve box drop-in and locking covers",
+          "Compact lightweight design for service utility trucks"
+        ]
+      },
+      {
+        "id": 135,
+        "image": "/images/watertools/valve-box-cover-bar.webp",
+        "name": "Valve Box Cover Bar",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-CB019",
+        "price": "Quote on Request",
+        "description": "Curved pry bar & pick tool engineered for opening, lifting, and scraping dirt/debris from stubborn valve box covers and service lids.",
+        "features": [
+          "Curved pry tip leverage end for lifting stuck covers",
+          "Pointed chisel tip for scraping compacted silt, mud, & ice",
+          "Forged high-carbon alloy steel bar construction",
+          "Blue powder-coated finish for field visibility"
+        ]
+      },
+      {
+        "id": 136,
+        "image": "/images/watertools/standard-valve-setter.webp",
+        "name": "Standard Valve Setter",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-VS020",
+        "price": "Quote on Request",
+        "description": "Engineered to set 4\" - 16\" gate valves into place before pipe connection. Upper slide handle slides down over valve nut so valve hangs secure and plumb while lifting.",
+        "features": [
+          "Load tested and tagged with 1,000 lbs lifting limit",
+          "Updated centering bridge holds setter centered so valve hangs plumb",
+          "Prevents valve setter distortion under heavy loads over time",
+          "Red powder coated for maximum durability and jobsite visibility"
         ]
       }
     ]
