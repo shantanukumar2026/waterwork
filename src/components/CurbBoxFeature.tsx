@@ -301,7 +301,7 @@ export default function CurbBoxFeature() {
 
             {/* CTA Button */}
             <motion.a
-              href="#products"
+              href="/products"
               initial={{ opacity: 0, y: 10 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.7 }}
