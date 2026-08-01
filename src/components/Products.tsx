@@ -178,7 +178,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
           <AnimatePresence mode="popLayout">
             {visible.map((p, i) => (
               <motion.div
-                key={p.id}
+                key={`${p.id}-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
