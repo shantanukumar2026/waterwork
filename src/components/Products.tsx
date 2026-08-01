@@ -27,7 +27,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState("All");
-  const [count, setCount] = useState(isFullPage ? 12 : 5);
+  const [count, setCount] = useState(isFullPage ? 12 : 4);
   const [qv, setQv] = useState<(typeof allProducts)[0] | null>(null);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
 
   const handleSelectCat = (c: string) => {
     setCat(c);
-    setCount(isFullPage ? 12 : 5);
+    setCount(isFullPage ? 12 : 4);
     if (typeof window !== "undefined") {
       const url = new URL(window.location.href);
       if (c === "All") {
@@ -62,7 +62,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
     const ok = p.name.toLowerCase().includes(q) || p.category.toLowerCase().includes(q) || p.sku.toLowerCase().includes(q);
     return ok && (cat === "All" || p.category === cat);
   });
-  const visible = isFullPage ? filtered.slice(0, count) : filtered.slice(0, 5);
+  const visible = isFullPage ? filtered.slice(0, count) : filtered.slice(0, 4);
   const hasMore = isFullPage ? count < filtered.length : true;
   const { header, searchPlaceholder, emptyMessage, button } = homeData.products;
 
@@ -168,10 +168,10 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
 
         {/* Grid */}
         <div 
-          className={!isFullPage ? "five-card-grid" : ""}
+          className={!isFullPage ? "four-card-grid" : ""}
           style={{
             display: "grid",
-            gridTemplateColumns: isFullPage ? "repeat(auto-fill, minmax(280px, 1fr))" : "repeat(5, minmax(0, 1fr))",
+            gridTemplateColumns: isFullPage ? "repeat(auto-fill, minmax(280px, 1fr))" : "repeat(4, minmax(0, 1fr))",
             gap: 16,
           }}
         >
@@ -204,7 +204,11 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                 if (isFullPage) {
                   setCount((prev) => prev + 12);
                 } else {
-                  router.push("/products");
+                  if (cat !== "All") {
+                    router.push(`/products?category=${slugify(cat)}`);
+                  } else {
+                    router.push("/products");
+                  }
                 }
               }}
               className="btn-primary"
@@ -212,7 +216,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                 padding: "14px 32px",
               }}
             >
-              {isFullPage ? "LOAD MORE PRODUCTS" : "SHOW MORE"} <ArrowRight size={16} />
+              {isFullPage ? "LOAD MORE PRODUCTS" : "VIEW ALL PRODUCTS"} <ArrowRight size={16} />
             </button>
           </div>
         )}
@@ -475,17 +479,12 @@ function ProductCard({ product, onQuickView, catColor, isCompact = false }: {
 
 <style>{`
   @media (max-width: 1280px) {
-    .five-card-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    }
-  }
-  @media (max-width: 768px) {
-    .five-card-grid {
+    .four-card-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
   }
-  @media (max-width: 480px) {
-    .five-card-grid {
+  @media (max-width: 640px) {
+    .four-card-grid {
       grid-template-columns: 1fr !important;
     }
   }
