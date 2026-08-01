@@ -1243,6 +1243,51 @@
           "Prevents valve setter distortion under heavy loads over time",
           "Red powder coated for maximum durability and jobsite visibility"
         ]
+      },
+      {
+        "id": 11,
+        "image": "/images/6.webp",
+        "name": "Digital Multiparameter Water Quality Sensor Probe",
+        "category": "Probe Systems",
+        "sku": "H2-PR-MQ011",
+        "price": ",450.00",
+        "description": "High-precision digital multiparameter sensor probe for continuous pH, turbidity, conductivity, and dissolved oxygen monitoring in industrial stormwater and municipal water channels.",
+        "features": [
+          "Simultaneous pH, conductivity & DO measurement",
+          "RS-485 Modbus digital interface",
+          "Self-cleaning optical wiper system",
+          "IP68 submersible titanium housing"
+        ]
+      },
+      {
+        "id": 12,
+        "image": "/images/7.webp",
+        "name": "Sub-Surface Ultrasonic Level & Flow Velocity Probe",
+        "category": "Probe Systems",
+        "sku": "H2-PR-UF012",
+        "price": ",280.00",
+        "description": "Submersible Doppler ultrasonic flow and depth probe designed for open-channel stormwater manholes, culverts, and sewer monitoring vaults.",
+        "features": [
+          "Non-contact ultrasonic level sensing",
+          "Doppler velocity sensor array",
+          "Low-power solar telemetry integration ready",
+          "Rugged polyurethane sealed cable"
+        ]
+      },
+      {
+        "id": 13,
+        "image": "/images/8.webp",
+        "name": "Submersible Optical Turbidity & Suspended Solids Probe",
+        "category": "Probe Systems",
+        "sku": "H2-PR-TB013",
+        "price": ".00",
+        "description": "90\u00b0 nephelometric infrared optical turbidity probe engineered for real-time monitoring of total suspended solids (TSS) in runoff and discharge vaults.",
+        "features": [
+          "ISO 7027 compliant 860nm infrared LED optics",
+          "Scratch-resistant sapphire glass lens",
+          "Automatic drift compensation",
+          "Quick-disconnect waterproof connector"
+        ]
       }
     ]
   },
