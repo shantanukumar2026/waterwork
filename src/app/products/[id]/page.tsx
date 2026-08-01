@@ -1,6 +1,7 @@
 import ProductDetailClient from "./ProductDetailClient";
 import homeData from "@/data/home.json";
 import { SITE_URL } from "@/data/seoConfig";
+import { slugify, matchSlug } from "@/utils/slug";
 
 const allProducts = homeData.products.items;
 
@@ -9,19 +10,24 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return allProducts.map((p) => ({
-    id: p.id.toString(),
-  }));
+  const paramsList: { id: string }[] = [];
+  allProducts.forEach((p) => {
+    paramsList.push({ id: p.id.toString() });
+    paramsList.push({ id: slugify(p.name) });
+  });
+  return paramsList;
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { id: idStr } = await params;
-  const id = parseInt(idStr, 10);
-  const product = allProducts.find((p) => p.id === id);
+  const product = allProducts.find(
+    (p) => p.id.toString() === idStr || matchSlug(p.name, idStr)
+  );
 
   if (!product) return { title: "Product Not Found | H2 Industries" };
 
-  const canonicalUrl = `${SITE_URL}/products/${id}`;
+  const cleanSlug = slugify(product.name);
+  const canonicalUrl = `${SITE_URL}/products/${cleanSlug}`;
 
   return {
     title: `${product.name} | H2 Industries Waterworks`,

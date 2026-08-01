@@ -6,18 +6,18 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const productsMenu = [
-  { label: "Wedge Joint Restraints", href: "/waterworks-castings?category=Joint%20Restraints" },
-  { label: "AWWA DI Pipe Fittings", href: "/waterworks-castings?category=AWWA%20DI%20Fittings" },
-  { label: "Resilient Gate Valves", href: "/waterworks-castings?category=Gate%20Valves" },
-  { label: "Pipe Accessories & Bolt Sets", href: "/waterworks-castings?category=Pipe%20Accessories" },
-  { label: "Valve Boxes & Risers", href: "/waterworks-castings?category=Valve%20Boxes" },
-  { label: "Manhole Rings & Covers", href: "/waterworks-castings?category=Manhole%20Rings%20%26%20Covers" },
-  { label: "Municipal Sewer Cleanouts", href: "/waterworks-castings?category=Cleanouts" },
-  { label: "Meter Box Assemblies", href: "/waterworks-castings?category=Meter%20Boxes" },
-  { label: "Frames & Grates", href: "/waterworks-castings?category=Frames%20%26%20Grates" },
-  { label: "Restrained Adapters", href: "/waterworks-castings?category=Restrained%20Adapters" },
-  { label: "Extended Range Castings", href: "/waterworks-castings?category=Extended%20Range" },
-  { label: "Closeout Overstock Deals", href: "/waterworks-castings?category=Closeout%20Deals" },
+  { label: "Wedge Joint Restraints", href: "/waterworks-castings?category=joint-restraints" },
+  { label: "AWWA DI Pipe Fittings", href: "/waterworks-castings?category=awwa-di-fittings" },
+  { label: "Resilient Gate Valves", href: "/waterworks-castings?category=gate-valves" },
+  { label: "Pipe Accessories & Bolt Sets", href: "/waterworks-castings?category=pipe-accessories" },
+  { label: "Valve Boxes & Risers", href: "/waterworks-castings?category=valve-boxes" },
+  { label: "Manhole Rings & Covers", href: "/waterworks-castings?category=manhole-rings-and-covers" },
+  { label: "Municipal Sewer Cleanouts", href: "/waterworks-castings?category=cleanouts" },
+  { label: "Meter Box Assemblies", href: "/waterworks-castings?category=meter-boxes" },
+  { label: "Frames & Grates", href: "/waterworks-castings?category=frames-and-grates" },
+  { label: "Restrained Adapters", href: "/waterworks-castings?category=restrained-adapters" },
+  { label: "Extended Range Castings", href: "/waterworks-castings?category=extended-range" },
+  { label: "Closeout Overstock Deals", href: "/waterworks-castings?category=closeout-deals" },
 ];
 
 const generalSubmittalsMenu = [

@@ -23,11 +23,23 @@ const mainLinks = [
       columns: [
         {
           title: "CORE SYSTEMS",
-          items: ["Stormwater Stations", "Modular Enclosures", "Drainage Infrastructure", "Filtration Systems"],
+          href: "/products",
+          items: [
+            { label: "Stormwater Stations", href: "/products?category=sampling-stations" },
+            { label: "Modular Enclosures", href: "/products?category=sampling-stations" },
+            { label: "Drainage Infrastructure", href: "/products?category=drainage-infrastructure" },
+            { label: "Filtration Systems", href: "/products" },
+          ],
         },
         {
           title: "CASTINGS & TOOLS",
-          items: ["Waterworks Tools", "Joint Restraints", "Gate Valves", "Valve Boxes"],
+          href: "/waterworks-castings",
+          items: [
+            { label: "Waterworks Tools", href: "/waterworks-castings?category=waterworks-tools" },
+            { label: "Joint Restraints", href: "/waterworks-castings?category=joint-restraints" },
+            { label: "Gate Valves", href: "/waterworks-castings?category=gate-valves" },
+            { label: "Valve Boxes", href: "/waterworks-castings?category=valve-boxes" },
+          ],
         },
       ],
     },
@@ -490,42 +502,71 @@ export default function Navbar() {
 
                         {/* Megamenu Right: Link Columns */}
                         <div style={{ padding: "40px 48px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 32, background: "var(--paper)" }}>
-                          {link.mega.columns.map((col, idx) => (
-                            <motion.div
-                              key={col.title}
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: 0.15 + (idx * 0.1) }}
-                            >
-                              <h4 className="font-mono-spec" style={{ fontSize: 12, fontWeight: 700, color: "var(--water)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 16, paddingBottom: 8, borderBottom: "1px solid var(--line)" }}>
-                                {col.title}
-                              </h4>
-                              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
-                                {col.items.map((item) => (
-                                  <li key={item}>
-                                    <button
-                                      onClick={() => nav(link.href)}
-                                      style={{
-                                        background: "none",
-                                        border: "none",
-                                        padding: 0,
-                                        fontSize: 14,
-                                        fontWeight: 500,
-                                        color: "var(--ink)",
-                                        cursor: "pointer",
-                                        textAlign: "left",
-                                        transition: "color 0.2s",
-                                      }}
-                                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--water)")}
-                                      onMouseLeave={(e) => (e.currentTarget.style.color = "var(--ink)")}
-                                    >
-                                      {item}
-                                    </button>
-                                  </li>
-                                ))}
-                              </ul>
-                            </motion.div>
-                          ))}
+                          {link.mega.columns.map((col: any, idx: number) => {
+                            const colHref = col.href || link.href;
+                            return (
+                              <motion.div
+                                key={col.title}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.15 + (idx * 0.1) }}
+                              >
+                                <button
+                                  onClick={() => nav(colHref)}
+                                  className="font-mono-spec"
+                                  style={{
+                                    background: "none",
+                                    border: "none",
+                                    padding: 0,
+                                    fontSize: 12,
+                                    fontWeight: 700,
+                                    color: "var(--water)",
+                                    textTransform: "uppercase",
+                                    letterSpacing: "0.1em",
+                                    marginBottom: 16,
+                                    paddingBottom: 8,
+                                    borderBottom: "1px solid var(--line)",
+                                    display: "block",
+                                    width: "100%",
+                                    textAlign: "left",
+                                    cursor: "pointer",
+                                  }}
+                                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--deep)")}
+                                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--water)")}
+                                >
+                                  {col.title}
+                                </button>
+                                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                                  {col.items.map((item: any) => {
+                                    const itemLabel = typeof item === "string" ? item : item.label;
+                                    const itemHref = typeof item === "string" ? link.href : item.href;
+                                    return (
+                                      <li key={itemLabel}>
+                                        <button
+                                          onClick={() => nav(itemHref)}
+                                          style={{
+                                            background: "none",
+                                            border: "none",
+                                            padding: 0,
+                                            fontSize: 14,
+                                            fontWeight: 500,
+                                            color: "var(--ink)",
+                                            cursor: "pointer",
+                                            textAlign: "left",
+                                            transition: "color 0.2s",
+                                          }}
+                                          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--water)")}
+                                          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--ink)")}
+                                        >
+                                          {itemLabel}
+                                        </button>
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              </motion.div>
+                            );
+                          })}
                         </div>
 
                       </div>
@@ -628,33 +669,56 @@ export default function Navbar() {
                           exit={{ height: 0, opacity: 0 }}
                           style={{ overflow: "hidden", display: "flex", flexDirection: "column", gap: 16, marginTop: 12 }}
                         >
-                          {link.mega.columns.map((col) => (
-                            <div key={col.title}>
-                              <h5 style={{ fontSize: 12, fontWeight: 800, color: "#42A5F5", marginBottom: 8, letterSpacing: "0.05em" }}>
-                                {col.title}
-                              </h5>
-                              <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-                                {col.items.map((item) => (
-                                  <button
-                                    key={item}
-                                    onClick={() => nav(link.href)}
-                                    style={{
-                                      textAlign: "left",
-                                      background: "none",
-                                      border: "none",
-                                      padding: "8px 16px",
-                                      fontSize: 14,
-                                      fontWeight: 600,
-                                      color: "#0085f4",
-                                      fontFamily: "inherit",
-                                    }}
-                                  >
-                                    {item}
-                                  </button>
-                                ))}
+                          {link.mega.columns.map((col: any) => {
+                            const colHref = col.href || link.href;
+                            return (
+                              <div key={col.title}>
+                                <button
+                                  onClick={() => nav(colHref)}
+                                  style={{
+                                    fontSize: 12,
+                                    fontWeight: 800,
+                                    color: "#42A5F5",
+                                    marginBottom: 8,
+                                    letterSpacing: "0.05em",
+                                    background: "none",
+                                    border: "none",
+                                    padding: 0,
+                                    textAlign: "left",
+                                    cursor: "pointer",
+                                    display: "block",
+                                  }}
+                                >
+                                  {col.title}
+                                </button>
+                                <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                                  {col.items.map((item: any) => {
+                                    const itemLabel = typeof item === "string" ? item : item.label;
+                                    const itemHref = typeof item === "string" ? link.href : item.href;
+                                    return (
+                                      <button
+                                        key={itemLabel}
+                                        onClick={() => nav(itemHref)}
+                                        style={{
+                                          textAlign: "left",
+                                          background: "none",
+                                          border: "none",
+                                          padding: "8px 16px",
+                                          fontSize: 14,
+                                          fontWeight: 600,
+                                          color: "#0085f4",
+                                          fontFamily: "inherit",
+                                          cursor: "pointer",
+                                        }}
+                                      >
+                                        {itemLabel}
+                                      </button>
+                                    );
+                                  })}
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            );
+                          })}
                         </motion.div>
                       )}
                     </AnimatePresence>

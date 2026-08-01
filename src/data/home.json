@@ -570,6 +570,21 @@
     ],
     "items": [
       {
+        "id": 117,
+        "image": "/images/watertools/ring-style-gate-wrench.webp",
+        "name": "Heavy Duty Ring Style Gate Wrench",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-GW001",
+        "price": "Quote on Request",
+        "description": "Shaft is 1\" schedule 40 pipe. Ring is forged 1\" thick steel with 1 3/4\" hole. Gate end is 2\" x 2\" square 3/16\" wall tubing 2 1/8 ID, with 1\" mud relief slots. Ring end allows for longer cheater bar to be used for touch valves.",
+        "features": [
+          "1\" Schedule 40 steel pipe shaft construction",
+          "Forged 1\" thick steel ring handle with 1-3/4\" opening",
+          "2-1/8\" ID square socket with 1\" mud relief slots",
+          "Designed for heavy-duty leverage with cheater bar compatibility"
+        ]
+      },
+      {
         "id": 1,
         "image": "/images/2.webp",
         "name": "Modular Sampling Station — Type A",
@@ -585,18 +600,33 @@
         ]
       },
       {
-        "id": 2,
-        "image": "/images/3.webp",
-        "name": "Modular Sampling Station — Type B",
-        "category": "Sampling Stations",
-        "sku": "H2-SS-B002",
-        "price": "$2,100.00",
-        "description": "Wide-body modular sampling station with optimised dual-compartment layout. Features integrated stainless probe assembly and enhanced interior access for maintenance teams.",
+        "id": 119,
+        "image": "/images/watertools/thandle-gate-wrench.webp",
+        "name": "Standard T-Handle Gate Valve Wrench",
+        "category": "Waterworks Tools",
+        "sku": "H2-WT-GW003",
+        "price": "Quote on Request",
+        "description": "Wrench used to operate standard 2\" square nuts on gate valves. Fabricated steel socket has 3/16\" wall thickness, with a mud relief arch above socket so silt and mud will not be trapped.",
         "features": [
-          "Wide-body enclosure",
-          "Enhanced access geometry",
-          "Integrated probe mount",
-          "UV-stabilised polymer"
+          "Operates standard 2\" AWWA square operating nuts on gate valves",
+          "Fabricated 3/16\" wall steel socket with mud relief arch",
+          "Available in fixed socket or swivel socket designs",
+          "Standard 24\" fixed handle (removable handle option available)"
+        ]
+      },
+      {
+        "id": 101,
+        "image": "/images/waterworks/valve-box-525.webp",
+        "name": "H2 Heavy Duty Screw-Type & Slip-Type Valve Boxes (5 1/4\")",
+        "category": "Waterworks Castings",
+        "sku": "H2-VB-525",
+        "price": "Quote on Request",
+        "description": "Cast iron two-piece and three-piece valve boxes designed to provide secure access to underground gate valves. Available in screw-type and slip-type configurations with WATER or SEWER marked drop-in or locking lids.",
+        "features": [
+          "ASTM A48 Class 35B Grey Iron construction",
+          "AASHTO H-20 heavy highway traffic load rated",
+          "Screw-type and slip-type telescoping height adjustment",
+          "TxDOT & regional municipal waterworks approved"
         ]
       },
       {

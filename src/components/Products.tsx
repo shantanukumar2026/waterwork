@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Search, Eye, X, ArrowRight } from "lucide-react";
 import homeData from "../data/home.json";
+
+import { slugify, matchSlug } from "@/utils/slug";
 
 export const allProducts = homeData.products.items;
 
@@ -25,8 +27,35 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState("All");
-  const [count, setCount] = useState(isFullPage ? 12 : 6);
+  const [count, setCount] = useState(isFullPage ? 12 : 5);
   const [qv, setQv] = useState<(typeof allProducts)[0] | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      const categoryParam = searchParams.get("category") || searchParams.get("cat");
+      if (categoryParam) {
+        const found = cats.find((c) => matchSlug(c, categoryParam));
+        if (found) {
+          setCat(found);
+        }
+      }
+    }
+  }, []);
+
+  const handleSelectCat = (c: string) => {
+    setCat(c);
+    setCount(isFullPage ? 12 : 5);
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      if (c === "All") {
+        url.searchParams.delete("category");
+      } else {
+        url.searchParams.set("category", slugify(c));
+      }
+      window.history.pushState({}, "", url.toString());
+    }
+  };
 
   const filtered = allProducts.filter((p) => {
     const q = search.toLowerCase();
@@ -60,24 +89,24 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
             >
               What We Build.<br />
               <span style={{ color: "var(--brand-blue)" }}>
-                Precision Waterworks Castings & Sub-Surface Assemblies.
+                Precision Waterworks Castings, Tools & Sub-Surface Assemblies.
               </span>
             </h2>
             <div style={{ width: 60, height: 2, background: "var(--brand-blue)", marginBottom: 20 }} />
 
             <p style={{ color: "var(--brand-deep)", fontSize: 16, maxWidth: 640, lineHeight: 1.65, fontWeight: 400, opacity: 0.9 }}>
-              Explore our line of AWWA-compliant mechanical joint restraints, ductile iron fittings, municipal manhole covers, and sampling enclosures.
+              Explore our line of AWWA-compliant waterworks tools, mechanical joint restraints, ductile iron fittings, municipal manhole covers, and sampling enclosures.
             </p>
           </motion.div>
         </div>
 
-        {/* Search + Filters (Only visible on full /products page) */}
-        {isFullPage && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}
-            style={{ display: "flex", flexWrap: "wrap", gap: 16, marginBottom: 32 }}
-          >
-            {/* Search */}
+        {/* Search + Category Filter Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}
+          style={{ display: "flex", flexWrap: "wrap", gap: 16, marginBottom: 32 }}
+        >
+          {/* Search (only on full page) */}
+          {isFullPage && (
             <div style={{ position: "relative", flex: "1 1 320px", minWidth: 200 }}>
               <Search size={16} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", color: "var(--water)" }} />
               <input
@@ -103,32 +132,32 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                 onBlur={(e) => { e.target.style.borderColor = "var(--line)"; }}
               />
             </div>
+          )}
 
-            {/* Category tabs */}
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              {cats.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => { setCat(c); setCount(4); }}
-                  className="font-mono-spec"
-                  style={{
-                    padding: "10px 18px",
-                    border: "1px solid var(--line)",
-                    borderRadius: "0px",
-                    background: cat === c ? "var(--deep)" : "var(--surface)",
-                    color: cat === c ? "#FFFFFF" : "var(--deep)",
-                    fontSize: 11,
-                    fontWeight: 700,
-                    cursor: "pointer",
-                    transition: "all 0.2s",
-                  }}
-                >
-                  {c}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
+          {/* Category tabs */}
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {cats.map((c) => (
+              <button
+                key={c}
+                onClick={() => handleSelectCat(c)}
+                className="font-mono-spec"
+                style={{
+                  padding: "10px 18px",
+                  border: "1px solid var(--line)",
+                  borderRadius: "0px",
+                  background: cat === c ? "var(--deep)" : "var(--surface)",
+                  color: cat === c ? "#FFFFFF" : "var(--deep)",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  transition: "all 0.2s",
+                }}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Count / Tag */}
         {isFullPage && (
@@ -276,7 +305,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                   </ul>
 
                   <button
-                    onClick={() => { setQv(null); router.push(`/products/${qv.id}`); }}
+                    onClick={() => { setQv(null); router.push(`/products/${slugify(qv.name)}`); }}
                     style={{
                       width: "100%",
                       padding: "16px",
@@ -429,7 +458,7 @@ function ProductCard({ product, onQuickView, catColor, isCompact = false }: {
         </div>
 
         <button
-          onClick={() => router.push(`/products/${product.id}`)}
+          onClick={() => router.push(`/products/${slugify(product.name)}`)}
           className="btn-outline"
           style={{
             width: "100%",

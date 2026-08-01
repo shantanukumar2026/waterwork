@@ -9,14 +9,17 @@ import homeData from "@/data/home.json";
 import { ArrowLeft, Check, Download, FileText, Settings, ShieldCheck, Factory, Play, Search, ArrowRight, Activity, Cpu } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import { matchSlug } from "@/utils/slug";
+
 const allProducts = homeData.products.items;
 
 export default function ProductDetailClient() {
   const params = useParams();
   const router = useRouter();
-  const idStr = params.id as string;
-  const id = parseInt(idStr, 10);
-  const product = allProducts.find((p) => p.id === id);
+  const idStr = (params.id as string) || "";
+  const product = allProducts.find(
+    (p) => p.id.toString() === idStr || matchSlug(p.name, idStr)
+  );
 
   if (!product) {
     return (
