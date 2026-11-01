@@ -36,7 +36,7 @@ export default function WhatWeGive() {
               </span>
             </div>
             
-            <h2 style={{ fontSize: "clamp(2.5rem, 5vw, 3.2rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: 32, textTransform: "uppercase" }}>
+            <h2 style={{ fontSize: "clamp(2.5rem, 5vw, 3.2rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: 32, textTransform: "uppercase", color: "#FFFFFF" }}>
               {data.title} <span style={{ color: "#2196F3" }}>{data.highlight}</span>
             </h2>
             

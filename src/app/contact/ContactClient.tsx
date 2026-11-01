@@ -248,7 +248,7 @@ export default function ContactClient() {
                       </label>
                       <input
                         type="tel"
-                        placeholder="e.g. +1 (512) 555-0199"
+                        placeholder="e.g. +1 (512) 782-8880"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         style={{ width: "100%", padding: "10px 12px", background: "var(--paper)", border: "1px solid var(--line)", fontSize: 13, outline: "none" }}
@@ -356,3 +356,4 @@ export default function ContactClient() {
     </div>
   );
 }
+

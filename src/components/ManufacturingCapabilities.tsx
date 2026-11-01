@@ -27,7 +27,7 @@ export default function ManufacturingCapabilities() {
               {header.tagline}
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0F172A", lineHeight: 1.1, textTransform: "uppercase" }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 800, color: "#004AAD", lineHeight: 1.1, textTransform: "uppercase" }}>
               {header.title}<br />
               <span style={{ color: "#0085f4" }}>{header.highlight}</span>
             </h2>
@@ -108,7 +108,7 @@ function CapabilityCard({ cap }: { cap: any }) {
 
       {/* Content */}
       <div style={{ padding: 24, flex: 1, display: "flex", flexDirection: "column" }}>
-        <h3 style={{ fontSize: 18, fontWeight: 800, color: "#0F172A", marginBottom: 10, textTransform: "uppercase" }}>{cap.title}</h3>
+        <h3 style={{ fontSize: 18, fontWeight: 800, color: "#004AAD", marginBottom: 10, textTransform: "uppercase" }}>{cap.title}</h3>
         <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.6, margin: 0, fontWeight: 400 }}>{cap.desc}</p>
         
         <div style={{ marginTop: "auto", paddingTop: 20 }}>

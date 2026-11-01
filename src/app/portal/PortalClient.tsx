@@ -94,25 +94,6 @@ export default function PortalClient() {
                   REQUEST TRADE ACCESS
                 </Link>
               </div>
-
-              {/* 1-Click Demo Evaluation for quick inspection */}
-              <div style={{ borderTop: "1px solid var(--line)", paddingTop: 24 }}>
-                <p className="font-mono-spec" style={{ fontSize: 11, fontWeight: 700, color: "var(--deep)", textTransform: "uppercase", marginBottom: 12 }}>
-                  Or instantly preview portal as a demo role:
-                </p>
-                <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap" }}>
-                  <button onClick={() => demoLogin("engineer")} className="btn-outline" style={{ padding: "8px 14px", fontSize: 11 }}>
-                    Sarah Jenkins (City Water P.E.)
-                  </button>
-                  <button onClick={() => demoLogin("contractor")} className="btn-outline" style={{ padding: "8px 14px", fontSize: 11 }}>
-                    Marcus Vance (Utility Contractor)
-                  </button>
-                  <button onClick={() => demoLogin("distributor")} className="btn-outline" style={{ padding: "8px 14px", fontSize: 11 }}>
-                    Elena Rostova (Master Distributor)
-                  </button>
-                </div>
-              </div>
-
             </div>
           </div>
         </main>
@@ -605,7 +586,7 @@ export default function PortalClient() {
                               fontWeight: 700,
                               background: q.status === "Engineering Stamped" ? "#ECFDF5" : q.status === "Dispatched" ? "#EFF6FF" : "#FFFBEB",
                               color: q.status === "Engineering Stamped" ? "#065F46" : q.status === "Dispatched" ? "#1E40AF" : "#92400E",
-                              border: "1px solid rgba(0,0,0,0.06)"
+                              border: "1px solid rgba(0, 74, 173, 0.08)"
                             }}
                           >
                             {q.status}

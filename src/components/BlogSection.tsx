@@ -47,7 +47,7 @@ export default function BlogSection() {
               style={{
                 fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 fontWeight: 800,
-                color: "#0F172A",
+                color: "#004AAD",
                 lineHeight: 1.1,
                 textTransform: "uppercase",
                 margin: 0
@@ -132,7 +132,7 @@ export default function BlogSection() {
                 }}
               >
                 {/* Image / Category Aspect Header */}
-                <div style={{ position: "relative", height: 210, width: "100%", background: "#0F172A" }}>
+                <div style={{ position: "relative", height: 210, width: "100%", background: "#002D6B" }}>
                   <img
                     src={blog.image}
                     alt={blog.title}
@@ -151,7 +151,7 @@ export default function BlogSection() {
                       letterSpacing: "0.06em",
                       padding: "4px 12px",
                       borderRadius: 4,
-                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
+                      boxShadow: "0 2px 8px rgba(0, 74, 173, 0.25)"
                     }}
                   >
                     {blog.category}
@@ -176,7 +176,7 @@ export default function BlogSection() {
                       style={{
                         fontSize: 19,
                         fontWeight: 800,
-                        color: "#0F172A",
+                        color: "#004AAD",
                         lineHeight: 1.35,
                         marginBottom: 10,
                         textTransform: "uppercase",

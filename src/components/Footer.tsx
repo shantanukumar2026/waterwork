@@ -474,9 +474,9 @@ export default function Footer() {
             © {new Date().getFullYear()} H2 Industries. All rights reserved. Precision Municipal & Industrial Solutions.
           </p>
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-            <a href="#" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}>Privacy Policy</a>
-            <a href="#" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}>Terms of Service</a>
-            <a href="#" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--signal)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--paper)")}>Cookie Preferences</a>
+            <a href="/contact" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }}>Privacy Policy</a>
+            <a href="/contact" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }}>Terms of Service</a>
+            <a href="/contact" className="font-mono-spec" style={{ color: "var(--paper)", fontSize: 11, textDecoration: "none" }}>Cookie Preferences</a>
           </div>
         </div>
       </div>

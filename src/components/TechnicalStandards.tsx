@@ -31,7 +31,7 @@ export default function TechnicalStandards() {
               MUNICIPAL COMPLIANCE
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, color: "#0F172A", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, color: "#004AAD", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
               {header.title}<br />
               <span style={{ color: "#0085f4" }}>{header.highlight}</span>
             </h2>
@@ -42,11 +42,11 @@ export default function TechnicalStandards() {
             <div style={{ display: "flex", gap: 24, marginBottom: 36, flexWrap: "wrap" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <BookmarkCheck size={22} color="#0085f4" />
-                <span style={{ color: "#0F172A", fontWeight: 800, fontSize: 14 }}>Tested & Rated</span>
+                <span style={{ color: "#004AAD", fontWeight: 800, fontSize: 14 }}>Tested & Rated</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <Anchor size={22} color="#0085f4" />
-                <span style={{ color: "#0F172A", fontWeight: 800, fontSize: 14 }}>Structural Integrity</span>
+                <span style={{ color: "#004AAD", fontWeight: 800, fontSize: 14 }}>Structural Integrity</span>
               </div>
             </div>
 
@@ -114,7 +114,7 @@ export default function TechnicalStandards() {
               }}
               >
                 <div style={{ width: 14, height: 4, background: "#0085f4", borderRadius: 2, marginBottom: 14 }} />
-                <h4 style={{ color: "#0F172A", fontSize: 17, fontWeight: 800, marginBottom: 6, letterSpacing: "0.02em", textTransform: "uppercase" }}>{std.name}</h4>
+                <h4 style={{ color: "#004AAD", fontSize: 17, fontWeight: 800, marginBottom: 6, letterSpacing: "0.02em", textTransform: "uppercase" }}>{std.name}</h4>
                 <p style={{ color: "#475569", fontSize: 13, margin: 0, fontWeight: 400, lineHeight: 1.55 }}>{std.desc}</p>
               </div>
             ))}

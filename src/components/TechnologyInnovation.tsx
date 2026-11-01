@@ -37,7 +37,7 @@ export default function TechnologyInnovation() {
               <span>{header.tagline}</span>
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "#0F172A", lineHeight: 1.1, marginBottom: 18, textTransform: "uppercase" }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "#004AAD", lineHeight: 1.1, marginBottom: 18, textTransform: "uppercase" }}>
               {header.title} <span style={{ color: "#0085f4" }}>{header.highlight}</span>
             </h2>
             <p style={{ color: "#334155", fontSize: 16, maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontWeight: 400 }}>
@@ -89,7 +89,7 @@ export default function TechnologyInnovation() {
                     <Icon size={26} color="#0085f4" />
                   </div>
                   
-                  <h3 style={{ color: "#0F172A", fontSize: 18, fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{tech.title}</h3>
+                  <h3 style={{ color: "#004AAD", fontSize: 18, fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{tech.title}</h3>
                   <p style={{ color: "#475569", fontSize: 14, lineHeight: 1.6, margin: 0, fontWeight: 400 }}>{tech.desc}</p>
                 </div>
               </motion.div>

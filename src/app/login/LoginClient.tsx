@@ -24,7 +24,7 @@ import { useAuth } from "@/context/AuthContext";
 
 export default function LoginClient() {
   const router = useRouter();
-  const { user, login, demoLogin, isLoading } = useAuth();
+  const { user, login, isLoading } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -56,12 +56,6 @@ export default function LoginClient() {
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const handleDemoSelect = (role: "engineer" | "contractor" | "distributor") => {
-    setError(null);
-    demoLogin(role);
-    router.push("/portal");
   };
 
   return (
@@ -187,96 +181,6 @@ export default function LoginClient() {
                 <p style={{ fontSize: 14, color: "var(--ink-soft)", lineHeight: 1.5, marginBottom: 24 }}>
                   Enter your verified engineering email and credentials below.
                 </p>
-
-                {/* Quick 1-Click Evaluation Accounts */}
-                <div style={{ background: "var(--paper)", border: "1px solid var(--line)", padding: "16px", marginBottom: 28 }}>
-                  <div className="font-mono-spec" style={{ fontSize: 10, fontWeight: 700, color: "var(--deep)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 10, display: "flex", alignItems: "center", gap: 6 }}>
-                    <UserCheck size={14} color="var(--water)" /> INSTANT 1-CLICK DEMO EVALUATION
-                  </div>
-                  
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }} className="demo-pills-grid">
-                    <button
-                      type="button"
-                      onClick={() => handleDemoSelect("engineer")}
-                      className="font-mono-spec"
-                      style={{
-                        padding: "8px 6px",
-                        background: "var(--surface)",
-                        border: "1px solid var(--line)",
-                        fontSize: 10,
-                        fontWeight: 700,
-                        color: "var(--deep)",
-                        cursor: "pointer",
-                        transition: "all 0.2s ease",
-                        textAlign: "center"
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = "var(--water)";
-                        e.currentTarget.style.background = "#EFF6FF";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = "var(--line)";
-                        e.currentTarget.style.background = "var(--surface)";
-                      }}
-                    >
-                      P.E. ENGINEER
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleDemoSelect("contractor")}
-                      className="font-mono-spec"
-                      style={{
-                        padding: "8px 6px",
-                        background: "var(--surface)",
-                        border: "1px solid var(--line)",
-                        fontSize: 10,
-                        fontWeight: 700,
-                        color: "var(--deep)",
-                        cursor: "pointer",
-                        transition: "all 0.2s ease",
-                        textAlign: "center"
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = "var(--water)";
-                        e.currentTarget.style.background = "#EFF6FF";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = "var(--line)";
-                        e.currentTarget.style.background = "var(--surface)";
-                      }}
-                    >
-                      CONTRACTOR
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleDemoSelect("distributor")}
-                      className="font-mono-spec"
-                      style={{
-                        padding: "8px 6px",
-                        background: "var(--surface)",
-                        border: "1px solid var(--line)",
-                        fontSize: 10,
-                        fontWeight: 700,
-                        color: "var(--deep)",
-                        cursor: "pointer",
-                        transition: "all 0.2s ease",
-                        textAlign: "center"
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = "var(--water)";
-                        e.currentTarget.style.background = "#EFF6FF";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = "var(--line)";
-                        e.currentTarget.style.background = "var(--surface)";
-                      }}
-                    >
-                      DISTRIBUTOR
-                    </button>
-                  </div>
-                </div>
 
                 {/* Error Banner */}
                 {error && (
@@ -431,3 +335,4 @@ export default function LoginClient() {
     </div>
   );
 }
+

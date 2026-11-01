@@ -125,7 +125,7 @@ export default function CurbBoxFeature() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <span style={{ color: "#0085f4", fontSize: 10, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em" }}>MATERIAL SPEC</span>
-                  <span style={{ color: "#0F172A", fontSize: 13, fontWeight: 800, textTransform: "uppercase", lineHeight: 1.2 }}>HIGH-YIELD<br />DUCTILE IRON</span>
+                  <span style={{ color: "#004AAD", fontSize: 13, fontWeight: 800, textTransform: "uppercase", lineHeight: 1.2 }}>HIGH-YIELD<br />DUCTILE IRON</span>
                 </div>
               </div>
             </motion.div>
@@ -155,7 +155,7 @@ export default function CurbBoxFeature() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <span style={{ color: "#0085f4", fontSize: 10, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em" }}>ADAPTABILITY</span>
-                  <span style={{ color: "#0F172A", fontSize: 13, fontWeight: 800, textTransform: "uppercase", lineHeight: 1.2 }}>ADJUSTABLE<br />RISER CORE</span>
+                  <span style={{ color: "#004AAD", fontSize: 13, fontWeight: 800, textTransform: "uppercase", lineHeight: 1.2 }}>ADJUSTABLE<br />RISER CORE</span>
                 </div>
               </div>
             </motion.div>
@@ -181,7 +181,7 @@ export default function CurbBoxFeature() {
               style={{
                 fontSize: "clamp(2.4rem, 4vw, 3.8rem)",
                 fontWeight: 800,
-                color: "#0F172A",
+                color: "#004AAD",
                 lineHeight: 1.05,
                 textTransform: "uppercase",
                 marginBottom: 16,
@@ -231,7 +231,7 @@ export default function CurbBoxFeature() {
                       <Icon size={18} color="#0085f4" />
                     </div>
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                      <span style={{ color: "#0F172A", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.02em" }}>{feat.title}</span>
+                      <span style={{ color: "#004AAD", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.02em" }}>{feat.title}</span>
                       <span style={{ color: "#475569", fontSize: 13, marginTop: 2, lineHeight: 1.45 }}>{feat.desc}</span>
                     </div>
                   </motion.div>

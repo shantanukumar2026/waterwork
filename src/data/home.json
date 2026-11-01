@@ -92,7 +92,7 @@
       {
         "id": "why-trust-us",
         "title": "WHY TRUST US",
-        "desc": "Decades of rigorous testing. Our solutions don't just meet standards\u00e2\u20ac\u201dthey define them. We build partnerships, not just products.",
+        "desc": "Decades of rigorous testing. Our solutions don't just meet standards—they define them. We build partnerships, not just products.",
         "icon": "ShieldCheck",
         "color": "#3F51B5"
       },
@@ -121,7 +121,7 @@
         "specs": {
           "MATERIAL": "High-Grade Aluminium",
           "RATING": "Municipal Class D",
-          "TOLERANCE": "\u00c2\u00b10.1mm"
+          "TOLERANCE": "±0.1mm"
         },
         "image": "/images/curb-box.webp",
         "icon": "Settings",
@@ -178,7 +178,7 @@
           },
           {
             "title": "PRECISION MACHINED",
-            "desc": "Engineered to \u00c2\u00b10.1mm tolerance for consistent fit and function.",
+            "desc": "Engineered to ±0.1mm tolerance for consistent fit and function.",
             "icon": "Target"
           },
           {
@@ -406,7 +406,7 @@
     ],
     "metrics": {
       "tensile": "85.4 MPa",
-      "thermal": "-40\u00c2\u00b0C / +85\u00c2\u00b0C"
+      "thermal": "-40°C / +85°C"
     }
   },
   "infrastructure": {
@@ -481,43 +481,43 @@
       "tagline": "How We Build",
       "title": "Our Manufacturing",
       "highlight": "Process",
-      "subtitle": "Every H2 Industries product passes through a disciplined five-stage manufacturing process \u00e2\u20ac\u201d ensuring precision, reliability, and environmental performance."
+      "subtitle": "Every H2 Industries product passes through a disciplined five-stage manufacturing process — ensuring precision, reliability, and environmental performance."
     },
     "steps": [
       {
         "icon": "Lightbulb",
         "num": "01",
         "title": "Design",
-        "desc": "Thorough design process \u00e2\u20ac\u201d identifying requirements, environmental impacts, and performance targets before a single part is drawn.",
-        "detail": "CAD modelling \u00c2\u00b7 Feasibility studies \u00c2\u00b7 Environmental impact assessment"
+        "desc": "Thorough design process — identifying requirements, environmental impacts, and performance targets before a single part is drawn.",
+        "detail": "CAD modelling • Feasibility studies • Environmental impact assessment"
       },
       {
         "icon": "Ruler",
         "num": "02",
         "title": "Engineering",
         "desc": "Translating design concepts into precision technical specifications. Material selection, structural analysis, and compliance requirements are validated.",
-        "detail": "Material science \u00c2\u00b7 Structural analysis \u00c2\u00b7 Compliance review"
+        "detail": "Material science • Structural analysis • Compliance review"
       },
       {
         "icon": "Cog",
         "num": "03",
         "title": "Manufacturing",
-        "desc": "Products are manufactured using precision CNC machining, injection moulding, and polymer forming processes \u00e2\u20ac\u201d ensuring exact dimensional accuracy.",
-        "detail": "CNC machining \u00c2\u00b7 Injection moulding \u00c2\u00b7 Quality-controlled fabrication"
+        "desc": "Products are manufactured using precision CNC machining, injection moulding, and polymer forming processes — ensuring exact dimensional accuracy.",
+        "detail": "CNC machining • Injection moulding • Quality-controlled fabrication"
       },
       {
         "icon": "FlaskConical",
         "num": "04",
         "title": "Testing",
         "desc": "Every product undergoes rigorous testing for dimensional accuracy, material performance, and environmental durability before release.",
-        "detail": "Dimensional verification \u00c2\u00b7 Load testing \u00c2\u00b7 Environmental simulation"
+        "detail": "Dimensional verification • Load testing • Environmental simulation"
       },
       {
         "icon": "Truck",
         "num": "05",
         "title": "Delivery",
-        "desc": "Finished products are quality-checked, packaged, and dispatched \u00e2\u20ac\u201d from single units to large-scale infrastructure project orders.",
-        "detail": "Packaging & protection \u00c2\u00b7 Project delivery \u00c2\u00b7 Customer support"
+        "desc": "Finished products are quality-checked, packaged, and dispatched — from single units to large-scale infrastructure project orders.",
+        "detail": "Packaging & protection • Project delivery • Customer support"
       }
     ]
   },
@@ -545,7 +545,7 @@
       },
       {
         "icon": "Layers",
-        "label": "Locking lid \u00e2\u20ac\u201d traffic-rated"
+        "label": "Locking lid — traffic-rated"
       }
     ],
     "button": "Explore Products"
@@ -555,9 +555,9 @@
       "tagline": "Equipment Range",
       "title": "OUR PRODUCT",
       "highlight": "MARKETPLACE",
-      "subtitle": "Browse the complete H2 Industries range \u00e2\u20ac\u201d precision-engineered water management products for heavy industrial, municipal, and environmental applications."
+      "subtitle": "Browse the complete H2 Industries range — precision-engineered water management products for heavy industrial, municipal, and environmental applications."
     },
-    "searchPlaceholder": "Search by name, category or SKU\u00e2\u20ac\u00a6",
+    "searchPlaceholder": "Search by name, category or SKU...",
     "emptyMessage": "NO PRODUCTS FOUND MATCHING YOUR SEARCH.",
     "button": "VIEW ALL PRODUCTS",
     "categories": [
@@ -587,7 +587,7 @@
       {
         "id": 1,
         "image": "/images/2.webp",
-        "name": "Modular Sampling Station \u00e2\u20ac\u201d Type A",
+        "name": "Modular Sampling Station — Type A",
         "category": "Sampling Stations",
         "sku": "H2-SS-A001",
         "price": "$1,850.00",
@@ -632,7 +632,7 @@
       {
         "id": 3,
         "image": "/images/4.webp",
-        "name": "Aluminium Inlet Drain \u00e2\u20ac\u201d Standard",
+        "name": "Aluminium Inlet Drain — Standard",
         "category": "Drainage Infrastructure",
         "sku": "H2-ID-AL003",
         "price": "$850.00",
@@ -647,22 +647,22 @@
       {
         "id": 4,
         "image": "/images/5.webp",
-        "name": "Polymer Column Drain \u00e2\u20ac\u201d Black Series",
+        "name": "Polymer Column Drain — Industrial Marine Series",
         "category": "Drainage Infrastructure",
-        "sku": "H2-CD-BK004",
+        "sku": "H2-CD-IND004",
         "price": "$620.00",
-        "description": "High-density polymer column drainage system in matte black finish. Features a stabilising foot plate and removable top cap for secure installation.",
+        "description": "High-density polymer column drainage system in heavy-duty protective marine coating. Features a stabilising foot plate and removable top cap for secure installation.",
         "features": [
           "HDPE moulded construction",
           "Stabilising foot plate",
           "Removable top cap",
-          "Matte black coating"
+          "Industrial marine protective coating"
         ]
       },
       {
         "id": 5,
         "image": "/images/6.webp",
-        "name": "Aluminium Inlet Drain \u00e2\u20ac\u201d Extended",
+        "name": "Aluminium Inlet Drain — Extended",
         "category": "Drainage Infrastructure",
         "sku": "H2-ID-AL005",
         "price": "$1,050.00",
@@ -677,11 +677,11 @@
       {
         "id": 6,
         "image": "/images/7.webp",
-        "name": "Sampling Station \u00e2\u20ac\u201d Concrete Environment",
+        "name": "Sampling Station — Concrete Environment",
         "category": "Sampling Stations",
         "sku": "H2-SS-CE006",
         "price": "$2,400.00",
-        "description": "H2 sampling station system shown in a concrete industrial environment \u00e2\u20ac\u201d demonstrating fit and finish in real-world structural settings.",
+        "description": "H2 sampling station system shown in a concrete industrial environment — demonstrating fit and finish in real-world structural settings.",
         "features": [
           "In-situ installation ready",
           "Heavy-duty exterior",
@@ -692,7 +692,7 @@
       {
         "id": 7,
         "image": "/images/8.webp",
-        "name": "Modular Enclosure Unit \u00e2\u20ac\u201d Closed Body",
+        "name": "Modular Enclosure Unit — Closed Body",
         "category": "Sampling Stations",
         "sku": "H2-ME-CB007",
         "price": "$1,550.00",
@@ -707,7 +707,7 @@
       {
         "id": 8,
         "image": "/images/9.webp",
-        "name": "Flat-Panel Sampling Station \u00e2\u20ac\u201d Open",
+        "name": "Flat-Panel Sampling Station — Open",
         "category": "Sampling Stations",
         "sku": "H2-SS-FP008",
         "price": "$1,950.00",
@@ -722,7 +722,7 @@
       {
         "id": 9,
         "image": "/images/sampling-probe-lr.webp",
-        "name": "Stainless Steel Sampling Probe \u00e2\u20ac\u201d Long Reach",
+        "name": "Stainless Steel Sampling Probe — Long Reach",
         "category": "Probe Systems",
         "sku": "H2-PR-LR009",
         "price": "$380.00",
@@ -737,7 +737,7 @@
       {
         "id": 10,
         "image": "/images/column-drain-water.webp",
-        "name": "Polymer Column Drain \u00e2\u20ac\u201d Water Series",
+        "name": "Polymer Column Drain — Water Series",
         "category": "Drainage Infrastructure",
         "sku": "H2-CD-BK010",
         "price": "$580.00",
@@ -977,7 +977,7 @@
       {
         "id": 118,
         "image": "/images/watertools/centering-rod-adapter.webp",
-        "name": "2\u00c2\u00bd\" Centering Rod Adapter",
+        "name": "2-1/2\" Centering Rod Adapter",
         "category": "Waterworks Tools",
         "sku": "H2-WT-CA002",
         "price": "Quote on Request",
@@ -1281,7 +1281,7 @@
         "category": "Probe Systems",
         "sku": "H2-PR-TB013",
         "price": ".00",
-        "description": "90\u00b0 nephelometric infrared optical turbidity probe engineered for real-time monitoring of total suspended solids (TSS) in runoff and discharge vaults.",
+        "description": "90° nephelometric infrared optical turbidity probe engineered for real-time monitoring of total suspended solids (TSS) in runoff and discharge vaults.",
         "features": [
           "ISO 7027 compliant 860nm infrared LED optics",
           "Scratch-resistant sapphire glass lens",
@@ -1352,7 +1352,7 @@
       "tagline": "Industries We Serve",
       "title": "BUILT FOR THE INDUSTRIES",
       "highlight": "THAT SHAPE OUR WORLD",
-      "subtitle": "H2 Industries products are deployed across a broad range of sectors \u00e2\u20ac\u201d wherever precision water management matters most."
+      "subtitle": "H2 Industries products are deployed across a broad range of sectors — wherever precision water management matters most."
     },
     "items": [
       {
@@ -1440,7 +1440,7 @@
       "tagline": "Environmental Responsibility",
       "title": "MANUFACTURING",
       "highlight": "TOMORROW",
-      "subtitle": "We build infrastructure to manage the world's most vital resource. That responsibility extends to how we manufacture our products \u00e2\u20ac\u201d prioritizing energy efficiency, waste reduction, and sustainable polymers."
+      "subtitle": "We build infrastructure to manage the world's most vital resource. That responsibility extends to how we manufacture our products — prioritizing energy efficiency, waste reduction, and sustainable polymers."
     },
     "initiatives": [
       {

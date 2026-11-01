@@ -136,6 +136,14 @@ export default function Navbar() {
   const router = useRouter();
   const { user, isAuthenticated, logout } = useAuth();
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -236,37 +244,6 @@ export default function Navbar() {
 
             {/* Top Right Group (Desktop) */}
             <div className="top-links" style={{ display: "none", alignItems: "center", gap: 32 }}>
-              {/* Language Selector */}
-              <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
-                <Globe size={14} color="var(--deep)" style={{ position: "absolute", left: 10, pointerEvents: "none" }} />
-                <select
-                  style={{
-                    appearance: "none",
-                    background: "var(--paper)",
-                    border: "1px solid var(--line)",
-                    padding: "6px 28px 6px 30px",
-                    borderRadius: "0px",
-                    color: "var(--deep)",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    cursor: "pointer",
-                    outline: "none",
-                    fontFamily: "var(--font-sans), sans-serif",
-                    transition: "background 0.2s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "#FFFFFF")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--paper)")}
-                >
-                  <option value="en" style={{ color: "var(--deep)" }}>EN</option>
-                  <option value="es" style={{ color: "var(--deep)" }}>ES</option>
-                  <option value="fr" style={{ color: "var(--deep)" }}>FR</option>
-                  <option value="de" style={{ color: "var(--deep)" }}>DE</option>
-                  <option value="zh" style={{ color: "var(--deep)" }}>ZH</option>
-                  <option value="ar" style={{ color: "var(--deep)" }}>AR</option>
-                </select>
-                <ChevronDown size={12} color="var(--deep)" style={{ position: "absolute", right: 10, pointerEvents: "none" }} />
-              </div>
-
               <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
                 {topLinks.map((link) => {
                   const Icon = link.icon;
@@ -523,7 +500,8 @@ export default function Navbar() {
             </nav>
 
             {/* Search Bar */}
-            <div
+            <form
+              onSubmit={handleSearchSubmit}
               style={{
                 position: "relative",
                 width: 300,
@@ -536,6 +514,8 @@ export default function Navbar() {
               />
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search specs & catalog..."
                 style={{
                   width: "100%",
@@ -559,7 +539,7 @@ export default function Navbar() {
                   e.target.style.background = "var(--paper)";
                 }}
               />
-            </div>
+            </form>
           </div>
 
           {/* MEGAMENU DROPDOWN */}

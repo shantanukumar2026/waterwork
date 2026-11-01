@@ -58,7 +58,7 @@ export default function ResearchDevelopment() {
               {header.tagline}
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#0F172A", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#004AAD", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
               {header.title}<br />
               <span style={{ color: "#0085f4" }}>{header.highlight}</span>
             </h2>
@@ -76,7 +76,7 @@ export default function ResearchDevelopment() {
                       <Icon size={20} color="#0085f4" />
                     </div>
                     <div>
-                      <h4 style={{ color: "#0F172A", fontSize: 15, fontWeight: 800, marginBottom: 4, textTransform: "uppercase" }}>{feature.title}</h4>
+                      <h4 style={{ color: "#004AAD", fontSize: 15, fontWeight: 800, marginBottom: 4, textTransform: "uppercase" }}>{feature.title}</h4>
                       <p style={{ color: "#475569", fontSize: 13, lineHeight: 1.5, margin: 0, fontWeight: 400 }}>{feature.desc}</p>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ export default function ResearchDevelopment() {
                 style={{ position: "absolute", top: "15%", left: "5%", background: "rgba(255, 255, 255, 0.95)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", padding: "12px 18px", border: "1px solid rgba(0, 133, 244, 0.25)", borderRadius: 8, boxShadow: "0 10px 30px rgba(6,35,71,0.06)" }}
               >
                 <div style={{ color: "#0085f4", fontSize: 10, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, fontWeight: 800 }}>Tensile Strength</div>
-                <div style={{ color: "#0F172A", fontSize: 20, fontWeight: 900 }}>{metrics.tensile}</div>
+                <div style={{ color: "#004AAD", fontSize: 20, fontWeight: 900 }}>{metrics.tensile}</div>
               </motion.div>
 
               <motion.div 
@@ -132,7 +132,7 @@ export default function ResearchDevelopment() {
                 style={{ position: "absolute", bottom: "20%", right: "-5%", background: "rgba(255, 255, 255, 0.95)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", padding: "12px 18px", border: "1px solid rgba(0, 133, 244, 0.25)", borderRadius: 8, boxShadow: "0 10px 30px rgba(6,35,71,0.06)" }}
               >
                 <div style={{ color: "#0085f4", fontSize: 10, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, fontWeight: 800 }}>Thermal Tolerance</div>
-                <div style={{ color: "#0F172A", fontSize: 20, fontWeight: 900 }}>{metrics.thermal}</div>
+                <div style={{ color: "#004AAD", fontSize: 20, fontWeight: 900 }}>{metrics.thermal}</div>
               </motion.div>
             </div>
           </motion.div>

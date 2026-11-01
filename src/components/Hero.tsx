@@ -309,10 +309,10 @@ export default function Hero() {
       >
         {[
           { icon: Search, label: "Search Specs", href: "/products" },
-          { icon: FileText, label: "Submittals", href: "/waterworks-castings" },
-          { icon: Phone, label: "Call Us", href: "tel:+18005550199" },
-          { icon: Mail, label: "Email Us", href: "#contact" },
-          { icon: User, label: "Engineer Portal", href: "/company" }
+          { icon: FileText, label: "Submittals", href: "/submittals" },
+          { icon: Phone, label: "Call Us", href: "tel:+15127828880" },
+          { icon: Mail, label: "Email Us", href: "/contact" },
+          { icon: User, label: "Engineer Portal", href: "/portal" }
         ].map((item, idx) => {
           const Icon = item.icon;
           return (

@@ -6,7 +6,7 @@ import { useState, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import homeData from "@/data/home.json";
-import { ArrowLeft, Check, Download, FileText, Settings, ShieldCheck, Factory, Play, Search, ArrowRight, Activity, Cpu } from "lucide-react";
+import { Check, Download, Factory, ShieldCheck, Activity, CheckCircle2 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { matchSlug } from "@/utils/slug";
@@ -23,10 +23,10 @@ export default function ProductDetailClient() {
 
   if (!product) {
     return (
-      <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#FAFAFA" }}>
+      <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#F8FAFC" }}>
         <Navbar />
         <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", paddingTop: 165 }}>
-          <h2 style={{ color: "#0F172A", fontWeight: 800, marginBottom: 16, textTransform: "uppercase" }}>PRODUCT NOT FOUND</h2>
+          <h2 style={{ color: "#004AAD", fontWeight: 800, marginBottom: 16, textTransform: "uppercase" }}>PRODUCT NOT FOUND</h2>
           <button onClick={() => router.push("/products")} style={{ background: "#0085f4", color: "#fff", border: "none", padding: "16px 32px", cursor: "pointer", fontWeight: 800, textTransform: "uppercase" }}>RETURN TO MARKETPLACE</button>
         </div>
         <Footer />
@@ -35,7 +35,7 @@ export default function ProductDetailClient() {
   }
 
   return (
-    <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#FAFAFA" }}>
+    <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#F8FAFC" }}>
       <Navbar />
 
       {/* 1. Hero Section (Product Presentation) */}
@@ -82,7 +82,7 @@ function ProductHero({ product }: { product: any }) {
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(33, 150, 243, 0.2)", border: "1px solid rgba(33, 150, 243, 0.4)", padding: "6px 16px", borderRadius: 4, marginBottom: 20 }}>
               <span style={{ color: "#90CAF9", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>{product.category}</span>
             </div>
-            <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 800, textTransform: "uppercase", lineHeight: 1.05, marginBottom: 24, letterSpacing: "0.01em" }}>
+            <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 800, textTransform: "uppercase", lineHeight: 1.05, marginBottom: 24, letterSpacing: "0.01em", color: "#FFFFFF" }}>
               {product.name}
             </h1>
             <p style={{ fontSize: 18, color: "#E2E8F0", lineHeight: 1.6, maxWidth: 650, marginBottom: 40, fontWeight: 400 }}>
@@ -100,8 +100,8 @@ function ProductHero({ product }: { product: any }) {
           </div>
 
           <motion.div style={{ y: yImage, position: "relative", height: 420, width: "100%" }}>
-            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle, rgba(33,150,243,0.3) 0%, transparent 70%)" }} />
-            <Image src={product.image} alt={product.name} fill style={{ objectFit: "contain", filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.5))" }} priority />
+            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle, rgba(33,150,243,0.25) 0%, transparent 70%)" }} />
+            <Image src={product.image} alt={product.name} fill style={{ objectFit: "contain", filter: "drop-shadow(0 16px 32px rgba(0, 74, 173, 0.22))" }} priority />
           </motion.div>
         </div>
       </div>
@@ -115,14 +115,14 @@ function TechnicalSpecs({ product }: { product: any }) {
       <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
         <div style={{ marginBottom: 60 }}>
           <span style={{ color: "#0085f4", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>Specification Details</span>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#0F172A", textTransform: "uppercase", margin: 0 }}>
-            ENGINEERING & <span style={{ color: "#0085f4" }}>ATTRIBUTES</span>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#004AAD", textTransform: "uppercase", margin: 0 }}>
+            ENGINEERING &amp; <span style={{ color: "#0085f4" }}>ATTRIBUTES</span>
           </h2>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60 }}>
           <div>
-            <h3 className="heading-card" style={{ fontSize: 20, fontWeight: 800, color: "#0F172A", textTransform: "uppercase", marginBottom: 24 }}>
+            <h3 className="heading-card" style={{ fontSize: 20, fontWeight: 800, color: "#004AAD", textTransform: "uppercase", marginBottom: 24 }}>
               Key Performance Features
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
@@ -136,14 +136,20 @@ function TechnicalSpecs({ product }: { product: any }) {
           </div>
 
           <div>
-            <h3 className="heading-card" style={{ fontSize: 20, fontWeight: 800, color: "#0F172A", textTransform: "uppercase", marginBottom: 24 }}>
-              Dimensional & Material Specs
+            <h3 className="heading-card" style={{ fontSize: 20, fontWeight: 800, color: "#004AAD", textTransform: "uppercase", marginBottom: 24 }}>
+              Dimensional &amp; Material Specs
             </h3>
             <div style={{ border: "1px solid #E2E8F0", borderRadius: 8, overflow: "hidden" }}>
-              {Object.entries(product.specs || {}).map(([key, val], idx) => (
+              {Object.entries(product.specs || {
+                "Standard Compliance": "AWWA C515 / C110 / ASTM A536",
+                "Working Pressure Rating": "250 PSI / 350 PSI Hydrostatic",
+                "Body Metallurgy": "Grade 65-45-12 High-Yield Ductile Iron",
+                "Coating Protection": "NSF 61 Fusion Bonded Epoxy",
+                "Regional Approval": "Municipal Water Utility Certified"
+              }).map(([key, val], idx) => (
                 <div key={key} style={{ display: "flex", justifyContent: "space-between", padding: "16px 24px", background: idx % 2 === 0 ? "#F8FAFC" : "#fff", borderBottom: "1px solid #E2E8F0" }}>
                   <span style={{ fontSize: 14, fontWeight: 700, color: "#64748B" }}>{key}</span>
-                  <span style={{ fontSize: 14, fontWeight: 800, color: "#0F172A" }}>{val as string}</span>
+                  <span style={{ fontSize: 14, fontWeight: 800, color: "#004AAD" }}>{val as string}</span>
                 </div>
               ))}
             </div>
@@ -161,7 +167,7 @@ function ManufacturingAndQuality() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }}>
           <div>
             <span style={{ color: "#0085f4", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>Quality Control</span>
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#0F172A", textTransform: "uppercase", marginBottom: 24 }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#004AAD", textTransform: "uppercase", marginBottom: 24 }}>
               RIGOROUS <span style={{ color: "#0085f4" }}>TESTING LAB</span>
             </h2>
             <p style={{ color: "#334155", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
@@ -170,17 +176,17 @@ function ManufacturingAndQuality() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
               <div style={{ background: "#fff", padding: 20, border: "1px solid #E2E8F0", borderRadius: 8 }}>
                 <Factory size={24} color="#0085f4" style={{ marginBottom: 12 }} />
-                <h4 style={{ fontSize: 16, fontWeight: 800, color: "#0F172A", margin: 0 }}>ISO 9001:2015</h4>
+                <h4 style={{ fontSize: 16, fontWeight: 800, color: "#004AAD", margin: 0 }}>ISO 9001:2015</h4>
                 <p style={{ fontSize: 13, color: "#64748B", margin: "4px 0 0 0" }}>Certified Production Facilities</p>
               </div>
               <div style={{ background: "#fff", padding: 20, border: "1px solid #E2E8F0", borderRadius: 8 }}>
                 <ShieldCheck size={24} color="#0085f4" style={{ marginBottom: 12 }} />
-                <h4 style={{ fontSize: 16, fontWeight: 800, color: "#0F172A", margin: 0 }}>AWWA C515 / C110</h4>
+                <h4 style={{ fontSize: 16, fontWeight: 800, color: "#004AAD", margin: 0 }}>AWWA C515 / C110</h4>
                 <p style={{ fontSize: 13, color: "#64748B", margin: "4px 0 0 0" }}>Full Municipal Compliance</p>
               </div>
             </div>
           </div>
-          <div style={{ position: "relative", height: 380, borderRadius: 16, overflow: "hidden" }}>
+          <div style={{ position: "relative", height: 380, borderRadius: 16, overflow: "hidden", border: "1px solid #E2E8F0" }}>
             <Image src="/images/3.webp" alt="QA Testing Lab" fill style={{ objectFit: "cover" }} />
           </div>
         </div>
@@ -195,7 +201,7 @@ function ApplicationsAndIndustries() {
       <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
         <div style={{ textAlign: "center", marginBottom: 60 }}>
           <span style={{ color: "#0085f4", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>Target Deployment</span>
-          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#0F172A", textTransform: "uppercase", margin: 0 }}>
+          <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#004AAD", textTransform: "uppercase", margin: 0 }}>
             FIELD <span style={{ color: "#0085f4" }}>APPLICATIONS</span>
           </h2>
         </div>
@@ -209,7 +215,7 @@ function ApplicationsAndIndustries() {
           ].map((app, i) => (
             <div key={i} style={{ background: "#F8FAFC", border: "1px solid #E2E8F0", padding: 32, borderRadius: 12 }}>
               <Activity size={24} color="#0085f4" style={{ marginBottom: 16 }} />
-              <h3 className="heading-card" style={{ fontSize: 18, fontWeight: 800, color: "#0F172A", marginBottom: 8 }}>{app.title}</h3>
+              <h3 className="heading-card" style={{ fontSize: 18, fontWeight: 800, color: "#004AAD", marginBottom: 8 }}>{app.title}</h3>
               <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.6, margin: 0 }}>{app.desc}</p>
             </div>
           ))}
@@ -220,32 +226,105 @@ function ApplicationsAndIndustries() {
 }
 
 function ResourcesAndContact({ product, router }: { product: any; router: any }) {
+  const [downloadSuccess, setDownloadSuccess] = useState(false);
+  const [inquirySent, setInquirySent] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", notes: "" });
+
+  const handleDownload = () => {
+    setDownloadSuccess(true);
+    setTimeout(() => {
+      // Trigger navigation or download
+      router.push("/submittals");
+    }, 1200);
+  };
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setInquirySent(true);
+  };
+
   return (
     <section id="contact" style={{ padding: "100px 0", background: "#004aad", color: "#fff" }}>
       <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 60, alignItems: "center" }}>
           <div>
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 800, textTransform: "uppercase", marginBottom: 20 }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 800, textTransform: "uppercase", marginBottom: 20, color: "#FFFFFF" }}>
               Request Submittal Package for <span style={{ color: "#60AEFF" }}>{product.name}</span>
             </h2>
             <p style={{ color: "#E2E8F0", fontSize: 17, lineHeight: 1.6, marginBottom: 32 }}>
-              Need CAD drawings, spec sheets, or a volume distributor quote? Submit your project details for fast engineering response.
+              Need CAD drawings, spec sheets, or a volume distributor quote? Access stamped engineering packages from our regional technical hubs.
             </p>
-            <div style={{ display: "flex", gap: 16 }}>
-              <button onClick={() => alert("Downloading specification drawing...")} style={{ background: "#0085f4", color: "#fff", padding: "16px 32px", border: "none", borderRadius: 4, fontWeight: 800, fontSize: 13, textTransform: "uppercase", cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8 }}>
-                <Download size={16} /> Download CAD Drawing
+            <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
+              <button
+                onClick={handleDownload}
+                style={{
+                  background: "#0085f4",
+                  color: "#fff",
+                  padding: "16px 32px",
+                  border: "none",
+                  borderRadius: 4,
+                  fontWeight: 800,
+                  fontSize: 13,
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  transition: "background 0.2s"
+                }}
+              >
+                <Download size={16} /> {downloadSuccess ? "Opening Vault..." : "Download CAD & Submittal Drawing"}
               </button>
             </div>
+            {downloadSuccess && (
+              <p style={{ marginTop: 12, fontSize: 13, color: "#90CAF9", display: "flex", alignItems: "center", gap: 6 }}>
+                <CheckCircle2 size={15} /> Redirecting to Engineering Submittals Vault...
+              </p>
+            )}
           </div>
 
-          <div style={{ background: "#fff", color: "#0F172A", padding: 40, borderRadius: 12 }}>
-            <h3 className="font-display" style={{ fontSize: 20, fontWeight: 800, textTransform: "uppercase", marginBottom: 20 }}>Quick Engineering Inquiry</h3>
-            <form onSubmit={(e) => { e.preventDefault(); alert("Inquiry submitted!"); }} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              <input type="text" placeholder="Full Name *" required style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14, color: "#0F172A" }} />
-              <input type="email" placeholder="Work Email *" required style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14, color: "#0F172A" }} />
-              <textarea placeholder="Specify quantities, SKUs, or project location..." rows={3} required style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14, resize: "vertical", color: "#0F172A" }} />
-              <button type="submit" style={{ padding: 16, background: "#0085f4", color: "#fff", border: "none", borderRadius: 4, fontWeight: 800, textTransform: "uppercase", fontSize: 13, cursor: "pointer" }}>Submit Inquiry</button>
-            </form>
+          <div style={{ background: "#fff", color: "#334155", padding: 40, borderRadius: 12, border: "1px solid #E2E8F0" }}>
+            <h3 className="font-display" style={{ fontSize: 22, fontWeight: 800, textTransform: "uppercase", marginBottom: 20, color: "#004AAD" }}>Quick Engineering Inquiry</h3>
+            {inquirySent ? (
+              <div style={{ background: "#F0FDF4", border: "1px solid #86EFAC", padding: 24, borderRadius: 8, color: "#166534" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8, fontWeight: 800, fontSize: 16 }}>
+                  <CheckCircle2 size={20} color="#16A34A" /> Inquiry Received
+                </div>
+                <p style={{ fontSize: 13, lineHeight: 1.6, margin: 0 }}>
+                  Thank you! Our municipal engineering sales team has received your project details for <strong>{product.name}</strong> and will follow up with drawings and pricing within 24 business hours.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleFormSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                <input
+                  type="text"
+                  placeholder="Full Name *"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14, color: "#334155", outline: "none" }}
+                />
+                <input
+                  type="email"
+                  placeholder="Work Email *"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14, color: "#334155", outline: "none" }}
+                />
+                <textarea
+                  placeholder="Specify quantities, SKUs, or project location..."
+                  rows={3}
+                  required
+                  value={formData.notes}
+                  onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                  style={{ padding: 14, background: "#F8FAFC", border: "1px solid #E2E8F0", borderRadius: 4, fontSize: 14, resize: "vertical", color: "#334155", outline: "none" }}
+                />
+                <button type="submit" style={{ padding: 16, background: "#0085f4", color: "#fff", border: "none", borderRadius: 4, fontWeight: 800, textTransform: "uppercase", fontSize: 13, cursor: "pointer", transition: "background 0.2s" }}>
+                  Submit Inquiry
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

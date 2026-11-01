@@ -170,3 +170,4 @@ export const SUBMITTALS_LIST: SubmittalItem[] = [
     downloadUrl: "#"
   }
 ];
+

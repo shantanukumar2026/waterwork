@@ -30,7 +30,7 @@
   --color-slate-600: #475569;
   --color-slate-700: #334155;
   --color-slate-800: #1e293b;
-  --color-slate-900: #0f172a;
+  --color-slate-900: #002d6b;
 }
 
 /* ─── H2 Industries Brand Tokens ─── */
@@ -46,10 +46,10 @@
   --h2-grey-mid: #e2e8f0;
 
   /* Typographic Contrast Tiers (WCAG 2.1 AA / AAA compliant) */
-  --h2-text-main: #0f172a;
+  --h2-text-main: #004aad;
   --h2-text-body: #334155;
   --h2-text-muted: #64748b;
-  --h2-text: #0f172a;
+  --h2-text: #004aad;
   --h2-border: #e2e8f0;
 
   /* Backward compatibility tokens */
@@ -65,7 +65,7 @@
   --surface: var(--white);
   --line: var(--hairline);
   --line-strong: #cbd5e1;
-  --ink: #0f172a;
+  --ink: #004aad;
   --ink-soft: #475569;
   --deep: var(--brand-deep);
   --water: var(--brand-blue);
@@ -119,6 +119,41 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   color: var(--h2-text-main);
+}
+
+/* High-Contrast Heading Protection on Dark / Blue Surfaces */
+[style*="background: #004aad"] h1:not([style*="color:"]),
+[style*="background: #004aad"] h2:not([style*="color:"]),
+[style*="background: #004aad"] h3:not([style*="color:"]),
+[style*="background: #004aad"] h4:not([style*="color:"]),
+[style*="background: var(--deep)"] h1:not([style*="color:"]),
+[style*="background: var(--deep)"] h2:not([style*="color:"]),
+[style*="background: var(--deep)"] h3:not([style*="color:"]),
+[style*="background: var(--deep)"] h4:not([style*="color:"]),
+[style*="background: var(--brand-deep)"] h1:not([style*="color:"]),
+[style*="background: var(--brand-deep)"] h2:not([style*="color:"]),
+[style*="background: var(--brand-deep)"] h3:not([style*="color:"]),
+[style*="background: var(--brand-deep)"] h4:not([style*="color:"]),
+[style*="background: #002B66"] h1:not([style*="color:"]),
+[style*="background: #002B66"] h2:not([style*="color:"]),
+[style*="background: #002B66"] h3:not([style*="color:"]),
+[style*="background: #002B66"] h4:not([style*="color:"]),
+[style*="color: #fff"] h1:not([style*="color:"]),
+[style*="color: #fff"] h2:not([style*="color:"]),
+[style*="color: #fff"] h3:not([style*="color:"]),
+[style*="color: #ffffff"] h1:not([style*="color:"]),
+[style*="color: #ffffff"] h2:not([style*="color:"]),
+[style*="color: #ffffff"] h3:not([style*="color:"]),
+[style*="color: #FFFFFF"] h1:not([style*="color:"]),
+[style*="color: #FFFFFF"] h2:not([style*="color:"]),
+[style*="color: #FFFFFF"] h3:not([style*="color:"]),
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+footer h1,
+footer h2,
+footer h3 {
+  color: #FFFFFF;
 }
 
 /* Standardized Heading Utilities */
@@ -210,9 +245,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero-overlay {
   background: linear-gradient(
     160deg,
-    rgba(8, 20, 40, 0.72) 0%,
-    rgba(10, 25, 55, 0.55) 50%,
-    rgba(8, 20, 40, 0.80) 100%
+    rgba(0, 43, 107, 0.75) 0%,
+    rgba(0, 60, 140, 0.60) 50%,
+    rgba(0, 35, 90, 0.85) 100%
   );
 }
 
