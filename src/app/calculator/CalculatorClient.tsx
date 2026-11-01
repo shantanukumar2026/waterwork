@@ -134,7 +134,7 @@ export default function CalculatorClient() {
     <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#F8FAFC" }}>
       <Navbar />
 
-      <div style={{ paddingTop: 140, paddingBottom: 80, flex: 1 }}>
+      <div style={{ paddingTop: 165, paddingBottom: 80, flex: 1 }}>
         <div style={{ maxWidth: 1440, margin: "0 auto", padding: "0 40px" }}>
           
           {/* Breadcrumb */}
@@ -156,7 +156,7 @@ export default function CalculatorClient() {
             <div className="pill-tag" style={{ marginBottom: 16 }}>
               <span className="dot" /> USDA NRCS TR-55 Hydrology Engine
             </div>
-            <h1 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.8rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
+            <h1 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.8rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", margin: 0 }}>
               US EPA Stormwater & <span style={{ color: "#0085f4" }}>Compliance Calculator</span>
             </h1>
             <p style={{ color: "#0085f4", fontSize: 17, marginTop: 12, maxWidth: 900, lineHeight: 1.6, fontWeight: 500 }}>
@@ -210,7 +210,7 @@ export default function CalculatorClient() {
               
               {/* Form Card */}
               <div style={{ background: "#ffffff", border: "1px solid #E2E8F0", borderRadius: 20, padding: 36, boxShadow: "0 4px 20px rgba(6,35,71,0.02)" }}>
-                <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", marginBottom: 24, paddingBottom: 12, borderBottom: "1px solid #E2E8F0" }}>
+                <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 24, paddingBottom: 12, borderBottom: "1px solid #E2E8F0" }}>
                   1. Hydrologic Parameters
                 </h3>
 
@@ -423,7 +423,7 @@ export default function CalculatorClient() {
               >
                 <div style={{ position: "absolute", top: "-30%", right: "-30%", width: 250, height: 250, background: "radial-gradient(circle, rgba(33,150,243,0.2) 0%, transparent 70%)", pointerEvents: "none" }} />
                 
-                <h3 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: 20, fontWeight: 900, textTransform: "uppercase", fontStyle: "italic", color: "#2196F3", marginBottom: 24 }}>
+                <h3 style={{ fontFamily: "var(--font-barlow), sans-serif", fontSize: 20, fontWeight: 900, textTransform: "uppercase", color: "#2196F3", marginBottom: 24 }}>
                   2. Hydrologic Analysis
                 </h3>
 
@@ -437,7 +437,7 @@ export default function CalculatorClient() {
 
                   <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 16 }}>
                     <span style={{ fontSize: 11, color: "#90CAF9", fontWeight: 800, textTransform: "uppercase", letterSpacing: 0.5 }}>Runoff Volume (Design Storm)</span>
-                    <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", fontFamily: "var(--font-barlow), sans-serif", fontStyle: "italic", marginTop: 4 }}>
+                    <div style={{ fontSize: 32, fontWeight: 900, color: "#ffffff", fontFamily: "var(--font-barlow), sans-serif", marginTop: 4 }}>
                       {Math.round(runoffGallons).toLocaleString()} <span style={{ fontSize: 18, color: "#2196F3", fontStyle: "normal", fontWeight: 500 }}>GAL</span>
                     </div>
                     <span style={{ fontSize: 12, color: "#64B5F6", fontWeight: 500 }}>

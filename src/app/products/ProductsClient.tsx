@@ -1,9 +1,9 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Products from "@/components/Products";
-import Footer from "@/components/Footer";
 import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Products from "@/components/Products";
 
 export default function ProductsClient() {
   const router = useRouter();
@@ -11,8 +11,8 @@ export default function ProductsClient() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#F8FAFC" }}>
       <Navbar />
-      <div style={{ paddingTop: 140, flex: 1 }}>
-        <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px", marginBottom: 16 }}>
+      <div style={{ paddingTop: 165, flex: 1 }}>
+        <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px", marginBottom: 20 }}>
           {/* Breadcrumb Navigation */}
           <nav style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em" }}>
             <span style={{ color: "#0085f4", cursor: "pointer", transition: "color 0.2s" }} onClick={() => router.push("/")} onMouseEnter={(e) => e.currentTarget.style.color = "#004aad"} onMouseLeave={(e) => e.currentTarget.style.color = "#0085f4"}>Home</span>

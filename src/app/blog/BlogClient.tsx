@@ -29,7 +29,7 @@ export default function BlogClient() {
       <Navbar />
       
       {/* Header Container */}
-      <div style={{ paddingTop: 140, paddingBottom: 60, flex: 1 }}>
+      <div style={{ paddingTop: 165, paddingBottom: 60, flex: 1 }}>
         <div style={{ maxWidth: 1440, margin: "0 auto", padding: "0 40px" }}>
           
           {/* Breadcrumb */}
@@ -51,7 +51,7 @@ export default function BlogClient() {
             <div className="pill-tag" style={{ marginBottom: 16 }}>
               <span className="dot" /> Knowledge Center
             </div>
-            <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
+            <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", margin: 0 }}>
               H2 Industries <span style={{ color: "#0085f4" }}>Insights</span>
             </h1>
             <p style={{ color: "#0085f4", fontSize: 18, marginTop: 12, maxWidth: 640, lineHeight: 1.6, fontWeight: 500 }}>
@@ -219,7 +219,7 @@ export default function BlogClient() {
                         </div>
 
                         {/* Title */}
-                        <h2 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", lineHeight: 1.3, marginBottom: 12 }}>
+                        <h2 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", lineHeight: 1.3, marginBottom: 12 }}>
                           {blog.title}
                         </h2>
 

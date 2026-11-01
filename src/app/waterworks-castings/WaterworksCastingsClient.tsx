@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { slugify, matchSlug } from "@/utils/slug";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import Navbar from "@/components/Navbar";
@@ -26,11 +27,10 @@ import {
   ExternalLink
 } from "lucide-react";
 
-import { slugify, matchSlug } from "@/utils/slug";
-
 export default function WaterworksCastingsClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const urlCat = searchParams ? searchParams.get("category") : null;
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true });
 
@@ -39,24 +39,26 @@ export default function WaterworksCastingsClient() {
   const [quickViewProduct, setQuickViewProduct] = useState<(typeof waterworksData.products)[0] | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const urlCat = searchParams ? searchParams.get("category") : null;
-
   useEffect(() => {
-    if (urlCat) {
-      const found = waterworksData.categories.find(
-        (c) => matchSlug(c, urlCat)
-      );
-      if (found) {
-        setSelectedCat(found);
-        setTimeout(() => {
-          const catalogSection = document.getElementById("catalog");
-          if (catalogSection) {
-            catalogSection.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 300);
+    if (typeof window !== "undefined") {
+      const searchParams = new URLSearchParams(window.location.search);
+      const cat = urlCat || searchParams.get("category");
+      if (cat) {
+        const found = waterworksData.categories.find(
+          (c) => matchSlug(c, cat) || c.toLowerCase() === cat.toLowerCase()
+        );
+        if (found) {
+          setSelectedCat(found);
+          setTimeout(() => {
+            const catalogSection = document.getElementById("catalog");
+            if (catalogSection) {
+              catalogSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 300);
+        }
       }
     }
-  }, [urlCat]);
+  }, []);
 
   const handleCatChange = (cat: string) => {
     setSelectedCat(cat);
@@ -97,7 +99,7 @@ export default function WaterworksCastingsClient() {
       <section
         ref={heroRef}
         style={{
-          paddingTop: 160,
+          paddingTop: 165,
           paddingBottom: 80,
           background: "linear-gradient(135deg, #004aad 0%, #004aad 50%, #004aad 100%)",
           color: "#fff",
@@ -193,10 +195,10 @@ export default function WaterworksCastingsClient() {
                 }}
               >
                 {waterworksData.hero.title} <br />
-                <span style={{ color: "#2196F3" }}>{waterworksData.hero.highlight}</span>
+                <span style={{ color: "#60AEFF" }}>{waterworksData.hero.highlight}</span>
               </h1>
 
-              <p style={{ color: "#B0BEC5", fontSize: 18, lineHeight: 1.7, maxWidth: 620, marginBottom: 40, fontWeight: 400 }}>
+              <p style={{ color: "#E2E8F0", fontSize: 18, lineHeight: 1.7, maxWidth: 620, marginBottom: 40, fontWeight: 400 }}>
                 {waterworksData.hero.subtitle}
               </p>
 
@@ -215,10 +217,10 @@ export default function WaterworksCastingsClient() {
               >
                 {waterworksData.hero.stats.map((st, i) => (
                   <div key={i}>
-                    <div style={{ fontSize: 28, fontWeight: 900, color: "#64B5F6", lineHeight: 1 }}>
+                    <div style={{ fontSize: 32, fontWeight: 800, color: "#60AEFF", lineHeight: 1 }}>
                       {st.value}
                     </div>
-                    <div style={{ fontSize: 11, fontWeight: 800, color: "#90CAF9", textTransform: "uppercase", letterSpacing: "0.05em", marginTop: 6 }}>
+                    <div style={{ fontSize: 11, fontWeight: 800, color: "#94A3B8", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 8 }}>
                       {st.label}
                     </div>
                   </div>
@@ -307,11 +309,13 @@ export default function WaterworksCastingsClient() {
               Complete Waterworks Catalog
             </span>
             <h2
+              className="font-display"
               style={{
                 fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 900,
-                color: "#004aad",
+                fontWeight: 800,
+                color: "#0F172A",
                 textTransform: "uppercase",
+                letterSpacing: "0.015em",
                 margin: 0,
               }}
             >
@@ -343,10 +347,11 @@ export default function WaterworksCastingsClient() {
                     width: "100%",
                     padding: "16px 16px 16px 48px",
                     background: "#fff",
-                    border: "2px solid #E0E0E0",
+                    border: "1.5px solid #CBD5E1",
+                    borderRadius: "6px",
                     fontSize: 15,
-                    fontWeight: 600,
-                    color: "#004aad",
+                    fontWeight: 500,
+                    color: "#0F172A",
                     outline: "none",
                     transition: "border-color 0.2s",
                   }}
@@ -356,8 +361,8 @@ export default function WaterworksCastingsClient() {
               </div>
 
               {/* Counter */}
-              <div style={{ display: "flex", alignItems: "center", padding: "0 16px", background: "#E3F2FD", border: "1px solid #90CAF9" }}>
-                <span style={{ fontSize: 13, fontWeight: 800, color: "#004aad", textTransform: "uppercase" }}>
+              <div style={{ display: "flex", alignItems: "center", padding: "0 16px", background: "#F1F5F9", border: "1px solid #CBD5E1", borderRadius: "6px" }}>
+                <span style={{ fontSize: 13, fontWeight: 700, color: "#334155", textTransform: "uppercase" }}>
                   Showing {filteredProducts.length} of {waterworksData.products.length} Products
                 </span>
               </div>
@@ -371,10 +376,11 @@ export default function WaterworksCastingsClient() {
                   onClick={() => handleCatChange(cat)}
                   style={{
                     padding: "12px 20px",
-                    border: "none",
-                    background: selectedCat === cat ? "#004aad" : "#fff",
-                    color: selectedCat === cat ? "#fff" : "#004aad",
-                    borderTop: selectedCat === cat ? "3px solid #2196F3" : "3px solid #CFD8DC",
+                    background: selectedCat === cat ? "#004aad" : "#FFFFFF",
+                    color: selectedCat === cat ? "#FFFFFF" : "#334155",
+                    border: selectedCat === cat ? "1.5px solid #004aad" : "1.5px solid #E2E8F0",
+                    borderRadius: "6px",
+                    borderTop: selectedCat === cat ? "3px solid #00BBFF" : "1.5px solid #E2E8F0",
                     fontSize: 13,
                     fontWeight: 800,
                     textTransform: "uppercase",
@@ -411,7 +417,9 @@ export default function WaterworksCastingsClient() {
                   <div
                     style={{
                       background: "#fff",
-                      border: "1px solid #E0E0E0",
+                      border: "1px solid #E2E8F0",
+                      borderRadius: "10px",
+                      overflow: "hidden",
                       height: "100%",
                       display: "flex",
                       flexDirection: "column",
@@ -445,9 +453,9 @@ export default function WaterworksCastingsClient() {
                       style={{
                         position: "relative",
                         aspectRatio: "1.1",
-                        background: "#004aad",
+                        background: "linear-gradient(145deg, #F8FAFC 0%, #EEF2F6 100%)",
                         overflow: "hidden",
-                        borderBottom: "1px solid #E0E0E0",
+                        borderBottom: "1px solid #E2E8F0",
                       }}
                     >
                       <div
@@ -467,7 +475,7 @@ export default function WaterworksCastingsClient() {
                         style={{
                           objectFit: "contain",
                           padding: 32,
-                          filter: "drop-shadow(0 10px 20px rgba(0, 74, 173,0.5))",
+                          filter: "drop-shadow(0 8px 16px rgba(0, 74, 173, 0.16))",
                           zIndex: 2,
                         }}
                       />
@@ -477,10 +485,11 @@ export default function WaterworksCastingsClient() {
                     <div style={{ padding: 24, flex: 1, display: "flex", flexDirection: "column" }}>
                       <div
                         style={{
-                          fontSize: 12,
-                          fontWeight: 800,
-                          color: "#1976D2",
-                          fontFamily: "monospace",
+                          fontSize: 11,
+                          fontWeight: 700,
+                          color: "#0085F4",
+                          fontFamily: "var(--font-mono), monospace",
+                          letterSpacing: "0.06em",
                           marginBottom: 8,
                         }}
                       >
@@ -490,8 +499,8 @@ export default function WaterworksCastingsClient() {
                       <h3
                         style={{
                           fontSize: 18,
-                          fontWeight: 900,
-                          color: "#004aad",
+                          fontWeight: 800,
+                          color: "#0F172A",
                           textTransform: "uppercase",
                           lineHeight: 1.3,
                           marginBottom: 16,
@@ -504,7 +513,7 @@ export default function WaterworksCastingsClient() {
                       <p
                         style={{
                           fontSize: 14,
-                          color: "#004aad",
+                          color: "#475569",
                           lineHeight: 1.6,
                           marginBottom: 24,
                           display: "-webkit-box",
@@ -521,9 +530,10 @@ export default function WaterworksCastingsClient() {
                           onClick={() => setQuickViewProduct(product)}
                           style={{
                             padding: "12px",
-                            background: "#E3F2FD",
-                            color: "#0085f4",
-                            border: "1px solid #90CAF9",
+                            background: "#F1F5F9",
+                            color: "#0F172A",
+                            border: "1px solid #CBD5E1",
+                            borderRadius: "6px",
                             fontSize: 13,
                             fontWeight: 800,
                             textTransform: "uppercase",
@@ -545,9 +555,10 @@ export default function WaterworksCastingsClient() {
                           onClick={() => router.push(`/products/${product.id}`)}
                           style={{
                             padding: "12px",
-                            background: "#0085f4",
-                            color: "#fff",
+                            background: "#0085F4",
+                            color: "#FFFFFF",
                             border: "none",
+                            borderRadius: "6px",
                             fontSize: 13,
                             fontWeight: 800,
                             textTransform: "uppercase",
@@ -590,10 +601,10 @@ export default function WaterworksCastingsClient() {
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
                 <FileText size={28} color="#0085f4" />
                 <div>
-                  <h3 style={{ fontSize: 24, fontWeight: 900, color: "#004aad", textTransform: "uppercase", margin: 0 }}>
+                  <h3 style={{ fontSize: 24, fontWeight: 800, color: "#0F172A", textTransform: "uppercase", letterSpacing: "0.015em", margin: 0 }}>
                     General Submittals & MSDS
                   </h3>
-                  <p style={{ fontSize: 14, color: "#004aad", margin: 0, marginTop: 4 }}>
+                  <p style={{ fontSize: 14, color: "#475569", margin: 0, marginTop: 4 }}>
                     Download official technical specification sheets and material certificates
                   </p>
                 </div>
@@ -609,7 +620,9 @@ export default function WaterworksCastingsClient() {
                       justifyContent: "space-between",
                       padding: "16px 20px",
                       background: "#F8FAFC",
-                      border: "1px solid #E0E0E0",
+                      border: "1px solid #E2E8F0",
+                      borderRadius: "10px",
+                      overflow: "hidden",
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -617,7 +630,7 @@ export default function WaterworksCastingsClient() {
                         {doc.code}
                       </span>
                       <div>
-                        <div style={{ fontSize: 14, fontWeight: 800, color: "#004aad" }}>{doc.title}</div>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: "#0F172A" }}>{doc.title}</div>
                       </div>
                     </div>
 
@@ -642,7 +655,7 @@ export default function WaterworksCastingsClient() {
             </div>
 
             {/* Quick Quote Form */}
-            <div style={{ background: "#004aad", color: "#fff", padding: 40, borderTop: "4px solid #2196F3" }}>
+            <div style={{ background: "linear-gradient(135deg, #002255 0%, #003380 100%)", color: "#FFFFFF", padding: 40, borderRadius: "10px", borderTop: "4px solid #00BBFF" }}>
               <h3 style={{ fontSize: 24, fontWeight: 900, textTransform: "uppercase", marginBottom: 8 }}>
                 Request Municipal Distributor Quote
               </h3>
@@ -771,7 +784,7 @@ export default function WaterworksCastingsClient() {
               </button>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 32, padding: 32 }} className="modal-grid">
-                <div style={{ background: "#004aad", position: "relative", aspectRatio: "1", padding: 24, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ background: "linear-gradient(145deg, #F8FAFC 0%, #EEF2F6 100%)", border: "1px solid #E2E8F0", borderRadius: "8px", position: "relative", aspectRatio: "1", padding: 24, display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <Image
                     src={quickViewProduct.image}
                     alt={quickViewProduct.name}
@@ -788,16 +801,16 @@ export default function WaterworksCastingsClient() {
                     SKU: {quickViewProduct.sku}
                   </div>
 
-                  <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginTop: 8, marginBottom: 16 }}>
+                  <h3 style={{ fontSize: 20, fontWeight: 800, color: "#0F172A", textTransform: "uppercase", letterSpacing: "0.015em", marginTop: 8, marginBottom: 16 }}>
                     {quickViewProduct.name}
                   </h3>
 
-                  <p style={{ fontSize: 14, color: "#004aad", lineHeight: 1.6, marginBottom: 24 }}>
+                  <p style={{ fontSize: 14, color: "#334155", lineHeight: 1.6, marginBottom: 24 }}>
                     {quickViewProduct.description}
                   </p>
 
                   <div style={{ marginBottom: 24 }}>
-                    <div style={{ fontSize: 12, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 8 }}>
+                    <div style={{ fontSize: 12, fontWeight: 800, color: "#0F172A", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 8 }}>
                       Key Features & Compliance:
                     </div>
                     {quickViewProduct.features.map((f, idx) => (
@@ -808,28 +821,28 @@ export default function WaterworksCastingsClient() {
                   </div>
 
                   {/* Specs Table */}
-                  {quickViewProduct.specs && (
-                    <div style={{ background: "#F8FAFC", border: "1px solid #E0E0E0", padding: 16, marginBottom: 24 }}>
-                      <div style={{ fontSize: 12, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 12 }}>
-                        Technical Specifications:
-                      </div>
-                      {Object.entries(quickViewProduct.specs).map(([key, val], idx) => (
-                        <div
-                          key={key}
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            padding: "6px 0",
-                            fontSize: 12,
-                            borderBottom: idx === Object.keys(quickViewProduct.specs!).length - 1 ? "none" : "1px solid #E0E0E0",
-                          }}
-                        >
-                          <span style={{ fontWeight: 800, color: "#004aad" }}>{key}</span>
-                          <span style={{ fontWeight: 600, color: "#004aad" }}>{val}</span>
-                        </div>
-                      ))}
+                  <div style={{ background: "#F8FAFC", border: "1px solid #E2E8F0",
+                      borderRadius: "10px",
+                      overflow: "hidden", padding: 16, marginBottom: 24 }}>
+                    <div style={{ fontSize: 12, fontWeight: 800, color: "#0F172A", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 12 }}>
+                      Technical Specifications:
                     </div>
-                  )}
+                    {Object.entries(quickViewProduct.specs || {}).map(([key, val], idx) => (
+                      <div
+                        key={key}
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          padding: "6px 0",
+                          fontSize: 12,
+                          borderBottom: idx === Object.keys(quickViewProduct.specs || {}).length - 1 ? "none" : "1px solid #E0E0E0",
+                        }}
+                      >
+                        <span style={{ fontWeight: 700, color: "#64748B" }}>{key}</span>
+                        <span style={{ fontWeight: 700, color: "#0F172A" }}>{val}</span>
+                      </div>
+                    ))}
+                  </div>
 
                   <button
                     onClick={() => {

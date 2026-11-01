@@ -275,7 +275,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                   }}>
                     {qv.category}
                   </span>
-                  <h3 style={{ fontSize: 24, fontWeight: 900, fontStyle: "italic", color: "#004aad", textTransform: "uppercase", margin: 0 }}>{qv.name}</h3>
+                  <h3 style={{ fontSize: 24, fontWeight: 900, color: "#0F172A", textTransform: "uppercase", letterSpacing: "0.015em", margin: 0 }}>{qv.name}</h3>
                   <p style={{ fontSize: 13, fontWeight: 700, color: "#0085f4", marginTop: 8, letterSpacing: "0.05em", fontFamily: "monospace" }}>SKU: {qv.sku}</p>
                 </div>
                 <button onClick={() => setQv(null)} style={{ background: "transparent", border: "2px solid #E0E0E0", borderRadius: "50%", padding: 8, cursor: "pointer", flexShrink: 0, transition: "background 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.background = "#F5F5F5"} onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}>
@@ -294,12 +294,12 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                 {/* Spec Col */}
                 <div style={{ padding: 32 }}>
                   <h4 style={{ fontSize: 14, fontWeight: 900, color: "#004aad", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>PRODUCT OVERVIEW</h4>
-                  <p style={{ fontSize: 15, color: "#0085f4", lineHeight: 1.7, marginBottom: 32, fontWeight: 500 }}>{qv.description}</p>
+                  <p style={{ fontSize: 15, color: "#334155", lineHeight: 1.7, marginBottom: 32, fontWeight: 500 }}>{qv.description}</p>
                   
                   <h4 style={{ fontSize: 14, fontWeight: 900, color: "#004aad", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>TECHNICAL SPECIFICATIONS</h4>
                   <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 12, marginBottom: 40 }}>
                     {qv.features.map((f) => (
-                      <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 15, color: "#004aad", fontWeight: 600 }}>
+                      <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 15, color: "#334155", fontWeight: 500 }}>
                         <div style={{ width: 20, height: 20, background: "rgba(0, 133, 244, 0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2, borderRadius: "4px", border: "1px solid rgba(0, 133, 244, 0.3)" }}>
                           <div style={{ width: 6, height: 6, background: "#0085f4", borderRadius: "50%" }} />
                         </div>

@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fontsource/barlow-condensed": "^5.3.0",
     "@fontsource/inter": "^5.2.8",
     "@swc/helpers": "^0.5.23",
     "framer-motion": "^12.42.2",

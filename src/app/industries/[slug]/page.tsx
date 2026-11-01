@@ -475,7 +475,7 @@ export default async function IndustryDetailPage({ params }: PageProps) {
               <div style={{ width: 44, height: 44, borderRadius: "12px", background: "rgba(0,133,244,0.1)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
                 <PhoneCall size={22} color="#0085f4" />
               </div>
-              <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", fontStyle: "italic", marginBottom: 12 }}>
+              <h3 style={{ fontSize: 20, fontWeight: 900, color: "#004aad", marginBottom: 12 }}>
                 Engineer Inquiry
               </h3>
               <p style={{ fontSize: 14, color: "#64748B", lineHeight: 1.6, marginBottom: 24 }}>

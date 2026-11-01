@@ -1,41 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Barlow_Condensed, IBM_Plex_Mono, Plus_Jakarta_Sans, Outfit } from "next/font/google";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/inter/latin-700.css";
+import "@fontsource/inter/latin-800.css";
+import "@fontsource/barlow-condensed/latin-400.css";
+import "@fontsource/barlow-condensed/latin-500.css";
+import "@fontsource/barlow-condensed/latin-600.css";
+import "@fontsource/barlow-condensed/latin-700.css";
+import "@fontsource/barlow-condensed/latin-800.css";
+import "@fontsource/barlow-condensed/latin-900.css";
+import "@fontsource/barlow-condensed/latin-700-italic.css";
+import "@fontsource/barlow-condensed/latin-800-italic.css";
+import "@fontsource/barlow-condensed/latin-900-italic.css";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-barlow",
-  display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-jakarta",
-  display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-outfit",
-  display: "swap",
-});
-
 import { SITE_URL } from "@/data/seoConfig";
 
 export const metadata: Metadata = {
@@ -84,8 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlowCondensed.variable} ${ibmPlexMono.variable} ${jakarta.variable} ${outfit.variable} scroll-smooth`}>
-      <body className="antialiased overflow-x-hidden">{children}</body>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body className="antialiased overflow-x-hidden font-sans" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

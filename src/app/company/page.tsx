@@ -11,14 +11,20 @@ export default function CompanyPage() {
       <Navbar />
       
       {/* Page Header */}
-      <div style={{ paddingTop: 140, paddingBottom: 40, maxWidth: 1720, margin: "0 auto", paddingLeft: 40, paddingRight: 40, width: "100%" }}>
+      <div style={{ paddingTop: 165, paddingBottom: 40, maxWidth: 1720, margin: "0 auto", paddingLeft: 40, paddingRight: 40, width: "100%" }}>
+        {/* Breadcrumb Navigation */}
+        <nav style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 20 }}>
+          <a href="/" style={{ color: "#0085f4", textDecoration: "none" }}>Home</a>
+          <span style={{ color: "#90CAF9" }}>/</span>
+          <span style={{ color: "#004aad" }}>Company</span>
+        </nav>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0, 133, 244, 0.1)", border: "1px solid rgba(0, 133, 244, 0.3)", padding: "6px 16px", borderRadius: "100px", marginBottom: 16 }}>
           <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#0085f4" }} />
           <span style={{ color: "#0085f4", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
             The H2 Group
           </span>
         </div>
-        <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", margin: 0 }}>
+        <h1 className="font-display" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", margin: 0 }}>
           COMPANY <span style={{ color: "#0085f4" }}>PROFILE</span>
         </h1>
       </div>

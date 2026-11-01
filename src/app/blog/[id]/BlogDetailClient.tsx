@@ -79,7 +79,7 @@ export default function BlogDetailClient() {
               {blog.category}
             </div>
 
-            <h1 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", fontStyle: "italic", lineHeight: 1.1, marginBottom: 20 }}>
+            <h1 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, color: "#004aad", textTransform: "uppercase", lineHeight: 1.1, marginBottom: 20 }}>
               {blog.title}
             </h1>
 
@@ -115,7 +115,7 @@ export default function BlogDetailClient() {
           <div style={{ maxWidth: 850, margin: "0 auto" }}>
             
             {/* Excerpt Lead */}
-            <p style={{ fontSize: 20, color: "#004aad", fontWeight: 600, fontStyle: "italic", lineHeight: 1.6, marginBottom: 32, paddingLeft: 20, borderLeft: "4px solid #0085f4" }}>
+            <p style={{ fontSize: 20, color: "#004aad", fontWeight: 600, lineHeight: 1.6, marginBottom: 32, paddingLeft: 20, borderLeft: "4px solid #0085f4" }}>
               {blog.excerpt}
             </p>
 
@@ -162,7 +162,7 @@ export default function BlogDetailClient() {
           {/* Related Articles */}
           {relatedArticles.length > 0 && (
             <div style={{ marginTop: 80, paddingTop: 40, borderTop: "2px solid #E2E8F0" }}>
-              <h3 style={{ fontSize: 24, fontWeight: 900, color: "#004aad", fontStyle: "italic", textTransform: "uppercase", marginBottom: 32 }}>
+              <h3 style={{ fontSize: 24, fontWeight: 900, color: "#004aad", textTransform: "uppercase", marginBottom: 32 }}>
                 Related Articles
               </h3>
 
@@ -185,7 +185,7 @@ export default function BlogDetailClient() {
                     </div>
                     <div style={{ padding: 24 }}>
                       <span style={{ fontSize: 11, fontWeight: 800, color: "#0085f4", textTransform: "uppercase" }}>{rel.category}</span>
-                      <h4 style={{ fontSize: 16, fontWeight: 900, color: "#004aad", marginTop: 8, marginBottom: 8, fontStyle: "italic" }}>{rel.title}</h4>
+                      <h4 style={{ fontSize: 16, fontWeight: 900, color: "#004aad", marginTop: 8, marginBottom: 8 }}>{rel.title}</h4>
                       <p style={{ fontSize: 13, color: "#0085f4", lineHeight: 1.5, margin: 0 }}>{rel.excerpt.slice(0, 100)}...</p>
                     </div>
                   </div>
