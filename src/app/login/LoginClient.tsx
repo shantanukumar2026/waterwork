@@ -203,7 +203,7 @@ export default function LoginClient() {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="e.g. j.smith@citywater.gov"
+                        placeholder="e.g. j.smith@citywaterworks.com"
                         style={{
                           width: "100%",
                           padding: "12px 14px 12px 42px",

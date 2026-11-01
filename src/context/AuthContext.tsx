@@ -48,7 +48,7 @@ const DEMO_USERS: Record<string, User> = {
   engineer: {
     id: "usr_eng_01",
     name: "Sarah Jenkins, P.E.",
-    email: "s.jenkins@austinwater.gov",
+    email: "s.jenkins@austinwater.com",
     company: "City of Austin Water Utility",
     role: "Lead Municipal Engineer",
     roleType: "engineer",
@@ -140,7 +140,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const stored = localStorage.getItem("h2_user_session");
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (parsed.email === "s.jenkins@austinwater.gov" || (parsed.name && parsed.name.includes("Sarah Jenkins"))) {
+        if (parsed.email === "s.jenkins@austinwater.com" || (parsed.name && parsed.name.includes("Sarah Jenkins"))) {
           localStorage.removeItem("h2_user_session");
           setUser(null);
         } else {
@@ -196,7 +196,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       id: "usr_" + Math.random().toString(36).substr(2, 9),
       name,
       email: cleanEmail,
-      company: cleanEmail.split("@")[1]?.replace(".com", "").replace(".gov", "").toUpperCase() + " Infrastructure",
+      company: cleanEmail.split("@")[1]?.replace(".com", "").replace(".org", "").toUpperCase() + " Infrastructure",
       role: "Engineering Specifier",
       roleType: "engineer",
       tier: "Verified Client (Direct Spec)",

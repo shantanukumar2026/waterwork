@@ -233,7 +233,7 @@ export default function ContactClient() {
                       <input
                         type="email"
                         required
-                        placeholder="e.g. r.caldwell@cityutility.gov"
+                        placeholder="e.g. r.caldwell@cityutility.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         style={{ width: "100%", padding: "10px 12px", background: "var(--paper)", border: "1px solid var(--line)", fontSize: 13, outline: "none" }}
