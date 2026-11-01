@@ -21,12 +21,12 @@ const productsMenu = [
 ];
 
 const generalSubmittalsMenu = [
-  { label: "ASTM A536 Ductile Iron Specs", href: "/quality#standards" },
-  { label: "AWWA C111 / C153 Standards", href: "/quality#standards" },
-  { label: "AWWA C509 / C515 Valve Specs", href: "/quality#standards" },
-  { label: "H-20 Traffic Rating Certification", href: "/quality#standards" },
+  { label: "Engineering Submittals Vault", href: "/submittals" },
+  { label: "AutoCAD DWG & BIM Library", href: "/submittals" },
+  { label: "ASTM A536 Ductile Iron Specs", href: "/submittals" },
+  { label: "AWWA C111 / C153 Standards", href: "/submittals" },
+  { label: "AWWA C509 / C515 Valve Specs", href: "/submittals" },
   { label: "ISO 9001:2015 Quality System", href: "/quality" },
-  { label: "Third-Party Test Reports", href: "/quality" },
 ];
 
 const regionalSubmittalsMenu = [
@@ -41,9 +41,10 @@ const regionalSubmittalsMenu = [
 
 const companyMenu = [
   { label: "About H2 Industries", href: "/company" },
-  { label: "Careers & Job Openings", href: "/company#careers" },
+  { label: "Client Portal & Submittals", href: "/portal" },
+  { label: "Contractor Trade Access", href: "/register" },
   { label: "Global Capabilities", href: "/capabilities" },
-  { label: "Quality & Compliance", href: "/quality" },
+  { label: "Regional Hubs & Contact", href: "/contact" },
   { label: "All Products Catalog", href: "/products" },
 ];
 

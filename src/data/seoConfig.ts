@@ -187,6 +187,56 @@ export const seoPagesConfig: Record<string, PageSeoConfig> = {
     ogImage: "/images/6.webp",
     ogType: "website"
   },
+  login: {
+    title: "Client & Contractor Portal Login | H2 Industries",
+    description: "Sign in to access engineering submittals, 3D CAD library files, wholesale municipal pricing, and active RFQ project quotes.",
+    keywords: ["H2 login", "waterworks contractor portal", "municipal engineering login", "CAD submittal download"],
+    canonical: `${SITE_URL}/login`,
+    ogTitle: "Client & Contractor Portal Login | H2 Industries",
+    ogDescription: "Secure gateway for municipal water engineers, utility contractors, and master distributors.",
+    ogImage: "/images/2.webp",
+    ogType: "website"
+  },
+  register: {
+    title: "Request Contractor & Municipal Portal Access | H2 Industries",
+    description: "Apply for verified contractor, municipal engineer, or regional distributor access to H2 Industries CAD libraries, AWWA submittals, and wholesale jobsite pricing.",
+    keywords: ["H2 register", "contractor trade account", "municipal engineering access", "waterworks distributor application"],
+    canonical: `${SITE_URL}/register`,
+    ogTitle: "Request Trade & Engineering Access | H2 Industries",
+    ogDescription: "Apply for verified trade account access for waterworks submittals and CAD files.",
+    ogImage: "/images/3.webp",
+    ogType: "website"
+  },
+  portal: {
+    title: "Client & Engineering Portal | H2 Industries",
+    description: "Manage engineering submittals, download 3D CAD/DWG drawings, track project quote submittals, and access trade wholesale pricing.",
+    keywords: ["H2 portal", "spec binder", "active project quotes", "AWWA CAD downloads"],
+    canonical: `${SITE_URL}/portal`,
+    ogTitle: "Client & Engineering Portal | H2 Industries",
+    ogDescription: "Centralized hub for municipal engineers and utility contractors.",
+    ogImage: "/images/4.webp",
+    ogType: "website"
+  },
+  submittals: {
+    title: "Engineering Submittals & CAD Library | H2 Industries",
+    description: "Download official AWWA C515, ASTM A536, and AASHTO H-20 engineering submittals, AutoCAD DWG drawings, and third-party metallurgical test reports.",
+    keywords: ["waterworks submittals", "AWWA C515 spec", "ASTM A536 submittal", "AutoCAD waterworks drawings", "DWG curb box"],
+    canonical: `${SITE_URL}/submittals`,
+    ogTitle: "Engineering Submittals & CAD Library | H2 Industries",
+    ogDescription: "Official municipal specification sheets and native CAD/DWG drawings for waterworks infrastructure.",
+    ogImage: "/images/5.webp",
+    ogType: "website"
+  },
+  contact: {
+    title: "Contact Engineering Sales & Regional Hubs | H2 Industries",
+    description: "Get in touch with H2 Industries municipal waterworks engineers, request custom submittals, or connect with regional distribution hubs in NY, FL, and ON.",
+    keywords: ["H2 Industries contact", "waterworks engineering sales", "municipal casting quotes", "Melville NY foundry", "Stuart FL distribution"],
+    canonical: `${SITE_URL}/contact`,
+    ogTitle: "Contact Engineering Sales | H2 Industries",
+    ogDescription: "Connect directly with our applications engineering desk and regional distribution operations.",
+    ogImage: "/images/7.webp",
+    ogType: "website"
+  },
   homepageTwo: {
     title: "Interactive Presentation Overview | H2 Industries",
     description: "Slide-based interactive overview of H2 Industries' core products, manufacturing facilities, global supply network, and quality standards.",

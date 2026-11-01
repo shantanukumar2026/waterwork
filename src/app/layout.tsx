@@ -15,6 +15,7 @@ import "@fontsource/barlow-condensed/latin-800-italic.css";
 import "@fontsource/barlow-condensed/latin-900-italic.css";
 import "./globals.css";
 import { SITE_URL } from "@/data/seoConfig";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -64,7 +65,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className="antialiased overflow-x-hidden font-sans" suppressHydrationWarning>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

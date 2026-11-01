@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Info, Mail, MapPin, User, FileText, ChevronDown, Search, ArrowRight, Globe } from "lucide-react";
+import { Menu, X, Info, Mail, MapPin, User, FileText, ChevronDown, Search, ArrowRight, Globe, LogOut, Layers, ShieldCheck } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
 
 const topLinks = [
-  { label: "Locations", href: "#locations", icon: MapPin },
-  { label: "Contact", href: "#contact", icon: Mail },
+  { label: "Submittals", href: "/submittals", icon: FileText },
+  { label: "Hubs & Locations", href: "/contact", icon: MapPin },
+  { label: "Contact Sales", href: "/contact", icon: Mail },
 ];
 
 const mainLinks = [
@@ -113,6 +115,10 @@ const mainLinks = [
     },
   },
   {
+    label: "Submittals",
+    href: "/submittals"
+  },
+  {
     label: "Calculator",
     href: "/calculator"
   },
@@ -128,6 +134,8 @@ export default function Navbar() {
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
   const pathname = usePathname();
   const router = useRouter();
+  const { user, isAuthenticated, logout } = useAuth();
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -291,29 +299,136 @@ export default function Navbar() {
                   );
                 })}
 
+                {/* Client / Contractor Portal Trigger */}
+                {isAuthenticated && user ? (
+                  <div style={{ position: "relative" }}>
+                    <button
+                      onClick={() => setUserMenuOpen(!userMenuOpen)}
+                      className="font-mono-spec"
+                      style={{
+                        background: "var(--paper)",
+                        border: "1px solid var(--water)",
+                        padding: "6px 12px",
+                        borderRadius: "0px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 8,
+                        cursor: "pointer",
+                        color: "var(--deep)",
+                        fontSize: 11,
+                        fontWeight: 700,
+                        transition: "all 0.2s"
+                      }}
+                    >
+                      <div style={{
+                        width: 20,
+                        height: 20,
+                        background: "var(--water)",
+                        color: "#FFFFFF",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: 10,
+                        fontWeight: 800,
+                      }}>
+                        {user.avatarInitials}
+                      </div>
+                      <span>{user.name}</span>
+                      <ChevronDown size={12} color="var(--water)" />
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {userMenuOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 6 }}
+                          transition={{ duration: 0.15 }}
+                          style={{
+                            position: "absolute",
+                            right: 0,
+                            top: "100%",
+                            marginTop: 6,
+                            background: "var(--surface)",
+                            border: "1px solid var(--line)",
+                            boxShadow: "0 10px 30px rgba(15, 23, 42, 0.12)",
+                            minWidth: 230,
+                            zIndex: 100,
+                            padding: "8px 0",
+                          }}
+                        >
+                          <div style={{ padding: "8px 16px", borderBottom: "1px solid var(--line)" }}>
+                            <div className="font-mono-spec" style={{ fontSize: 10, color: "var(--water)", fontWeight: 700 }}>
+                              {user.tier}
+                            </div>
+                            <div style={{ fontSize: 11, color: "var(--ink-soft)", marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                              {user.company}
+                            </div>
+                          </div>
+
+                          <button
+                            onClick={() => { setUserMenuOpen(false); nav("/portal"); }}
+                            style={{ width: "100%", textAlign: "left", padding: "10px 16px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 8, fontSize: 12, fontWeight: 600, color: "var(--deep)" }}
+                            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--paper)")}
+                            onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
+                          >
+                            <Layers size={14} color="var(--water)" /> Engineering Portal
+                          </button>
+
+                          <button
+                            onClick={() => { setUserMenuOpen(false); nav("/portal"); }}
+                            style={{ width: "100%", textAlign: "left", padding: "10px 16px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 8, fontSize: 12, fontWeight: 600, color: "var(--deep)" }}
+                            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--paper)")}
+                            onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
+                          >
+                            <FileText size={14} color="var(--water)" /> My Spec Binder ({user.savedSubmittals.length})
+                          </button>
+
+                          <div style={{ borderTop: "1px solid var(--line)", marginTop: 4, paddingTop: 4 }}>
+                            <button
+                              onClick={() => { setUserMenuOpen(false); logout(); nav("/login"); }}
+                              style={{ width: "100%", textAlign: "left", padding: "10px 16px", background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", gap: 8, fontSize: 12, fontWeight: 700, color: "#DC2626" }}
+                              onMouseEnter={(e) => (e.currentTarget.style.background = "#FEF2F2")}
+                              onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
+                            >
+                              <LogOut size={14} /> Sign Out
+                            </button>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => nav("/login")}
+                    className="btn-outline font-mono-spec"
+                    style={{
+                      padding: "7px 14px",
+                      fontSize: 11,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                    }}
+                  >
+                    <User size={13} color="var(--water)" />
+                    <span>CLIENT PORTAL</span>
+                  </button>
+                )}
+
                 <button
-                  onClick={() => nav("#contact")}
+                  onClick={() => nav("/contact")}
+                  className="btn-primary"
                   style={{
-                    background: "#0085F4",
-                    color: "#FFFFFF",
-                    padding: "8px 20px",
-                    borderRadius: "100px",
-                    fontSize: 12,
-                    fontWeight: 800,
-                    textTransform: "uppercase",
-                    border: "none",
-                    cursor: "pointer",
+                    padding: "8px 18px",
+                    fontSize: 11,
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 6,
-                    transition: "background 0.2s",
-                    boxShadow: "0 4px 12px rgba(0, 133, 244, 0.3)"
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "#004AAD")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "#0085F4")}
                 >
                   <span>GET IN TOUCH</span>
-                  <ArrowRight size={14} />
+                  <ArrowRight size={13} />
                 </button>
               </div>
             </div>
@@ -724,6 +839,57 @@ export default function Navbar() {
                     </AnimatePresence>
                   </div>
                 ))}
+              </div>
+
+              {/* Mobile Portal / Auth Section */}
+              <div style={{ borderTop: "1px solid var(--line)", paddingTop: 16, marginTop: 16 }}>
+                {isAuthenticated && user ? (
+                  <div style={{ background: "var(--paper)", border: "1px solid var(--line)", padding: "16px", marginBottom: 16 }}>
+                    <div className="font-mono-spec" style={{ fontSize: 10, color: "var(--water)", fontWeight: 700, textTransform: "uppercase" }}>
+                      AUTHENTICATED PORTAL
+                    </div>
+                    <div className="font-display" style={{ fontSize: 16, fontWeight: 800, color: "var(--deep)", margin: "4px 0" }}>
+                      {user.name}
+                    </div>
+                    <div style={{ fontSize: 12, color: "var(--ink-soft)", marginBottom: 12 }}>
+                      {user.company} • {user.tier}
+                    </div>
+
+                    <div style={{ display: "flex", gap: 8 }}>
+                      <button
+                        onClick={() => nav("/portal")}
+                        className="btn-primary"
+                        style={{ flex: 1, padding: "8px 12px", fontSize: 11, textAlign: "center" }}
+                      >
+                        OPEN PORTAL
+                      </button>
+                      <button
+                        onClick={() => { logout(); nav("/login"); }}
+                        className="btn-outline"
+                        style={{ padding: "8px 12px", fontSize: 11, color: "#DC2626", borderColor: "#FCA5A5" }}
+                      >
+                        LOGOUT
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 16 }}>
+                    <button
+                      onClick={() => nav("/login")}
+                      className="btn-primary"
+                      style={{ width: "100%", padding: "12px", fontSize: 12, display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}
+                    >
+                      <User size={14} /> SIGN IN TO PORTAL
+                    </button>
+                    <button
+                      onClick={() => nav("/register")}
+                      className="btn-outline"
+                      style={{ width: "100%", padding: "10px", fontSize: 11, textAlign: "center" }}
+                    >
+                      REQUEST TRADE ACCOUNT
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Mobile Top Links */}

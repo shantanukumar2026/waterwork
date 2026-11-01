@@ -15,6 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/industries",
     "/calculator",
     "/blog",
+    "/submittals",
+    "/contact",
+    "/login",
+    "/register",
+    "/portal",
     "/homepage-two",
   ];
 
