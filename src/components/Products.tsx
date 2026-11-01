@@ -81,20 +81,21 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
               className="font-display"
               style={{
                 fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
-                fontWeight: 700,
-                color: "var(--brand-deep)",
+                fontWeight: 800,
+                color: "var(--deep)",
                 lineHeight: 1.1,
                 marginBottom: 16,
+                textTransform: "uppercase",
               }}
             >
               What We Build.<br />
-              <span style={{ color: "var(--brand-blue)" }}>
+              <span style={{ color: "var(--water)" }}>
                 Precision Waterworks Castings, Tools & Sub-Surface Assemblies.
               </span>
             </h2>
-            <div style={{ width: 60, height: 2, background: "var(--brand-blue)", marginBottom: 20 }} />
+            <div style={{ width: 60, height: 2, background: "var(--water)", marginBottom: 20 }} />
 
-            <p style={{ color: "var(--brand-deep)", fontSize: 16, maxWidth: 640, lineHeight: 1.65, fontWeight: 400, opacity: 0.9 }}>
+            <p style={{ color: "var(--ink-soft)", fontSize: 15, maxWidth: 640, lineHeight: 1.65, fontWeight: 400 }}>
               Explore our line of AWWA-compliant waterworks tools, mechanical joint restraints, ductile iron fittings, municipal manhole covers, and sampling enclosures.
             </p>
           </motion.div>
@@ -250,7 +251,7 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
               onClick={(e) => e.stopPropagation()}
               style={{
                 background: "#fff",
-                borderRadius: "16px",
+                borderRadius: "0px", border: "1px solid var(--line)",
                 maxWidth: 800,
                 width: "100%",
                 maxHeight: "90vh",
@@ -275,8 +276,8 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                   }}>
                     {qv.category}
                   </span>
-                  <h3 style={{ fontSize: 24, fontWeight: 900, color: "#0F172A", textTransform: "uppercase", letterSpacing: "0.015em", margin: 0 }}>{qv.name}</h3>
-                  <p style={{ fontSize: 13, fontWeight: 700, color: "#0085f4", marginTop: 8, letterSpacing: "0.05em", fontFamily: "monospace" }}>SKU: {qv.sku}</p>
+                  <h3 style={{ fontSize: 24, fontWeight: 900, color: "var(--deep)", textTransform: "uppercase", letterSpacing: "0.015em", margin: 0 }}>{qv.name}</h3>
+                  <p style={{ fontSize: 13, fontWeight: 700, color: "var(--water)", marginTop: 8, letterSpacing: "0.05em", fontFamily: "monospace" }}>SKU: {qv.sku}</p>
                 </div>
                 <button onClick={() => setQv(null)} style={{ background: "transparent", border: "2px solid #E0E0E0", borderRadius: "50%", padding: 8, cursor: "pointer", flexShrink: 0, transition: "background 0.2s" }} onMouseEnter={(e) => e.currentTarget.style.background = "#F5F5F5"} onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}>
                   <X size={20} color="#004aad" />
@@ -293,13 +294,13 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
                 
                 {/* Spec Col */}
                 <div style={{ padding: 32 }}>
-                  <h4 style={{ fontSize: 14, fontWeight: 900, color: "#004aad", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>PRODUCT OVERVIEW</h4>
-                  <p style={{ fontSize: 15, color: "#334155", lineHeight: 1.7, marginBottom: 32, fontWeight: 500 }}>{qv.description}</p>
+                  <h4 style={{ fontSize: 14, fontWeight: 900, color: "var(--deep)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>PRODUCT OVERVIEW</h4>
+                  <p style={{ fontSize: 15, color: "var(--ink-soft)", lineHeight: 1.7, marginBottom: 32, fontWeight: 500 }}>{qv.description}</p>
                   
-                  <h4 style={{ fontSize: 14, fontWeight: 900, color: "#004aad", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>TECHNICAL SPECIFICATIONS</h4>
+                  <h4 style={{ fontSize: 14, fontWeight: 900, color: "var(--deep)", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: 16 }}>TECHNICAL SPECIFICATIONS</h4>
                   <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 12, marginBottom: 40 }}>
                     {qv.features.map((f) => (
-                      <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 15, color: "#334155", fontWeight: 500 }}>
+                      <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: 12, fontSize: 15, color: "var(--ink-soft)", fontWeight: 500 }}>
                         <div style={{ width: 20, height: 20, background: "rgba(0, 133, 244, 0.1)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: 2, borderRadius: "4px", border: "1px solid rgba(0, 133, 244, 0.3)" }}>
                           <div style={{ width: 6, height: 6, background: "#0085f4", borderRadius: "50%" }} />
                         </div>
@@ -344,13 +345,21 @@ export default function Products({ isFullPage = false }: { isFullPage?: boolean 
       <style>{`
         .products-section { padding: 64px 0; }
         .products-container { padding: 0 60px; }
+        @media (max-width: 1280px) {
+          .four-card-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          }
+        }
         @media (min-width: 768px) {
           .modal-grid { grid-template-columns: 1fr 1.2fr !important; }
         }
         @media (max-width: 767px) {
           .modal-img-col { border-right: none !important; border-bottom: 1px solid #E0E0E0 !important; }
           .products-section { padding: 32px 0; }
-          .products-container { padding: 0 24px; }
+          .products-container { padding: 0 20px; }
+          .four-card-grid {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
     </section>
@@ -476,16 +485,3 @@ function ProductCard({ product, onQuickView, catColor, isCompact = false }: {
     </div>
   );
 }
-
-<style>{`
-  @media (max-width: 1280px) {
-    .four-card-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    }
-  }
-  @media (max-width: 640px) {
-    .four-card-grid {
-      grid-template-columns: 1fr !important;
-    }
-  }
-`}</style>

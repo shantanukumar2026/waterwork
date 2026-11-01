@@ -20,21 +20,21 @@ export default function ManufacturingProcess() {
   const { header, steps } = homeData.process;
 
   return (
-    <section id="process" className="section-pad" style={{ background: "var(--tint-1)", borderTop: "1px solid var(--hairline)" }}>
-      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
+    <section id="process" className="section-pad" style={{ background: "var(--surface)", borderTop: "1px solid var(--line)" }}>
+      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }} className="process-container">
         {/* Header */}
-        <div ref={ref} style={{ textAlign: "center", marginBottom: 64 }}>
+        <div ref={ref} style={{ textAlign: "center", marginBottom: 56 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
             <div className="eyebrow-label" style={{ marginBottom: 16, justifyContent: "center" }}>
               MANUFACTURING SEQUENCE
             </div>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 700, color: "var(--brand-deep)", lineHeight: 1.1, marginBottom: 16 }}
+              style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 800, color: "var(--deep)", lineHeight: 1.1, marginBottom: 16, textTransform: "uppercase" }}
             >
               Precision Metallurgy. From Raw Spec to Field-Ready Casting.
             </h2>
-            <p style={{ color: "var(--brand-deep)", fontSize: 16, maxWidth: 620, margin: "0 auto", lineHeight: 1.65, opacity: 0.9 }}>
+            <p style={{ color: "var(--ink-soft)", fontSize: 15, maxWidth: 640, margin: "0 auto", lineHeight: 1.65, fontWeight: 400 }}>
               Every casting undergoes automated polymer injection modeling, CNC lathe profiling, and 100% hydrostatic pressure testing before shipment.
             </p>
           </motion.div>
@@ -43,7 +43,7 @@ export default function ManufacturingProcess() {
         {/* Desktop timeline */}
         <div className="process-desktop" style={{ display: "none", position: "relative" }}>
           {/* Grid of Spec Strip Cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0, border: "1px solid var(--hairline)", borderRadius: "6px", overflow: "hidden" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0, border: "1px solid var(--line)", borderRadius: "0px", overflow: "hidden" }}>
             {steps.map((step, i) => {
               const Icon = iconMap[step.icon as keyof typeof iconMap] || Lightbulb;
               return (
@@ -58,26 +58,26 @@ export default function ManufacturingProcess() {
                     flexDirection: "column",
                     position: "relative",
                     padding: "32px 24px",
-                    background: "var(--white)",
-                    borderRight: i < 4 ? "1px solid var(--hairline)" : "none",
+                    background: "var(--paper)",
+                    borderRight: i < 4 ? "1px solid var(--line)" : "none",
                     borderTop: "none",
                     borderBottom: "none",
                     borderLeft: "none",
                     overflow: "hidden",
-                    minHeight: 280,
+                    minHeight: 290,
                   }}
                 >
-                  {/* Large Numeral in --hairline / --brand-blue */}
+                  {/* Large Numeral */}
                   <div
                     className="font-display"
                     style={{
                       position: "absolute",
                       right: 12,
                       top: 4,
-                      fontSize: 84,
-                      fontWeight: 700,
-                      color: "var(--brand-blue)",
-                      opacity: 0.12,
+                      fontSize: 80,
+                      fontWeight: 800,
+                      color: "var(--deep)",
+                      opacity: 0.08,
                       lineHeight: 1,
                       pointerEvents: "none",
                       userSelect: "none",
@@ -90,26 +90,26 @@ export default function ManufacturingProcess() {
                   <div style={{
                     width: 42,
                     height: 42,
-                    background: "var(--tint-2)",
-                    border: "1px solid var(--hairline)",
-                    borderRadius: "4px",
+                    background: "var(--surface)",
+                    border: "1px solid var(--line)",
+                    borderRadius: "0px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    marginBottom: 24,
+                    marginBottom: 20,
                     zIndex: 1,
                   }}>
-                    <Icon size={20} color="var(--brand-blue)" strokeWidth={1.5} />
+                    <Icon size={20} color="var(--water)" strokeWidth={1.5} />
                   </div>
 
                   <h3
                     className="font-display"
-                    style={{ fontSize: 18, fontWeight: 700, color: "var(--brand-deep)", marginBottom: 8, zIndex: 1 }}
+                    style={{ fontSize: 17, fontWeight: 800, color: "var(--deep)", marginBottom: 8, zIndex: 1 }}
                   >
                     {step.title}
                   </h3>
-                  <p style={{ fontSize: 13, color: "var(--brand-deep)", lineHeight: 1.55, marginBottom: 12, flex: 1, zIndex: 1, opacity: 0.9 }}>{step.desc}</p>
-                  <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--brand-blue)", fontWeight: 700, zIndex: 1 }}>{step.detail}</p>
+                  <p style={{ fontSize: 13, color: "var(--ink-soft)", lineHeight: 1.55, marginBottom: 16, flex: 1, zIndex: 1, fontWeight: 400 }}>{step.desc}</p>
+                  <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--water)", fontWeight: 700, zIndex: 1, textTransform: "uppercase" }}>{step.detail}</p>
                 </motion.div>
               );
             })}
@@ -117,7 +117,7 @@ export default function ManufacturingProcess() {
         </div>
 
         {/* Mobile vertical */}
-        <div className="process-mobile" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        <div className="process-mobile" style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {steps.map((step, i) => {
             const Icon = iconMap[step.icon as keyof typeof iconMap] || Lightbulb;
             return (
@@ -127,7 +127,7 @@ export default function ManufacturingProcess() {
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.09 }}
                 className="industrial-card"
-                style={{ display: "flex", gap: 16, padding: "20px", background: "var(--white)", position: "relative", overflow: "hidden" }}
+                style={{ display: "flex", gap: 16, padding: "20px", background: "var(--paper)", border: "1px solid var(--line)", borderRadius: "0px", position: "relative", overflow: "hidden" }}
               >
                 <div
                   className="font-display"
@@ -135,25 +135,25 @@ export default function ManufacturingProcess() {
                     position: "absolute",
                     right: 12,
                     top: 0,
-                    fontSize: 64,
-                    fontWeight: 700,
-                    color: "var(--brand-blue)",
-                    opacity: 0.12,
+                    fontSize: 60,
+                    fontWeight: 800,
+                    color: "var(--deep)",
+                    opacity: 0.08,
                     lineHeight: 1,
                     pointerEvents: "none",
                   }}
                 >
                   {step.num}
                 </div>
-                <div style={{ width: 40, height: 40, background: "var(--tint-2)", border: "1px solid var(--hairline)", borderRadius: "4px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <Icon size={18} color="var(--brand-blue)" strokeWidth={1.5} />
+                <div style={{ width: 40, height: 40, background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "0px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <Icon size={18} color="var(--water)" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-display" style={{ fontSize: 18, fontWeight: 700, color: "var(--brand-deep)", marginBottom: 4 }}>
+                  <h3 className="font-display" style={{ fontSize: 16, fontWeight: 800, color: "var(--deep)", marginBottom: 4 }}>
                     {step.title}
                   </h3>
-                  <p style={{ fontSize: 13, color: "var(--brand-deep)", lineHeight: 1.5, marginBottom: 6, opacity: 0.9 }}>{step.desc}</p>
-                  <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--brand-blue)", fontWeight: 700 }}>{step.detail}</p>
+                  <p style={{ fontSize: 13, color: "var(--ink-soft)", lineHeight: 1.5, marginBottom: 6, fontWeight: 400 }}>{step.desc}</p>
+                  <p className="font-mono-spec" style={{ fontSize: 10, color: "var(--water)", fontWeight: 700, textTransform: "uppercase" }}>{step.detail}</p>
                 </div>
               </motion.div>
             );
@@ -165,6 +165,9 @@ export default function ManufacturingProcess() {
         @media (min-width: 1024px) {
           .process-desktop { display: block !important; }
           .process-mobile { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          .process-container { padding: 0 20px !important; }
         }
       `}</style>
     </section>

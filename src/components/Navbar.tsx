@@ -646,7 +646,7 @@ export default function Navbar() {
                         fontSize: 16,
                         fontWeight: 800,
                         textTransform: "uppercase",
-                        color: "#004aad",
+                        color: "var(--deep)",
                         fontFamily: "inherit",
                       }}
                     >
@@ -678,7 +678,7 @@ export default function Navbar() {
                                   style={{
                                     fontSize: 12,
                                     fontWeight: 800,
-                                    color: "#42A5F5",
+                                    color: "var(--water)",
                                     marginBottom: 8,
                                     letterSpacing: "0.05em",
                                     background: "none",
@@ -706,7 +706,7 @@ export default function Navbar() {
                                           padding: "8px 16px",
                                           fontSize: 14,
                                           fontWeight: 600,
-                                          color: "#0085f4",
+                                          color: "var(--ink-soft)",
                                           fontFamily: "inherit",
                                           cursor: "pointer",
                                         }}
@@ -743,14 +743,14 @@ export default function Navbar() {
                         fontSize: 14,
                         fontWeight: 700,
                         textTransform: "uppercase",
-                        color: "#0085f4",
+                        color: "var(--deep)",
                         display: "flex",
                         alignItems: "center",
                         gap: 12,
                         fontFamily: "inherit",
                       }}
                     >
-                      <Icon size={18} />
+                      <Icon size={18} color="var(--water)" />
                       {link.label}
                     </button>
                   );

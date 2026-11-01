@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import blogsData from "../data/blogs.json";
 
@@ -19,24 +19,20 @@ export default function BlogSection() {
       id="latest-insights"
       style={{
         background: "#F8FAFC",
-        padding: "48px 0",
+        padding: "80px 0",
         position: "relative",
         width: "100%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        minHeight: "100vh",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
+        borderTop: "1px solid #E2E8F0"
       }}
     >
-      {/* Decorative subtle background shapes */}
-      <div style={{ position: "absolute", top: "10%", left: "5%", width: 300, height: 300, borderRadius: "50%", background: "radial-gradient(circle, rgba(33,150,243,0.04) 0%, transparent 70%)", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", bottom: "10%", right: "5%", width: 400, height: 400, borderRadius: "50%", background: "radial-gradient(circle, rgba(21,101,192,0.03) 0%, transparent 70%)", pointerEvents: "none" }} />
-
-      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px", width: "100%", zIndex: 1 }}>
+      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px", width: "100%", zIndex: 1 }} className="blog-container">
         
         {/* Header */}
-        <div ref={ref} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 40, flexWrap: "wrap", gap: 24 }}>
+        <div ref={ref} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 44, flexWrap: "wrap", gap: 24 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -49,9 +45,9 @@ export default function BlogSection() {
             <h2
               className="font-display"
               style={{
-                fontSize: "clamp(2rem, 6vw, 3.2rem)",
+                fontSize: "clamp(2rem, 5vw, 3.2rem)",
                 fontWeight: 800,
-                color: "var(--brand-deep)",
+                color: "#0F172A",
                 lineHeight: 1.1,
                 textTransform: "uppercase",
                 margin: 0
@@ -59,7 +55,7 @@ export default function BlogSection() {
             >
               H2 Knowledge <span style={{ color: "#0085f4" }}>Hub</span>
             </h2>
-            <p style={{ color: "#0085f4", fontSize: 16, maxWidth: 600, marginTop: 12, lineHeight: 1.6, fontWeight: 500 }}>
+            <p style={{ color: "#334155", fontSize: 16, maxWidth: 600, marginTop: 12, lineHeight: 1.6, fontWeight: 400 }}>
               Stay updated with the latest in smart water management, green infrastructure standards, and US EPA compliance guides.
             </p>
           </motion.div>
@@ -76,27 +72,26 @@ export default function BlogSection() {
                 color: "#fff",
                 border: "none",
                 padding: "14px 28px",
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: 800,
                 textTransform: "uppercase",
-                letterSpacing: "0.08em",
+                letterSpacing: "0.05em",
+                borderRadius: "6px",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
                 cursor: "pointer",
-                boxShadow: "0 4px 14px rgba(21, 101, 192, 0.2)",
-                transition: "all 0.3s ease"
+                boxShadow: "0 4px 14px rgba(0, 133, 244, 0.25)",
+                transition: "all 0.2s ease"
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = "#004aad";
-                e.currentTarget.style.transform = "translateY(-2px)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "#0085f4";
-                e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              View All Blogs <ArrowRight size={16} />
+              View All Articles <ArrowRight size={16} />
             </button>
           </motion.div>
         </div>
@@ -108,7 +103,7 @@ export default function BlogSection() {
               key={blog.id}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              transition={{ duration: 0.6, delay: i * 0.12 }}
               onClick={() => router.push(`/blog/${blog.id}`)}
               style={{ height: "100%", cursor: "pointer" }}
             >
@@ -117,27 +112,27 @@ export default function BlogSection() {
                 style={{
                   background: "#ffffff",
                   border: "1px solid #E2E8F0",
-                  borderRadius: "16px",
+                  borderRadius: "12px",
                   overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
                   height: "100%",
-                  transition: "all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)",
-                  boxShadow: "0 4px 20px rgba(6, 35, 71, 0.03)"
+                  transition: "all 0.25s ease",
+                  boxShadow: "0 4px 16px rgba(15, 23, 42, 0.03)"
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(21, 101, 192, 0.25)";
-                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(21, 101, 192, 0.08)";
-                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.borderColor = "rgba(0, 133, 244, 0.4)";
+                  e.currentTarget.style.boxShadow = "0 16px 36px rgba(0, 133, 244, 0.08)";
+                  e.currentTarget.style.transform = "translateY(-3px)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = "#E2E8F0";
-                  e.currentTarget.style.boxShadow = "0 4px 20px rgba(6, 35, 71, 0.03)";
+                  e.currentTarget.style.boxShadow = "0 4px 16px rgba(15, 23, 42, 0.03)";
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
                 {/* Image / Category Aspect Header */}
-                <div style={{ position: "relative", height: 200, width: "100%", background: "#004aad" }}>
+                <div style={{ position: "relative", height: 210, width: "100%", background: "#0F172A" }}>
                   <img
                     src={blog.image}
                     alt={blog.title}
@@ -146,17 +141,17 @@ export default function BlogSection() {
                   <div
                     style={{
                       position: "absolute",
-                      top: 16,
-                      left: 16,
+                      top: 14,
+                      left: 14,
                       background: "#0085f4",
                       color: "#fff",
                       fontSize: 11,
                       fontWeight: 800,
                       textTransform: "uppercase",
-                      letterSpacing: "0.08em",
+                      letterSpacing: "0.06em",
                       padding: "4px 12px",
                       borderRadius: 4,
-                      boxShadow: "0 2px 8px rgba(0, 133, 244, 0.15)"
+                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
                     }}
                   >
                     {blog.category}
@@ -167,23 +162,23 @@ export default function BlogSection() {
                 <div style={{ padding: 24, display: "flex", flexDirection: "column", flex: 1, justifyContent: "space-between" }}>
                   <div>
                     {/* Date / Time */}
-                    <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 13, color: "#0085f4", fontWeight: 600, marginBottom: 12 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 13, color: "#64748B", fontWeight: 600, marginBottom: 12 }}>
                       <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                        <Calendar size={14} /> {blog.date}
+                        <Calendar size={14} color="#0085f4" /> {blog.date}
                       </span>
                       <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                        <Clock size={14} /> {blog.readTime}
+                        <Clock size={14} color="#0085f4" /> {blog.readTime}
                       </span>
                     </div>
 
                     {/* Title */}
                     <h3
                       style={{
-                        fontSize: 20,
-                        fontWeight: 900,
-                        color: "#004aad",
-                        lineHeight: 1.3,
-                        marginBottom: 12,
+                        fontSize: 19,
+                        fontWeight: 800,
+                        color: "#0F172A",
+                        lineHeight: 1.35,
+                        marginBottom: 10,
                         textTransform: "uppercase",
                         transition: "color 0.2s"
                       }}
@@ -193,17 +188,26 @@ export default function BlogSection() {
                     </h3>
 
                     {/* Excerpt */}
-                    <p style={{ color: "#0085f4", fontSize: 14, lineHeight: 1.6, fontWeight: 500, marginBottom: 24 }}>
+                    <p style={{ color: "#475569", fontSize: 14, lineHeight: 1.6, fontWeight: 400, marginBottom: 20 }}>
                       {blog.excerpt}
                     </p>
                   </div>
 
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#0085f4", fontSize: 13, fontWeight: 700, textTransform: "uppercase" }}>
+                    Read Full Article <ArrowRight size={14} />
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .blog-container { padding: 0 24px !important; }
+        }
+      `}</style>
     </section>
   );
 }

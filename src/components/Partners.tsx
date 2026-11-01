@@ -40,28 +40,27 @@ export default function Partners() {
   const marqueeItems = [...partnersList, ...partnersList];
 
   return (
-    <section ref={ref} style={{ padding: "48px 0", background: "#002255", position: "relative", overflow: "hidden" }}>
+    <section ref={ref} style={{ padding: "64px 0", background: "var(--deep)", position: "relative", overflow: "hidden", borderTop: "1px solid var(--line-strong)" }}>
 
       {/* Left Fade */}
-      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 150, background: "linear-gradient(90deg, #002255 0%, transparent 100%)", zIndex: 10, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 150, background: "linear-gradient(90deg, var(--deep) 0%, transparent 100%)", zIndex: 10, pointerEvents: "none" }} />
       {/* Right Fade */}
-      <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 150, background: "linear-gradient(270deg, #002255 0%, transparent 100%)", zIndex: 10, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 150, background: "linear-gradient(270deg, var(--deep) 0%, transparent 100%)", zIndex: 10, pointerEvents: "none" }} />
 
-      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px", position: "relative", zIndex: 1 }}>
+      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px", position: "relative", zIndex: 1 }} className="partners-container">
         <div style={{ textAlign: "center", marginBottom: 40 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-            <span style={{ color: "#2196F3", fontSize: 13, fontWeight: 800, letterSpacing: "0.2em", textTransform: "uppercase", display: "block", marginBottom: 12 }}>
-              Global Network
-            </span>
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 800, color: "#fff", textTransform: "uppercase", lineHeight: 1.1 }}>
-              Trusted <span style={{ color: "var(--brand-blue)" }}>By</span><br />
-              Industry Leaders
+            <div className="eyebrow-label" style={{ color: "var(--water)", marginBottom: 14, justifyContent: "center" }}>
+              GLOBAL SPECIFICATION NETWORK
+            </div>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 800, color: "#FFFFFF", textTransform: "uppercase", lineHeight: 1.1 }}>
+              Trusted by <span style={{ color: "var(--water)" }}>Industry Leaders</span>
             </h2>
           </motion.div>
         </div>
 
         {/* Marquee Container */}
-        <div className="marquee-container" style={{ position: "relative", width: "100%", overflow: "hidden", padding: "20px 0" }}>
+        <div className="marquee-container" style={{ position: "relative", width: "100%", overflow: "hidden", padding: "16px 0" }}>
 
           <motion.div
             className="marquee-track"
@@ -69,14 +68,14 @@ export default function Partners() {
             transition={{
               repeat: Infinity,
               ease: "linear",
-              duration: 40 // Adjust speed here
+              duration: 40
             }}
-            style={{ display: "flex", gap: "60px", width: "max-content", alignItems: "center" }}
+            style={{ display: "flex", gap: "32px", width: "max-content", alignItems: "center" }}
           >
             {marqueeItems.map((p, i) => (
               <div
                 key={i}
-                className="marquee-item"
+                className="marquee-item industrial-card"
                 style={{
                   width: "150px",
                   height: "76px",
@@ -85,9 +84,9 @@ export default function Partners() {
                   alignItems: "center",
                   justifyContent: "center",
                   background: "#ffffff",
-                  borderRadius: "8px",
-                  padding: "8px 12px",
-                  boxShadow: "0 4px 14px rgba(0, 133, 244, 0.15)",
+                  borderRadius: "0px",
+                  padding: "8px 14px",
+                  border: "1px solid var(--line-strong)",
                   flexShrink: 0
                 }}
               >
@@ -108,13 +107,15 @@ export default function Partners() {
       <style>{`
         .marquee-item {
           opacity: 0.9;
-          transform: scale(0.98);
-          transition: all 0.3s ease;
+          transition: all 0.25s ease;
         }
         .marquee-item:hover {
           opacity: 1 !important;
-          transform: scale(1.05) !important;
-          box-shadow: 0 8px 25px rgba(33, 150, 243, 0.35) !important;
+          transform: translateY(-2px) !important;
+          border-color: var(--water) !important;
+        }
+        @media (max-width: 768px) {
+          .partners-container { padding: 0 20px !important; }
         }
       `}</style>
     </section>

@@ -119,7 +119,7 @@ export default function CompanyProfile() {
   };
 
   return (
-    <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 40px 100px" }}>
+    <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 40px 100px" }} className="company-wrapper">
       <div style={{ display: "grid", gridTemplateColumns: "300px 1fr", gap: 50, alignItems: "start" }} className="company-grid">
 
         {/* Sticky Left Sidebar Navigation */}
@@ -148,8 +148,10 @@ export default function CompanyProfile() {
                       borderRadius: "0px",
                       border: "none",
                       background: isActive ? "var(--paper)" : "transparent",
+                      color: isActive ? "var(--deep)" : "var(--ink-soft)",
                       fontFamily: "var(--font-sans), sans-serif",
-                      fontWeight: isActive ? 800 : 600,
+                      fontSize: 13,
+                      fontWeight: isActive ? 700 : 500,
                       transition: "all 0.2s ease"
                     }}
                     onMouseEnter={(e) => {
@@ -214,19 +216,18 @@ export default function CompanyProfile() {
         </aside>
 
         {/* Right Main Content Sections */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 64 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 48 }} className="company-content">
 
           {/* 1. COMPANY OVERVIEW */}
           <section id="overview" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "40px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", marginBottom: 16 }}>
-                <Building2 size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>ABOUT H2 INDUSTRIES</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                <Building2 size={13} style={{ marginRight: 6 }} /> ABOUT H2 INDUSTRIES
               </div>
-              <h2 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 20 }}>
-                H2 INDUSTRIES COMPANY OVERVIEW
+              <h2 className="font-display" style={{ fontSize: 30, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 16 }}>
+                H2 Industries Company Overview
               </h2>
-              <p style={{ fontSize: 15, color: "#0085f4", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
+              <p style={{ fontSize: 15, color: "var(--ink)", lineHeight: 1.7, margin: 0, fontWeight: 400 }}>
                 H2 Industries is a premier manufacturer of precision-engineered hydro-infrastructure products. Headquartered in Melville, New York, with regional manufacturing and distribution operations in Florida and Ontario, H2 Industries engineers municipal waterworks castings, valve access boxes, modular sampling enclosures, and stormwater column drainage systems.
               </p>
             </div>
@@ -234,46 +235,45 @@ export default function CompanyProfile() {
 
           {/* 2. WHO WE ARE */}
           <section id="who-we-are" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "40px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 40, alignItems: "center" }}>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 40, alignItems: "center" }} className="who-we-are-grid">
                 <div>
-                  <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", marginBottom: 16 }}>
-                    <FileText size={14} color="#0085f4" />
-                    <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>WHO WE ARE</span>
+                  <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                    <FileText size={13} style={{ marginRight: 6 }} /> WHO WE ARE
                   </div>
-                  <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 16 }}>
+                  <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 16 }}>
                     Engineered for Multi-Decade Field Reliability
                   </h3>
-                  <p style={{ fontSize: 14, color: "#0085f4", lineHeight: 1.65, marginBottom: 16, fontWeight: 500 }}>
+                  <p style={{ fontSize: 14, color: "var(--ink)", lineHeight: 1.65, marginBottom: 16, fontWeight: 400 }}>
                     Founded in 1998, H2 Industries was forged on a commitment to solve complex municipal water challenges through metallurgical precision and rigorous quality control. Our products are installed in major metropolitan water systems, roadway catch basins, and industrial water plants across North America.
                   </p>
-                  <p style={{ fontSize: 14, color: "#0085f4", lineHeight: 1.65, marginBottom: 24, fontWeight: 500 }}>
+                  <p style={{ fontSize: 14, color: "var(--ink-soft)", lineHeight: 1.65, marginBottom: 24, fontWeight: 400 }}>
                     We combine old-world foundry expertise with 21st-century CAD modeling, finite element analysis (FEA), and automated polymer injection molding to create infrastructure built for 50+ year service lifespans.
                   </p>
 
-                  <div style={{ display: "flex", gap: 16 }}>
+                  <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                      <CheckCircle2 size={16} color="#0085f4" />
-                      <span style={{ fontSize: 13, fontWeight: 800, color: "#004aad" }}>100% In-House Testing</span>
+                      <CheckCircle2 size={16} color="var(--water)" />
+                      <span className="font-mono-spec" style={{ fontSize: 12, fontWeight: 700, color: "var(--deep)" }}>100% In-House Testing</span>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                      <CheckCircle2 size={16} color="#0085f4" />
-                      <span style={{ fontSize: 13, fontWeight: 800, color: "#004aad" }}>Buy American Compliant</span>
+                      <CheckCircle2 size={16} color="var(--water)" />
+                      <span className="font-mono-spec" style={{ fontSize: 12, fontWeight: 700, color: "var(--deep)" }}>Buy American Compliant</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Real Facility Image Container */}
-                <div style={{ position: "relative", height: 320, borderRadius: "14px", overflow: "hidden", border: "1px solid #E2E8F0" }}>
+                <div style={{ position: "relative", height: 320, borderRadius: "0px", overflow: "hidden", border: "1px solid var(--line)" }}>
                   <Image
                     src="/images/THROUGHENGINEERING.png"
                     alt="H2 Industries Manufacturing Facility"
                     fill
                     style={{ objectFit: "cover" }}
                   />
-                  <div style={{ position: "absolute", bottom: 0, inset: "auto 0 0 0", background: "linear-gradient(to top, rgba(0,74,173,0.95), transparent)", padding: "20px 24px", color: "#fff" }}>
-                    <div style={{ fontSize: 11, fontWeight: 900, letterSpacing: "0.1em", textTransform: "uppercase", color: "#90CAF9" }}>MELVILLE, NY FACILITY</div>
-                    <div style={{ fontSize: 14, fontWeight: 800 }}>Foundry Operations & Automated Tooling Lab</div>
+                  <div style={{ position: "absolute", bottom: 0, inset: "auto 0 0 0", background: "linear-gradient(to top, rgba(15,23,42,0.95), transparent)", padding: "20px 24px", color: "#fff" }}>
+                    <div className="font-mono-spec" style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--water)" }}>MELVILLE, NY FACILITY</div>
+                    <div className="font-display" style={{ fontSize: 14, fontWeight: 700, marginTop: 4 }}>Foundry Operations & Automated Tooling Lab</div>
                   </div>
                 </div>
               </div>
@@ -282,25 +282,24 @@ export default function CompanyProfile() {
 
           {/* 3. OUR JOURNEY (Timeline) */}
           <section id="our-journey" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "40px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", marginBottom: 16 }}>
-                <Clock size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>OUR JOURNEY</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                <Clock size={13} style={{ marginRight: 6 }} /> OUR JOURNEY
               </div>
-              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 28 }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Quarter-Century of Innovation & Growth
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="timeline-grid">
                 {storyTimeline.map((item, i) => (
-                  <div key={i} style={{ background: "#F8FAFC", borderRadius: "12px", padding: "24px", border: "1px solid #E2E8F0", position: "relative" }}>
-                    <div className="font-display" style={{ fontSize: 24, fontWeight: 800, color: "var(--brand-blue)", marginBottom: 4 }}>
+                  <div key={i} className="industrial-card" style={{ background: "var(--paper)", borderRadius: "0px", padding: "20px", border: "1px solid var(--line)", position: "relative" }}>
+                    <div className="font-display" style={{ fontSize: 22, fontWeight: 800, color: "var(--water)", marginBottom: 4 }}>
                       {item.year}
                     </div>
-                    <div style={{ fontSize: 14, fontWeight: 900, color: "#004aad", marginBottom: 8 }}>
+                    <div className="font-display" style={{ fontSize: 14, fontWeight: 800, color: "var(--deep)", marginBottom: 8 }}>
                       {item.title}
                     </div>
-                    <div style={{ fontSize: 12, color: "#0085f4", lineHeight: 1.5, fontWeight: 500 }}>
+                    <div style={{ fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.55, fontWeight: 400 }}>
                       {item.text}
                     </div>
                   </div>
@@ -311,33 +310,32 @@ export default function CompanyProfile() {
 
           {/* 4. WHAT WE DO */}
           <section id="what-we-do" style={{ scrollMarginTop: 140 }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", alignSelf: "flex-start" }}>
-                <Wrench size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>WHAT WE DO</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                <Wrench size={13} style={{ marginRight: 6 }} /> WHAT WE DO
               </div>
-              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", margin: 0 }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 End-to-End Infrastructure Capabilities
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="pillars-grid">
                 {whatWeDoPillars.map((pil, idx) => {
                   const Icon = pil.icon;
                   return (
-                    <div key={idx} style={{ background: "#ffffff", borderRadius: "16px", padding: "28px", border: "1px solid #E2E8F0", boxShadow: "0 8px 24px rgba(0,74,173,0.03)" }}>
-                      <div style={{ width: 42, height: 42, borderRadius: "10px", background: "#EFF6FF", border: "1.5px solid #93C5FD", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
-                        <Icon size={20} color="#0085f4" />
+                    <div key={idx} className="industrial-card" style={{ background: "var(--paper)", borderRadius: "0px", padding: "24px", border: "1px solid var(--line)", display: "flex", flexDirection: "column" }}>
+                      <div style={{ width: 40, height: 40, borderRadius: "0px", background: "var(--surface)", border: "1px solid var(--line)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
+                        <Icon size={18} color="var(--water)" />
                       </div>
-                      <h4 style={{ fontSize: 15, fontWeight: 900, color: "#004aad", marginBottom: 8, letterSpacing: "0.02em" }}>
+                      <h4 className="font-display" style={{ fontSize: 14, fontWeight: 800, color: "var(--deep)", marginBottom: 8, letterSpacing: "0.02em" }}>
                         {pil.title}
                       </h4>
-                      <p style={{ fontSize: 12, color: "#0085f4", lineHeight: 1.5, marginBottom: 16, fontWeight: 500 }}>
+                      <p style={{ fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.55, marginBottom: 16, fontWeight: 400, flex: 1 }}>
                         {pil.desc}
                       </p>
-                      <div style={{ borderTop: "1px solid #E2E8F0", paddingTop: 12, display: "flex", flexDirection: "column", gap: 6 }}>
+                      <div style={{ borderTop: "1px solid var(--line)", paddingTop: 12, display: "flex", flexDirection: "column", gap: 6 }}>
                         {pil.points.map((pt, pIdx) => (
-                          <div key={pIdx} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, color: "#0085f4" }}>
-                            <Check size={12} color="#0085f4" /> {pt}
+                          <div key={pIdx} className="font-mono-spec" style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 600, color: "var(--ink)" }}>
+                            <Check size={12} color="var(--water)" /> {pt}
                           </div>
                         ))}
                       </div>
@@ -350,53 +348,52 @@ export default function CompanyProfile() {
 
           {/* 5. MANUFACTURING FOOTPRINT */}
           <section id="footprint" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "40px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", marginBottom: 16 }}>
-                <Factory size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>MANUFACTURING FOOTPRINT</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                <Factory size={13} style={{ marginRight: 6 }} /> MANUFACTURING FOOTPRINT
               </div>
-              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Strategic North American Facilities
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="footprint-grid">
                 {/* NY Facility */}
-                <div style={{ background: "#F8FAFC", borderRadius: "14px", overflow: "hidden", border: "1px solid #E2E8F0" }}>
+                <div className="industrial-card" style={{ background: "var(--paper)", borderRadius: "0px", overflow: "hidden", border: "1px solid var(--line)" }}>
                   <div style={{ position: "relative", height: 160 }}>
                     <Image src="/images/THROUGHENGINEERINGPRD.png" alt="Melville NY Facility" fill style={{ objectFit: "cover" }} />
                   </div>
                   <div style={{ padding: "20px" }}>
-                    <div style={{ fontSize: 10, fontWeight: 900, color: "#0085f4", textTransform: "uppercase" }}>HEADQUARTERS & FOUNDRY</div>
-                    <div style={{ fontSize: 16, fontWeight: 900, color: "#004aad", margin: "4px 0 8px" }}>Melville, New York, USA</div>
-                    <p style={{ fontSize: 12, color: "#0085f4", lineHeight: 1.45, margin: 0, fontWeight: 500 }}>
+                    <div className="font-mono-spec" style={{ fontSize: 10, fontWeight: 700, color: "var(--water)", textTransform: "uppercase" }}>HEADQUARTERS & FOUNDRY</div>
+                    <div className="font-display" style={{ fontSize: 16, fontWeight: 800, color: "var(--deep)", margin: "4px 0 8px" }}>Melville, New York, USA</div>
+                    <p style={{ fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.5, margin: 0, fontWeight: 400 }}>
                       120,000 sq. ft. primary casting, CNC machining, metallurgical testing lab, and corporate HQ.
                     </p>
                   </div>
                 </div>
 
                 {/* FL Facility */}
-                <div style={{ background: "#F8FAFC", borderRadius: "14px", overflow: "hidden", border: "1px solid #E2E8F0" }}>
-                  <div style={{ position: "relative", height: 160 }}>
-                    <Image src="/images/curb-box.webp" alt="Stuart FL Facility" fill style={{ objectFit: "contain", padding: 20, background: "#ffffff" }} />
+                <div className="industrial-card" style={{ background: "var(--paper)", borderRadius: "0px", overflow: "hidden", border: "1px solid var(--line)" }}>
+                  <div style={{ position: "relative", height: 160, background: "#ffffff" }}>
+                    <Image src="/images/curb-box.webp" alt="Stuart FL Facility" fill style={{ objectFit: "contain", padding: 20 }} />
                   </div>
                   <div style={{ padding: "20px" }}>
-                    <div style={{ fontSize: 10, fontWeight: 900, color: "#0085f4", textTransform: "uppercase" }}>SOUTHERN OPERATIONS</div>
-                    <div style={{ fontSize: 16, fontWeight: 900, color: "#004aad", margin: "4px 0 8px" }}>Stuart, Florida, USA</div>
-                    <p style={{ fontSize: 12, color: "#0085f4", lineHeight: 1.45, margin: 0, fontWeight: 500 }}>
+                    <div className="font-mono-spec" style={{ fontSize: 10, fontWeight: 700, color: "var(--water)", textTransform: "uppercase" }}>SOUTHERN OPERATIONS</div>
+                    <div className="font-display" style={{ fontSize: 16, fontWeight: 800, color: "var(--deep)", margin: "4px 0 8px" }}>Stuart, Florida, USA</div>
+                    <p style={{ fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.5, margin: 0, fontWeight: 400 }}>
                       Specialized polymer molding, hydrostatic burst testing, and Southeast US logistics distribution hub.
                     </p>
                   </div>
                 </div>
 
                 {/* ON Facility */}
-                <div style={{ background: "#F8FAFC", borderRadius: "14px", overflow: "hidden", border: "1px solid #E2E8F0" }}>
-                  <div style={{ position: "relative", height: 160 }}>
-                    <Image src="/images/column-drain-water.webp" alt="Toronto ON Facility" fill style={{ objectFit: "contain", padding: 20, background: "#ffffff" }} />
+                <div className="industrial-card" style={{ background: "var(--paper)", borderRadius: "0px", overflow: "hidden", border: "1px solid var(--line)" }}>
+                  <div style={{ position: "relative", height: 160, background: "#ffffff" }}>
+                    <Image src="/images/column-drain-water.webp" alt="Toronto ON Facility" fill style={{ objectFit: "contain", padding: 20 }} />
                   </div>
                   <div style={{ padding: "20px" }}>
-                    <div style={{ fontSize: 10, fontWeight: 900, color: "#0085f4", textTransform: "uppercase" }}>CANADIAN OPERATIONS</div>
-                    <div style={{ fontSize: 16, fontWeight: 900, color: "#004aad", margin: "4px 0 8px" }}>Toronto, Ontario, Canada</div>
-                    <p style={{ fontSize: 12, color: "#0085f4", lineHeight: 1.45, margin: 0, fontWeight: 500 }}>
+                    <div className="font-mono-spec" style={{ fontSize: 10, fontWeight: 700, color: "var(--water)", textTransform: "uppercase" }}>CANADIAN OPERATIONS</div>
+                    <div className="font-display" style={{ fontSize: 16, fontWeight: 800, color: "var(--deep)", margin: "4px 0 8px" }}>Toronto, Ontario, Canada</div>
+                    <p style={{ fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.5, margin: 0, fontWeight: 400 }}>
                       Canadian head office, CSA compliance laboratory, and nationwide provincial distribution center.
                     </p>
                   </div>
@@ -407,47 +404,38 @@ export default function CompanyProfile() {
 
           {/* 6. QUALITY & STANDARDS */}
           <section id="quality" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "40px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", marginBottom: 16 }}>
-                <Award size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>QUALITY & STANDARDS</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                <Award size={13} style={{ marginRight: 6 }} /> QUALITY & STANDARDS
               </div>
-              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Certified North American Standards & Approvals
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="standards-grid">
                 {certificationBadges.map((badge, idx) => (
-                  <div key={idx} style={{ background: "#F8FAFC", borderRadius: "12px", padding: "20px", border: "1px solid #E2E8F0", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                  <div key={idx} className="industrial-card" style={{ background: "var(--paper)", borderRadius: "0px", padding: "18px", border: "1px solid var(--line)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                     <div>
                       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-                        <Award size={18} color="#0085f4" />
-                        <span style={{ fontSize: 14, fontWeight: 900, color: "#004aad" }}>{badge.name}</span>
+                        <Award size={16} color="var(--water)" />
+                        <span className="font-display" style={{ fontSize: 13, fontWeight: 800, color: "var(--deep)" }}>{badge.name}</span>
                       </div>
-                      <div style={{ fontSize: 10, fontWeight: 800, color: "#0085f4", textTransform: "uppercase" }}>
+                      <div className="font-mono-spec" style={{ fontSize: 9, fontWeight: 700, color: "var(--ink-soft)", textTransform: "uppercase" }}>
                         {badge.sub}
                       </div>
                     </div>
 
                     <Link
                       href={badge.href}
+                      className="btn-outline"
                       style={{
-                        marginTop: 16,
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 6,
-                        background: "transparent",
-                        border: "1px solid #90CAF9",
-                        color: "#0085f4",
-                        padding: "6px 12px",
-                        borderRadius: "6px",
-                        fontSize: 11,
-                        fontWeight: 800,
-                        textDecoration: "none",
+                        marginTop: 14,
+                        padding: "6px 10px",
+                        fontSize: 10,
                         width: "fit-content"
                       }}
                     >
-                      <Download size={12} /> VIEW SPEC
+                      <Download size={11} /> VIEW SPEC
                     </Link>
                   </div>
                 ))}
@@ -457,32 +445,31 @@ export default function CompanyProfile() {
 
           {/* 7. MISSION, VISION & VALUES */}
           <section id="mission-values" style={{ scrollMarginTop: 140 }}>
-            <div style={{ background: "#ffffff", borderRadius: "20px", padding: "40px", border: "1px solid #E2E8F0", boxShadow: "0 10px 30px rgba(0, 74, 173, 0.04)" }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", marginBottom: 16 }}>
-                <Compass size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>MISSION, VISION & VALUES</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                <Compass size={13} style={{ marginRight: 6 }} /> MISSION, VISION & VALUES
               </div>
-              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", marginBottom: 24 }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Compact & Principled Engineering Philosophy
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 28 }}>
-                <div style={{ background: "#F8FAFC", padding: "24px", borderRadius: "14px", border: "1px solid #E2E8F0" }}>
-                  <div style={{ fontSize: 12, fontWeight: 900, color: "#0085f4", textTransform: "uppercase", marginBottom: 6 }}>OUR MISSION</div>
-                  <p style={{ fontSize: 14, color: "#004aad", fontWeight: 700, lineHeight: 1.5, margin: 0 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 24 }} className="mission-vision-grid">
+                <div className="industrial-card" style={{ background: "var(--paper)", padding: "24px", borderRadius: "0px", border: "1px solid var(--line)", borderLeft: "3px solid var(--water)" }}>
+                  <div className="font-mono-spec" style={{ fontSize: 11, fontWeight: 700, color: "var(--water)", textTransform: "uppercase", marginBottom: 6 }}>OUR MISSION</div>
+                  <p style={{ fontSize: 14, color: "var(--ink)", fontWeight: 500, lineHeight: 1.6, margin: 0 }}>
                     To engineer and manufacture high-yield, fail-safe waterworks products that safeguard public health, protect natural waterways, and exceed North American municipal standards.
                   </p>
                 </div>
-                <div style={{ background: "#F8FAFC", padding: "24px", borderRadius: "14px", border: "1px solid #E2E8F0" }}>
-                  <div style={{ fontSize: 12, fontWeight: 900, color: "#0085f4", textTransform: "uppercase", marginBottom: 6 }}>OUR VISION</div>
-                  <p style={{ fontSize: 14, color: "#004aad", fontWeight: 700, lineHeight: 1.5, margin: 0 }}>
+                <div className="industrial-card" style={{ background: "var(--paper)", padding: "24px", borderRadius: "0px", border: "1px solid var(--line)", borderLeft: "3px solid var(--water)" }}>
+                  <div className="font-mono-spec" style={{ fontSize: 11, fontWeight: 700, color: "var(--water)", textTransform: "uppercase", marginBottom: 6 }}>OUR VISION</div>
+                  <p style={{ fontSize: 14, color: "var(--ink)", fontWeight: 500, lineHeight: 1.6, margin: 0 }}>
                     To set the gold standard in sustainable hydro-infrastructure, integrating smart telemetry and eco-friendly manufacturing across all 50 States and 10 Canadian Provinces.
                   </p>
                 </div>
               </div>
 
               {/* Core Values Compact Grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 14 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }} className="values-grid">
                 {[
                   { title: "INTEGRITY", desc: "Strict adherence to specs.", icon: ShieldCheck },
                   { title: "QUALITY", desc: "Zero compromise on tolerances.", icon: Award },
@@ -492,12 +479,12 @@ export default function CompanyProfile() {
                 ].map((v, idx) => {
                   const VIcon = v.icon;
                   return (
-                    <div key={idx} style={{ background: "#EBF3FF", padding: "16px", borderRadius: "12px", textAlign: "center" }}>
-                      <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#0085f4", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px" }}>
-                        <VIcon size={16} />
+                    <div key={idx} className="industrial-card" style={{ background: "var(--paper)", padding: "16px", borderRadius: "0px", border: "1px solid var(--line)", textAlign: "center" }}>
+                      <div style={{ width: 32, height: 32, borderRadius: "0px", background: "var(--deep)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 8px" }}>
+                        <VIcon size={16} color="var(--water)" />
                       </div>
-                      <div style={{ fontSize: 12, fontWeight: 900, color: "#004aad" }}>{v.title}</div>
-                      <div style={{ fontSize: 10, color: "#0085f4", marginTop: 2, fontWeight: 500 }}>{v.desc}</div>
+                      <div className="font-mono-spec" style={{ fontSize: 11, fontWeight: 700, color: "var(--deep)" }}>{v.title}</div>
+                      <div style={{ fontSize: 10, color: "var(--ink-soft)", marginTop: 4, fontWeight: 400, lineHeight: 1.4 }}>{v.desc}</div>
                     </div>
                   );
                 })}
@@ -507,25 +494,24 @@ export default function CompanyProfile() {
 
           {/* 8. MARKETS WE SERVE */}
           <section id="markets" style={{ scrollMarginTop: 140 }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#EBF3FF", padding: "6px 14px", borderRadius: "100px", alignSelf: "flex-start" }}>
-                <Globe2 size={14} color="#0085f4" />
-                <span style={{ color: "#0085f4", fontSize: 11, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase" }}>MARKETS WE SERVE</span>
+            <div className="industrial-card" style={{ background: "var(--surface)", borderRadius: "0px", padding: "36px", border: "1px solid var(--line)" }}>
+              <div className="eyebrow-label" style={{ marginBottom: 12 }}>
+                <Globe2 size={13} style={{ marginRight: 6 }} /> MARKETS WE SERVE
               </div>
-              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, color: "var(--brand-deep)", textTransform: "uppercase", margin: 0 }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 24 }}>
                 Diverse Infrastructure Sector Application
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="markets-grid">
                 {marketsServed.map((m, idx) => {
                   const MIcon = m.icon;
                   return (
-                    <div key={idx} style={{ background: "#ffffff", borderRadius: "16px", padding: "28px", border: "1px solid #E2E8F0", boxShadow: "0 8px 24px rgba(0,74,173,0.03)" }}>
-                      <div style={{ width: 40, height: 40, borderRadius: "10px", background: "#EFF6FF", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
-                        <MIcon size={20} color="#0085f4" />
+                    <div key={idx} className="industrial-card" style={{ background: "var(--paper)", borderRadius: "0px", padding: "24px", border: "1px solid var(--line)", display: "flex", flexDirection: "column" }}>
+                      <div style={{ width: 36, height: 36, borderRadius: "0px", background: "var(--surface)", border: "1px solid var(--line)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
+                        <MIcon size={18} color="var(--water)" />
                       </div>
-                      <h4 style={{ fontSize: 16, fontWeight: 900, color: "#004aad", marginBottom: 8 }}>{m.title}</h4>
-                      <p style={{ fontSize: 12, color: "#0085f4", lineHeight: 1.5, margin: 0, fontWeight: 500 }}>{m.desc}</p>
+                      <h4 className="font-display" style={{ fontSize: 15, fontWeight: 800, color: "var(--deep)", marginBottom: 6 }}>{m.title}</h4>
+                      <p style={{ fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.55, margin: 0, fontWeight: 400 }}>{m.desc}</p>
                     </div>
                   );
                 })}
@@ -539,11 +525,11 @@ export default function CompanyProfile() {
               <div className="eyebrow-label" style={{ color: "var(--water)", marginBottom: 8 }}>
                 MEASURABLE DIFFERENTIATORS
               </div>
-              <h3 className="font-display" style={{ fontSize: 28, fontWeight: 800, textTransform: "uppercase", marginBottom: 24, color: "#FFFFFF" }}>
+              <h3 className="font-display" style={{ fontSize: 26, fontWeight: 800, textTransform: "uppercase", marginBottom: 24, color: "#FFFFFF" }}>
                 Why Engineers & Contractors Specify H2 Industries
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="why-grid">
                 {[
                   { title: "ENGINEERING SUPPORT", desc: "Direct access to P.E. engineers for custom submittals & CAD drawings." },
                   { title: "MANUFACTURING CONTROL", desc: "100% owned foundry & polymer tooling ensuring zero quality drift." },
@@ -569,7 +555,7 @@ export default function CompanyProfile() {
                 Downloadable Corporate & Technical Documentation
               </h3>
 
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }} className="resources-grid">
                 {[
                   { name: "H2 Company Profile", size: "PDF • Technical Spec Sheet", href: "/quality#standards" },
                   { name: "Quality Certifications Pack", size: "PDF • AWWA & ASTM Approvals", href: "/quality#standards" },
@@ -579,7 +565,7 @@ export default function CompanyProfile() {
                   <div key={i} className="industrial-card" style={{ background: "var(--paper)", padding: "16px", borderRadius: "0px", border: "1px solid var(--line)", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                     <div>
                       <FileCheck size={20} color="var(--water)" style={{ marginBottom: 8 }} />
-                      <div className="font-display" style={{ fontSize: 15, fontWeight: 800, color: "var(--deep)" }}>{res.name}</div>
+                      <div className="font-display" style={{ fontSize: 14, fontWeight: 800, color: "var(--deep)" }}>{res.name}</div>
                       <div className="font-mono-spec" style={{ fontSize: 10, color: "var(--ink-soft)", marginTop: 4 }}>{res.size}</div>
                     </div>
                     <Link
@@ -587,11 +573,11 @@ export default function CompanyProfile() {
                       className="btn-outline"
                       style={{
                         marginTop: 14,
-                        padding: "8px",
+                        padding: "6px 10px",
                         fontSize: 10,
                       }}
                     >
-                      <Download size={12} /> VIEW SPEC
+                      <Download size={11} /> VIEW SPEC
                     </Link>
                   </div>
                 ))}
@@ -605,7 +591,7 @@ export default function CompanyProfile() {
               <div className="eyebrow-label" style={{ marginBottom: 8, justifyContent: "center" }}>
                 PARTNERSHIP & MUNICIPAL INQUIRIES
               </div>
-              <h2 className="font-display" style={{ fontSize: 32, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 14 }}>
+              <h2 className="font-display" style={{ fontSize: 30, fontWeight: 800, color: "var(--deep)", textTransform: "uppercase", marginBottom: 14 }}>
                 Work With H2 Industries
               </h2>
               <p style={{ fontSize: 15, color: "var(--ink)", maxWidth: 640, margin: "0 auto 28px", lineHeight: 1.6, fontWeight: 400 }}>
@@ -636,6 +622,34 @@ export default function CompanyProfile() {
 
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .company-wrapper { padding: 0 20px 80px !important; }
+          .company-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .company-sidebar { position: static !important; }
+          .who-we-are-grid { grid-template-columns: 1fr !important; }
+          .timeline-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .pillars-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .footprint-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .standards-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .values-grid { grid-template-columns: repeat(3, 1fr) !important; }
+          .markets-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .why-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .resources-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 640px) {
+          .timeline-grid { grid-template-columns: 1fr !important; }
+          .pillars-grid { grid-template-columns: 1fr !important; }
+          .footprint-grid { grid-template-columns: 1fr !important; }
+          .standards-grid { grid-template-columns: 1fr !important; }
+          .mission-vision-grid { grid-template-columns: 1fr !important; }
+          .values-grid { grid-template-columns: 1fr 1fr !important; }
+          .markets-grid { grid-template-columns: 1fr !important; }
+          .why-grid { grid-template-columns: 1fr !important; }
+          .resources-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   );
 }

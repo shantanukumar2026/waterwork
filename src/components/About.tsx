@@ -155,15 +155,16 @@ function PortfolioSection({ item, index }: { item: typeof portfolioItems[0]; ind
             style={{
               fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
               fontWeight: 700,
-              color: "var(--brand-deep)",
+              color: "var(--deep)",
               lineHeight: 1.15,
+              textTransform: "uppercase",
               margin: "6px 0 0 0",
             }}
           >
             {item.mainTitle} <br />
             <span
               style={{
-                color: "var(--brand-blue)",
+                color: "var(--water)",
                 display: "inline-block",
               }}
             >
@@ -173,14 +174,14 @@ function PortfolioSection({ item, index }: { item: typeof portfolioItems[0]; ind
 
           {/* Subtitle / Engineering Line */}
           <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "4px 0 12px 0" }}>
-            <span className="font-mono-spec" style={{ color: "var(--brand-blue)", fontSize: 11, fontWeight: 700 }}>
+            <span className="font-mono-spec" style={{ color: "var(--water)", fontSize: 11, fontWeight: 700 }}>
               /// {item.subtitle}
             </span>
             <div style={{ flex: 1, height: 1, background: "var(--hairline)", maxWidth: 110 }} />
           </div>
 
           {/* Description */}
-          <p style={{ color: "var(--brand-deep)", fontSize: 15, lineHeight: 1.65, fontWeight: 400, marginBottom: 20, maxWidth: 540 }}>
+          <p style={{ color: "var(--ink-soft)", fontSize: 15, lineHeight: 1.65, fontWeight: 400, marginBottom: 20, maxWidth: 540 }}>
             {item.desc}
           </p>
 

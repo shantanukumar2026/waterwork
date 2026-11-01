@@ -34,12 +34,12 @@ export default function Projects() {
             </div>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(1.8rem, 8vw, 3.2rem)", fontWeight: 900, color: "#004aad", lineHeight: 1.0, marginBottom: 16, textTransform: "uppercase" }}
+              style={{ fontSize: "clamp(1.8rem, 8vw, 3.2rem)", fontWeight: 900, color: "var(--deep)", lineHeight: 1.0, marginBottom: 16, textTransform: "uppercase" }}
             >
               Our Products<br />
-              <span style={{ color: "#0085f4" }}>In Action</span>
+              <span style={{ color: "var(--water)" }}>In Action</span>
             </h2>
-            <p style={{ color: "#0085f4", fontSize: 17, maxWidth: 520, margin: "0 auto", lineHeight: 1.65 }}>
+            <p style={{ color: "var(--ink-soft)", fontSize: 15, maxWidth: 520, margin: "0 auto", lineHeight: 1.65 }}>
               A visual showcase of the H2 Industries product range — precision-engineered components built for real-world water management challenges.
             </p>
           </motion.div>
@@ -84,7 +84,7 @@ export default function Projects() {
               transition={{ type: "spring", damping: 22, stiffness: 200 }}
               onClick={(e) => e.stopPropagation()}
               style={{
-                background: "#F5F7FA",
+                background: "var(--paper)",
                 borderRadius: 20,
                 overflow: "hidden",
                 maxWidth: 640,
@@ -97,10 +97,10 @@ export default function Projects() {
               </div>
               <div style={{ padding: "16px 24px", background: "#fff", borderTop: "1px solid #90CAF9", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>
-                  <p style={{ fontSize: 15, fontWeight: 700, color: "#004aad" }}>{lb.label}</p>
-                  <p style={{ fontSize: 11, color: "#0085f4", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>H2 Industries™</p>
+                  <p style={{ fontSize: 15, fontWeight: 700, color: "var(--deep)" }}>{lb.label}</p>
+                  <p style={{ fontSize: 11, color: "var(--water)", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>H2 Industries™</p>
                 </div>
-                <button onClick={() => setLb(null)} style={{ background: "#F5F7FA", border: "none", borderRadius: 8, padding: 8, cursor: "pointer" }}>
+                <button onClick={() => setLb(null)} style={{ background: "var(--paper)", border: "none", borderRadius: 8, padding: 8, cursor: "pointer" }}>
                   <X size={18} color="#0085f4" />
                 </button>
               </div>
@@ -134,7 +134,7 @@ function GalleryItem({ item, index, inView, onOpen, tall }: {
         aspectRatio: tall ? "1/2" : "1/1",
         borderRadius: 14,
         overflow: "hidden",
-        background: "#F5F7FA",
+        background: "var(--paper)",
         border: `1.5px solid ${hovered ? "rgba(21,101,192,0.35)" : "#90CAF9"}`,
         cursor: "pointer",
         transition: "all 0.28s ease",

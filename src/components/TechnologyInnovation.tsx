@@ -22,26 +22,25 @@ export default function TechnologyInnovation() {
     <section 
       id="technology" 
       style={{ 
-        background: "#FAFAFA",
-        padding: "48px 0",
-        position: "relative"
+        background: "#ffffff",
+        padding: "60px 0",
+        position: "relative",
+        borderTop: "1px solid #E2E8F0"
       }}
     >
-      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
+      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }} className="tech-container">
         
         <div ref={ref} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", marginBottom: 48 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(21, 101, 192, 0.1)", border: "1px solid rgba(21, 101, 192, 0.3)", padding: "6px 16px", marginBottom: 20 }}>
+            <div className="pill-tag" style={{ marginBottom: 18 }}>
               <Zap size={14} color="#0085f4" />
-              <span style={{ color: "#0085f4", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                {header.tagline}
-              </span>
+              <span>{header.tagline}</span>
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "var(--brand-deep)", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
-              {header.title} <span style={{ color: "var(--brand-blue)" }}>{header.highlight}</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "#0F172A", lineHeight: 1.1, marginBottom: 18, textTransform: "uppercase" }}>
+              {header.title} <span style={{ color: "#0085f4" }}>{header.highlight}</span>
             </h2>
-            <p style={{ color: "var(--brand-blue)", fontSize: 16, maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontWeight: 500 }}>
+            <p style={{ color: "#334155", fontSize: 16, maxWidth: 680, margin: "0 auto", lineHeight: 1.6, fontWeight: 400 }}>
               {header.subtitle}
             </p>
           </motion.div>
@@ -60,41 +59,38 @@ export default function TechnologyInnovation() {
               >
                 <div
                   style={{
-                    background: "#ffffff",
-                    border: "1px solid #E0E0E0",
-                    padding: "40px",
-                    borderRadius: "16px",
+                    background: "#F8FAFC",
+                    border: "1px solid #E2E8F0",
+                    padding: "36px 28px",
+                    borderRadius: "12px",
                     position: "relative",
                     overflow: "hidden",
-                    transition: "all 0.3s ease",
+                    transition: "all 0.25s ease",
                     cursor: "default",
-                    boxShadow: "0 10px 30px rgba(6,35,71,0.03)",
+                    boxShadow: "0 4px 16px rgba(15, 23, 42, 0.03)",
                     display: "flex",
                     flexDirection: "column",
                     height: "100%"
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(21, 101, 192, 0.02)";
-                    e.currentTarget.style.borderColor = "#0085f4";
-                    e.currentTarget.style.transform = "translateY(-4px)";
-                    e.currentTarget.style.boxShadow = "0 20px 40px rgba(21, 101, 192, 0.1)";
+                    e.currentTarget.style.background = "#ffffff";
+                    e.currentTarget.style.borderColor = "rgba(0, 133, 244, 0.4)";
+                    e.currentTarget.style.transform = "translateY(-3px)";
+                    e.currentTarget.style.boxShadow = "0 16px 36px rgba(0, 133, 244, 0.08)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "#ffffff";
-                    e.currentTarget.style.borderColor = "#E0E0E0";
+                    e.currentTarget.style.background = "#F8FAFC";
+                    e.currentTarget.style.borderColor = "#E2E8F0";
                     e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "0 10px 30px rgba(6,35,71,0.03)";
+                    e.currentTarget.style.boxShadow = "0 4px 16px rgba(15, 23, 42, 0.03)";
                   }}
                 >
-                  {/* Decorative top-right accent */}
-                  <div style={{ position: "absolute", top: 0, right: 0, width: 60, height: 60, background: "linear-gradient(135deg, transparent 50%, rgba(21, 101, 192, 0.05) 50%)" }} />
-                  
-                  <div style={{ width: 64, height: 64, background: "#F0F7FF", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 24, border: "1px solid #90CAF9" }}>
-                    <Icon size={28} color="#0085f4" />
+                  <div style={{ width: 56, height: 56, background: "rgba(0, 133, 244, 0.08)", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 20, border: "1px solid rgba(0, 133, 244, 0.2)" }}>
+                    <Icon size={26} color="#0085f4" />
                   </div>
                   
-                  <h3 style={{ color: "var(--brand-deep)", fontSize: 20, fontWeight: 800, marginBottom: 12, textTransform: "uppercase" }}>{tech.title}</h3>
-                  <p style={{ color: "#0085f4", fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500 }}>{tech.desc}</p>
+                  <h3 style={{ color: "#0F172A", fontSize: 18, fontWeight: 800, marginBottom: 10, textTransform: "uppercase" }}>{tech.title}</h3>
+                  <p style={{ color: "#475569", fontSize: 14, lineHeight: 1.6, margin: 0, fontWeight: 400 }}>{tech.desc}</p>
                 </div>
               </motion.div>
             );
@@ -107,7 +103,12 @@ export default function TechnologyInnovation() {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+          .tech-container {
+            padding: 0 24px !important;
+          }
+        }
+        @media (max-width: 640px) {
           .tech-grid {
             grid-template-columns: 1fr !important;
           }

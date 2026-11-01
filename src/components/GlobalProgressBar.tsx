@@ -3,17 +3,18 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
-export default function GlobalProgressBar({ containerRef }: { containerRef: React.RefObject<any> }) {
+export default function GlobalProgressBar({ containerRef }: { containerRef?: React.RefObject<any> }) {
   const [isClient, setIsClient] = useState(false);
   
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const { scrollYProgress } = useScroll({ container: containerRef }); // tracks container scroll
+  // Track window page scroll directly
+  const { scrollYProgress } = useScroll();
   
   const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
+    stiffness: 120,
     damping: 30,
     restDelta: 0.001
   });
@@ -26,9 +27,9 @@ export default function GlobalProgressBar({ containerRef }: { containerRef: Reac
       top: 0,
       right: 0,
       bottom: 0,
-      width: 6,
-      background: "rgba(255,255,255,0.05)",
-      zIndex: 9999, // Ensure it sits on top of everything
+      width: 4,
+      background: "rgba(0, 74, 173, 0.08)",
+      zIndex: 9999,
       pointerEvents: "none"
     }}>
       <motion.div
@@ -38,10 +39,10 @@ export default function GlobalProgressBar({ containerRef }: { containerRef: Reac
           left: 0,
           right: 0,
           bottom: 0,
-          background: "linear-gradient(180deg, #2196F3 0%, #00E5FF 100%)",
+          background: "linear-gradient(180deg, #0085F4 0%, #00BBFF 100%)",
           transformOrigin: "top",
           scaleY,
-          boxShadow: "-2px 0 10px rgba(33,150,243,0.5)"
+          boxShadow: "-1px 0 8px rgba(0, 133, 244, 0.4)"
         }}
       />
     </div>

@@ -13,29 +13,28 @@ export default function ManufacturingCapabilities() {
     <section 
       id="capabilities" 
       style={{ 
-        background: "#F5F7FA", 
-        padding: "48px 0",
+        background: "#F8FAFC", 
+        padding: "60px 0",
+        borderTop: "1px solid #E2E8F0"
       }}
     >
-      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
+      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }} className="capabilities-container">
         
-        <div ref={ref} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 32, marginBottom: 64 }}>
+        <div ref={ref} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 32, marginBottom: 50 }}>
           <motion.div initial={{ opacity: 0, x: -30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#fff", border: "1px solid #E0E0E0", padding: "6px 16px", marginBottom: 20 }}>
-              <span style={{ width: 8, height: 8, background: "#0085f4", borderRadius: "50%" }} />
-              <span style={{ color: "#0085f4", fontSize: 12, fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                {header.tagline}
-              </span>
+            <div className="pill-tag" style={{ marginBottom: 18 }}>
+              <span className="dot" />
+              {header.tagline}
             </div>
             
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 900, color: "#004aad", lineHeight: 1.1, textTransform: "uppercase" }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 800, color: "#0F172A", lineHeight: 1.1, textTransform: "uppercase" }}>
               {header.title}<br />
               <span style={{ color: "#0085f4" }}>{header.highlight}</span>
             </h2>
           </motion.div>
           
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} style={{ maxWidth: 500 }}>
-            <p style={{ color: "#0085f4", fontSize: 16, lineHeight: 1.6, margin: 0 }}>
+          <motion.div initial={{ opacity: 0, x: 30 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} style={{ maxWidth: 520 }}>
+            <p style={{ color: "#334155", fontSize: 16, lineHeight: 1.65, margin: 0, fontWeight: 400 }}>
               {header.subtitle}
             </p>
           </motion.div>
@@ -47,7 +46,7 @@ export default function ManufacturingCapabilities() {
               key={cap.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.12 }}
               style={{ height: "100%" }}
             >
               <CapabilityCard cap={cap} />
@@ -61,7 +60,12 @@ export default function ManufacturingCapabilities() {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+          .capabilities-container {
+            padding: 0 24px !important;
+          }
+        }
+        @media (max-width: 640px) {
           .capabilities-grid {
             grid-template-columns: 1fr !important;
           }
@@ -80,36 +84,35 @@ function CapabilityCard({ cap }: { cap: any }) {
       onMouseLeave={() => setHovered(false)}
       style={{
         background: "#fff",
-        borderRadius: "4px",
+        borderRadius: "8px",
         overflow: "hidden",
-        boxShadow: hovered ? "0 20px 40px rgba(13, 58, 115, 0.1)" : "0 4px 12px rgba(13, 58, 115, 0.05)",
-        transition: "all 0.3s ease",
-        transform: hovered ? "translateY(-4px)" : "translateY(0)",
+        boxShadow: hovered ? "0 16px 36px rgba(15, 23, 42, 0.08)" : "0 4px 16px rgba(15, 23, 42, 0.04)",
+        transition: "all 0.25s ease",
+        transform: hovered ? "translateY(-3px)" : "translateY(0)",
         cursor: "default",
         display: "flex",
         flexDirection: "column",
         height: "100%",
-        border: "1px solid #E0E0E0"
+        border: "1px solid #E2E8F0"
       }}
     >
       {/* Visual Image Placeholder Area */}
-      <div style={{ height: 240, background: cap.imageColor, position: "relative", overflow: "hidden" }}>
-        {/* Placeholder graphic simulating machinery/industrial process */}
-        <div style={{ position: "absolute", inset: 0, opacity: 0.4, backgroundImage: "linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent)", backgroundSize: "20px 20px" }} />
+      <div style={{ height: 200, background: cap.imageColor || "#002B66", position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, opacity: 0.35, backgroundImage: "linear-gradient(45deg, rgba(255,255,255,0.12) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.12) 75%, transparent 75%, transparent)", backgroundSize: "20px 20px" }} />
         <div style={{ position: "absolute", bottom: -20, right: -20, width: 120, height: 120, borderRadius: "50%", border: "20px solid rgba(255,255,255,0.1)" }} />
         
-        <div style={{ position: "absolute", top: 20, left: 20, background: "rgba(255,255,255,0.2)", backdropFilter: "blur(4px)", padding: "4px 12px", color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
+        <div style={{ position: "absolute", top: 16, left: 16, background: "rgba(15, 23, 42, 0.65)", backdropFilter: "blur(4px)", padding: "4px 12px", borderRadius: 4, color: "#fff", fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
           ISO 9001 Facility
         </div>
       </div>
 
       {/* Content */}
-      <div style={{ padding: 32, flex: 1, display: "flex", flexDirection: "column" }}>
-        <h3 style={{ fontSize: 20, fontWeight: 800, color: "#004aad", marginBottom: 16, textTransform: "uppercase" }}>{cap.title}</h3>
-        <p style={{ fontSize: 15, color: "#0085f4", lineHeight: 1.6, margin: 0 }}>{cap.desc}</p>
+      <div style={{ padding: 24, flex: 1, display: "flex", flexDirection: "column" }}>
+        <h3 style={{ fontSize: 18, fontWeight: 800, color: "#0F172A", marginBottom: 10, textTransform: "uppercase" }}>{cap.title}</h3>
+        <p style={{ fontSize: 14, color: "#475569", lineHeight: 1.6, margin: 0, fontWeight: 400 }}>{cap.desc}</p>
         
-        <div style={{ marginTop: "auto", paddingTop: 24 }}>
-          <div style={{ width: 40, height: 2, background: hovered ? "#0085f4" : "#E0E0E0", transition: "all 0.3s" }} />
+        <div style={{ marginTop: "auto", paddingTop: 20 }}>
+          <div style={{ width: 40, height: 2, background: hovered ? "#0085f4" : "#E2E8F0", transition: "all 0.3s" }} />
         </div>
       </div>
     </div>

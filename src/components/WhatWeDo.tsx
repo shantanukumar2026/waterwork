@@ -15,35 +15,36 @@ export default function WhatWeDo() {
     <section
       id="what-we-do"
       style={{
-        background: "#F5F7FA",
-        color: "#004aad",
-        padding: "48px 0",
+        background: "var(--paper)",
+        color: "var(--deep)",
+        padding: "64px 0",
         position: "relative",
-        overflow: "hidden"
+        overflow: "hidden",
+        borderTop: "1px solid var(--line)"
       }}
     >
-      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 60px", position: "relative", zIndex: 10 }}>
-        <div ref={ref} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: 80, alignItems: "center" }}>
+      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 60px", position: "relative", zIndex: 10 }} className="what-we-do-container">
+        <div ref={ref} style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))", gap: 60, alignItems: "center" }}>
 
           {/* Image & Features */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8 }}
-            style={{ position: "relative", order: 2 }} // Changed order for layout alternation
+            style={{ position: "relative", order: 2 }}
           >
-            <div style={{ position: "relative", width: "100%", height: 600, borderRadius: 8, overflow: "hidden", boxShadow: "0 30px 60px rgba(0, 133, 244, 0.1)" }}>
+            <div style={{ position: "relative", width: "100%", height: 500, borderRadius: "0px", border: "1px solid var(--line)", overflow: "hidden" }}>
               <Image src={data.image} alt={data.title} fill style={{ objectFit: "cover" }} />
             </div>
 
-            <div style={{ position: "absolute", top: 40, left: -40, background: "#fff", padding: "32px", borderRadius: 8, boxShadow: "0 20px 40px rgba(0, 133, 244, 0.1)", maxWidth: 300 }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div className="industrial-card" style={{ position: "absolute", bottom: -20, left: 20, right: 20, background: "var(--surface)", padding: "24px", borderRadius: "0px", border: "1px solid var(--line)", boxShadow: "0 10px 30px rgba(15,23,42,0.06)", maxWidth: 360 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {data.features.map((feature, i) => (
-                  <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                    <CheckCircle2 color="#2196F3" size={20} style={{ flexShrink: 0, marginTop: 2 }} />
+                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <CheckCircle2 color="var(--water)" size={18} style={{ flexShrink: 0, marginTop: 2 }} />
                     <div>
-                      <h4 style={{ margin: 0, fontSize: 15, fontWeight: 800, textTransform: "uppercase", color: "#004aad", marginBottom: 4 }}>{feature.title}</h4>
-                      <p style={{ margin: 0, fontSize: 14, color: "#607D8B", lineHeight: 1.5 }}>{feature.desc}</p>
+                      <h4 className="font-display" style={{ margin: 0, fontSize: 13, fontWeight: 800, textTransform: "uppercase", color: "var(--deep)", marginBottom: 2 }}>{feature.title}</h4>
+                      <p style={{ margin: 0, fontSize: 12, color: "var(--ink-soft)", lineHeight: 1.45, fontWeight: 400 }}>{feature.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -53,25 +54,23 @@ export default function WhatWeDo() {
 
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
             style={{ order: 1 }}
           >
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(33, 150, 243, 0.1)", padding: "8px 16px", marginBottom: 24, borderRadius: 4, borderLeft: "2px solid #2196F3" }}>
-              <span style={{ color: "#0085f4", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                {data.tagline}
-              </span>
+            <div className="eyebrow-label" style={{ marginBottom: 16 }}>
+              {data.tagline}
             </div>
 
-            <h2 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 900, lineHeight: 1.1, marginBottom: 32, textTransform: "uppercase" }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(2.2rem, 5vw, 3.4rem)", fontWeight: 800, color: "var(--deep)", lineHeight: 1.1, marginBottom: 24, textTransform: "uppercase" }}>
               {data.title} <br />
-              <span style={{ color: "#2196F3" }}>{data.highlight}</span>
+              <span style={{ color: "var(--water)" }}>{data.highlight}</span>
             </h2>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {data.paragraphs.map((p, i) => (
-                <p key={i} style={{ color: "#0085f4", fontSize: 18, lineHeight: 1.7, fontWeight: 400, margin: 0 }}>
+                <p key={i} style={{ color: "var(--ink)", fontSize: 15, lineHeight: 1.65, fontWeight: 400, margin: 0 }}>
                   {p}
                 </p>
               ))}
@@ -81,11 +80,9 @@ export default function WhatWeDo() {
         </div>
       </div>
 
-      {/* Decorative CSS trick to make it look like alternating blocks */}
       <style>{`
-        @media (min-width: 1024px) {
-          #what-we-do > div > div > div:nth-child(1) { order: 2 !important; }
-          #what-we-do > div > div > div:nth-child(2) { order: 1 !important; }
+        @media (max-width: 768px) {
+          .what-we-do-container { padding: 0 20px !important; }
         }
       `}</style>
     </section>

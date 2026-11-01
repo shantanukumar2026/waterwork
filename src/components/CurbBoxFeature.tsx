@@ -10,55 +10,34 @@ export default function CurbBoxFeature() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
-  const { header, image } = homeData.curbbox;
+  const { header } = homeData.curbbox;
 
   return (
     <section
       id="curb-box"
       className="curbbox-section"
       style={{
-        backgroundColor: "#f0f6ff",
+        backgroundColor: "#F8FAFC",
         position: "relative",
         overflow: "hidden",
-        padding: "48px 0",
+        padding: "60px 0",
         boxSizing: "border-box",
         display: "flex",
         flexDirection: "column",
+        borderTop: "1px solid #E2E8F0"
       }}
     >
-      {/* ── Premium Layered Background ── */}
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 25% 50%, rgba(22,101,193,0.08) 0%, transparent 65%)", zIndex: 0 }} />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 75% 40%, rgba(6,55,115,0.05) 0%, transparent 60%)", zIndex: 0 }} />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 100%, rgba(22,101,193,0.06) 0%, transparent 40%)", zIndex: 0 }} />
-
-      {/* Engineering Blueprint Grid */}
+      {/* Background blueprint elements */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          opacity: 0.15,
-          backgroundImage: "linear-gradient(rgba(22,101,193,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(22,101,193,0.15) 1px, transparent 1px)",
+          opacity: 0.12,
+          backgroundImage: "linear-gradient(rgba(0,133,244,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,133,244,0.15) 1px, transparent 1px)",
           backgroundSize: "48px 48px",
           zIndex: 0,
-          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
         }}
       />
-
-      {/* Decorative Floating Geometric Shapes */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-        style={{ position: "absolute", top: "15%", right: "8%", width: 200, height: 200, border: "1px solid rgba(22,101,193,0.08)", borderRadius: "50%", zIndex: 0 }}
-      />
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
-        style={{ position: "absolute", bottom: "20%", left: "5%", width: 300, height: 300, border: "1px solid rgba(22,101,193,0.06)", borderRadius: "50%", zIndex: 0 }}
-      />
-      <div style={{ position: "absolute", top: "30%", left: "12%", width: 6, height: 6, background: "rgba(22,101,193,0.15)", borderRadius: "50%", zIndex: 0 }} />
-      <div style={{ position: "absolute", top: "20%", right: "20%", width: 4, height: 4, background: "rgba(22,101,193,0.12)", borderRadius: "50%", zIndex: 0 }} />
-      <div style={{ position: "absolute", bottom: "25%", right: "12%", width: 8, height: 8, background: "rgba(22,101,193,0.1)", borderRadius: "50%", zIndex: 0 }} />
 
       {/* Main Content Area */}
       <div
@@ -80,191 +59,150 @@ export default function CurbBoxFeature() {
           style={{
             display: "grid",
             gridTemplateColumns: "1.05fr 0.95fr",
-            gap: 50,
+            gap: 60,
             alignItems: "center",
             width: "100%",
           }}
         >
-          {/* ───────── LEFT: Product Showcase ───────── */}
+          {/* LEFT: Product Showcase */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             style={{
               position: "relative",
               display: "flex",
               justifyContent: "center",
-              alignItems: "flex-end",
+              alignItems: "center",
               width: "100%",
-              paddingBottom: "3%",
-              minHeight: "450px"
+              minHeight: "420px"
             }}
           >
-            {/* Glowing Halo Behind Product */}
+            {/* Visual glow backdrop */}
             <div
               style={{
                 position: "absolute",
-                top: "10%",
-                left: "10%",
-                right: "10%",
-                bottom: "5%",
-                background: "radial-gradient(circle, rgba(22,101,193,0.15) 0%, rgba(22,101,193,0.05) 40%, transparent 70%)",
-                filter: "blur(40px)",
+                width: "80%",
+                height: "80%",
+                background: "radial-gradient(circle, rgba(0,133,244,0.12) 0%, transparent 70%)",
                 borderRadius: "50%",
-                pointerEvents: "none",
-                zIndex: 0,
               }}
             />
 
-            {/* Arch Background with Premium Gradient */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: "3%",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "min(380px, 80%)",
-                height: "88%",
-                background: "linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(224,238,255,0.4) 50%, rgba(22,101,193,0.05) 100%)",
-                borderTopLeftRadius: "50%",
-                borderTopRightRadius: "50%",
-                zIndex: 0,
-                border: "1px solid rgba(22,101,193,0.06)",
-                borderBottom: "none",
-              }}
-            />
-
-            {/* Layered Blue Disc Platform */}
-            <div style={{ position: "absolute", bottom: "3%", left: "50%", transform: "translateX(-50%)", width: "min(380px, 82%)", zIndex: 1 }}>
-              {/* Shadow ring */}
-              <div style={{ position: "absolute", bottom: -8, left: "50%", transform: "translateX(-50%)", width: "110%", height: 30, background: "rgba(6,55,115,0.08)", borderRadius: "50%", filter: "blur(8px)" }} />
-              {/* Outer ring */}
-              <div style={{ position: "absolute", bottom: -4, left: "50%", transform: "translateX(-50%)", width: "105%", height: 50, background: "linear-gradient(180deg, rgba(22,101,193,0.15), rgba(22,101,193,0.05))", borderRadius: "50%" }} />
-              {/* Main disc */}
-              <div style={{ position: "relative", width: "100%", height: 55, background: "linear-gradient(180deg, #2185d0, #0085f4)", borderRadius: "50%", boxShadow: "0 8px 32px rgba(22,101,193,0.35), inset 0 2px 8px rgba(255,255,255,0.2), inset 0 -4px 0 rgba(0, 133, 244, 0.15)" }} />
-            </div>
-
-            {/* Product Image */}
-            <div style={{ position: "absolute", bottom: "6%", width: "100%", height: "88%", zIndex: 2 }}>
+            {/* Curb Box Product Image */}
+            <div style={{ position: "relative", width: "100%", maxWidth: 380, height: 400 }}>
               <Image
                 src="/images/curb-box.webp"
                 alt={header.title}
                 fill
-                style={{ objectFit: "contain", filter: "drop-shadow(0 20px 40px rgba(0,74,173,0.18))" }}
+                style={{ objectFit: "contain", filter: "drop-shadow(0 20px 30px rgba(15,23,42,0.15))" }}
                 priority
               />
             </div>
 
-            {/* Left Callout Badge — Glassmorphism with Blur */}
+            {/* Left Callout Badge */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              style={{ position: "absolute", top: "28%", left: 0, zIndex: 10, display: "flex", alignItems: "center", transform: "translateX(-12%)" }}
+              className="curbbox-callout-left"
+              style={{ position: "absolute", top: "25%", left: 0, zIndex: 10, display: "flex", alignItems: "center" }}
             >
               <div style={{
-                background: "rgba(255,255,255,0.88)",
-                backdropFilter: "blur(16px)",
-                WebkitBackdropFilter: "blur(16px)",
-                padding: "12px 16px",
-                borderRadius: 12,
-                border: "1.5px solid rgba(0, 133, 244, 0.2)",
-                boxShadow: "0 10px 32px rgba(0,74,173,0.12)",
+                background: "rgba(255,255,255,0.95)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                padding: "12px 18px",
+                borderRadius: 8,
+                border: "1px solid rgba(0, 133, 244, 0.25)",
+                boxShadow: "0 10px 28px rgba(15,23,42,0.08)",
                 display: "flex",
                 alignItems: "center",
                 gap: 12
               }}>
-                <div style={{ background: "linear-gradient(135deg, #0085f4, #004aad)", borderRadius: 8, width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 4px 12px rgba(0,74,173,0.3)" }}>
+                <div style={{ background: "#0085f4", borderRadius: 6, width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <ShieldCheck size={18} color="#fff" />
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <span style={{ color: "#0085f4", fontSize: 9, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 2 }}>MATERIAL SPEC</span>
-                  <span style={{ color: "#004aad", fontSize: 12, fontWeight: 900, textTransform: "uppercase", lineHeight: 1.15 }}>HIGH-YIELD<br />CAST IRON</span>
+                  <span style={{ color: "#0085f4", fontSize: 10, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em" }}>MATERIAL SPEC</span>
+                  <span style={{ color: "#0F172A", fontSize: 13, fontWeight: 800, textTransform: "uppercase", lineHeight: 1.2 }}>HIGH-YIELD<br />DUCTILE IRON</span>
                 </div>
               </div>
-              <div style={{ width: "3vw", maxWidth: 40, height: 2, background: "linear-gradient(90deg, #0085f4, transparent)" }} />
-              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#0085f4", boxShadow: "0 0 10px rgba(0,133,244,0.6)" }} />
             </motion.div>
 
-            {/* Right Callout Badge — Glassmorphism with Blur */}
+            {/* Right Callout Badge */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
-              style={{ position: "absolute", bottom: "36%", right: 0, zIndex: 10, display: "flex", alignItems: "center", transform: "translateX(12%)" }}
+              className="curbbox-callout-right"
+              style={{ position: "absolute", bottom: "25%", right: 0, zIndex: 10, display: "flex", alignItems: "center" }}
             >
-              <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#0085f4", boxShadow: "0 0 10px rgba(0,133,244,0.6)" }} />
-              <div style={{ width: "3vw", maxWidth: 40, height: 2, background: "linear-gradient(90deg, transparent, #0085f4)" }} />
               <div style={{
-                background: "rgba(255,255,255,0.88)",
-                backdropFilter: "blur(16px)",
-                WebkitBackdropFilter: "blur(16px)",
-                padding: "12px 16px",
-                borderRadius: 12,
-                border: "1.5px solid rgba(0, 133, 244, 0.2)",
-                boxShadow: "0 10px 32px rgba(0,74,173,0.12)",
+                background: "rgba(255,255,255,0.95)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                padding: "12px 18px",
+                borderRadius: 8,
+                border: "1px solid rgba(0, 133, 244, 0.25)",
+                boxShadow: "0 10px 28px rgba(15,23,42,0.08)",
                 display: "flex",
                 alignItems: "center",
                 gap: 12
               }}>
-                <div style={{ background: "linear-gradient(135deg, #0085f4, #004aad)", borderRadius: 8, width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 4px 12px rgba(0,74,173,0.3)" }}>
+                <div style={{ background: "#0085f4", borderRadius: 6, width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   <Settings size={18} color="#fff" />
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <span style={{ color: "#0085f4", fontSize: 9, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 2 }}>ADAPTABILITY</span>
-                  <span style={{ color: "#004aad", fontSize: 12, fontWeight: 900, textTransform: "uppercase", lineHeight: 1.15 }}>ADJUSTABLE<br />RISER CORE</span>
+                  <span style={{ color: "#0085f4", fontSize: 10, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em" }}>ADAPTABILITY</span>
+                  <span style={{ color: "#0F172A", fontSize: 13, fontWeight: 800, textTransform: "uppercase", lineHeight: 1.2 }}>ADJUSTABLE<br />RISER CORE</span>
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* ───────── RIGHT: Text Content ───────── */}
+          {/* RIGHT: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
           >
-            {/* Title */}
+            <div className="pill-tag" style={{ marginBottom: 18, alignSelf: "flex-start" }}>
+              <span className="dot" />
+              MUNICIPAL HARDWARE
+            </div>
+
             <motion.h2
               className="font-display"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
               style={{
-                fontSize: "clamp(2.4rem, 4vw, 4rem)",
+                fontSize: "clamp(2.4rem, 4vw, 3.8rem)",
                 fontWeight: 800,
-                color: "#004aad",
-                lineHeight: 0.92,
+                color: "#0F172A",
+                lineHeight: 1.05,
                 textTransform: "uppercase",
-                letterSpacing: "-0.03em",
-                marginBottom: "1.2vh",
-                background: "linear-gradient(135deg, #004aad 0%, #0085f4 50%, #1976D2 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                marginBottom: 16,
               }}
             >
-              THE H2<br />CURB BOX
+              THE H2<br />
+              <span style={{ color: "#0085f4" }}>CURB BOX SYSTEM</span>
             </motion.h2>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={inView ? { width: 70 } : {}}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              style={{ height: 3, background: "linear-gradient(90deg, #0085f4, #42A5F5)", marginBottom: "2vh", borderRadius: 2 }}
-            />
 
-            {/* Description */}
-            <p style={{ color: "#0085f4", fontSize: "clamp(12px, 1.5vh, 15px)", lineHeight: 1.6, marginBottom: "2.5vh", fontWeight: 500, maxWidth: 440, letterSpacing: "0.01em" }}>
-              Designed for maximum durability in harsh environments, the H2 Curb Box sets the standard for municipal water infrastructure reliability.
+            <div style={{ width: 60, height: 3, background: "#0085f4", marginBottom: 20, borderRadius: 2 }} />
+
+            <p style={{ color: "#334155", fontSize: 16, lineHeight: 1.65, marginBottom: 28, fontWeight: 400, maxWidth: 480 }}>
+              Designed for multi-decade durability in harsh municipal environments, the H2 Curb Box sets the standard for public works reliability, frost protection, and clean shut-off access.
             </p>
 
             {/* Feature Rows */}
-            <div style={{ display: "flex", flexDirection: "column", marginBottom: "2.5vh", maxWidth: 480 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 32, maxWidth: 480 }}>
               {[
-                { icon: ShieldCheck, title: "CAST-IRON & HDPE COMPOSITE BODY", desc: "Engineered for absolute reliability." },
-                { icon: ArrowUpDown, title: "TELESCOPING ADJUSTABLE RISER", desc: "Precision height adjustment system." },
-                { icon: Lock, title: "LOCKING LID — TRAFFIC-RATED", desc: "Heavy-duty tamper-proof security." },
+                { icon: ShieldCheck, title: "DUCTILE-IRON & COMPOSITE BODY", desc: "AASHTO H-20 traffic load tested for highway corridors." },
+                { icon: ArrowUpDown, title: "TELESCOPING ADJUSTABLE RISER", desc: "Precision height adjustment matching finished grade." },
+                { icon: Lock, title: "LOCKING LID & PENTAGON BOLT", desc: "Heavy-duty tamper-proof security preventing unauthorized access." },
               ].map((feat, i) => {
                 const Icon = feat.icon;
                 return (
@@ -275,24 +213,26 @@ export default function CurbBoxFeature() {
                     transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
                     style={{
                       display: "flex",
-                      alignItems: "center",
+                      alignItems: "flex-start",
                       gap: 14,
-                      borderBottom: i < 2 ? "1px solid rgba(22,101,193,0.08)" : "none",
-                      padding: "1.3vh 0",
+                      background: "#ffffff",
+                      border: "1px solid #E2E8F0",
+                      padding: "16px 18px",
+                      borderRadius: 8,
+                      boxShadow: "0 2px 8px rgba(15,23,42,0.02)"
                     }}
                   >
                     <div style={{
-                      width: 36, height: 36, borderRadius: "50%",
-                      background: "rgba(255,255,255,0.9)",
-                      border: "1px solid rgba(22,101,193,0.1)",
-                      display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
-                      boxShadow: "0 2px 8px rgba(6,55,115,0.06)"
+                      width: 36, height: 36, borderRadius: "6px",
+                      background: "rgba(0,133,244,0.08)",
+                      border: "1px solid rgba(0,133,244,0.2)",
+                      display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0
                     }}>
-                      <Icon size={16} color="#004aad" strokeWidth={2} />
+                      <Icon size={18} color="#0085f4" />
                     </div>
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                      <span style={{ color: "#004aad", fontWeight: 800, fontSize: "clamp(10px, 1.2vh, 12px)", textTransform: "uppercase", letterSpacing: "0.03em" }}>{feat.title}</span>
-                      <span style={{ color: "#0085f4", fontSize: "clamp(9px, 1vh, 11px)", fontWeight: 500 }}>{feat.desc}</span>
+                      <span style={{ color: "#0F172A", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.02em" }}>{feat.title}</span>
+                      <span style={{ color: "#475569", fontSize: 13, marginTop: 2, lineHeight: 1.45 }}>{feat.desc}</span>
                     </div>
                   </motion.div>
                 );
@@ -302,16 +242,13 @@ export default function CurbBoxFeature() {
             {/* CTA Button */}
             <motion.a
               href="/products"
-              initial={{ opacity: 0, y: 10 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              whileHover={{ scale: 1.03, boxShadow: "0 12px 32px rgba(13,71,161,0.35)" }}
+              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
-                background: "linear-gradient(135deg, #004aad, #0085f4)",
+                background: "#0085f4",
                 color: "#fff",
                 textDecoration: "none",
                 padding: "14px 28px",
@@ -319,13 +256,15 @@ export default function CurbBoxFeature() {
                 fontSize: 13,
                 fontWeight: 800,
                 textTransform: "uppercase",
-                letterSpacing: "0.04em",
-                boxShadow: "0 8px 24px rgba(13,71,161,0.25)",
+                letterSpacing: "0.05em",
+                boxShadow: "0 4px 14px rgba(0,133,244,0.3)",
                 alignSelf: "flex-start",
-                transition: "all 0.3s ease",
+                transition: "background 0.2s ease",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "#004aad")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "#0085f4")}
             >
-              EXPLORE PRODUCTS <ArrowRight size={15} />
+              EXPLORE WATERWORKS PRODUCTS <ArrowRight size={15} />
             </motion.a>
           </motion.div>
         </div>
@@ -333,9 +272,13 @@ export default function CurbBoxFeature() {
 
       <style>{`
         @media (max-width: 1024px) {
-          .curbbox-section { height: auto !important; padding: 80px 0 40px !important; }
           .curbbox-container { padding: 0 24px !important; }
           .curbbox-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .curbbox-callout-left { left: 10px !important; }
+          .curbbox-callout-right { right: 10px !important; }
+        }
+        @media (max-width: 640px) {
+          .curbbox-callout-left, .curbbox-callout-right { display: none !important; }
         }
       `}</style>
     </section>

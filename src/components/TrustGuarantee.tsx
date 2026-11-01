@@ -45,7 +45,7 @@ export default function TrustGuarantee() {
       style={{
         position: "relative",
         background: "var(--brand-deep)",
-        padding: "90px 0",
+        padding: "80px 0",
         overflow: "hidden",
         borderTop: "1px solid var(--hairline)",
         borderBottom: "1px solid var(--hairline)",
@@ -54,7 +54,7 @@ export default function TrustGuarantee() {
       <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 40px", position: "relative", zIndex: 10 }}>
 
         {/* Section Header */}
-        <div style={{ textAlign: "center", marginBottom: 56 }}>
+        <div style={{ textAlign: "center", marginBottom: 50 }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -66,21 +66,22 @@ export default function TrustGuarantee() {
             </div>
             <h2 className="font-display" style={{
               fontSize: "clamp(2.2rem, 5vw, 3.6rem)",
-              fontWeight: 700,
+              fontWeight: 800,
               color: "#FFFFFF",
               letterSpacing: "-0.01em",
               margin: 0,
-              lineHeight: 1.1
+              lineHeight: 1.1,
+              textTransform: "uppercase"
             }}>
               Zero Field Failures Across 25+ Years of Municipal Service.
             </h2>
             <p style={{
-              color: "var(--white)",
+              color: "rgba(255, 255, 255, 0.9)",
               fontSize: "1.05rem",
               maxWidth: 620,
               margin: "16px auto 0",
               fontWeight: 400,
-              opacity: 0.9,
+              lineHeight: 1.6
             }}>
               Our metallurgical precision and 100% in-house hydrostatic testing deliver field performance trusted by public works departments nationwide.
             </p>
@@ -91,8 +92,8 @@ export default function TrustGuarantee() {
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
-          gap: 24
-        }} className="halo-grid">
+          gap: 20
+        }} className="trust-grid">
           {stats.map((st, i) => (
             <motion.div
               key={i}
@@ -101,28 +102,41 @@ export default function TrustGuarantee() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               style={{
-                background: "rgba(255, 255, 255, 0.05)",
-                border: "1px solid var(--hairline)",
-                borderRadius: "6px",
-                padding: "32px 24px",
+                background: "rgba(255, 255, 255, 0.06)",
+                border: "1px solid rgba(0, 187, 255, 0.25)",
+                borderRadius: "8px",
+                padding: "28px 22px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
               }}
             >
-              <div className="font-display" style={{ fontSize: 44, fontWeight: 700, color: "var(--brand-bright)", lineHeight: 1, marginBottom: 8 }}>
+              <div className="font-display" style={{ fontSize: 44, fontWeight: 800, color: "var(--brand-bright)", lineHeight: 1, marginBottom: 8 }}>
                 {st.value}
               </div>
-              <div className="font-mono-spec" style={{ fontSize: 11, fontWeight: 700, color: "#FFFFFF", marginBottom: 8 }}>
+              <div className="font-mono-spec" style={{ fontSize: 11, fontWeight: 800, color: "#FFFFFF", letterSpacing: "0.08em", marginBottom: 8 }}>
                 {st.label}
               </div>
-              <p style={{ fontSize: 13, color: "var(--white)", opacity: 0.85, margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: 13, color: "rgba(255, 255, 255, 0.85)", margin: 0, lineHeight: 1.5 }}>
                 {st.desc}
               </p>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .trust-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .trust-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

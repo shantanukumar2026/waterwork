@@ -22,56 +22,31 @@ export default function Industries() {
   const { header, items } = homeData.industries;
 
   return (
-    <section id="industries" className="industries-section" style={{ background: "#002255", position: "relative", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-      {/* Top Border Accent */}
-      <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 4, background: "#0085f4" }} />
+    <section id="industries" className="industries-section" style={{ background: "var(--deep)", position: "relative", borderTop: "1px solid var(--line-strong)" }}>
 
       <div className="industries-container" style={{ maxWidth: 1720, margin: "0 auto", position: "relative" }}>
         {/* Header */}
         <div ref={ref} style={{ marginBottom: 48, display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-            {/* Rigid Tag */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                background: "rgba(21, 101, 192, 0.3)",
-                padding: "6px 16px",
-                marginBottom: 20,
-                border: "1px solid rgba(33, 150, 243, 0.2)"
-              }}
-            >
-              <div style={{ width: 12, height: 2, background: "#fff" }} />
-              <span
-                style={{
-                  color: "#90CAF9",
-                  fontSize: 12,
-                  fontWeight: 800,
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                }}
-              >
-                {header.tagline}
-              </span>
+            <div className="eyebrow-label" style={{ color: "var(--water)", marginBottom: 16, justifyContent: "center" }}>
+              {header.tagline}
             </div>
 
             <h2
               className="font-display"
               style={{
-                fontSize: "clamp(2rem, 8vw, 3.2rem)",
-                fontWeight: 900,
-                color: "#fff",
-                lineHeight: 1,
-                marginBottom: 20,
+                fontSize: "clamp(2rem, 5vw, 3.2rem)",
+                fontWeight: 800,
+                color: "#FFFFFF",
+                lineHeight: 1.1,
+                marginBottom: 16,
                 textTransform: "uppercase",
-                letterSpacing: "0.02em",
               }}
             >
               {header.title}<br />
-              <span style={{ color: "#2196F3" }}>{header.highlight}</span>
+              <span style={{ color: "var(--water)" }}>{header.highlight}</span>
             </h2>
-            <p style={{ color: "#90CAF9", fontSize: 16, maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
+            <p style={{ color: "#CBD5E1", fontSize: 15, maxWidth: 640, margin: "0 auto", lineHeight: 1.6, fontWeight: 400 }}>
               {header.subtitle}
             </p>
           </motion.div>
@@ -81,7 +56,7 @@ export default function Industries() {
         <div style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-          gap: 24,
+          gap: 20,
         }}>
           {items.map((ind, i) => {
             const Icon = iconMap[ind.icon as keyof typeof iconMap] || Building2;
@@ -90,7 +65,7 @@ export default function Industries() {
                 key={ind.title}
                 initial={{ opacity: 0, y: 28 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.09 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
                 style={{ height: "100%" }}
               >
                 <IndustryCard ind={ind} Icon={Icon} />
@@ -101,11 +76,11 @@ export default function Industries() {
       </div>
 
       <style>{`
-        .industries-section { padding: 48px 0; }
+        .industries-section { padding: 64px 0; }
         .industries-container { padding: 0 60px; }
         @media (max-width: 768px) {
-          .industries-section { padding: 32px 0; }
-          .industries-container { padding: 0 24px; }
+          .industries-section { padding: 48px 0; }
+          .industries-container { padding: 0 20px; }
         }
       `}</style>
     </section>
@@ -121,49 +96,51 @@ function IndustryCard({ ind, Icon }: { ind: any; Icon: React.ElementType }) {
       href={href}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="industrial-card"
       style={{
         position: "relative",
         padding: "32px",
-        background: hovered ? "rgba(33, 150, 243, 0.12)" : "rgba(255, 255, 255, 0.03)",
-        border: "1px solid rgba(255, 255, 255, 0.08)",
-        borderTop: `4px solid ${ind.accent}`,
+        background: hovered ? "rgba(255, 255, 255, 0.06)" : "rgba(255, 255, 255, 0.02)",
+        border: "1px solid var(--line-strong)",
+        borderTop: `3px solid ${ind.accent || "var(--water)"}`,
+        borderRadius: "0px",
         transition: "all 0.25s ease",
         cursor: "pointer",
         display: "flex",
         flexDirection: "column",
         height: "100%",
         textDecoration: "none",
-        boxShadow: hovered ? "0 20px 40px rgba(0, 74, 173, 0.5)" : "none",
-        transform: hovered ? "translateY(-4px)" : "none"
+        transform: hovered ? "translateY(-3px)" : "none"
       }}
     >
       <div style={{
-        width: 48,
-        height: 48,
-        background: "rgba(33, 150, 243, 0.15)",
+        width: 44,
+        height: 44,
+        background: "rgba(255, 255, 255, 0.05)",
+        borderRadius: "0px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         marginBottom: 20,
-        border: "1px solid rgba(33, 150, 243, 0.3)",
+        border: "1px solid var(--line-strong)",
       }}>
-        <Icon size={24} color={ind.accent} />
+        <Icon size={22} color={ind.accent || "var(--water)"} />
       </div>
 
-      <h3 className="font-display" style={{ fontSize: 18, fontWeight: 800, color: "#fff", marginBottom: 12 }}>
+      <h3 className="font-display" style={{ fontSize: 18, fontWeight: 800, color: "#FFFFFF", marginBottom: 10, textTransform: "uppercase" }}>
         {ind.title}
       </h3>
-      <p style={{ fontSize: 14, color: "#90CAF9", lineHeight: 1.6, marginBottom: 24, flex: 1 }}>
+      <p style={{ fontSize: 13, color: "#CBD5E1", lineHeight: 1.6, marginBottom: 20, flex: 1, fontWeight: 400 }}>
         {ind.desc}
       </p>
 
-      <div style={{
+      <div className="font-mono-spec" style={{
         display: "flex",
         alignItems: "center",
         gap: 8,
-        fontSize: 12,
-        fontWeight: 800,
-        color: ind.accent,
+        fontSize: 11,
+        fontWeight: 700,
+        color: ind.accent || "var(--water)",
         letterSpacing: "0.1em",
         textTransform: "uppercase"
       }}>

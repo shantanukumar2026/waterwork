@@ -22,39 +22,35 @@ export default function QualityCompliance() {
     <section
       id="quality"
       style={{
-        background: "#002255",
-        padding: "48px 0",
-        position: "relative"
+        background: "var(--deep)",
+        padding: "64px 0",
+        position: "relative",
+        borderTop: "1px solid var(--line-strong)"
       }}
     >
-      {/* Decorative Top Border */}
-      <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 4, background: "#0085f4" }} />
-
-      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
+      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }} className="quality-container">
 
         <div ref={ref} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", marginBottom: 48 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(21, 101, 192, 0.3)", padding: "6px 16px", marginBottom: 20, border: "1px solid rgba(33, 150, 243, 0.2)" }}>
-              <span style={{ color: "#90CAF9", fontSize: 12, fontWeight: 800, letterSpacing: "0.15em", textTransform: "uppercase" }}>
-                {header.tagline}
-              </span>
+            <div className="eyebrow-label" style={{ color: "var(--water)", marginBottom: 16, justifyContent: "center" }}>
+              {header.tagline}
             </div>
 
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 6vw, 3.2rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
-              {header.title} <span style={{ color: "var(--brand-blue)" }}>{header.highlight}</span>
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#FFFFFF", lineHeight: 1.1, marginBottom: 16, textTransform: "uppercase" }}>
+              {header.title} <span style={{ color: "var(--water)" }}>{header.highlight}</span>
             </h2>
-            <p style={{ color: "#90CAF9", fontSize: 16, maxWidth: 600, margin: "0 auto", lineHeight: 1.6 }}>
+            <p style={{ color: "#CBD5E1", fontSize: 15, maxWidth: 640, margin: "0 auto", lineHeight: 1.6, fontWeight: 400 }}>
               {header.subtitle}
             </p>
           </motion.div>
         </div>
 
         {/* Workflow Timeline */}
-        <div style={{ position: "relative", padding: "40px 0" }}>
+        <div style={{ position: "relative", padding: "20px 0" }}>
           {/* Connecting Line Desktop */}
-          <div style={{ display: "none", position: "absolute", top: 80, left: "10%", right: "10%", height: 2, background: "rgba(33, 150, 243, 0.2)" }} className="qc-line" />
+          <div style={{ display: "none", position: "absolute", top: 60, left: "10%", right: "10%", height: 1, background: "var(--line-strong)" }} className="qc-line" />
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 40, position: "relative", zIndex: 10 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 32, position: "relative", zIndex: 10 }}>
             {workflow.map((step, i) => {
               const Icon = iconMap[step.icon as keyof typeof iconMap] || Search;
               return (
@@ -66,42 +62,41 @@ export default function QualityCompliance() {
                   style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}
                 >
                   <div style={{
-                    width: 80,
-                    height: 80,
-                    background: "#0D274D",
-                    borderRadius: "50%",
+                    width: 72,
+                    height: 72,
+                    background: "rgba(255, 255, 255, 0.05)",
+                    borderRadius: "0px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    border: "2px solid #2196F3",
-                    marginBottom: 24,
+                    border: "1px solid var(--line-strong)",
+                    marginBottom: 20,
                     position: "relative"
                   }}>
-                    <Icon size={32} color="#42A5F5" />
+                    <Icon size={28} color="var(--water)" />
 
                     {/* Step Number Badge */}
-                    <div style={{
+                    <div className="font-mono-spec" style={{
                       position: "absolute",
-                      top: -10,
-                      right: -10,
-                      width: 28,
-                      height: 28,
-                      background: "#2196F3",
-                      borderRadius: "50%",
+                      top: -8,
+                      right: -8,
+                      width: 24,
+                      height: 24,
+                      background: "var(--water)",
+                      borderRadius: "0px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       color: "#fff",
-                      fontWeight: 800,
-                      fontSize: 12,
-                      boxShadow: "0 0 0 4px #004aad"
+                      fontWeight: 700,
+                      fontSize: 11,
                     }}>
                       {i + 1}
                     </div>
                   </div>
 
-                  <h3 style={{ color: "#fff", fontSize: 18, fontWeight: 800, marginBottom: 12, textTransform: "uppercase" }}>{step.title}</h3>
-                  <p style={{ color: "#64B5F6", fontSize: 14, lineHeight: 1.6, margin: 0 }}>{step.desc}</p>
+                  <h3 className="font-display" style={{ color: "#FFFFFF", fontSize: 17, fontWeight: 800, marginBottom: 8, textTransform: "uppercase" }}>{step.title}</h3>
+                  <p style={{ color: "#CBD5E1", fontSize: 13, lineHeight: 1.55, margin: 0, fontWeight: 400 }}>{step.desc}</p>
                 </motion.div>
               );
             })}
@@ -112,6 +107,9 @@ export default function QualityCompliance() {
       <style>{`
         @media (min-width: 768px) {
           .qc-line { display: block !important; }
+        }
+        @media (max-width: 768px) {
+          .quality-container { padding: 0 20px !important; }
         }
       `}</style>
     </section>

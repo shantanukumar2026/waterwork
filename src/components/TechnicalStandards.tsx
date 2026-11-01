@@ -13,12 +13,12 @@ export default function TechnicalStandards() {
 
   return (
     <section id="standards" className="standards-section" style={{ 
-        background: "#F1F5F9", 
-        padding: "48px 0",
+        background: "#F8FAFC", 
+        padding: "60px 0",
         borderTop: "1px solid #E2E8F0"
       }}>
-      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }}>
-        <div ref={ref} style={{ display: "flex", flexWrap: "wrap", gap: 60, alignItems: "center" }}>
+      <div style={{ maxWidth: 1720, margin: "0 auto", padding: "0 60px" }} className="standards-container">
+        <div ref={ref} style={{ display: "flex", flexWrap: "wrap", gap: 60, alignItems: "center" }} className="standards-flex">
           
           <motion.div 
             initial={{ opacity: 0, x: -30 }} 
@@ -26,51 +26,58 @@ export default function TechnicalStandards() {
             transition={{ duration: 0.6 }}
             style={{ flex: "1 1 400px" }}
           >
-            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 900, color: "#004aad", lineHeight: 1.1, marginBottom: 24, textTransform: "uppercase" }}>
+            <div className="pill-tag" style={{ marginBottom: 20 }}>
+              <span className="dot" />
+              MUNICIPAL COMPLIANCE
+            </div>
+            
+            <h2 className="font-display" style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, color: "#0F172A", lineHeight: 1.1, marginBottom: 20, textTransform: "uppercase" }}>
               {header.title}<br />
               <span style={{ color: "#0085f4" }}>{header.highlight}</span>
             </h2>
-            <p style={{ color: "#0085f4", fontSize: 16, lineHeight: 1.6, marginBottom: 32, fontWeight: 500 }}>
+            <p style={{ color: "#334155", fontSize: 16, lineHeight: 1.6, marginBottom: 32, fontWeight: 400 }}>
               {header.subtitle}
             </p>
 
-            <div style={{ display: "flex", gap: 24, marginBottom: 40 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <BookmarkCheck size={24} color="#0085f4" />
-                <span style={{ color: "#004aad", fontWeight: 800, fontSize: 14 }}>Tested & Rated</span>
+            <div style={{ display: "flex", gap: 24, marginBottom: 36, flexWrap: "wrap" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <BookmarkCheck size={22} color="#0085f4" />
+                <span style={{ color: "#0F172A", fontWeight: 800, fontSize: 14 }}>Tested & Rated</span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <Anchor size={24} color="#0085f4" />
-                <span style={{ color: "#004aad", fontWeight: 800, fontSize: 14 }}>Structural Integrity</span>
+              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                <Anchor size={22} color="#0085f4" />
+                <span style={{ color: "#0F172A", fontWeight: 800, fontSize: 14 }}>Structural Integrity</span>
               </div>
             </div>
 
             <button 
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#0085f4";
+                e.currentTarget.style.background = "#004aad";
                 e.currentTarget.style.color = "#ffffff";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#0085f4";
+                e.currentTarget.style.background = "#0085f4";
+                e.currentTarget.style.color = "#ffffff";
               }}
               style={{ 
-                background: "transparent", 
-                border: "1px solid #0085f4", 
-                color: "#0085f4", 
+                background: "#0085f4", 
+                border: "none", 
+                color: "#ffffff", 
                 padding: "14px 28px", 
-                fontSize: 14, 
+                fontSize: 13, 
                 fontWeight: 800, 
                 textTransform: "uppercase", 
-                letterSpacing: 1, 
-                display: "flex", 
+                letterSpacing: "0.05em", 
+                borderRadius: "6px",
+                display: "inline-flex", 
                 alignItems: "center", 
-                gap: 12,
+                gap: 10,
                 cursor: "pointer",
-                transition: "all 0.2s"
+                transition: "all 0.2s",
+                boxShadow: "0 4px 14px rgba(0, 133, 244, 0.25)"
               }}
             >
-              <FileText size={18} />
+              <FileText size={17} />
               {button}
             </button>
           </motion.div>
@@ -79,39 +86,49 @@ export default function TechnicalStandards() {
             initial={{ opacity: 0, scale: 0.95 }} 
             animate={inView ? { opacity: 1, scale: 1 } : {}} 
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ flex: "1 1 500px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}
+            style={{ flex: "1 1 500px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}
+            className="standards-grid"
           >
             {items.map((std, i) => (
               <div key={i} style={{ 
                 background: "#ffffff", 
                 border: "1px solid #E2E8F0", 
-                padding: "32px 24px", 
-                borderRadius: "12px",
+                padding: "28px 22px", 
+                borderRadius: "10px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-                transition: "all 0.3s",
+                transition: "all 0.25s ease",
                 height: "100%",
-                boxShadow: "0 4px 20px rgba(6,35,71,0.01)"
+                boxShadow: "0 4px 16px rgba(15, 23, 42, 0.03)"
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(21, 101, 192, 0.25)";
-                e.currentTarget.style.boxShadow = "0 12px 30px rgba(21, 101, 192, 0.05)";
+                e.currentTarget.style.borderColor = "rgba(0, 133, 244, 0.4)";
+                e.currentTarget.style.boxShadow = "0 12px 28px rgba(0, 133, 244, 0.08)";
+                e.currentTarget.style.transform = "translateY(-2px)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = "#E2E8F0";
-                e.currentTarget.style.boxShadow = "0 4px 20px rgba(6, 35, 71, 0.01)";
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(15, 23, 42, 0.03)";
+                e.currentTarget.style.transform = "translateY(0)";
               }}
               >
-                <div style={{ width: 12, height: 4, background: "#0085f4", marginBottom: 16 }} />
-                <h4 style={{ color: "#004aad", fontSize: 18, fontWeight: 900, marginBottom: 8, letterSpacing: 0.5, textTransform: "uppercase" }}>{std.name}</h4>
-                <p style={{ color: "#0085f4", fontSize: 13, margin: 0, fontWeight: 500, lineHeight: 1.5 }}>{std.desc}</p>
+                <div style={{ width: 14, height: 4, background: "#0085f4", borderRadius: 2, marginBottom: 14 }} />
+                <h4 style={{ color: "#0F172A", fontSize: 17, fontWeight: 800, marginBottom: 6, letterSpacing: "0.02em", textTransform: "uppercase" }}>{std.name}</h4>
+                <p style={{ color: "#475569", fontSize: 13, margin: 0, fontWeight: 400, lineHeight: 1.55 }}>{std.desc}</p>
               </div>
             ))}
           </motion.div>
 
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .standards-container { padding: 0 24px !important; }
+          .standards-flex { gap: 40px !important; }
+        }
+      `}</style>
     </section>
   );
 }
