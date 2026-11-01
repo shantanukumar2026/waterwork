@@ -139,7 +139,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       const stored = localStorage.getItem("h2_user_session");
       if (stored) {
-        setUser(JSON.parse(stored));
+        const parsed = JSON.parse(stored);
+        if (parsed.email === "s.jenkins@austinwater.gov" || (parsed.name && parsed.name.includes("Sarah Jenkins"))) {
+          localStorage.removeItem("h2_user_session");
+          setUser(null);
+        } else {
+          setUser(parsed);
+        }
       }
     } catch {
       // ignore storage access errors
